@@ -1,5 +1,7 @@
 
 .main {
+    display: flex;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     background-color: whitesmoke;
@@ -8,5 +10,10 @@
 }
 
 .content {
-    background-color: red;
+    flex-grow: 1;
+}
+
+.content-body{
+    height: 100%;
+    width: 100%;
 }

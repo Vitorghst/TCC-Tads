@@ -18,6 +18,7 @@ const routes: Routes = [
   {
     path: '', component: MainComponent, canActivate: [AuthGuard],
     children: [
+      { path: '', redirectTo: 'listar-api', pathMatch: 'full' },
       { path: 'listar-api', component: ListarApiComponent },
       { path: 'adicionar-api', component: AdicionarApiComponent },
       { path: 'listar-tela', component: ListarTelaComponent},
@@ -27,7 +28,7 @@ const routes: Routes = [
 
     ]
   },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

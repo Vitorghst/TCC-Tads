@@ -15,27 +15,30 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page" href="#">API</a>
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page" >API</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" [routerLink]="['listar-api']">Listar APIS</a></li>
-                            <li><a class="dropdown-item" [routerLink]="['adicionar-api']">Adicionar API</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['listar-api']" [routerLinkActive]="'active'">Listar APIS</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['adicionar-api']" [routerLinkActive]="'active'">Adicionar API</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page" href="#">TELAS</a>
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-current="page">TELAS</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" [routerLink]="['listar-tela']">Listar Telas</a></li>
-                            <li><a class="dropdown-item" [routerLink]="['adicionar-tela']">Adicionar Tela</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['listar-tela']" [routerLinkActive]="'active'">Listar Telas</a></li>
+                            <li><a class="dropdown-item" [routerLink]="['adicionar-tela']" [routerLinkActive]="'active'">Adicionar Tela</a></li>
                         </ul>
                     </li>   
                     <li>
-                        <a class="nav-link active" aria-current="page" [routerLink]="['decrypter']">DECRYPTER</a>
+                        <a class="nav-link" aria-current="page" [routerLink]="['decrypter']" [routerLinkActive]="'active'">DECRYPTER</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="content">
-        <router-outlet></router-outlet>
+        <div class="content-body">
+            <router-outlet></router-outlet>
+        </div>
+        
     </div>
 </div>
