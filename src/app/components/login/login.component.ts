@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['']);
         } else {
           sessionStorage.removeItem('token');
-          alert('Usuario ou Senha incorreto');
+          alert('Usuário ou Senha incorreto');
         }
       },
         (error: any) => {

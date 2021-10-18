@@ -1,1 +1,26 @@
-<p>decrypter works!</p>
+<form [formGroup]="form" method="post">
+    <div class="col-md-8 offset-md-2 mt-3">
+        <div class="form-group">
+            <div class="form-group">
+                <label for="comment" class="mb-1">Request:</label>
+                <textarea required class="form-control" rows="5" name="descypt" id="comment">{"p0":"RdDKATEMLirKrTaO9swa7rxmLmo5wxJ6t1xHBEkiMIsDkesalziRPQ7gDYZCufkjglifwLz/s+2GVigEOkdylwxRJsk/4cJIA+wVS4X8/msRLJkdILpoKcUgM3Fw0ZZHj62kIa4v8zURwSrwXTWGbWsQh6KLC6BkDHcY7TaSeTQ=","p2":50400,"p3":115700,"p1":119000}
+    </textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="token" class="mt-2">Token:</label>
+            <textarea required class="form-control" rows="5" name="token"
+                id="to">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJlOlwvXC9lZSIsImlwIjoiMTkyLjE2OC41Mi4yNiIsImV4cCI6MTU1MDMxNTYyOSwiZGF0YSI6ImVKSW9URlZWSXdZSUlBSXdZSUlBVmtUSVRnTEpJb1VJSVVPSUxKSW9WSUljT0pJd2FJSUFWa1RJVGdMSklvSTB5aGppVVRFU2lpaTZqeGlpeTZqeGx3RXpEaUNraml5c21paWlDbWppQ3NtaWlVaWlDNmp4bHdFekRpQ3BqaW49In0=.9+IyakLftvDdgZ9vB2k+3rKowVkhI/L9ABsw1x6yDJ4=</textarea>
+        </div>
+        <div class="modal-footer mt-3">
+            <input type="hidden" name="op" value="descypt">
+
+            <button type="submit" class="btn btn-success">Descypt</button>
+
+        </div>
+        <div class='alert alert-success' role='alert'>
+            false
+        </div>
+
+    </div>
+</form>

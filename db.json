@@ -1,11 +1,90 @@
 {
-    "users": [
-      { "id": 1, "user": "vitor", "password": "123" },
-      { "id": 2, "user": "pacheco", "password": "123" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+  "users": [
+    {
+      "id": 1,
+      "user": "vitor",
+      "password": "123"
+    },
+    {
+      "id": 2,
+      "user": "pacheco",
+      "password": "123"
+    }
+  ],
+  "apis": [
+    {
+      "id": 0,
+      "codigo": "547864",
+      "nome": "datasource.adicionarPlano",
+      "metodo": "execute"
+    },
+    {
+      "id": 1,
+      "codigo": "624859",
+      "nome": "user.login",
+      "metodo": "execute"
+    },
+    {
+      "id": 2,
+      "codigo": "195374",
+      "nome": "datasource.client_exists",
+      "metodo": "execute"
+    },
+    {
+      "id": 3,
+      "codigo": "675394",
+      "nome": "client.addServiceV5",
+      "metodo": "execute"
+    },
+    {
+      "id": 4,
+      "codigo": "468754",
+      "nome": "client.getInfo",
+      "metodo": "execute"
+    },
+    {
+      "id": 5,
+      "codigo": "597534",
+      "nome": "datasource.quant_atendimentos_pendentes",
+      "metodo": "execute"
+    },
+    {
+      "nome": "Teste",
+      "id": 6
+    },
+    {
+      "nome": "Teste2",
+      "id": 7
+    }
+  ],
+  "telas": [
+    {
+      "id": 0,
+      "JHashT": "0195191919",
+      "nome": "Login"
+    },
+    {
+      "id": 1,
+      "JHashT": "01FYHDFGDD",
+      "nome": "Atendimento"
+    },
+    {
+      "id": 2,
+      "JHashT": "01SDOIGOIS",
+      "nome": "Adicionar Plano"
+    },
+    {
+      "id": 3,
+      "JHashT": "01TCIKLF7N",
+      "nome": "Cliente.PesquisaCliente"
+    },
+    {
+      "id": 4,
+      "JHashT": "01TCINWOJE",
+      "nome": "teste"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
   }
-  
+}

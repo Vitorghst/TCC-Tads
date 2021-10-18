@@ -1,1 +1,67 @@
-<p>adicionar-tela works!</p>
+<div class="main col-md-6 offset-md-3">
+    <form [formGroup]="form">
+        <div class="form-group">
+            <label class="mb-1 " for="perm">Nome da Permissão:</label>
+            <select class="form-select" name="method" id="perm">
+                <option>Escolha uma permissão</option>
+                <option>Executar</option>
+                <option>List</option>
+                <option>Datasource</option>
+                <option>Tema Mac</option>
+                <option>Mudar Status</option>
+                <option>Site Survey </option>
+                <option>Novo Atendimento</option>
+                <option>Adicionar Lembrete ao Desktop</option>
+                <option>Agenda de Técnicos </option>
+                <option>Novo Cliente</option>
+                <option>Gerenciador de Documentos </option>
+                <option>Mapas</option>
+                <option>Organizar Desktop </option>
+                <option>Ajuda e Suporte </option>
+                <option>Informações do Usuario </option>
+                <option>Novo Prospecto</option>
+                <option>Atendimentos</option>
+                <option>Ordens de Serviço</option>
+                <option>Painel de Autenticações</option>
+                <option>Clientes</option>
+                <option>Pontos de Acesso</option>
+                <option>Def. valor a cobrar pela OS</option>
+                <option>Prospectos</option>
+                <option>Habilitação Provisória</option>
+                <option>Alterar Senha </option>
+                <option>Dashboard</option>
+                <option>Base de Conhecimento</option>
+                <option>Editar Ordem de Serviço</option>
+                <option>Reagendar Ordem de Serviço</option>
+                <option>Agendar Modificação de Status</option>
+                <option>Alterar F.Cobrança P.Cancel</option>
+                <option>Configurar Contratos</option>
+                <option>Atendimento Simplificado</option>
+                <option>Mudar Motivo do Contato</option>
+                <option>Permite Editar Vendedor Prospe</option>
+                <option>Abrint</option>
+                <option>Cancelar Plano</option>
+                <option>Central Mensagem</option>
+                <option>Permite Ed. Dados Cadastro Cli</option>
+                <option>Editar Multa ao Cancelar</option>
+                <option>Editar Data Cancel.(Canc.Imed.</option>
+                <option>Mudar Data Negociada</option>
+                <option>Editar Valor de Novo Plano</option>
+                <option>Configurações de Condominios</option>
+                <option>Maps New</option>
+                <option>Bi Web</option>
+                <option>Configuração Central</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="usr">Name da Tela:</label>
+            <input type="text" name="nome_tela" class="form-control" required>
+            <input type="hidden" name="op" value="addtela">
+
+        </div>
+        <div class="modal-footer mt-3">
+            <button type="submit" class="btn btn-success">Adicionar</button>
+        </div>
+    </form>
+
+</div>

@@ -1,6 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms'
+import {HTTP_INTERCEPTORS} from '@angular/common/http'
+
+
+import { ListaApiService } from './services/lista-api.service';
+import { ListaTelaService } from './services/lista-tela.service';
+
+
+
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +24,7 @@ import { AdicionarApiComponent } from './components/adicionar-api/adicionar-api.
 import { ListarTelaComponent } from './components/listar-tela/listar-tela.component';
 import { AdicionarTelaComponent } from './components/adicionar-tela/adicionar-tela.component';
 import { DecrypterComponent } from './components/decrypter/decrypter.component';
+import { AdicionarApiService } from './services/adicionar-api.service';
 
 
 
@@ -34,11 +45,12 @@ import { DecrypterComponent } from './components/decrypter/decrypter.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [ListaApiService, ListaTelaService, AdicionarApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

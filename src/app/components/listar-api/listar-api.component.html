@@ -1,1 +1,29 @@
-<p>listar-api works!</p>
+<div class="offset-md-2 col-md-8">
+    <input class="form-control mt-3 me-2" type="search" placeholder="Search" aria-label="Search">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th scope="col">N</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nome API</th>
+                <th scope="col">Metodo</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <tr *ngFor="let api of apis">
+                    <td>{{api.id}}</td>
+                    <td>{{api.codigo}}</td>
+                    <td>{{api.nome}}</td>
+                    <td>{{api.metodo}}</td>    
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm">Editar</button>
+                        <button type="button" class="btn btn-danger ms-2 btn-sm">Copiar</button>
+                    </td>
+              </tr>
+
+        </tbody>
+    </table>
+</div>

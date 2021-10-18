@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-decrypter',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./decrypter.component.css']
 })
 export class DecrypterComponent implements OnInit {
+
+  form = new FormGroup({
+    
+  })
 
   constructor() { }
 
