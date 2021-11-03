@@ -3,11 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms'
-import {HTTP_INTERCEPTORS} from '@angular/common/http'
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
+import { ListaApiService } from './services/api.service';
 
-import { ListaApiService } from './services/lista-api.service';
-import { ListaTelaService } from './services/lista-tela.service';
 
 
 
@@ -24,7 +23,11 @@ import { AdicionarApiComponent } from './components/adicionar-api/adicionar-api.
 import { ListarTelaComponent } from './components/listar-tela/listar-tela.component';
 import { AdicionarTelaComponent } from './components/adicionar-tela/adicionar-tela.component';
 import { DecrypterComponent } from './components/decrypter/decrypter.component';
-import { AdicionarApiService } from './services/adicionar-api.service';
+import { EditApiComponent } from './components/edit-api/edit-api.component';
+import { EditTelaComponent } from './components/edit-tela/edit-tela.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 
 
@@ -38,6 +41,9 @@ import { AdicionarApiService } from './services/adicionar-api.service';
     ListarTelaComponent,
     AdicionarTelaComponent,
     DecrypterComponent,
+    EditApiComponent,
+    EditTelaComponent,
+
     
 
   ],
@@ -45,12 +51,15 @@ import { AdicionarApiService } from './services/adicionar-api.service';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    DragDropModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    CommonModule
 
   ],
-  providers: [ListaApiService, ListaTelaService, AdicionarApiService],
+  providers: [ListaApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

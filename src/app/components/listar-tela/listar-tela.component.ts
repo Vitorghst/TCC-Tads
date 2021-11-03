@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ListaTelaService } from 'src/app/services/lista-tela.service';
+import { ListaApiService } from 'src/app/services/api.service';
+import { Router } from '@angular/router';
+
+
 import { Tela } from './listar-tela.model';
 
 @Component({
@@ -11,18 +14,27 @@ export class ListarTelaComponent implements OnInit {
 
   tela = {} as Tela;
   telas?: Tela[];
+  searchText = '';
+  
 
-  constructor(private telaService: ListaTelaService) { }
+  constructor(private listarApi: ListaApiService, private route: Router) { }
 
   ngOnInit(): void {
     this.getTelas();
   }
 
   getTelas() {
-    this.telaService.getTelas().subscribe((telas: Tela[]) => {
+    this.listarApi.getTelas().subscribe((telas: Tela[]) => {
       this.telas = telas;
     });
   }
-  
+
+  editTela(tela: Tela) {
+    console.log(tela)
+    this.listarApi.editTelas = tela
+    this.route.navigate(['/edit-tela'])
+  }
+
+
 
 }

@@ -18,4 +18,5 @@ export class RequestService {
   public login(params: { user: string, password: string }): Observable<any> {
     return this.http.get(this.url + '/users?user=' + params.user, this.options)
   }
+  
 }

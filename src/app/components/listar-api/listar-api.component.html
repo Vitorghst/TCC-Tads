@@ -1,5 +1,5 @@
 <div class="offset-md-2 col-md-8">
-    <input class="form-control mt-3 me-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control mt-3 me-2" type="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
     <table class="table table-sm">
         <thead>
             <tr>
@@ -13,14 +13,13 @@
         </thead>
         <tbody>
             <tr>
-                <tr *ngFor="let api of apis">
+                <tr *ngFor="let api of apis | filter:searchText">
                     <td>{{api.id}}</td>
                     <td>{{api.codigo}}</td>
                     <td>{{api.nome}}</td>
                     <td>{{api.metodo}}</td>    
                     <td>
-                        <button type="button" class="btn btn-primary btn-sm">Editar</button>
-                        <button type="button" class="btn btn-danger ms-2 btn-sm">Copiar</button>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="editApi(api)">Editar</button>
                     </td>
               </tr>
 

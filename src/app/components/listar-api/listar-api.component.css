@@ -6,6 +6,9 @@ table {
 
   }
 
+.btn{
+  margin-left: 5px;
+}
 
 form {
     margin: auto;

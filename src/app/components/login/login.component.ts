@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RequestService } from 'src/app/services/request.service';
+import { RequestService } from '../../services/request.service';
 
 
 @Component({

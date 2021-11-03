@@ -15,7 +15,7 @@
     {
       "id": 0,
       "codigo": "547864",
-      "nome": "datasource.adicionarPlano",
+      "nome": "datasource.adicionarTeste",
       "metodo": "execute"
     },
     {
@@ -44,24 +44,47 @@
     },
     {
       "id": 5,
-      "codigo": "597534",
-      "nome": "datasource.quant_atendimentos_pendentes",
+      "codigo": 543861,
+      "nome": "Pacheco",
+      "metodo": "list"
+    },
+    {
+      "id": 6,
+      "codigo": 944482,
+      "nome": "Teste",
+      "metodo": "list"
+    },
+    {
+      "id": 7,
+      "codigo": 456375,
+      "nome": "Teste2",
+      "metodo": "list"
+    },
+    {
+      "id": 8,
+      "codigo": 28199,
+      "nome": "Teste10",
       "metodo": "execute"
     },
     {
-      "nome": "Teste",
-      "id": 6
+      "codigo": 971473,
+      "nome": "Blaaaa",
+      "metodo": "execute",
+      "id": 9
     },
     {
-      "nome": "Teste2",
-      "id": 7
+      "codigo": 117096,
+      "nome": "Vitor",
+      "metodo": "execute",
+      "id": 10
     }
   ],
   "telas": [
     {
       "id": 0,
       "JHashT": "0195191919",
-      "nome": "Login"
+      "nome": "Login2",
+      "permissao": "Novo Cliente"
     },
     {
       "id": 1,
@@ -76,12 +99,49 @@
     {
       "id": 3,
       "JHashT": "01TCIKLF7N",
-      "nome": "Cliente.PesquisaCliente"
+      "nome": "Cliente.PesquisaCliente",
+      "permissao": "Tema Mac"
     },
     {
       "id": 4,
-      "JHashT": "01TCINWOJE",
-      "nome": "teste"
+      "JHashT": 5566435393,
+      "nome": "Teste6"
+    },
+    {
+      "id": 5,
+      "JHashT": 6490998442,
+      "nome": "Teste2",
+      "permissao": "Executar"
+    },
+    {
+      "id": 6,
+      "JHashT": 3925774818,
+      "nome": "Pacheco",
+      "permissao": "Dashboard"
+    },
+    {
+      "id": 7,
+      "JHashT": 3651131240,
+      "nome": "Edmundo",
+      "permissao": "Mudar Data Negociada"
+    },
+    {
+      "id": 8,
+      "JHashT": 9861774771,
+      "nome": "Teste21",
+      "permissao": "Datasource"
+    },
+    {
+      "id": 9,
+      "JHashT": 9959337570,
+      "nome": "Teste9",
+      "permissao": "Datasource"
+    },
+    {
+      "id": 10,
+      "JHashT": 4935509054,
+      "nome": "Teste6",
+      "permissao": "List"
     }
   ],
   "profile": {

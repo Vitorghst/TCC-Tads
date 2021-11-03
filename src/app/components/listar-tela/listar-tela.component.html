@@ -1,5 +1,5 @@
 <div class="offset-md-2 col-md-8">
-    <input class="form-control mt-3 me-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control mt-3 me-2" type="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
     <table class="table table-sm">
         <thead>
             <tr>
@@ -12,13 +12,12 @@
         </thead>
         <tbody>
             <tr>
-            <tr *ngFor="let tela of telas">
+            <tr *ngFor="let tela of telas | filter:searchText">
                 <td>{{tela.id}}</td>
                 <td>{{tela.JHashT}}</td>
                 <td>{{tela.nome}}</td>
                 <td>
-                    <button type="button" class="btn btn-primary btn-sm">Editar</button>
-                    <button type="button" class="btn btn-danger ms-2 btn-sm">Copiar</button>
+                    <button type="button" class="btn btn-primary btn-sm" (click)="editTela(tela)">Editar</button>
                 </td>
             </tr>
         </tbody>

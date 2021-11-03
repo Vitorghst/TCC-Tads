@@ -9,6 +9,8 @@ import { AdicionarApiComponent } from './components/adicionar-api/adicionar-api.
 import { ListarTelaComponent } from './components/listar-tela/listar-tela.component';
 import { AdicionarTelaComponent } from './components/adicionar-tela/adicionar-tela.component';
 import { DecrypterComponent } from './components/decrypter/decrypter.component';
+import { EditApiComponent } from './components/edit-api/edit-api.component';
+import { EditTelaComponent } from './components/edit-tela/edit-tela.component';
 
 
 
@@ -20,9 +22,11 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'listar-api', pathMatch: 'full' },
       { path: 'listar-api', component: ListarApiComponent },
+      { path: 'edit-api', component: EditApiComponent},
       { path: 'adicionar-api', component: AdicionarApiComponent },
       { path: 'listar-tela', component: ListarTelaComponent},
       { path: 'adicionar-tela', component: AdicionarTelaComponent},
+      { path: 'edit-tela', component: EditTelaComponent},
       { path: 'decrypter', component: DecrypterComponent}
 
 
