@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Api } from '../components/listar-api/listar-api.model';
 import { Tela } from '../components/listar-tela/listar-tela.model';
+import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 
 
 
@@ -49,7 +50,7 @@ export class ListaApiService {
   }
 
    // Adiciona uma API
-  public addApi(params: { id: number, codigo: number, nome: string, metodo: string }): Observable<Api> {
+  public addApi(params: { id: number, codigo: number, nome: string, metodo: string}): Observable<Api> {
     return this.httpClient.post<Api>(`${this.url}/apis`, params , this.options)
     
   }
@@ -60,7 +61,7 @@ export class ListaApiService {
   }
   
   //Edita uma API
-  updateApi( params: { id: number, codigo: number, nome: string, metodo: string }): Observable<any> {
+  updateApi( params: { id: number, codigo: number, nome: string, metodo: string}): Observable<any> {
     console.log(this.url + '/apis' + params.id , params, this.options )
     return this.httpClient.put( this.url + '/apis/' + params.id , params, this.options )
 

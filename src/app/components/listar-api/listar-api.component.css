@@ -1,3 +1,17 @@
+.main{
+  height: 100%;
+  width: 100%;
+}
+
+.barra-pesquisa{
+  height: 38px;
+}
+
+.content-body{
+height: calc(100% - 38px);
+overflow-y: auto;
+}
+
 table {
     margin:auto;
     border-collapse:separate;

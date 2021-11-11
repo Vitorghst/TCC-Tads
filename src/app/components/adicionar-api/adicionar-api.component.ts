@@ -16,7 +16,8 @@ export class AdicionarApiComponent implements OnInit {
   apiForm = new FormGroup({
     codigo: new FormControl(Math.floor(Math.random() * 1000000) + 1, Validators.required),
     nome: new FormControl('', Validators.required),
-    metodo: new FormControl('', Validators.required)
+    metodo: new FormControl('', Validators.required),
+    tela: new FormControl('', Validators.required)
 
   });
 
@@ -27,9 +28,13 @@ export class AdicionarApiComponent implements OnInit {
   apis?: Api[];
   tela = {} as Tela;
   telas?: Tela[];
+
+
   searchText = '';
-  confirmList: Tela[] = [];
   myList: Tela[] = [];
+  confirmList: Tela[] = [];
+
+  
 
   constructor(
     private Api: ListaApiService,
@@ -39,25 +44,30 @@ export class AdicionarApiComponent implements OnInit {
 
   ngOnInit() {
     this.getTelas();
-
   }
   getTelas() {
     this.Api.getTelas().subscribe((telas: Tela[]) => {
       this.myList = telas;
+      console.log(telas)
     });
   }
+  
 
   addApi() {
     let params = {
     id: this.apiForm.get('id')?.value,
     codigo: this.apiForm.get('codigo')?.value,
     nome: this.apiForm.get('nome')?.value,
-    metodo: this.apiForm.get('metodo')?.value
+    metodo: this.apiForm.get('metodo')?.value,
+    telas: this.confirmList.map((element: any) => {
+      return element.id
+    })
     }
+    console.log(params);
     this.Api.addApi(params)
       .subscribe(res => {
         const id = res['id'];
-        this.isLoadingResults = false;
+        this.isLoadingResults = true;
         console.log(params)
         this.route.navigate(['/listar-api'])
       }, (err) => {

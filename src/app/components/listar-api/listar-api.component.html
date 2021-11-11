@@ -1,28 +1,31 @@
-<div class="offset-md-2 col-md-8">
-    <input class="form-control mt-3 me-2" type="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
-    <table class="table table-sm">
-        <thead>
-            <tr>
-                <th scope="col">N</th>
-                <th scope="col">Codigo</th>
-                <th scope="col">Nome API</th>
-                <th scope="col">Metodo</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <tr *ngFor="let api of apis | filter:searchText">
-                    <td>{{api.id}}</td>
-                    <td>{{api.codigo}}</td>
-                    <td>{{api.nome}}</td>
-                    <td>{{api.metodo}}</td>    
-                    <td>
-                        <button type="button" class="btn btn-primary btn-sm" (click)="editApi(api)">Editar</button>
-                    </td>
-              </tr>
-
-        </tbody>
-    </table>
+<div class="main">
+    <div class="barra-pesquisa offset-md-3 col-md-6 mt-4">
+        <input class="form-control mt-3 me-2" type="search" [(ngModel)]="searchText" placeholder="Search" aria-label="Search">
+    </div>
+    <div class="content-body offset-md-3 col-md-6">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">N</th>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nome API</th>
+                    <th scope="col">Metodo</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <tr *ngFor="let api of apis | filter:searchText">
+                        <td>{{api.id}}</td>
+                        <td>{{api.codigo}}</td>
+                        <td>{{api.nome}}</td>
+                        <td>{{api.metodo}}</td>    
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm" (click)="editApi(api)">Editar</button>
+                        </td>
+                  </tr>
+    
+            </tbody>
+        </table>
+    </div>
 </div>

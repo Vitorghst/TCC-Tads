@@ -20,7 +20,7 @@ export class EditApiComponent implements OnInit {
     id: new FormControl('', Validators.required),
     codigo: new FormControl(Math.floor(Math.random() * 1000000) + 1, Validators.required),
     nome: new FormControl('', Validators.required),
-    metodo: new FormControl('', Validators.required)
+    metodo: new FormControl('', Validators.required),
 
   });
 
@@ -47,6 +47,7 @@ export class EditApiComponent implements OnInit {
         this.editForm.get('codigo')?.setValue(this.listaApi.editDados.codigo),
         this.editForm.get('nome')?.setValue(this.listaApi.editDados.nome),
         this.editForm.get('metodo')?.setValue(this.listaApi.editDados.metodo);
+        this.editForm.get('tela')?.setValue(this.listaApi.editDados.tela)
       console.log(this.listaApi.editDados);
     }
     this.getApis();
@@ -72,7 +73,8 @@ export class EditApiComponent implements OnInit {
       id: this.editForm.get('id')?.value,
       codigo: this.editForm.get('codigo')?.value,
       nome: this.editForm.get('nome')?.value,
-      metodo: this.editForm.get('metodo')?.value
+      metodo: this.editForm.get('metodo')?.value,
+      tela: this.editForm.get('tela')?.value
     }
     this.listaApi.updateApi(params)
       .subscribe(res => {

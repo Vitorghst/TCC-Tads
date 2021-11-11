@@ -69,10 +69,9 @@
     border-radius: 4px;
 }
 .main {
-    display: flex;
-    flex-direction: column;
+    height: 100%;
     width: 100%;
-    background-color: whitesmoke;
+    overflow-y: auto;
 }
 
 .tap{

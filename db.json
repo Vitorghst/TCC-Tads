@@ -16,67 +16,19 @@
       "id": 0,
       "codigo": "547864",
       "nome": "datasource.adicionarTeste",
-      "metodo": "execute"
-    },
-    {
-      "id": 1,
-      "codigo": "624859",
-      "nome": "user.login",
-      "metodo": "execute"
-    },
-    {
-      "id": 2,
-      "codigo": "195374",
-      "nome": "datasource.client_exists",
-      "metodo": "execute"
-    },
-    {
-      "id": 3,
-      "codigo": "675394",
-      "nome": "client.addServiceV5",
-      "metodo": "execute"
-    },
-    {
-      "id": 4,
-      "codigo": "468754",
-      "nome": "client.getInfo",
-      "metodo": "execute"
-    },
-    {
-      "id": 5,
-      "codigo": 543861,
-      "nome": "Pacheco",
-      "metodo": "list"
-    },
-    {
-      "id": 6,
-      "codigo": 944482,
-      "nome": "Teste",
-      "metodo": "list"
-    },
-    {
-      "id": 7,
-      "codigo": 456375,
-      "nome": "Teste2",
-      "metodo": "list"
-    },
-    {
-      "id": 8,
-      "codigo": 28199,
-      "nome": "Teste10",
-      "metodo": "execute"
-    },
-    {
-      "codigo": 971473,
-      "nome": "Blaaaa",
       "metodo": "execute",
-      "id": 9
+      "telas": [
+        {
+          "id": 0
+        }
+      ]
     },
     {
-      "codigo": 117096,
-      "nome": "Vitor",
-      "metodo": "execute",
-      "id": 10
+      "codigo": 152812,
+      "nome": "Hericson",
+      "metodo": "list",
+      "telas": [],
+      "id": 4
     }
   ],
   "telas": [
@@ -84,63 +36,53 @@
       "id": 0,
       "JHashT": "0195191919",
       "nome": "Login2",
-      "permissao": "Novo Cliente"
+      "permissao": "Novo Cliente",
+      "apis": [
+        {
+          "id": 0
+        }
+      ]
     },
     {
       "id": 1,
-      "JHashT": "01FYHDFGDD",
-      "nome": "Atendimento"
-    },
-    {
-      "id": 2,
-      "JHashT": "01SDOIGOIS",
-      "nome": "Adicionar Plano"
-    },
-    {
-      "id": 3,
-      "JHashT": "01TCIKLF7N",
-      "nome": "Cliente.PesquisaCliente",
-      "permissao": "Tema Mac"
-    },
-    {
-      "id": 4,
-      "JHashT": 5566435393,
-      "nome": "Teste6"
-    },
-    {
-      "id": 5,
-      "JHashT": 6490998442,
-      "nome": "Teste2",
+      "JHashT": 8575849576,
+      "nome": "Teste9",
       "permissao": "Executar"
     },
     {
+      "id": 2,
+      "JHashT": 8870207945,
+      "nome": "Teste3",
+      "permissao": "List"
+    },
+    {
+      "id": 3,
+      "JHashT": 7856031589,
+      "nome": "Teste2",
+      "permissao": "List"
+    },
+    {
+      "id": 4,
+      "JHashT": 988990308,
+      "nome": "Teste12",
+      "permissao": "Executar"
+    },
+    {
+      "id": 5,
+      "JHashT": 7701785165,
+      "nome": "Viper",
+      "permissao": "List"
+    },
+    {
       "id": 6,
-      "JHashT": 3925774818,
-      "nome": "Pacheco",
-      "permissao": "Dashboard"
+      "JHashT": 6490481449,
+      "nome": "Teste92",
+      "permissao": "List"
     },
     {
       "id": 7,
-      "JHashT": 3651131240,
-      "nome": "Edmundo",
-      "permissao": "Mudar Data Negociada"
-    },
-    {
-      "id": 8,
-      "JHashT": 9861774771,
-      "nome": "Teste21",
-      "permissao": "Datasource"
-    },
-    {
-      "id": 9,
-      "JHashT": 9959337570,
+      "JHashT": 5697554980,
       "nome": "Teste9",
-      "permissao": "Datasource"
-    },
-    {
-      "id": 10,
-      "JHashT": 4935509054,
-      "nome": "Teste6",
       "permissao": "List"
     }
   ],

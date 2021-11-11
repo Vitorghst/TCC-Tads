@@ -4,8 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms'
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
 import { ListaApiService } from './services/api.service';
+
 
 
 
@@ -26,6 +26,8 @@ import { DecrypterComponent } from './components/decrypter/decrypter.component';
 import { EditApiComponent } from './components/edit-api/edit-api.component';
 import { EditTelaComponent } from './components/edit-tela/edit-tela.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 
 
@@ -56,7 +58,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ReactiveFormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    CommonModule
+    CommonModule,
 
   ],
   providers: [ListaApiService],

@@ -57,9 +57,8 @@ export class AdicionarTelaComponent implements OnInit {
     this.listaAPi.addTela(telas)
       .subscribe(res => {
         const id = res['id'];
-        this.isLoadingResults = false;
+        this.isLoadingResults = true;
         console.log(telas)
-        this.route.navigate(['/listar-tela'])
       }, (err) => {
         console.log(err);
         this.isLoadingResults = false;
