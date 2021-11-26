@@ -24,11 +24,87 @@
       ]
     },
     {
+      "id": 4,
       "codigo": 152812,
-      "nome": "Hericson",
+      "nome": "Hericsons",
+      "metodo": "list"
+    },
+    {
+      "codigo": 187600,
+      "nome": "amd",
       "metodo": "list",
       "telas": [],
-      "id": 4
+      "id": 5
+    },
+    {
+      "codigo": 798074,
+      "nome": "teste",
+      "metodo": "list",
+      "telas": [],
+      "id": 6
+    },
+    {
+      "codigo": 760451,
+      "nome": "teste 2",
+      "metodo": "datasource",
+      "telas": [],
+      "id": 8
+    },
+    {
+      "codigo": 572354,
+      "nome": "teste 3",
+      "metodo": "list",
+      "telas": [],
+      "id": 9
+    },
+    {
+      "codigo": 886491,
+      "nome": "teste 4",
+      "metodo": "list",
+      "telas": [],
+      "id": 10
+    },
+    {
+      "codigo": 322948,
+      "nome": "teste 5",
+      "metodo": "execute",
+      "telas": [],
+      "id": 11
+    },
+    {
+      "codigo": 391799,
+      "nome": "teste 6",
+      "metodo": "datasource",
+      "telas": [],
+      "id": 12
+    },
+    {
+      "codigo": 968521,
+      "nome": "teste 7",
+      "metodo": "datasource",
+      "telas": [],
+      "id": 13
+    },
+    {
+      "codigo": 266616,
+      "nome": "teste 9",
+      "metodo": "execute",
+      "telas": [],
+      "id": 15
+    },
+    {
+      "codigo": 281931,
+      "nome": "teste 10",
+      "metodo": "datasource",
+      "telas": [],
+      "id": 16
+    },
+    {
+      "codigo": 509154,
+      "nome": "teste 11",
+      "metodo": "list",
+      "telas": [],
+      "id": 17
     }
   ],
   "telas": [
@@ -62,12 +138,6 @@
       "permissao": "List"
     },
     {
-      "id": 4,
-      "JHashT": 988990308,
-      "nome": "Teste12",
-      "permissao": "Executar"
-    },
-    {
       "id": 5,
       "JHashT": 7701785165,
       "nome": "Viper",
@@ -80,9 +150,27 @@
       "permissao": "List"
     },
     {
-      "id": 7,
-      "JHashT": 5697554980,
-      "nome": "Teste9",
+      "id": 9,
+      "JHashT": 7024261754,
+      "nome": "Lucas",
+      "permissao": "List"
+    },
+    {
+      "id": 10,
+      "JHashT": 7024261754,
+      "nome": "Loures",
+      "permissao": "List"
+    },
+    {
+      "id": 11,
+      "JHashT": 2875633347,
+      "nome": "Ed",
+      "permissao": "List"
+    },
+    {
+      "id": 12,
+      "JHashT": 2955408247,
+      "nome": "Pachecao",
       "permissao": "List"
     }
   ],

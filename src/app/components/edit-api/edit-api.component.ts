@@ -14,7 +14,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   styleUrls: ['./edit-api.component.css']
 })
 export class EditApiComponent implements OnInit {
-  editUrl = 'http://localhost:3000'
+
 
   editForm = new FormGroup({
     id: new FormControl('', Validators.required),
@@ -26,15 +26,17 @@ export class EditApiComponent implements OnInit {
 
 
   url = 'http://localhost:3000';
+
   api = {} as Api;
   apis?: Api[];
+
   searchText = '';
   confirmList: Tela[] = [];
   myList: Tela[] = [];
+
   tela = {} as Tela;
   telas?: Tela[];
 
-  isLoadingResults = false;
 
 
 
@@ -54,20 +56,22 @@ export class EditApiComponent implements OnInit {
     this.getTelas();
 
   }
+  //Pegar as APIS
   getApis() {
     this.listaApi.getApis().subscribe((apis: Api[]) => {
       this.apis = apis;
     });
   }
 
-
+  //Pegar as Telas
   getTelas() {
     this.listaApi.getTelas().subscribe((telas: Tela[]) => {
       this.myList = telas;
 
     });
   }
-
+  
+  //Atualizar API
   updateApi() {
     let params = {
       id: this.editForm.get('id')?.value,
@@ -78,16 +82,15 @@ export class EditApiComponent implements OnInit {
     }
     this.listaApi.updateApi(params)
       .subscribe(res => {
-        this.isLoadingResults = false;
         console.log(params)
         this.route.navigate(['/listar-api'])
       }, (err) => {
         console.log(err);
-        this.isLoadingResults = false;
       });
 
 
   }
+  //Drag and Drop
   drop(event: CdkDragDrop<Tela[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

@@ -1,108 +1,66 @@
 <div class="main">
-    <div class="container">
-        <div class="row">
-            <h3 class="mt-3">Nome da Tela: {{telaForm.get('nome')?.value}}</h3>
-            <div class="modal-footer">
-                <a class='btn btn-danger' [routerLink]="['/lista-tela']">Voltar</a>
-                <button type="submit" class="btn btn-success" (click)="updateTela()">Salvar</button>
-            </div>
-            <form [formGroup]="telaForm" class="row">
-              <div class="form-group width-a ">
-                <label for="usr">Name da Tela:</label>
-                <input type="text" name="nome" formControlName="nome" class="form-control">
-            </div>
-                <div class="form-group width-b ">
-                    <label class="mb-1 " for="perm">Nome da Permissão:</label>
-                    <select class="form-select tap" formControlName="permissao" id="permissao">
-                        <option>Escolha uma permissão</option>
-                        <option>Executar</option>
-                        <option>List</option>
-                        <option>Datasource</option>
-                        <option>Tema Mac</option>
-                        <option>Mudar Status</option>
-                        <option>Site Survey </option>
-                        <option>Novo Atendimento</option>
-                        <option>Adicionar Lembrete ao Desktop</option>
-                        <option>Agenda de Técnicos </option>
-                        <option>Novo Cliente</option>
-                        <option>Gerenciador de Documentos </option>
-                        <option>Mapas</option>
-                        <option>Organizar Desktop </option>
-                        <option>Ajuda e Suporte </option>
-                        <option>Informações do Usuario </option>
-                        <option>Novo Prospecto</option>
-                        <option>Atendimentos</option>
-                        <option>Ordens de Serviço</option>
-                        <option>Painel de Autenticações</option>
-                        <option>Clientes</option>
-                        <option>Pontos de Acesso</option>
-                        <option>Def. valor a cobrar pela OS</option>
-                        <option>Prospectos</option>
-                        <option>Habilitação Provisória</option>
-                        <option>Alterar Senha </option>
-                        <option>Dashboard</option>
-                        <option>Base de Conhecimento</option>
-                        <option>Editar Ordem de Serviço</option>
-                        <option>Reagendar Ordem de Serviço</option>
-                        <option>Agendar Modificação de Status</option>
-                        <option>Alterar F.Cobrança P.Cancel</option>
-                        <option>Configurar Contratos</option>
-                        <option>Atendimento Simplificado</option>
-                        <option>Mudar Motivo do Contato</option>
-                        <option>Permite Editar Vendedor Prospe</option>
-                        <option>Abrint</option>
-                        <option>Cancelar Plano</option>
-                        <option>Central Mensagem</option>
-                        <option>Permite Ed. Dados Cadastro Cli</option>
-                        <option>Editar Multa ao Cancelar</option>
-                        <option>Editar Data Cancel.(Canc.Imed.</option>
-                        <option>Mudar Data Negociada</option>
-                        <option>Editar Valor de Novo Plano</option>
-                        <option>Configurações de Condominios</option>
-                        <option>Maps New</option>
-                        <option>Bi Web</option>
-                        <option>Configuração Central</option>
-                    </select>
-                </div>
-            </form>
-
-            <div class="container mx-auto p-2">
-                <div class="row p-2">
-                  <div class="col-lg-12">
-                  </div>
-                </div>
-                <div class="row">
-                  <div cdkDropList #minha="cdkDropList" [cdkDropListData]="myList"  [cdkDropListConnectedTo]="[confirmados]" 
-                    class="col-lg-6" (cdkDropListDropped)="drop($event)">
-                    <ul class="list-group well">
-                        <div class="input-group">
-                          <input type="text" class="form-control mb-2" [(ngModel)]="searchText" placeholder="Search">
-                          <div class="input-group-btn">
-                            <span class="btn btn-default" type="submit">
-                              <i class="fas fa-search"></i>
-                            </span>
-                          </div>
-                        </div>
-                    <li class="list-group-item" *ngFor="let api of myList | filter:searchText" cdkDrag>
-                        {{api.nome}}</li>
-                    </ul>
-                  </div>
-                  <div cdkDropList #confirmados="cdkDropList"  [cdkDropListData]="confirmList" [cdkDropListConnectedTo]="[minha]"
-                    (cdkDropListDropped)="drop($event)" class="col-lg-6">
-                    <ul class="list-group well">
-                      <div class="input-group">
-                        <input type="text" class="form-control mb-2" [(ngModel)]="searchText" placeholder="Search">
-                        <div class="input-group-btn">
-                          <span class="btn btn-default" type="submit">
-                            <i class="fas fa-search"></i>
-                          </span>
-                        </div>
-                      </div>
-                      <li class="list-group-item"  *ngFor="let api of confirmList | filter:searchText" cdkDrag>
-                        {{api.nome}}</li>
-                    </ul>
-                  </div>
-                </div>
+  <div class="container">
+    <div class="col-xs-12">
+      <h3 class="mt-3">Nome da Tela: {{telaForm.get('nome')?.value}}</h3>
+      <form [formGroup]="telaForm" class="row">
+        <div class="col-md-6 ml-auto">
+          <div class="form-group mt-4">
+            <label class="mb-1" for="usr">Nome da Tela:</label>
+            <input type="text" name="nome" formControlName="nome" class="form-control">
+          </div>
         </div>
+        <div class="col-md-6">
+          <div class="form-group mt-4">
+            <label class="mb-1" for="perm">Nome da Permissão:</label>
+            <select class="form-select" formControlName="permissao" id="permissao">
+              <option value="">Escolha uma permissão</option>
+              <option>Atendimento</option>
+              <option>Tema Mac</option>
+              <option>Novo Cliente</option>
+            </select>
+          </div>
+        </div>
+      </form>
+      <div class="modal-footer mt-3">
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="list-group">
+            <li class="list-group-item text-center list-group-item">
+              <h5>APIS</h5>
+            </li>
+            <li class="list-group-item">
+              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Search">
+              <div cdkDropList #minha="cdkDropList" [cdkDropListConnectedTo]="[confirmados]" [cdkDropListData]="myList"
+                class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
+                <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let api of myList | filter: searchText " cdkDrag>{{api.nome}}
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="list-group">
+            <li class="list-group-item text-center list-group-item">
+              <h5>APIS Adicionadas</h5>
+            </li>
+            <li class="list-group-item">
+              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Search">
+              <div cdkDropList #confirmados="cdkDropList" [cdkDropListConnectedTo]="[minha]"
+                [cdkDropListData]="confirmList" class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
+                <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let api of confirmList | filter: searchText " cdkDrag>
+                    {{api.nome}}</li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="modal-footer mt-2">
+      <a class='btn btn-danger' [routerLink]="['/listar-tela']">Voltar</a>
+      <button type="submit" class="btn btn-success" (click)="updateTela()">Salvar</button>
+    </div>
+  </div>
 </div>

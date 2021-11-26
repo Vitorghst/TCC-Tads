@@ -1,83 +1,36 @@
-.well {
- min-height: 20px;
- padding: 25px;
- margin-bottom: 20px;
- background-color: #ffffff;
- border-radius: 4px ;
-}
-.width-a{
-    width: 400px;
-}
-.width-b{
-    width: 400px;
-}
-
-.input-group-text {
-    display: flex;
-    align-items: center;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #000000;
-    text-align: center;
-    white-space: nowrap;
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 0.25rem;
-}
-.v-center {
-    display: flex;
-    justify-content:center;
-    flex-flow: column wrap;
-}
-.list-group-item {
-    position: relative;
-    display: block;
-    padding: 10px 15px;
-    margin-bottom: -1px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-
-.list-group-item.active {
-    z-index: 2;
-    color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-}
-
-.btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
 .main {
     height: 100%;
     width: 100%;
     overflow-y: auto;
 }
 
-.tap{
-    margin-top: -3px;
+.cdk-drop-dragging .cdk-drag {
+  transition: transform 100ms cubic-bezier(0, 0, 0.2, 1);
+}
+  
+.cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+  
+.cdk-drag-placeholder {
+  background: rgba(20, 66, 135);
 }
 
+.vertical-menu {
+  min-height: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-color: #d4aa70 #e4e4e4;
+  scrollbar-width: thin;
+}
 
+.vertical-menu::-webkit-scrollbar {
+  width: 20px;
+}
 
-
+.vertical-menu::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  border: 5px solid transparent;
+  background-clip: content-box;
+  background-color: #777676;
+}

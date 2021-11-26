@@ -23,16 +23,17 @@ export class EditTelaComponent implements OnInit {
     permissao: new FormControl('', Validators.required)
 
   });
-  isLoadingResults = false;
+
   url = 'http://localhost:3000';
+
   api = {} as Api;
   apis?: Api[];
+
   searchText = '';
+
   confirmList: Api[] = [];
   myList: Api[] = [];
 
-
-  
   tela = {} as Tela;
   telas?: Tela[];
   
@@ -52,13 +53,14 @@ export class EditTelaComponent implements OnInit {
     this.getTelas();
 
   }
+  //Pegar as APIS
   getApis() {
     this.listarApi.getApis().subscribe((apis: Api[]) => {
       this.myList = apis;
     });
   }
 
-
+  //Pegar as Telas
   getTelas() {
     this.listarApi.getTelas().subscribe((telas: Tela[]) => {
       this.telas = telas;
@@ -66,6 +68,7 @@ export class EditTelaComponent implements OnInit {
     });
   }
 
+  //Atualizar API
   updateTela() {
     let telas = {
       id: this.telaForm.get('id')?.value,
@@ -75,17 +78,16 @@ export class EditTelaComponent implements OnInit {
     }
     this.listarApi.updateTela(telas)
       .subscribe(res => {
-        this.isLoadingResults = false;
         console.log(telas)
         this.route.navigate(['/listar-tela'])
       }, (err) => {
         console.log(err);
-        this.isLoadingResults = false;
       });
 
 
   }
 
+  //Drag and Drop
   drop(event: CdkDragDrop<Api[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

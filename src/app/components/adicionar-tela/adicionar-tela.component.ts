@@ -21,32 +21,44 @@ export class AdicionarTelaComponent implements OnInit {
 
   });
 
-  isLoadingResults = false;
+  apiForm = new FormGroup({
+    codigo: new FormControl(Math.floor(Math.random() * 1000000) + 1, Validators.required),
+    nome: new FormControl('', Validators.required),
+    metodo: new FormControl('', Validators.required),
+    tela: new FormControl('', Validators.required)
+
+  });
+
 
   api = {} as Api;
   apis?: Api[]
+
   tela = {} as Tela;
   telas?: Tela[];
+
   searchText = '';
+
   confirmList: Api[] = [];
   myList: Api[] = [];
+  selectedApi?: Api;
 
 
-  constructor(private listaAPi: ListaApiService, 
+  constructor(private listaApi: ListaApiService, 
     private route: Router, 
     private fb: FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getApis()
   }
-
+  
+  //Pegar as APIS
   getApis() {
-    this.listaAPi.getApis().subscribe((apis: Api[]) => {
+    this.listaApi.getApis().subscribe((apis: Api[]) => {
       this.myList = apis;
     });
   }
 
-  
+  //Adicionar Tela
   addTela() {
     let telas = {
     id: this.telaForm.get('id')?.value,
@@ -54,18 +66,41 @@ export class AdicionarTelaComponent implements OnInit {
     nome: this.telaForm.get('nome')?.value,
     permissao: this.telaForm.get('permissao')?.value
     }
-    this.listaAPi.addTela(telas)
+    this.listaApi.addTela(telas)
       .subscribe(res => {
         const id = res['id'];
-        this.isLoadingResults = true;
+        this.route.navigate(['/listar-tela'])
         console.log(telas)
       }, (err) => {
         console.log(err);
-        this.isLoadingResults = false;
       });
 
   }
 
+  //Adicionar API
+  addApi() {
+    let params = {
+    id: this.apiForm.get('id')?.value,
+    codigo: this.apiForm.get('codigo')?.value,
+    nome: this.apiForm.get('nome')?.value,
+    metodo: this.apiForm.get('metodo')?.value,
+    telas: this.confirmList.map((element: any) => {
+      return element.id
+    })
+    }
+    console.log(params);
+    this.listaApi.addApi(params)
+      .subscribe(res => {
+        const id = res['id'];
+        this.ngOnInit();
+        console.log(params)
+      }, (err) => {
+        console.log(err);
+      });
+
+  }
+  
+  //Drag and Drop
   drop(event: CdkDragDrop<Api[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -76,5 +111,23 @@ export class AdicionarTelaComponent implements OnInit {
         event.currentIndex);
     }
   }
+
+
+  //Evento Click
+  ListA(api: Api): void {
+      this.selectedApi = api;
+      this.confirmList.push(api)
+      this.myList.splice(this.myList.indexOf(api), 1)
+      console.log(`selectedaApi = ${JSON.stringify(this.selectedApi)}`)
+  }
+  ListB(api: Api): void {
+    this.selectedApi = api;
+    this.myList.push(api)
+    this.confirmList.splice(this.confirmList.indexOf(api), 1)
+    console.log(`selectedaApi = ${JSON.stringify(this.selectedApi)}`)
+}
+
+ 
+
 
 }

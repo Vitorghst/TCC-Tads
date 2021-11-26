@@ -8,24 +8,35 @@
 }
 
 .content-body{
-height: calc(100% - 38px);
-overflow-y: auto;
+  height: calc(100% - 78px);
+  overflow-y: auto;
+  scrollbar-color: #d4aa70 #e4e4e4;
+  scrollbar-width: thin;
+}
+
+.content-body::-webkit-scrollbar {
+  width: 20px;
+}
+  
+.content-body::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  border: 5px solid transparent;
+  background-clip: content-box;
+  background-color: #777676;
 }
 
 table {
-    margin:auto;
-    border-collapse:separate;
-    border-spacing: 0px;
-    
-
-  }
+  margin:auto;
+  border-collapse:separate;
+  border-spacing: 0px;
+}
 
 .btn{
   margin-left: 5px;
 }
 
 form {
-    margin: auto;
+  margin: auto;
 }
 
              

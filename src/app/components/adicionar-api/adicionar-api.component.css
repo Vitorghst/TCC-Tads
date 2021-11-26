@@ -17,7 +17,7 @@
 }
 
 .vertical-menu {
-  min-height: 20px;
+  min-height: 10px;
   max-height: 300px;
   overflow-y: auto;
   scrollbar-color: #d4aa70 #e4e4e4;
@@ -35,7 +35,7 @@
   background-color: #777676;
 }
 
-.btn {
+.button {
   background-color: rgba(20, 66, 135);
   color: white;
 }

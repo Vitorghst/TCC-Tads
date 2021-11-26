@@ -1,40 +1,49 @@
 .main {
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .cdk-drop-dragging .cdk-drag {
-    transition: transform 100ms cubic-bezier(0, 0, 0.2, 1);
-  }
-    
-  .cdk-drag-animating {
-    transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
-  }
-    
-  .cdk-drag-placeholder {
-    background: rgba(20, 66, 135);
-  }
+transition: transform 100ms cubic-bezier(0, 0, 0.2, 1);
+}
 
-  .vertical-menu {
-    height: 250px;
-    overflow-y: auto;
-    scrollbar-color: #d4aa70 #e4e4e4;
-    scrollbar-width: thin;
-  }
-  
-  .vertical-menu::-webkit-scrollbar {
-    width: 20px;
-  }
-  
-  .vertical-menu::-webkit-scrollbar-thumb {
-    border-radius: 100px;
-    border: 5px solid transparent;
-    background-clip: content-box;
-    background-color: #777676;
-  }
-  
-  .btn {
-    background-color: rgba(20, 66, 135);
-    color: white;
-  }
+.cdk-drag-animating {
+transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-placeholder {
+background: rgba(20, 66, 135);
+}
+
+.vertical-menu {
+min-height: 10px;
+max-height: 300px;
+overflow-y: auto;
+scrollbar-color: #d4aa70 #e4e4e4;
+scrollbar-width: thin;
+}
+
+.vertical-menu::-webkit-scrollbar {
+width: 20px;
+}
+
+.vertical-menu::-webkit-scrollbar-thumb {
+border-radius: 100px;
+border: 5px solid transparent;
+background-clip: content-box;
+background-color: #777676;
+}
+
+.button {
+background-color: rgba(20, 66, 135);
+color: white;
+}
+
+
+
+
+
+
+
+

@@ -21,13 +21,12 @@ export class ListarApiComponent implements OnInit {
     this.getApis();
   }
 
-
   getApis() {
     this.apiService.getApis().subscribe((apis: Api[]) => {
       this.apis = apis;
     });
   }
-
+  
   editApi(api: Api) {
     console.log(api)
     this.apiService.editDados = api
