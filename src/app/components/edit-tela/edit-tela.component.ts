@@ -36,6 +36,7 @@ export class EditTelaComponent implements OnInit {
 
   tela = {} as Tela;
   telas?: Tela[];
+  selectedApi?: Api;
   
 
 
@@ -98,6 +99,19 @@ export class EditTelaComponent implements OnInit {
         event.currentIndex);
     }
   }
+  
+  ListA(api: Api): void {
+    this.selectedApi = api;
+    this.confirmList.push(api)
+    this.myList.splice(this.myList.indexOf(api), 1)
+    console.log(`selectedaApi = ${JSON.stringify(this.selectedApi)}`)
+}
+ListB(api: Api): void {
+  this.selectedApi = api;
+  this.myList.push(api)
+  this.confirmList.splice(this.confirmList.indexOf(api), 1)
+  console.log(`selectedaApi = ${JSON.stringify(this.selectedApi)}`)
+}
 
 
  

@@ -105,6 +105,16 @@
       "metodo": "list",
       "telas": [],
       "id": 17
+    },
+    {
+      "codigo": 837338,
+      "nome": "TTeste22",
+      "metodo": "list",
+      "telas": [
+        0,
+        4
+      ],
+      "id": 18
     }
   ],
   "telas": [
@@ -171,6 +181,12 @@
       "id": 12,
       "JHashT": 2955408247,
       "nome": "Pachecao",
+      "permissao": "List"
+    },
+    {
+      "id": 13,
+      "JHashT": 1536104609,
+      "nome": "Teste22",
       "permissao": "List"
     }
   ],

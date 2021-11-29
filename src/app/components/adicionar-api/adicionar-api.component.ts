@@ -123,13 +123,13 @@ export class AdicionarApiComponent implements OnInit {
     this.selectedTela = tela;
     this.confirmList.push(tela)
     this.myList.splice(this.myList.indexOf(tela), 1)
-    console.log(`selectedaApi = ${JSON.stringify(this.selectedTela)}`)
+
   }
   ListB(tela: Tela): void {
     this.selectedTela = tela;
     this.myList.push(tela)
     this.confirmList.splice(this.confirmList.indexOf(tela), 1)
-    console.log(`selectedaApi = ${JSON.stringify(this.selectedTela)}`)
+
   }
 
 

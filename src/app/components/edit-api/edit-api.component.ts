@@ -36,6 +36,7 @@ export class EditApiComponent implements OnInit {
 
   tela = {} as Tela;
   telas?: Tela[];
+  selectedTela?: Tela;
 
 
 
@@ -100,6 +101,19 @@ export class EditApiComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
+  }
+
+  ListA(tela: Tela): void {
+    this.selectedTela = tela;
+    this.confirmList.push(tela)
+    this.myList.splice(this.myList.indexOf(tela), 1)
+
+  }
+  ListB(tela: Tela): void {
+    this.selectedTela = tela;
+    this.myList.push(tela)
+    this.confirmList.splice(this.confirmList.indexOf(tela), 1)
+
   }
 
 

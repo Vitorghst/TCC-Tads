@@ -34,7 +34,7 @@
               <div cdkDropList #minha="cdkDropList" [cdkDropListConnectedTo]="[confirmados]" [cdkDropListData]="myList"
                 class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
                 <ul class="list-group">
-                  <li class="list-group-item" *ngFor="let tela of myList | filter: searchText " cdkDrag>{{tela.nome}}
+                  <li class="list-group-item" *ngFor="let tela of myList | filter: searchText" (click)="ListA(tela)"cdkDrag>{{tela.nome}}
                   </li>
                 </ul>
               </div>
@@ -50,7 +50,7 @@
               <div cdkDropList #confirmados="cdkDropList" [cdkDropListConnectedTo]="[minha]"
                 [cdkDropListData]="confirmList" class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
                 <ul class="list-group">
-                  <li class="list-group-item" *ngFor="let tela of confirmList | filter: searchText " cdkDrag>
+                  <li class="list-group-item" *ngFor="let tela of confirmList | filter: searchText " (click)="ListB(tela)" cdkDrag>
                     {{tela.nome}}</li>
                 </ul>
               </div>
