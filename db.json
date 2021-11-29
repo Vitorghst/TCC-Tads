@@ -24,170 +24,18 @@
       ]
     },
     {
-      "id": 4,
-      "codigo": 152812,
-      "nome": "Hericsons",
-      "metodo": "list"
-    },
-    {
-      "codigo": 187600,
-      "nome": "amd",
-      "metodo": "list",
-      "telas": [],
-      "id": 5
-    },
-    {
-      "codigo": 798074,
-      "nome": "teste",
-      "metodo": "list",
-      "telas": [],
-      "id": 6
-    },
-    {
-      "codigo": 760451,
-      "nome": "teste 2",
-      "metodo": "datasource",
-      "telas": [],
-      "id": 8
-    },
-    {
-      "codigo": 572354,
-      "nome": "teste 3",
-      "metodo": "list",
-      "telas": [],
-      "id": 9
-    },
-    {
-      "codigo": 886491,
-      "nome": "teste 4",
-      "metodo": "list",
-      "telas": [],
-      "id": 10
-    },
-    {
-      "codigo": 322948,
-      "nome": "teste 5",
-      "metodo": "execute",
-      "telas": [],
-      "id": 11
-    },
-    {
-      "codigo": 391799,
-      "nome": "teste 6",
-      "metodo": "datasource",
-      "telas": [],
-      "id": 12
-    },
-    {
-      "codigo": 968521,
-      "nome": "teste 7",
-      "metodo": "datasource",
-      "telas": [],
-      "id": 13
-    },
-    {
-      "codigo": 266616,
-      "nome": "teste 9",
-      "metodo": "execute",
-      "telas": [],
-      "id": 15
-    },
-    {
-      "codigo": 281931,
-      "nome": "teste 10",
-      "metodo": "datasource",
-      "telas": [],
-      "id": 16
-    },
-    {
-      "codigo": 509154,
-      "nome": "teste 11",
-      "metodo": "list",
-      "telas": [],
-      "id": 17
-    },
-    {
-      "codigo": 837338,
-      "nome": "TTeste22",
-      "metodo": "list",
-      "telas": [
-        0,
-        4
-      ],
-      "id": 18
+      "id": 20,
+      "codigo": 687551,
+      "nome": "ssd242",
+      "metodo": "datasource"
     }
   ],
   "telas": [
     {
       "id": 0,
       "JHashT": "0195191919",
-      "nome": "Login2",
-      "permissao": "Novo Cliente",
-      "apis": [
-        {
-          "id": 0
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "JHashT": 8575849576,
-      "nome": "Teste9",
-      "permissao": "Executar"
-    },
-    {
-      "id": 2,
-      "JHashT": 8870207945,
-      "nome": "Teste3",
-      "permissao": "List"
-    },
-    {
-      "id": 3,
-      "JHashT": 7856031589,
-      "nome": "Teste2",
-      "permissao": "List"
-    },
-    {
-      "id": 5,
-      "JHashT": 7701785165,
-      "nome": "Viper",
-      "permissao": "List"
-    },
-    {
-      "id": 6,
-      "JHashT": 6490481449,
-      "nome": "Teste92",
-      "permissao": "List"
-    },
-    {
-      "id": 9,
-      "JHashT": 7024261754,
-      "nome": "Lucas",
-      "permissao": "List"
-    },
-    {
-      "id": 10,
-      "JHashT": 7024261754,
-      "nome": "Loures",
-      "permissao": "List"
-    },
-    {
-      "id": 11,
-      "JHashT": 2875633347,
-      "nome": "Ed",
-      "permissao": "List"
-    },
-    {
-      "id": 12,
-      "JHashT": 2955408247,
-      "nome": "Pachecao",
-      "permissao": "List"
-    },
-    {
-      "id": 13,
-      "JHashT": 1536104609,
-      "nome": "Teste22",
-      "permissao": "List"
+      "nome": "Login32",
+      "permissao": "Atendimento"
     }
   ],
   "profile": {

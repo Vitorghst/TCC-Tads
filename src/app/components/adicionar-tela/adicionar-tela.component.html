@@ -30,9 +30,10 @@
             <li class="list-group-item">
               <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Search">
               <div cdkDropList #minha="cdkDropList" [cdkDropListConnectedTo]="[confirmados]" [cdkDropListData]="myList"
-                class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)" >
-                <ul class="list-group" >
-                  <li class="list-group-item" *ngFor="let api of myList | filter: searchText " (click)="ListA(api)" cdkDrag>{{api.nome}}
+                class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
+                <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let api of myList | filter: searchText " (click)="ListA(api)"
+                    cdkDrag>{{api.nome}}
                   </li>
                 </ul>
               </div>
@@ -40,7 +41,6 @@
           <button type="button" class="btn button mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Adicionar API
           </button>
-
         </div>
         <div class="col-md-6">
           <div class="list-group">
@@ -52,7 +52,8 @@
               <div cdkDropList #confirmados="cdkDropList" [cdkDropListConnectedTo]="[minha]"
                 [cdkDropListData]="confirmList" class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
                 <ul class="list-group">
-                  <li class="list-group-item" *ngFor="let api of confirmList | filter: searchText" (click)="ListB(api)" cdkDrag>
+                  <li class="list-group-item" *ngFor="let api of confirmList | filter: searchText" (click)="ListB(api)"
+                    cdkDrag>
                     {{api.nome}}</li>
                 </ul>
               </div>
@@ -60,7 +61,7 @@
         </div>
       </div>
       <div class="modal-footer mt-1">
-        <button class="btn btn-success"  data-bs-dismiss="modal" aria-label="Close" (click)="addTela()">Salvar</button>
+        <button class="btn btn-success" data-bs-dismiss="modal" aria-label="Close" (click)="addTela()">Salvar</button>
       </div>
     </div>
   </div>
@@ -74,22 +75,22 @@
         <div class="modal-body">
           <form [formGroup]="apiForm" class="row">
             <div class="ml-auto">
-            <div class="form-group">
-              <label class="mb-1" for="name">Nome da API:</label>
-              <input type="text" id="name" formControlName="nome" class="form-control ">
+              <div class="form-group">
+                <label class="mb-1" for="name">Nome da API:</label>
+                <input type="text" id="name" formControlName="nome" class="form-control ">
+              </div>
             </div>
-          </div>
-           <div>
-            <div class="form-group mt-1">
-              <label class="mb-1" for="metodo">Nome da Permissão:</label>
-              <select class="form-select " formControlName="metodo" id="metodo">
-                <option value="">Escolha um metodo</option>
-                <option value="execute">Executar</option>
-                <option value="list">List</option>
-                <option value="datasource">Datasource</option>
-              </select>
+            <div>
+              <div class="form-group mt-1">
+                <label class="mb-1" for="metodo">Nome da Permissão:</label>
+                <select class="form-select " formControlName="metodo" id="metodo">
+                  <option value="">Escolha um metodo</option>
+                  <option value="execute">Executar</option>
+                  <option value="list">List</option>
+                  <option value="datasource">Datasource</option>
+                </select>
+              </div>
             </div>
-          </div>
           </form>
         </div>
         <div class="modal-footer">
@@ -98,4 +99,3 @@
       </div>
     </div>
   </div>
-  

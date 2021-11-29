@@ -11,10 +11,11 @@ import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ListaApiService {
 
   url = 'http://localhost:3000';
-  editDados : any = '';
+  editDados: any = '';
   editTelas: any = '';
   ev: any = '';
   options = {
@@ -33,51 +34,51 @@ export class ListaApiService {
   // Obtem todas as APIS
   getApis(): Observable<Api[]> {
     return this.httpClient.get<Api[]>(`${this.url}/apis`)
-    .pipe(
-      retry(2),
-      catchError(this.handleError)
-    )
-  
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+
   }
-  
+
   // Obtem todas as TELAS
   getTelas(): Observable<Tela[]> {
     return this.httpClient.get<Tela[]>(`${this.url}/telas`)
-    .pipe(
-      retry(2),
-      catchError(this.handleError)
-    )
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
   }
 
-   // Adiciona uma API
-  public addApi(params: { id: number, codigo: number, nome: string, metodo: string}): Observable<Api> {
-    return this.httpClient.post<Api>(`${this.url}/apis`, params , this.options)
-    
+  // Adiciona uma API
+  public addApi(params: { id: number, codigo: number, nome: string, metodo: string }): Observable<Api> {
+    return this.httpClient.post<Api>(`${this.url}/apis`, params, this.options)
+
   }
   // Adicionar uma TELA
-  public addTela(telas: { id: number, JHashT: string, nome: string, permissao: string}): Observable<Tela> {
-    return this.httpClient.post<Tela>(`${this.url}/telas`, telas , this.options)
-    
-  }
-  
-  //Edita uma API
-  updateApi( params: { id: number, codigo: number, nome: string, metodo: string}): Observable<any> {
-    console.log(this.url + '/apis' + params.id , params, this.options )
-    return this.httpClient.put( this.url + '/apis/' + params.id , params, this.options )
+  public addTela(telas: { id: number, JHashT: string, nome: string, permissao: string }): Observable<Tela> {
+    return this.httpClient.post<Tela>(`${this.url}/telas`, telas, this.options)
 
-  
   }
 
-  //Edita uma TELA
-  updateTela( telas: { id: number, JHashT: string, nome: string, permissao: string}): Observable<any> {
-    console.log(this.url + '/telas' + telas.id , telas, this.options )
-    return this.httpClient.put( this.url + '/telas/' + telas.id , telas, this.options )
+  // Editar API
+  updateApi(params: { id: number, codigo: number, nome: string, metodo: string }): Observable<any> {
+    console.log(this.url + '/apis' + params.id, params, this.options)
+    return this.httpClient.put(this.url + '/apis/' + params.id, params, this.options)
 
-  
+
+  }
+
+  // Editar TELA
+  updateTela(telas: { id: number, JHashT: string, nome: string, permissao: string }): Observable<any> {
+    console.log(this.url + '/telas' + telas.id, telas, this.options)
+    return this.httpClient.put(this.url + '/telas/' + telas.id, telas, this.options)
+
+
   }
 
 
- 
+
 
 
 
@@ -93,5 +94,5 @@ export class ListaApiService {
     console.log(errorMessage);
     return throwError(errorMessage);
   };
-  
+
 }

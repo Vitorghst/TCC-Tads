@@ -4,26 +4,26 @@
             aria-label="Search">
     </div>
     <div class="content-body offset-md-3 col-md-6">
-    <table class="table table-sm ">
-        <thead>
-            <tr>
-                <th scope="col">N</th>
-                <th scope="col">JHashT</th>
-                <th scope="col">Nome API</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <tr *ngFor="let tela of telas | filter:searchText">
-                <td>{{tela.id}}</td>
-                <td>{{tela.JHashT}}</td>
-                <td>{{tela.nome}}</td>
-                <td>
-                    <button type="button" class="btn btn-primary btn-sm" (click)="editTela(tela)">Editar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table table-sm ">
+            <thead>
+                <tr>
+                    <th scope="col">N</th>
+                    <th scope="col">JHashT</th>
+                    <th scope="col">Nome API</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <tr *ngFor="let tela of telas | filter:searchText">
+                    <td>{{tela.id}}</td>
+                    <td>{{tela.JHashT}}</td>
+                    <td>{{tela.nome}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="editTela(tela)">Editar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

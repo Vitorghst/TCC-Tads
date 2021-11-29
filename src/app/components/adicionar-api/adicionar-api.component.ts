@@ -13,13 +13,14 @@ import { switchMap } from 'rxjs/operators';
   templateUrl: './adicionar-api.component.html',
   styleUrls: ['./adicionar-api.component.css']
 })
+
 export class AdicionarApiComponent implements OnInit {
 
   apiForm = new FormGroup({
+    id: new FormControl('', Validators.required),
     codigo: new FormControl(Math.floor(Math.random() * 1000000) + 1, Validators.required),
     nome: new FormControl('', Validators.required),
     metodo: new FormControl('', Validators.required),
-    tela: new FormControl('', Validators.required)
 
   });
 
@@ -32,15 +33,12 @@ export class AdicionarApiComponent implements OnInit {
   });
 
 
-  
+
   api = {} as Api;
   apis?: Api[];
-
   tela = {} as Tela;
   telas?: Tela[];
-
   searchText = '';
-
   myList: Tela[] = [];
   confirmList: Tela[] = [];
   selectedTela?: Tela;
@@ -53,13 +51,11 @@ export class AdicionarApiComponent implements OnInit {
     private route: Router,
     private fb: FormBuilder) { }
 
-
   ngOnInit() {
     this.getTelas()
-
-
   }
-  //Pegar as APIS
+
+  // Obtem todas as Telas
   getTelas() {
     this.Api.getTelas().subscribe((telas: Tela[]) => {
       this.myList = telas;
@@ -67,7 +63,7 @@ export class AdicionarApiComponent implements OnInit {
     });
   }
 
-  //Adicionar Api
+  // Obtem todas as APIS
   addApi() {
     let params = {
       id: this.apiForm.get('id')?.value,
@@ -87,9 +83,9 @@ export class AdicionarApiComponent implements OnInit {
       }, (err) => {
         console.log(err);
       });
-
   }
-  //Adicionar Tela
+
+  // Adicionar Tela
   addTela() {
     let telas = {
       id: this.telaForm.get('id')?.value,
@@ -107,7 +103,7 @@ export class AdicionarApiComponent implements OnInit {
       });
 
   }
-  //Drag and Drop
+  // Drag and Drop
   drop(event: CdkDragDrop<Tela[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -118,7 +114,7 @@ export class AdicionarApiComponent implements OnInit {
         event.currentIndex);
     }
   }
-  //Evento Click
+  // Evento Click
   ListA(tela: Tela): void {
     this.selectedTela = tela;
     this.confirmList.push(tela)

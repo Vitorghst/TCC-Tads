@@ -3,11 +3,13 @@ import { ListaApiService } from '../../services/api.service';
 import { Api } from './listar-api.model';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-listar-api',
   templateUrl: './listar-api.component.html',
   styleUrls: ['./listar-api.component.css']
 })
+
 export class ListarApiComponent implements OnInit {
 
   api = {} as Api;
@@ -15,7 +17,7 @@ export class ListarApiComponent implements OnInit {
   searchText = '';
 
 
-  constructor(private apiService: ListaApiService,  private route: Router) { }
+  constructor(private apiService: ListaApiService, private route: Router) { }
 
   ngOnInit(): void {
     this.getApis();
@@ -26,7 +28,7 @@ export class ListarApiComponent implements OnInit {
       this.apis = apis;
     });
   }
-  
+
   editApi(api: Api) {
     console.log(api)
     this.apiService.editDados = api

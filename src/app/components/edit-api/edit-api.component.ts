@@ -6,13 +6,14 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ListaApiService } from 'src/app/services/api.service';
 import { Tela } from '../listar-tela/listar-tela.model';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-edit-api',
   templateUrl: './edit-api.component.html',
   styleUrls: ['./edit-api.component.css']
 })
+
 export class EditApiComponent implements OnInit {
 
 
@@ -29,11 +30,9 @@ export class EditApiComponent implements OnInit {
 
   api = {} as Api;
   apis?: Api[];
-
   searchText = '';
   confirmList: Tela[] = [];
   myList: Tela[] = [];
-
   tela = {} as Tela;
   telas?: Tela[];
   selectedTela?: Tela;
@@ -42,7 +41,7 @@ export class EditApiComponent implements OnInit {
 
 
 
-  constructor( private httpclient: HttpClient, private listaApi: ListaApiService, private route: Router) { }
+  constructor(private httpclient: HttpClient, private listaApi: ListaApiService, private route: Router) { }
 
   ngOnInit(): void {
     if (this.listaApi.editDados !== '') {
@@ -50,29 +49,29 @@ export class EditApiComponent implements OnInit {
         this.editForm.get('codigo')?.setValue(this.listaApi.editDados.codigo),
         this.editForm.get('nome')?.setValue(this.listaApi.editDados.nome),
         this.editForm.get('metodo')?.setValue(this.listaApi.editDados.metodo);
-        this.editForm.get('tela')?.setValue(this.listaApi.editDados.tela)
       console.log(this.listaApi.editDados);
     }
     this.getApis();
     this.getTelas();
 
   }
-  //Pegar as APIS
+
+  // Obtem todas as APIS
   getApis() {
     this.listaApi.getApis().subscribe((apis: Api[]) => {
       this.apis = apis;
     });
   }
 
-  //Pegar as Telas
+  // Obtem todas as Telas
   getTelas() {
     this.listaApi.getTelas().subscribe((telas: Tela[]) => {
       this.myList = telas;
 
     });
   }
-  
-  //Atualizar API
+
+  // Atualizar API
   updateApi() {
     let params = {
       id: this.editForm.get('id')?.value,
@@ -88,10 +87,9 @@ export class EditApiComponent implements OnInit {
       }, (err) => {
         console.log(err);
       });
-
-
   }
-  //Drag and Drop
+
+  // Drag and Drop
   drop(event: CdkDragDrop<Tela[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -103,6 +101,7 @@ export class EditApiComponent implements OnInit {
     }
   }
 
+  // Evento Click
   ListA(tela: Tela): void {
     this.selectedTela = tela;
     this.confirmList.push(tela)

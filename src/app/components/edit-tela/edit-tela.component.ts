@@ -5,15 +5,14 @@ import { ListaApiService } from 'src/app/services/api.service';
 import { Api } from '../listar-api/listar-api.model';
 import { Tela } from '../listar-tela/listar-tela.model';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-
-
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-edit-tela',
   templateUrl: './edit-tela.component.html',
   styleUrls: ['./edit-tela.component.css']
 })
+
 export class EditTelaComponent implements OnInit {
 
   telaForm = new FormGroup({
@@ -28,16 +27,13 @@ export class EditTelaComponent implements OnInit {
 
   api = {} as Api;
   apis?: Api[];
-
   searchText = '';
-
   confirmList: Api[] = [];
   myList: Api[] = [];
-
   tela = {} as Tela;
   telas?: Tela[];
   selectedApi?: Api;
-  
+
 
 
   constructor(private listarApi: ListaApiService, private route: Router, private httpClient: HttpClient) { }
@@ -48,20 +44,21 @@ export class EditTelaComponent implements OnInit {
         this.telaForm.get('JHashT')?.setValue(this.listarApi.editTelas.JHashT),
         this.telaForm.get('nome')?.setValue(this.listarApi.editTelas.nome),
         this.telaForm.get('permissao')?.setValue(this.listarApi.editTelas.permissao),
-      console.log(this.listarApi.editTelas);
+        console.log(this.listarApi.editTelas);
     }
     this.getApis();
     this.getTelas();
 
   }
-  //Pegar as APIS
+  
+  // Obtem todas as APIS
   getApis() {
     this.listarApi.getApis().subscribe((apis: Api[]) => {
       this.myList = apis;
     });
   }
 
-  //Pegar as Telas
+  // Obtem todas as Telas
   getTelas() {
     this.listarApi.getTelas().subscribe((telas: Tela[]) => {
       this.telas = telas;
@@ -69,7 +66,7 @@ export class EditTelaComponent implements OnInit {
     });
   }
 
-  //Atualizar API
+  // Atualizar API
   updateTela() {
     let telas = {
       id: this.telaForm.get('id')?.value,
@@ -88,7 +85,7 @@ export class EditTelaComponent implements OnInit {
 
   }
 
-  //Drag and Drop
+  // Drag and Drop
   drop(event: CdkDragDrop<Api[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -99,22 +96,23 @@ export class EditTelaComponent implements OnInit {
         event.currentIndex);
     }
   }
-  
+   
+  // Evento Click
   ListA(api: Api): void {
     this.selectedApi = api;
     this.confirmList.push(api)
     this.myList.splice(this.myList.indexOf(api), 1)
     console.log(`selectedaApi = ${JSON.stringify(this.selectedApi)}`)
-}
-ListB(api: Api): void {
-  this.selectedApi = api;
-  this.myList.push(api)
-  this.confirmList.splice(this.confirmList.indexOf(api), 1)
-  console.log(`selectedaApi = ${JSON.stringify(this.selectedApi)}`)
-}
+  }
+  ListB(api: Api): void {
+    this.selectedApi = api;
+    this.myList.push(api)
+    this.confirmList.splice(this.confirmList.indexOf(api), 1)
+    console.log(`selectedaApi = ${JSON.stringify(this.selectedApi)}`)
+  }
 
 
- 
+
 
 
 

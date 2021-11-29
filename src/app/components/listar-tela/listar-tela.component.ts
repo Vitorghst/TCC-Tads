@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
-
-
 import { Tela } from './listar-tela.model';
 
 @Component({
@@ -15,7 +13,7 @@ export class ListarTelaComponent implements OnInit {
   tela = {} as Tela;
   telas?: Tela[];
   searchText = '';
-  
+
 
   constructor(private listarApi: ListaApiService, private route: Router) { }
 
