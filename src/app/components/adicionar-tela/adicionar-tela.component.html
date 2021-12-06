@@ -28,7 +28,7 @@
               <h5>APIS</h5>
             </li>
             <li class="list-group-item">
-              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Search">
+              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Filtrar">
               <div cdkDropList #minha="cdkDropList" [cdkDropListConnectedTo]="[confirmados]" [cdkDropListData]="myList"
                 class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
                 <ul class="list-group">
@@ -48,7 +48,7 @@
               <h5>APIS Adicionadas</h5>
             </li>
             <li class="list-group-item">
-              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Search">
+              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Filtrar">
               <div cdkDropList #confirmados="cdkDropList" [cdkDropListConnectedTo]="[minha]"
                 [cdkDropListData]="confirmList" class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
                 <ul class="list-group">
@@ -61,7 +61,7 @@
         </div>
       </div>
       <div class="modal-footer mt-1">
-        <button class="btn btn-success" data-bs-dismiss="modal" aria-label="Close" (click)="addTela()">Salvar</button>
+        <button class="btn btn-success" (click)="addTela()">Salvar</button>
       </div>
     </div>
   </div>

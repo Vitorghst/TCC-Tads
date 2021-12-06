@@ -35,6 +35,16 @@
   background-color: #777676;
 }
 
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.button {
+  background-color: rgba(20, 66, 135);
+  color: white;
+
+}
 
 
 

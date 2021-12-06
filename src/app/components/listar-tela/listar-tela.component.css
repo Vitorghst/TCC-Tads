@@ -1,6 +1,7 @@
 .main{
   height: 100%;
   width: 100%;
+  overflow-y: auto;
 }
 
 .barra-pesquisa{
@@ -8,7 +9,8 @@
 }
 
 .content-body{
-  height: calc(100% - 78px);
+  min-height: 10px;
+  max-height: 600px;
   overflow-y: auto;
   scrollbar-color: #d4aa70 #e4e4e4;
   scrollbar-width: thin;
@@ -25,18 +27,16 @@
   background-color: #777676;
 }
   
-
-
-
 table {
-  margin:auto;
   border-collapse:separate;
   border-spacing: 0px;
-    
-
-  }
-
+}
 
 form {
   margin: auto;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }

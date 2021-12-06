@@ -25,6 +25,15 @@ export class EditApiComponent implements OnInit {
 
   });
 
+  telaForm = new FormGroup({
+    id: new FormControl('', Validators.required),
+    JHashT: new FormControl(Math.floor(Math.random() * 10000000000) + 1, Validators.required),
+    nome: new FormControl('', Validators.required),
+    permissao: new FormControl('', Validators.required)
+
+  });
+
+
 
   url = 'http://localhost:3000';
 
@@ -41,15 +50,15 @@ export class EditApiComponent implements OnInit {
 
 
 
-  constructor(private httpclient: HttpClient, private listaApi: ListaApiService, private route: Router) { }
+  constructor(private httpclient: HttpClient, private Api: ListaApiService, private route: Router) { }
 
   ngOnInit(): void {
-    if (this.listaApi.editDados !== '') {
-      this.editForm.get('id')?.setValue(this.listaApi.editDados.id),
-        this.editForm.get('codigo')?.setValue(this.listaApi.editDados.codigo),
-        this.editForm.get('nome')?.setValue(this.listaApi.editDados.nome),
-        this.editForm.get('metodo')?.setValue(this.listaApi.editDados.metodo);
-      console.log(this.listaApi.editDados);
+    if (this.Api.editDados !== '') {
+      this.editForm.get('id')?.setValue(this.Api.editDados.id),
+        this.editForm.get('codigo')?.setValue(this.Api.editDados.codigo),
+        this.editForm.get('nome')?.setValue(this.Api.editDados.nome),
+        this.editForm.get('metodo')?.setValue(this.Api.editDados.metodo);
+      console.log(this.Api.editDados);
     }
     this.getApis();
     this.getTelas();
@@ -58,14 +67,14 @@ export class EditApiComponent implements OnInit {
 
   // Obtem todas as APIS
   getApis() {
-    this.listaApi.getApis().subscribe((apis: Api[]) => {
+    this.Api.getApis().subscribe((apis: Api[]) => {
       this.apis = apis;
     });
   }
 
   // Obtem todas as Telas
   getTelas() {
-    this.listaApi.getTelas().subscribe((telas: Tela[]) => {
+    this.Api.getTelas().subscribe((telas: Tela[]) => {
       this.myList = telas;
 
     });
@@ -80,13 +89,30 @@ export class EditApiComponent implements OnInit {
       metodo: this.editForm.get('metodo')?.value,
       tela: this.editForm.get('tela')?.value
     }
-    this.listaApi.updateApi(params)
+    this.Api.updateApi(params)
       .subscribe(res => {
-        console.log(params)
         this.route.navigate(['/listar-api'])
       }, (err) => {
         console.log(err);
       });
+  }
+
+  // Adicionar Tela
+  addTela() {
+    let telas = {
+      id: this.telaForm.get('id')?.value,
+      JHashT: this.telaForm.get('JHashT')?.value,
+      nome: this.telaForm.get('nome')?.value,
+      permissao: this.telaForm.get('permissao')?.value
+    }
+    this.Api.addTela(telas)
+      .subscribe(res => {
+        const id = res['id'];
+        this.ngOnInit();
+      }, (err) => {
+        console.log(err);
+      });
+
   }
 
   // Drag and Drop

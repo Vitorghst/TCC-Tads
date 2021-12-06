@@ -16,18 +16,14 @@
       "id": 0,
       "codigo": "547864",
       "nome": "datasource.adicionarTeste",
-      "metodo": "execute",
-      "telas": [
-        {
-          "id": 0
-        }
-      ]
+      "metodo": "execute"
     },
     {
-      "id": 20,
-      "codigo": 687551,
-      "nome": "ssd242",
-      "metodo": "datasource"
+      "id": 1,
+      "codigo": 276904,
+      "nome": "intel",
+      "metodo": "datasource",
+      "telas": []
     }
   ],
   "telas": [
@@ -36,6 +32,12 @@
       "JHashT": "0195191919",
       "nome": "Login32",
       "permissao": "Atendimento"
+    },
+    {
+      "id": 1,
+      "JHashT": 9451945841,
+      "nome": "Ed",
+      "permissao": ""
     }
   ],
   "profile": {

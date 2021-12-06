@@ -23,6 +23,14 @@ export class EditTelaComponent implements OnInit {
 
   });
 
+  apiForm = new FormGroup({
+    id: new FormControl('', Validators.required),
+    codigo: new FormControl(Math.floor(Math.random() * 1000000) + 1, Validators.required),
+    nome: new FormControl('', Validators.required),
+    metodo: new FormControl('', Validators.required),
+  });
+
+
   url = 'http://localhost:3000';
 
   api = {} as Api;
@@ -36,15 +44,15 @@ export class EditTelaComponent implements OnInit {
 
 
 
-  constructor(private listarApi: ListaApiService, private route: Router, private httpClient: HttpClient) { }
+  constructor(private Api: ListaApiService, private route: Router, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
-    if (this.listarApi.editTelas !== '') {
-      this.telaForm.get('id')?.setValue(this.listarApi.editTelas.id),
-        this.telaForm.get('JHashT')?.setValue(this.listarApi.editTelas.JHashT),
-        this.telaForm.get('nome')?.setValue(this.listarApi.editTelas.nome),
-        this.telaForm.get('permissao')?.setValue(this.listarApi.editTelas.permissao),
-        console.log(this.listarApi.editTelas);
+    if (this.Api.editTelas !== '') {
+      this.telaForm.get('id')?.setValue(this.Api.editTelas.id),
+        this.telaForm.get('JHashT')?.setValue(this.Api.editTelas.JHashT),
+        this.telaForm.get('nome')?.setValue(this.Api.editTelas.nome),
+        this.telaForm.get('permissao')?.setValue(this.Api.editTelas.permissao),
+        console.log(this.Api.editTelas);
     }
     this.getApis();
     this.getTelas();
@@ -53,14 +61,14 @@ export class EditTelaComponent implements OnInit {
   
   // Obtem todas as APIS
   getApis() {
-    this.listarApi.getApis().subscribe((apis: Api[]) => {
+    this.Api.getApis().subscribe((apis: Api[]) => {
       this.myList = apis;
     });
   }
 
   // Obtem todas as Telas
   getTelas() {
-    this.listarApi.getTelas().subscribe((telas: Tela[]) => {
+    this.Api.getTelas().subscribe((telas: Tela[]) => {
       this.telas = telas;
 
     });
@@ -74,14 +82,31 @@ export class EditTelaComponent implements OnInit {
       nome: this.telaForm.get('nome')?.value,
       permissao: this.telaForm.get('permissao')?.value
     }
-    this.listarApi.updateTela(telas)
+    this.Api.updateTela(telas)
       .subscribe(res => {
-        console.log(telas)
         this.route.navigate(['/listar-tela'])
       }, (err) => {
         console.log(err);
       });
 
+
+  }
+
+  addApi() {
+    let params = {
+      id: this.apiForm.get('id')?.value,
+      codigo: this.apiForm.get('codigo')?.value,
+      nome: this.apiForm.get('nome')?.value,
+      metodo: this.apiForm.get('metodo')?.value,
+    }
+    console.log(params);
+    this.Api.addApi(params)
+      .subscribe(res => {
+        const id = res['id'];
+        this.ngOnInit();
+      }, (err) => {
+        console.log(err);
+      });
 
   }
 

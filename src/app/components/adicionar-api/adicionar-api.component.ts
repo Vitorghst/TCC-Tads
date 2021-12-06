@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 import { ListaApiService } from 'src/app/services/api.service';
 import { Tela } from '../listar-tela/listar-tela.model';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { BehaviorSubject } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { debounceTime, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-adicionar-api',
@@ -33,7 +32,7 @@ export class AdicionarApiComponent implements OnInit {
   });
 
 
-
+  alert: boolean = false;
   api = {} as Api;
   apis?: Api[];
   tela = {} as Tela;
@@ -53,6 +52,7 @@ export class AdicionarApiComponent implements OnInit {
 
   ngOnInit() {
     this.getTelas()
+    
   }
 
   // Obtem todas as Telas
@@ -78,7 +78,8 @@ export class AdicionarApiComponent implements OnInit {
     this.Api.addApi(params)
       .subscribe(res => {
         const id = res['id'];
-        console.log(params)
+        this.alert = true;
+        setTimeout(() => this.alert = false, 1400);
         this.route.navigate(['/listar-api'])
       }, (err) => {
         console.log(err);
@@ -97,7 +98,6 @@ export class AdicionarApiComponent implements OnInit {
       .subscribe(res => {
         const id = res['id'];
         this.ngOnInit();
-        console.log(telas)
       }, (err) => {
         console.log(err);
       });

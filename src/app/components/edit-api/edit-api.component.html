@@ -30,7 +30,7 @@
               <h5>Telas</h5>
             </li>
             <li class="list-group-item">
-              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Search">
+              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Filtrar">
               <div cdkDropList #minha="cdkDropList" [cdkDropListConnectedTo]="[confirmados]" [cdkDropListData]="myList"
                 class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
                 <ul class="list-group">
@@ -40,6 +40,9 @@
                 </ul>
               </div>
           </div>
+          <button type="button" class="btn button mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Adicionar Tela
+          </button>
         </div>
         <div class="col-md-6">
           <div class="list-group">
@@ -47,7 +50,7 @@
               <h5>Telas Adicionadas</h5>
             </li>
             <li class="list-group-item">
-              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Search">
+              <input type="text" class="form-control mt-2" [(ngModel)]="searchText" placeholder="Filtrar">
               <div cdkDropList #confirmados="cdkDropList" [cdkDropListConnectedTo]="[minha]"
                 [cdkDropListData]="confirmList" class="vertical-menu mt-2" (cdkDropListDropped)="drop($event)">
                 <ul class="list-group">
@@ -63,6 +66,41 @@
     <div class="modal-footer mt-2">
       <a class='btn btn-danger' [routerLink]="['/lista-api']">Voltar</a>
       <button type="submit" class="btn btn-success" (click)="updateApi()">Salvar</button>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar Tela</h5>
+        <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="telaForm" class="">
+          <div class="ml-auto">
+            <div class="form-group">
+              <label class="mb-1" for="usr">Nome da Tela:</label>
+              <input type="text" name="nome" formControlName="nome" class="form-control">
+            </div>
+          </div>
+          <div>
+            <div class="form-group mt-1">
+              <label class="mb-1" for="perm">Nome da Permissão:</label>
+              <select class="form-select" formControlName="permissao" id="permissao">
+                <option value="">Escolha uma permissão</option>
+                <option *ngFor="let tela of telas"></option>
+                <option>Executar</option>
+                <option>List</option>
+                <option>Novo Cliente</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="addTela()">Salvar</button>
+      </div>
     </div>
   </div>
 </div>

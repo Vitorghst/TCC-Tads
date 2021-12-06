@@ -15,21 +15,21 @@ export class ListarTelaComponent implements OnInit {
   searchText = '';
 
 
-  constructor(private listarApi: ListaApiService, private route: Router) { }
+  constructor(private Api: ListaApiService, private route: Router) { }
 
   ngOnInit(): void {
     this.getTelas();
   }
 
   getTelas() {
-    this.listarApi.getTelas().subscribe((telas: Tela[]) => {
+    this.Api.getTelas().subscribe((telas: Tela[]) => {
       this.telas = telas;
     });
   }
 
   editTela(tela: Tela) {
     console.log(tela)
-    this.listarApi.editTelas = tela
+    this.Api.editTelas = tela
     this.route.navigate(['/edit-tela'])
   }
 

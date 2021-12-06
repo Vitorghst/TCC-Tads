@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Tela } from '../listar-tela/listar-tela.model';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ListaApiService } from 'src/app/services/api.service';
 import { Api } from '../listar-api/listar-api.model';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-adicionar-tela',
@@ -20,8 +20,6 @@ export class AdicionarTelaComponent implements OnInit {
     JHashT: new FormControl(Math.floor(Math.random() * 10000000000) + 1, Validators.required),
     nome: new FormControl('', Validators.required),
     permissao: new FormControl('', Validators.required),
-
-
   });
 
   apiForm = new FormGroup({
@@ -29,7 +27,6 @@ export class AdicionarTelaComponent implements OnInit {
     codigo: new FormControl(Math.floor(Math.random() * 1000000) + 1, Validators.required),
     nome: new FormControl('', Validators.required),
     metodo: new FormControl('', Validators.required),
-
   });
 
 
@@ -43,7 +40,7 @@ export class AdicionarTelaComponent implements OnInit {
   selectedApi?: Api;
 
 
-  constructor(private listaApi: ListaApiService,
+  constructor(private Api: ListaApiService,
     private route: Router,
     private fb: FormBuilder) { }
 
@@ -53,7 +50,7 @@ export class AdicionarTelaComponent implements OnInit {
 
   // Obtem todas as APIS
   getApis() {
-    this.listaApi.getApis().subscribe((apis: Api[]) => {
+    this.Api.getApis().subscribe((apis: Api[]) => {
       this.myList = apis;
     });
   }
@@ -66,11 +63,10 @@ export class AdicionarTelaComponent implements OnInit {
       nome: this.telaForm.get('nome')?.value,
       permissao: this.telaForm.get('permissao')?.value,
     }
-    this.listaApi.addTela(telas)
+    this.Api.addTela(telas)
       .subscribe(res => {
         const id = res['id'];
         this.route.navigate(['/listar-tela'])
-        console.log(telas)
       }, (err) => {
         console.log(err);
       });
@@ -86,11 +82,10 @@ export class AdicionarTelaComponent implements OnInit {
       metodo: this.apiForm.get('metodo')?.value,
     }
     console.log(params);
-    this.listaApi.addApi(params)
+    this.Api.addApi(params)
       .subscribe(res => {
         const id = res['id'];
         this.ngOnInit();
-        console.log(params)
       }, (err) => {
         console.log(err);
       });

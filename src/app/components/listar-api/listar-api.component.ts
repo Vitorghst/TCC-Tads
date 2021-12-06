@@ -17,21 +17,21 @@ export class ListarApiComponent implements OnInit {
   searchText = '';
 
 
-  constructor(private apiService: ListaApiService, private route: Router) { }
+  constructor(private Api: ListaApiService, private route: Router) { }
 
   ngOnInit(): void {
     this.getApis();
   }
 
   getApis() {
-    this.apiService.getApis().subscribe((apis: Api[]) => {
+    this.Api.getApis().subscribe((apis: Api[]) => {
       this.apis = apis;
     });
   }
 
   editApi(api: Api) {
     console.log(api)
-    this.apiService.editDados = api
+    this.Api.editDados = api
     this.route.navigate(['/edit-api'])
   }
 

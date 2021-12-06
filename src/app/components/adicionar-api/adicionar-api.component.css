@@ -1,7 +1,7 @@
 .main {
-    height: 100%;
-    width: 100%;
-    overflow-y: auto;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
 }
 
 .cdk-drop-dragging .cdk-drag {
@@ -38,7 +38,16 @@
 .button {
   background-color: rgba(20, 66, 135);
   color: white;
+
 }
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
 
 
 

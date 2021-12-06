@@ -5,40 +5,49 @@
 }
 
 .cdk-drop-dragging .cdk-drag {
-transition: transform 100ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 100ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .cdk-drag-animating {
-transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 .cdk-drag-placeholder {
-background: rgba(20, 66, 135);
+  background: rgba(20, 66, 135);
 }
 
 .vertical-menu {
-min-height: 10px;
-max-height: 300px;
-overflow-y: auto;
-scrollbar-color: #d4aa70 #e4e4e4;
-scrollbar-width: thin;
+  min-height: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-color: #d4aa70 #e4e4e4;
+  scrollbar-width: thin;
 }
 
 .vertical-menu::-webkit-scrollbar {
-width: 20px;
+  width: 20px;
 }
 
 .vertical-menu::-webkit-scrollbar-thumb {
-border-radius: 100px;
-border: 5px solid transparent;
-background-clip: content-box;
-background-color: #777676;
+  border-radius: 100px;
+  border: 5px solid transparent;
+  background-clip: content-box;
+  background-color: #777676;
 }
 
 .button {
-background-color: rgba(20, 66, 135);
-color: white;
+  background-color: rgba(20, 66, 135);
+  color: white;
 }
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
 
 
 
