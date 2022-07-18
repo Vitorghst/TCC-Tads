@@ -26,6 +26,7 @@ import { DecrypterComponent } from './components/decrypter/decrypter.component';
 import { EditApiComponent } from './components/edit-api/edit-api.component';
 import { EditTelaComponent } from './components/edit-tela/edit-tela.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -45,6 +46,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     DecrypterComponent,
     EditApiComponent,
     EditTelaComponent,
+    HomeComponent,
 
     
 

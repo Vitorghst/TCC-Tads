@@ -1,43 +1,17 @@
-.login {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #9e9e9e;
-}
-
-.card {
-    background-color: white;
-    border-radius: 0;
-    border: 0;
-    max-height: 100%;
-    overflow-y: auto;
-    width: 370px;
-    max-width: 100%;
- 
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 0;
-    background: #224289 !important;
-    color: #f8f8f8 !important;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.btn-primary {
-    background-color: #0d47a1;
-}
-
-.info{
-    color: #333333;
-    font-size: 12px;
-}
-
-.card-img-top{
-    width: 40%;
-}
+.gradient-custom-2 {
+    background: #fccb90;
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    }
+    
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    }
+    @media (min-width: 769px) {
+    .gradient-custom-2 {
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    }
+    }
