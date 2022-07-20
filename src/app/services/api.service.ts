@@ -5,6 +5,7 @@ import { retry, catchError } from 'rxjs/operators';
 import { Api } from '../components/listar-api/listar-api.model';
 import { Tela } from '../components/listar-tela/listar-tela.model';
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
+import { MenuItem } from '../home/home.model';
 
 
 
@@ -50,6 +51,15 @@ export class ListaApiService {
       )
   }
 
+  getMenu(): Observable<MenuItem[]> {
+    return this.httpClient.get<MenuItem[]>(`${this.url}/menu`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+   
+
   // Adiciona uma API
   public addApi(params: { id: number, codigo: number, nome: string, metodo: string }): Observable<Api> {
     return this.httpClient.post<Api>(`${this.url}/apis`, params, this.options)
@@ -76,7 +86,6 @@ export class ListaApiService {
 
 
   }
-
 
 
 

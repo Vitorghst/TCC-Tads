@@ -11,6 +11,7 @@ import { AdicionarTelaComponent } from './components/adicionar-tela/adicionar-te
 import { DecrypterComponent } from './components/decrypter/decrypter.component';
 import { EditApiComponent } from './components/edit-api/edit-api.component';
 import { EditTelaComponent } from './components/edit-tela/edit-tela.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   {
     path: '', component: MainComponent, canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'listar-api', pathMatch: 'full' },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
       { path: 'listar-api', component: ListarApiComponent },
       { path: 'edit-api', component: EditApiComponent},
       { path: 'adicionar-api', component: AdicionarApiComponent },
