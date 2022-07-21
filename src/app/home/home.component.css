@@ -10,43 +10,56 @@
   margin-top: -20px;
 }
 
-.main{
+.main {
   height: 100%;
   width: 100%;
   overflow-y: auto;
 }
 
-.barra-pesquisa{
+.barra-pesquisa {
   height: 20px;
   margin-top: 200px;
 }
 
-.content-body{
+.main-restaurant {
+  border-radius: 10px;
+}
+
+.container-teste{
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-left: 20px;
+}
+
+
+.content-body {
   min-height: 10px;
-  max-height: 800px;
-  scrollbar-color: #d4aa70 #e4e4e4;
+  max-height: 700px;
+  overflow: auto;
+  overflow-x: hidden;
   scrollbar-width: thin;
   border-radius: 15px;
 }
 
-.space{
+.space {
   margin-left: 10px;
 }
-  
+
 .content-body::-webkit-scrollbar {
   width: 20px;
 }
-    
+
 .content-body::-webkit-scrollbar-thumb {
   border-radius: 100px;
   border: 5px solid transparent;
   background-clip: content-box;
   background-color: #777676;
 }
-  
+
 
 table {
-  border-collapse:separate;
+  border-collapse: separate;
   border-spacing: 0px;
 }
 
@@ -88,9 +101,10 @@ table {
 }
 
 .nav {
-  background-color: rgb(180, 26, 26);
+  background-color: whitesmoke;
   border-radius: 10px;
 }
+
 
 .nav-pills .nav-link {
   background: none;

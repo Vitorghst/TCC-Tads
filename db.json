@@ -24,6 +24,16 @@
       "nome": "intel",
       "metodo": "datasource",
       "telas": []
+    },
+    {
+      "id": 2,
+      "codigo": 807032,
+      "nome": "",
+      "metodo": "execute",
+      "telas": [
+        0,
+        1
+      ]
     }
   ],
   "telas": [
@@ -45,131 +55,130 @@
   },
   "menu": [
     {
-      "id": "cup-cake",
+      "id": 1,
       "imagePath": "assets/images/foods/cupcake.png",
       "name": "Cup Cake",
       "description": "Cup Cake recheado de Doce de Leite",
       "price": 8.7
     },
     {
-      "id": "donut",
+      "id": 2,
       "imagePath": "assets/images/foods/donut.png",
       "name": "Donut",
       "description": "Coberto com chantilly",
       "price": 2.5
     },
     {
-      "id": "bread",
+      "id": 3,
       "imagePath": "assets/images/foods/bread.png",
       "name": "Pão Artesanal Italiano",
       "description": "Pão artesanal com queijos italianos",
       "price": 15.9
     },
     {
-      "id": "burger",
+      "id": 4,
       "imagePath": "assets/images/foods/burger.png",
       "name": "Classic Burger",
       "description": "O clássico. Não tem como errar.",
       "price": 18.5
     },
     {
-      "id": "fries",
+      "id": 5,
       "imagePath": "assets/images/foods/fries.png",
       "name": "Batatas Fritas",
       "description": "Batatas fritas crocantes",
       "price": 5.5
     },
     {
-      "id": "coke.png",
+      "id": 6,
       "imagePath": "assets/images/foods/coke.png",
       "name": "Refrigerante",
       "description": "O refri mais gelado da cidade.",
       "price": 4.5
     },
     {
-      "id": "capp",
+      "id": 7,
       "imagePath": "assets/images/foods/capp.png",
       "name": "Cappuccino com Chantilly",
       "description": "Tradicional cappuccino com chantilly",
       "price": 9.9
     },
     {
-      "id": "espreso",
+      "id": 8,
       "imagePath": "assets/images/foods/espreso.png",
       "name": "Super Espreso",
       "description": "Café espresso duplo. ",
       "price": 12.5
     },
     {
-      "id": "starb",
+      "id": 9,
       "imagePath": "assets/images/foods/starb.png",
       "name": "Starbucks Copycat",
       "description": "O mais pedido da casa. O verdadeiro café americano pura água.",
       "price": 15.6
     },
     {
-      "id": "zlasagna",
+      "id": 10,
       "imagePath": "assets/images/foods/zlasagna.png",
       "name": "Lasagna de Zucchini",
       "description": "Lasagna deliciosa que se salva por causa do queijo",
       "price": 14.9
     },
     {
-      "id": "greensandwich",
+      "id": 11,
       "imagePath": "assets/images/foods/greensandwich.png",
       "name": "Sanduíche de Frango",
       "description": "Frango grelhado e salada",
       "price": 10.5
     },
     {
-      "id": "ceasar",
+      "id": 12,
       "imagePath": "assets/images/foods/ceasar.png",
       "name": "Salada Ceasar",
       "description": "Clássica salada ceasar.",
       "price": 33.9
     },
     {
-      "id": "sunday",
+      "id": 13,
       "imagePath": "assets/images/foods/sunday.png",
       "name": "Mega Sunday",
       "description": "Sunday com várias bolas de sorvete a sua escolha",
       "price": 21.5
     },
     {
-      "id": "chocpop",
+      "id": 14,
       "imagePath": "assets/images/foods/chocpop.png",
       "name": "Picolé de Brigadeiro",
       "description": "Picolé de brigadeiro recheado com côco.",
       "price": 8.5
     },
     {
-      "id": "icestd.png",
+      "id": 15,
       "imagePath": "assets/images/foods/icestd.png",
       "name": "Sorvete Simples",
       "description": "Clássico sorvete de rua onde todos os sabores são idênticos.",
       "price": 1.5
     },
     {
-      "id": "cup",
+      "id": 16,
       "imagePath": "assets/images/foods/cup.png",
       "name": "Cup Cake de Choc. Branco",
       "description": "Cup Cake de chocolate branco",
       "price": 5.5
     },
     {
-      "id": "straw",
+      "id": 17,
       "imagePath": "assets/images/foods/straw.png",
       "name": "Bolo de Morango",
       "description": "Bolo recheado e coberto com morangos",
       "price": 40.5
     },
     {
-      "id": "cake",
+      "id": 18,
       "imagePath": "assets/images/foods/cake.png",
       "name": "Fatia de Bolo",
       "description": "Fatia de bolo de morango",
       "price": 5.9
     }
   ]
-
 }
