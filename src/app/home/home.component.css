@@ -21,8 +21,18 @@
   margin-top: 200px;
 }
 
-.main-restaurant {
-  border-radius: 10px;
+
+.container {
+  width: 100%;
+  padding: 6px;
+}
+
+.espaço{
+  --bs-gutter-x: 0 rem;
+  --bs-gutter-y: 0;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
 .container-teste{
@@ -30,6 +40,19 @@
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-left: 20px;
+  padding: 20px;
+}
+
+.space {
+  margin-right: 5px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  margin-bottom: 15px;
+  height: 25px;
 }
 
 
@@ -111,4 +134,28 @@ table {
   color: whitesmoke;
   border: 0;
   border-radius: 0.25rem;
+}
+
+.background-color {
+  background-color: whitesmoke;
+  border-color: red;
+}
+
+.gradient-custom-2 {
+  background: #fccb90;
+  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+  .gradient-form {
+      height: 100vh !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+      border-top-right-radius: .3rem;
+      border-bottom-right-radius: .3rem;
+  }
 }

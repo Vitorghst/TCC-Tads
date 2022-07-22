@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms'
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ListaApiService } from './services/api.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -61,6 +62,7 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     Ng2SearchPipeModule,
     CommonModule,
+    BrowserAnimationsModule
 
   ],
   providers: [ListaApiService],

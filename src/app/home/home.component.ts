@@ -1,13 +1,25 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MenuItem } from './home.model';
 import { ListaApiService } from '../services/api.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  animations: [
+    trigger('menuItemAppeared', [
+      state('ready', style({opacity: 1})),
+      transition('void => ready', [
+        style({opacity: 0, transform: 'translateY(-20px)'}),
+        animate('300ms 0s ease-in')
+      ])
+    ])
+  ]
 })
 export class HomeComponent implements OnInit {
+
+  menuItemState = 'ready';
   searchText = '';
   home?: MenuItem[];
   @Output() add = new EventEmitter()
