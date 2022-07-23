@@ -180,5 +180,145 @@
       "description": "Fatia de bolo de morango",
       "price": 5.9
     }
+  ],
+  "reviews": [
+    {
+      "name": "Julia",
+      "date": "2017-01-23T18:25:43",
+      "rating": 4.5,
+      "comments": "Tudo muito bom, entrega no tempo certo"
+    },
+    {
+      "name": "Aline",
+      "date": "2016-12-12T18:25:43",
+      "rating": 3,
+      "comments": "NÃO recomendo. O recheio é só um creme, não tem camarão e nem carne"
+    },
+    {
+      "name": "Renata",
+      "date": "2016-12-12T18:25:43",
+      "rating": 2,
+      "comments": "Não foi muito agradável ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode até ter sido outra coisa, mas..."
+    },
+    {
+      "name": "Renata",
+      "date": "2016-12-12T18:25:43",
+      "rating": 5,
+      "comments": "Nunca deixou na mão, comida sempre deliciosa."
+    },
+    {
+      "name": "Daniela",
+      "date": "2017-01-23T18:25:43",
+      "rating": 4,
+      "comments": "Sanduíche muito bom! Já pedi diversas vezes sempre bom!"
+    },
+    {
+      "name": "Laila",
+      "date": "2017-02-02T18:25:43",
+      "rating": 5,
+      "comments": "Melhor hambúrguer que já provei. Vai ser difícil voltar para mc e bk"
+    },
+    {
+      "name": "Suzana",
+      "date": "2016-12-12T18:25:43",
+      "rating": 3.5,
+      "comments": "Meu sanduíche chegou frio e todo desmontado =\\"
+    },
+    {
+      "name": "Eric",
+      "date": "2017-01-23T18:25:43",
+      "rating": 4.5,
+      "comments": "Excelente opção! Recomendo!"
+    },
+    {
+      "name": "Amanda",
+      "date": "2017-02-02T18:25:43",
+      "rating": 2.5,
+      "comments": "Demorou muito e o café veio gelado"
+    },
+    {
+      "name": "Carla",
+      "date": "2016-12-12T18:25:43",
+      "rating": 4.8,
+      "comments": "Tudo perfeito. Entrega, embalagem, comida. Resultado? Melhor custo beneficio"
+    },
+    {
+      "name": "Rodrigo",
+      "date": "2016-12-12T18:25:43",
+      "rating": 4,
+      "comments": "Muito rápida a entrega, mas é caro."
+    },
+    {
+      "name": "André",
+      "date": "2016-12-12T18:25:43",
+      "rating": 4.5,
+      "comments": "Excelente como sempre!"
+    },
+    {
+      "name": "João",
+      "date": "2017-01-23T18:25:43",
+      "rating": 5,
+      "comments": "Excelente. Fiz o pedido com outro endereço e quando vi o erro liguei avisando. O motoqueiro cortou a cidade todinha e a comida ainda chegou quentinha (e deliciosa). Estou sempre pedindo e recomendando"
+    },
+    {
+      "name": "Marcelo",
+      "date": "2017-02-02T18:25:43",
+      "rating": 4.5,
+      "comments": "Chegou muito rápido, antes mesmo da previsão"
+    },
+    {
+      "name": "Fatinha",
+      "date": "2017-01-23T18:25:43",
+      "rating": 2,
+      "comments": "Ñ gostei dos sabores q pedi e achei o preço muito elevado"
+    },
+    {
+      "name": "Lucas",
+      "date": "2017-02-02T18:25:43",
+      "rating": 2.5,
+      "comments": "Esperar 1:45hr pra receber o pedido é INACEITÁVEL"
+    },
+    {
+      "name": "Jacira",
+      "date": "2017-02-01T18:25:43",
+      "rating": 4.5,
+      "comments": "Veio OK!"
+    },
+    {
+      "name": "Ana",
+      "date": "2017-01-23T18:25:43",
+      "rating": 5,
+      "comments": "Rápido e sempre uma delicia!! Ja pedi 3x e sempre veio rapido e tudo certinho."
+    },
+    {
+      "name": "Larissa",
+      "date": "2017-02-02T18:25:43",
+      "rating": 2.5,
+      "comments": "A taxa de entrega poderia ser mais barata."
+    },
+    {
+      "name": "Jarbas",
+      "date": "2016-12-15T18:25:43",
+      "rating": 4.7,
+      "comments": "Excelente e chegou muito rápido!"
+    },
+    {
+      "name": "Rafaela",
+      "date": "2017-01-12T18:25:43",
+      "rating": 5,
+      "comments": "Chegou rápido e perfeito!"
+    },
+    {
+      "name": "Julia",
+      "date": "2016-12-12T18:25:43",
+      "rating": 1.5,
+      "comments": "Sempre gostei muito dos pedidos que eu fiz, mas dessa vez foi péssimo e decepcionou muito. Demorou 30min a mais pra chegar do que o tempo máximo esperado."
+    },
+    {
+      "name": "Marília",
+      "date": "2016-12-20T18:25:43",
+      "rating": 4.5,
+      "comments": "Taxa de entrega bastante elevada e precisa colocar no app se a pessoa quer porção adicional de algo (calda, crocante etc)"
+    }
   ]
 }

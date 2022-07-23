@@ -60,6 +60,14 @@ export class ListaApiService {
       )
   }
 
+  getReview(): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/reviews`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
   clear(){
     this.items = []
   }

@@ -43,8 +43,10 @@
   padding: 20px;
 }
 
-.space {
-  margin-right: 5px;
+.avaliacao{
+  float: right;
+  font-size: 15px;
+  color: #fccb90;
 }
 
 .btn-primary {
@@ -67,6 +69,15 @@
 
 .space {
   margin-left: 10px;
+}
+
+.color {
+  color: #fccb90;
+  cursor: pointer;
+}
+
+.espaço-cart {
+  margin-right: 5px;
 }
 
 .content-body::-webkit-scrollbar {

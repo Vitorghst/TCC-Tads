@@ -1,0 +1,49 @@
+<div class="main">
+    <div class="row espaço">
+        <div class="col-md-6 offset-md-3 ">
+            <div class="container mt-3 shadow bg-white">
+                <div class="row">
+                    <div>
+                        <hr>
+                        <h5 class="space mt-2">Avaliações</h5>
+                        <hr>
+                    </div>
+                    <div class="col-md-5 teste mt-3" *ngFor="let reviews of review ">
+                        <span class="review-score avaliacao pull-right"><i class="fa fa-star"></i>
+                            {{reviews.rating}}</span>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img *ngIf="reviews.rating < 3" alt="User Image" height="95px" class="img-circle"
+                                    src="assets/images/reactions/pissed.png">
+                                <img *ngIf="reviews.rating >= 3 && reviews.rating < 4" height="95px" alt="User Image"
+                                    class="img-circle" src="assets/images/reactions/soso.png">
+                                <img *ngIf="reviews.rating >= 4" alt="User Image" height="95px" class="img-circle"
+                                    src="assets/images/reactions/loved.png">
+                            </div>
+                            <div class="col-md-2 mt-4">
+                                <div>
+                                    <h6 class="username">{{reviews.name}}</h6>
+                                </div>
+                                <span class="description"> {{reviews.date | date:'dd/MM/yyyy'}}</span>
+                            </div>
+                        </div>
+                        <hr>
+                        <p>{{reviews.comments}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="col-md-2" [@menuItemAppeared]="menuItemState"><span>
+            <img height="115px" [src]="menuItem.imagePath"></span></div>
+    <div class="col bg-white">
+        <h3 class="mt-2">{{menuItem.name}}</h3>
+        <span>{{menuItem.description}}</span>
+        <div>
+            <span>{{menuItem.price | currency: 'BRL': true}}</span>
+            <a class="space color text-decoration-none" id="adicionar" (click)="emitAddEvent(menuItem)"><i
+                    class="fa fa-plus-circle"></i> Adicionar</a>
+        </div>
+    </div> -->
