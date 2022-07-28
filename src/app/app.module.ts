@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,10 @@ import { EditTelaComponent } from './components/edit-tela/edit-tela.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HomeComponent } from './home/home.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
+import { OrderComponent } from './components/order/order.component';
+import { OrderItemsComponent } from './components/order/order-items/order-items.component';
+import { DeliveryCostsComponent } from './components/order/delivery-costs/delivery-costs.component';
+import { RadioComponent } from './components/radio/radio.component';
 
 
 
@@ -50,6 +55,10 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
     EditTelaComponent,
     HomeComponent,
     ReviewsComponent,
+    OrderComponent,
+    OrderItemsComponent,
+    DeliveryCostsComponent,
+    RadioComponent,
 
     
 

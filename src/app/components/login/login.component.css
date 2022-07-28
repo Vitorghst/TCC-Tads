@@ -16,3 +16,7 @@
         border-bottom-right-radius: .3rem;
     }
 }
+
+.background {
+    background-color: red
+}

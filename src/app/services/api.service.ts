@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Api } from '../components/listar-api/listar-api.model';
 import { Tela } from '../components/listar-tela/listar-tela.model';
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 import { CartItem, MenuItem } from '../home/home.model';
+import { Order } from '../components/order/order.model';
 
 
 
@@ -92,6 +93,10 @@ export class ListaApiService {
     }
   }
 
+  cartItems(): CartItem[]{
+    return this.items
+  }
+
   removeItem(item:CartItem){
     this.items.splice(this.items.indexOf(item), 1)
   }
@@ -101,7 +106,10 @@ export class ListaApiService {
       .map(item => item.value())
       .reduce((prev, value)=> prev+value, 0)
   }
-   
+
+  checkOrder(order: Order): Observable<Order> {
+    return this.httpClient.post<Order>(`${this.url}/orders`, order, this.options)
+  }
 
   // Adiciona uma API
   public addApi(params: { id: number, codigo: number, nome: string, metodo: string }): Observable<Api> {

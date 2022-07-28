@@ -72,8 +72,32 @@
 }
 
 .color {
-  color: #fccb90;
+  color: #4f6fd8;
   cursor: pointer;
+}
+
+.fa-box-open:before {
+  content: "\f49e";
+  color: rgb(90, 69, 31);
+}
+
+.fa-shopping-bag:before {
+  content: "\f290";
+  color: #fccb90;
+}
+
+.fa-money-bill:before {
+  content: "\f0d6";
+  color: rgb(47, 75, 19);
+}
+
+.fa-motorcycle:before {
+  content: "\f21c";
+  color: red;
+}
+
+.navbar-light .navbar-nav .nav-link {
+   color: white; 
 }
 
 .espaço-cart {
@@ -101,6 +125,11 @@ table {
 .btn:focus {
   outline: none;
   box-shadow: none;
+}
+
+.fa-times-circle:before {
+  content: "\f057";
+  color: red;
 }
 
 .fundo {

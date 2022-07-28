@@ -1,0 +1,87 @@
+<div class="main">
+    <div class="row espaço">
+        <div class="col-md-6 offset-md-3 ">
+            <div class="container mt-3 shadow bg-white">
+                <form [formGroup]="orderForm">
+                    <div class="row">
+                        <div class="mt-3">
+                            <h2 class="pedido page-header">
+                                <i class="fa text-center fa-shopping-cart"></i>Finalize o seu pedido
+                            </h2>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-9">
+                                <p class="lead">Seus Dados:</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-3">
+                                <span class="help-block pull-right has-error-block"
+                                    *ngIf="orderForm.hasError('emailsNotMatch')"><i class="fa fa-remove"></i> Email-s
+                                    não conferem</span>
+                            </div>
+
+                            <div class="col-sm-6 col-xs-12">
+                                <input class="form-control" formControlName="name" placeholder="Nome"
+                                    autocomplete="off">
+
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <input type="text" class="form-control" formControlName="email" placeholder="E-mail"
+                                    autocomplete="off">
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <input type="text" class="form-control" formControlName="emailConfirmation"
+                                    placeholder="Confirmação do e-mail" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p class="lead">Endereço de Entrega:</p>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                                <input class="form-control" formControlName="address" placeholder="Endereço"
+                                    autocomplete="off">
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <input type="text" class="form-control" formControlName="number" placeholder="Número"
+                                    autocomplete="off">
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <input type="text" class="form-control" formControlName="optionalAddress"
+                                    placeholder="Complemento">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 mt-2">
+                            <p class="lead">Itens do Pedido:</p>
+                        </div>
+                        <div class="teste mt-1">
+                            <div class=" teste mt-3">
+                                <app-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)"
+                                    (decreaseQty)="decreaseQty($event)" (remove)="remove($event)"></app-order-items>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <p class="lead">Formas de Pagamento:</p>
+                            <div class="form-group">
+                                <app-radio [options]="paymentOptions" formControlName="paymentOption"></app-radio>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <p class="lead">Frete e Total:</p>
+                            <app-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></app-delivery-costs>
+                        </div>
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="p-2">
+                        <button (click)="checkOrder(orderForm.value)" class="btn btn-success pull-right float-button"
+                            [disabled]="!orderForm.valid || cartItems().length === 0">
+                            <i class="fa fa-credit-card"></i> Concluir Pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

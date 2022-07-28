@@ -1,0 +1,15 @@
+.fa-plus:before {
+    content: "\f067";
+    color: rgb(77, 143, 218);
+}
+
+.fa-minus:before {
+    content: "\F068";
+    color: rgb(77, 143, 218);
+}
+
+
+.fa-times-circle:before {
+    content: "\f057";
+    color: red;
+}

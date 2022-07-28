@@ -4,12 +4,12 @@
             <div class="container mt-3 shadow bg-white">
                 <div class="row">
                     <div>
-                        <hr>
-                        <h5 class="space mt-2">Avaliações</h5>
-                        <hr>
+                        <hr class="margin">
+                        <h5 class="space mt-2 top-avaliacao"><i class="fas fa-star"></i>Avaliações</h5>
+                        <hr class="margin">
                     </div>
-                    <div class="col-md-5 teste mt-3" *ngFor="let reviews of review ">
-                        <span class="review-score avaliacao pull-right"><i class="fa fa-star"></i>
+                    <div class="col-md-5 teste mt-3" *ngFor="let reviews of review " [@menuItemAppeared]="menuItemState">
+                        <span class="review-score avaliacao pull-right" ><i class="fa fa-star"></i>
                             {{reviews.rating}}</span>
                         <div class="row">
                             <div class="col-md-5">
@@ -35,15 +35,4 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="col-md-2" [@menuItemAppeared]="menuItemState"><span>
-            <img height="115px" [src]="menuItem.imagePath"></span></div>
-    <div class="col bg-white">
-        <h3 class="mt-2">{{menuItem.name}}</h3>
-        <span>{{menuItem.description}}</span>
-        <div>
-            <span>{{menuItem.price | currency: 'BRL': true}}</span>
-            <a class="space color text-decoration-none" id="adicionar" (click)="emitAddEvent(menuItem)"><i
-                    class="fa fa-plus-circle"></i> Adicionar</a>
-        </div>
-    </div> -->
+</div>

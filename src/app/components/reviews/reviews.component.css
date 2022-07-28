@@ -45,8 +45,17 @@
 
 .avaliacao {
     float: right;
-    font-size: 15px;
+    font-size: 20px;
     color: #fccb90;
+}
+
+.top-avaliacao {
+    color: #fccb90;
+}
+
+.margin {
+    margin-left: 42px;
+    margin-right: 42px;
 }
 
 .btn-primary {
