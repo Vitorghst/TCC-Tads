@@ -1,73 +1,98 @@
 <div class="main">
-    <div class="col-md-6  offset-md-3 main-restaurant shadow mb-4 bg-white">
-        <div class="p-4 mt-3">
-            <h5>
-                <i class="fas fa-home"></i> Maurinho e Bia Lanches
-                <a class="pull-right text-decoration-none avaliacao" routerLinkActive="detail-active" id="reviews"
-                    [routerLink]="['/reviews']">
-                    <i class="fas fa-star"></i> Avaliações
-                </a>
-            </h5>
-            <hr>
-            <div class="row">
-                <div class="col-md-1">
-                    <img src="../../assets/images/logo1.png" data-bs-toggle="dropdown" height="70">
+    <div class="shadow">
+        <div class="container-img">
+            <div class="col-md-6 offset-md-3 opacity shadow">
+                <div class="row">
+                <div class="col-md-6 offset-md-4">
+                    <h5 class="tipografia text-white">
+                        <i class="fas fa-store-alt"></i> Maurinho e Bia Lanches
+                    </h5>
                 </div>
-                <div class="col-sm-4">
-                    <span><i class="fas fa-circle"></i> Fechado - Abre hoje as 18:00</span>
-                    <p>Avenida Romário Martins, 101 Centro, Rolândia - PR, 86600-103</p>
+                <div class="col-md-2">
+                    <a class="pull-right text-decoration-none avaliacao text-white tipografia-icon" routerLinkActive="detail-active" id="reviews"
+                        [routerLink]="['/reviews']">
+                        <i class="fas fa-star"></i> Avaliações
+                    </a>
+                </div>
+               </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-2 offset-md-2">
+                        <img src="../../assets/images/logo2.png" data-bs-toggle="dropdown" height="100">
+                    </div>
+                    <div class="col-sm-6">
+                        <span class="tipografia text-white"><i class="fas fa-circle"></i> Fechado - Abre hoje as 18:00</span>
+                        <p class="tipografia-endereco text-white">Avenida Romário Martins, 101 Centro, Rolândia - PR, 86600-103</p>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-md-4 offset-md-2 tipografia-icon text-white">
+                        <i class="fas fa-motorcycle"></i> Entrega em até 40 min
+                    </div>
+                    <div class="col-md-4 offset-md-1 tipografia-icon text-white">
+                        <i class="fas fa-box-open"></i> Retirada em 30 min.
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-md-4 offset-md-2 tipografia-icon text-white"><i class="fas fa-shopping-bag"></i> Pedido minimo de R$8,50</div>
+                    <div class="col-md-4 offset-md-1 tipografia-icon text-white"><i class="fas fa-money-bill"></i> Calcular Entrega</div>
                 </div>
             </div>
-            <hr>
-
-            <div class="row">
-                <div class="col">
-                    <i class="fas fa-motorcycle"></i> Entrega em até 40 min
-                </div>
-                <div class="col">
-                    <i class="fas fa-box-open"></i> Retirada em 30 min.
-                </div>
-                <div class="w-100"></div>
-                <div class="col"><i class="fas fa-shopping-bag"></i> Pedido minimo de R$8,50</div>
-                <div class="col"><i class="fas fa-money-bill"></i> Calcular Entrega</div>
-            </div>
-
         </div>
     </div>
+    <div class="col-md-12 bg-white shadow bg-white mb-4">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid col-md-6 offset-md-3">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav">
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
     <div class="row espaço">
-        <div class="col-md-6 offset-md-3 ">
-            <div class="container shadow bg-white">
+        <div class="col-md-4 offset-md-3 border-top">
+            <div class="content p-4 shadow bg-white">
+                <h5 class="tipografia"><i class="fas fa-list"></i> Menu</h5>
                 <div class="col-md-2 input-group rounded">
                     <input type="search" class="form-control mt-3 rounded " [(ngModel)]="searchText"
                         placeholder="Pesquisar Produto" aria-label="Search" aria-describedby="search-addon" />
-                    <span class="input-group-text mt-3 border-0 gradient-custom-2" id="search-addon">
+                    <span class="input-group-text mt-3 border-0" id="search-addon">
                         <i class="fas fa-search"></i>
                     </span>
                 </div>
                 <div class="content-body">
-                    <div class="row mt-3" *ngFor="let menuItem of home | filter:searchText">
-                        <div class="col-md-2" [@menuItemAppeared]="menuItemState"><span>
-                                <img height="115px" [src]="menuItem.imagePath"></span></div>
-                        <div class="col bg-white">
-                            <h3 class="mt-2">{{menuItem.name}}</h3>
+                    <hr class="bg-black">
+                    <div class="row shaodow" *ngFor="let menuItem of home | filter:searchText">
+                        <div class="col-md-4" [@menuItemAppeared]="menuItemState"><span>
+                                <img height="132px" [src]="menuItem.imagePath"></span></div>
+                        <div class="col">
+                            <h3 class="mt-2 tipografia">{{menuItem.name}}</h3>
                             <span>{{menuItem.description}}</span>
                             <div>
                                 <span>{{menuItem.price | currency: 'BRL': true}}</span>
-                                <a class="space color text-decoration-none" id="adicionar" (click)="emitAddEvent(menuItem)"><i class="fa fa-plus-circle"></i> Adicionar</a>
+                                <button type="button" class="btn btn-color shadow btn-sm space  text-decoration-none" id="adicionar" (click)="emitAddEvent(menuItem)">
+                                    <i class="fa fa-plus-circle"></i> Adicionar</button>
                             </div>
                         </div>
+                        <hr class="mt-2 bg-black">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-2" [@menuItemAppeared]="menuItemState" *ngIf="items().length">
-            <div class="container-teste bg-white shadow">
+        <div class="col-md-3" [@menuItemAppeared]="menuItemState" *ngIf="items().length">
+            <div class="container-teste bg-white shadow border-top">
                 <div class="input-group rounded">
                     <h5 class="mt-3"><i class="fas fa-shopping-cart"></i> Carrinho</h5>
                 </div>
                 <div class="content-body">
                     <div class="box-body">
-
                         <div *ngIf="!items().length">
                             <p class="text-center">
                                 Seu carrinho está vazio!
@@ -92,13 +117,15 @@
                             </table>
                         </div>
                     </div>
-                    <div class="mb-3" *ngIf="items().length">
-                        <div class="pull-right">
-                            <button (click)="clear()" type="button" class="btn btn-danger espaço-cart"><i
-                                    class="fa fa-trash"></i>
-                                Limpar</button>
-                            <a [routerLink]="['/order']" class="btn btn-success"><i class="fa fa-credit-card"></i>
-                                Fechar Pedido</a>
+                    <div *ngIf="items().length">
+                        <div class="row">
+                            <div class="col offset-md-4">
+                                <button (click)="clear()" type="button" class="btn float-button btn-danger"><i class="fas fa-trash-alt"></i> Limpar</button>
+                            </div>
+                            <div class="col">
+                                <button [routerLink]="['/order']" type="button" class="btn float-button btn-success"><i class="fa fa-credit-card"></i>
+                                     Finalizar</button>
+                            </div>
                         </div>
                     </div>
                 </div>

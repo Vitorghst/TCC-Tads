@@ -34,6 +34,7 @@ import { OrderComponent } from './components/order/order.component';
 import { OrderItemsComponent } from './components/order/order-items/order-items.component';
 import { DeliveryCostsComponent } from './components/order/delivery-costs/delivery-costs.component';
 import { RadioComponent } from './components/radio/radio.component';
+import { OrderSumaryComponent } from './components/order-sumary/order-sumary.component';
 
 
 
@@ -59,6 +60,7 @@ import { RadioComponent } from './components/radio/radio.component';
     OrderItemsComponent,
     DeliveryCostsComponent,
     RadioComponent,
+    OrderSumaryComponent,
 
     
 

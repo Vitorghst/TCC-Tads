@@ -14,6 +14,7 @@ import { EditTelaComponent } from './components/edit-tela/edit-tela.component';
 import { HomeComponent } from './home/home.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { OrderComponent } from './components/order/order.component';
+import { OrderSumaryComponent } from './components/order-sumary/order-sumary.component';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
       { path: 'listar-api', component: ListarApiComponent },
       { path: 'edit-api', component: EditApiComponent},
       {path: 'order', component: OrderComponent},
+      { path: 'order-sumary', component: OrderSumaryComponent },
       { path: 'reviews', component: ReviewsComponent },
       { path: 'adicionar-api', component: AdicionarApiComponent },
       { path: 'listar-tela', component: ListarTelaComponent},

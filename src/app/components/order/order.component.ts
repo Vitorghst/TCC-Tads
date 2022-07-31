@@ -42,6 +42,7 @@ export class OrderComponent implements OnInit {
     },)
   }
 
+
   itemsValue(): number {
     return this.Api.total()
   }
@@ -65,7 +66,7 @@ export class OrderComponent implements OnInit {
   checkOrder(order: Order){
     order.orderItems = this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
     this.Api.checkOrder(order).subscribe((): void => {
-      this.route.navigate(['/order-summary'])
+      this.route.navigate(['/order-sumary'])
       this.Api.clear()
     }, (err) => {
       console.log(err)

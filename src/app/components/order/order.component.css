@@ -6,3 +6,7 @@
 .float-button{
     float: right;
 }
+
+.border-top{
+    border-top: 4px solid #e69a3e !important;
+}
