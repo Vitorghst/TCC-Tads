@@ -8,5 +8,16 @@
 }
 
 .border-top{
-    border-top: 4px solid #e69a3e !important;
+    border-top: 4px solid #f25c04 !important;
+}
+
+.boder-color {
+    border-color: #47dd1a !important;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 }

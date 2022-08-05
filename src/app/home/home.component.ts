@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MenuItem } from './home.model';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { CartItem, MenuItem } from './home.model';
 import { ListaApiService } from '../services/api.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { NgBusinessHoursComponent } from 'ng-business-hours';
+import { timeout, timestamp } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -20,13 +21,19 @@ import { NgBusinessHoursComponent } from 'ng-business-hours';
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild('searchBar') searchBar?: { setFocus: () => void; } ;
+
   menuItemState = 'ready';
   searchText = '';
+  toastmsg: any;
   home?: MenuItem[];
   @Output() add = new EventEmitter()
   rowState = 'ready'
   hours: any;
   now = new Date()
+
+  public showSearchBar : boolean = false;
+
 
 
 
@@ -45,6 +52,7 @@ export class HomeComponent implements OnInit {
 
   items(): any[] {
     return this.Api.items;
+    
   }
 
   clear() {
@@ -58,6 +66,8 @@ export class HomeComponent implements OnInit {
 
   addItem(item: any) {
     this.Api.addItem(item)
+    
+    
   }
 
   total(): number {
@@ -71,7 +81,26 @@ export class HomeComponent implements OnInit {
   emitAddEvent(item: any) {
     this.Api.addItem(item)
 
+  
   }
+
+  decreaseQty(item: any){
+    this.Api.decreaseQty(item)
+  }
+  
+  emitRemoveEvent(item: any) {
+    this.Api.decreaseQty(item)
+  }
+
+  toggleSearchBar(){
+    this.showSearchBar = ! this.showSearchBar;
+    if (this.showSearchBar)
+      // use setTimeout to allow *ngIf to display searchBar before calling setFocus
+      setTimeout( () => {
+        if (this.searchBar) this.searchBar.setFocus();
+      } )
+
+}
 
 
 

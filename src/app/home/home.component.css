@@ -29,18 +29,18 @@
 
 .container-img {
   width: 100%;
-  padding: 60px;
-  background-image: url("https://images8.alphacoders.com/942/thumb-1920-942495.jpg");
+  padding-top: 120px;
+  padding-bottom: 70px;
+  background-image: url("https://img4.goodfon.com/wallpaper/nbig/0/32/meat-tomatoes-salat-fastfud-fast-food-sendvich-hamburger-pom.jpg");
   background-size: cover;
   font-size: 17px;
   background-position: center;
 }
 
-.opacity {
-  background-color: rgb(0, 0, 0);
-  opacity: 0.83;
-  border-radius: 5px;
-  padding: 17px;
+
+
+.border-bottom {
+  border-bottom: 4px solid #c08b18 !important;
 }
 
 .espaço{
@@ -51,6 +51,20 @@
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
+.fa-wallet:before {
+  content: "\f555";
+  color: #f25c04;
+}
+
+.color-orange {
+  background-color: #f25c04;
+  color: white;
+}
+
+.local {
+  color: #f25c04;
+}
+
 .container-teste{
   width: 94%;
   padding-right: var(--bs-gutter-x, 0.75rem);
@@ -58,6 +72,7 @@
   margin-left: 20px;
   padding: 20px;
 }
+
 
 .avaliacao{
   float: right;
@@ -68,13 +83,11 @@
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
-  margin-bottom: 15px;
-  height: 25px;
 }
 
 .fa-star:before {
   content: "\f005";
-  color: #e69a3e;
+  color: #ffffff;
 }
 
 .image-teste {
@@ -94,7 +107,7 @@
 
 .tipografia{
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .tipografia-endereco{
@@ -113,21 +126,37 @@
 
 .text-hover {
   box-shadow: inset 0 0 0 0 #ffffff;
-  color: #e69a3e;
+  color: #f25c04;
   padding: 0 .64rem;
   margin: 0 -.50rem;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 .text-hover:hover {
-  color: #e69a3e;
+  color: #f25c04;
   box-shadow: inset 500px 0 0 0 #ffffff;
   ;
 }
 
+.btn-outline-warning {
+  color: #f25c04;
+  border-color: #f25c04;
+  
+}
+
+.button {
+  transition-duration: 0.6s;
+}
+
+.button-menu:hover {
+  
+  background-color: #f25c04; /* Green */
+  color: white;
+}
+
 .border-top {
   border-top: 5px solid !important;
-  border-color: #e69a3e !important;
+  border-color: #c08b18 !important;
 }
 
 
@@ -155,26 +184,26 @@
 
 .fa-box-open:before {
   content: "\f49e";
-  color: #e69a3e;
+  color: #f25c04;
 }
 
 .fa-shopping-bag:before {
   content: "\f290";
-  color: #e69a3e;
+  color: #f25c04;
 }
 
 .fa-money-bill:before {
   content: "\f0d6";
-  color: #e69a3e;
+  color: #f25c04;
 }
 
 .fa-motorcycle:before {
   content: "\f21c";
-  color: #e69a3e;
+  color: #f25c04;
 }
 
 .navbar-light .navbar-nav .nav-link {
-   color: #e69a3e; 
+   color: #f25c04;
 }
 
 .espaço-cart {
@@ -224,7 +253,7 @@ table {
   color: #212529;
   text-align: center;
   white-space: nowrap;
-  background-color: #e69a3e;
+  background-color: #f25c04;
   opacity: 0.85;
   border: 1px solid #dad1ce;
   border-radius: 0.25rem;
@@ -232,7 +261,11 @@ table {
 
 .fa-search:before {
   content: "\f002";
-  color: white;
+  color: #ffffff;
+}
+
+.heigth {
+  width: 50px;
 }
 
 .nav {
@@ -262,7 +295,7 @@ table {
 
 .btn-color {
   color: white;
-  background-color: #e69a3e;
+  background-color: #f25c04;
 }
 
 .gradient-custom-2 {
@@ -283,3 +316,30 @@ table {
       border-bottom-right-radius: .3rem;
   }
 }
+
+
+.right {
+  text-align: right;
+}
+
+.form-control {
+  display: block;
+  width: 60%;
+  height: 10%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+
+

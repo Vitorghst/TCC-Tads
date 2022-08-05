@@ -35,6 +35,7 @@ import { OrderItemsComponent } from './components/order/order-items/order-items.
 import { DeliveryCostsComponent } from './components/order/delivery-costs/delivery-costs.component';
 import { RadioComponent } from './components/radio/radio.component';
 import { OrderSumaryComponent } from './components/order-sumary/order-sumary.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 
 
@@ -61,6 +62,7 @@ import { OrderSumaryComponent } from './components/order-sumary/order-sumary.com
     DeliveryCostsComponent,
     RadioComponent,
     OrderSumaryComponent,
+    SnackbarComponent,
 
     
 

@@ -2,7 +2,7 @@
     <div class="row espaço">
         <div class="col-md-8 offset-md-2 ">
             <div class="container mt-3 shadow bg-white border-top">
-                <form [formGroup]="orderForm" >
+                <form [formGroup]="orderForm">
                     <div class="row">
                         <div class="mt-3">
                             <h2 class="pedido page-header">
@@ -18,33 +18,62 @@
                                 <span class="help-block pull-right has-error-block"><i class="fa fa-remove"></i> Email-s
                                     não conferem</span>
                             </div> -->
+                                
+                            <div class="col-sm-6 col-xs-12 formGroup ">
+                                <input class="form-control " formControlName="name" placeholder="Nome" autocomplete="off"
+                                    required>
+                                <p *ngIf="orderForm.get('name')?.errors?.minlength" class="text-danger"><i
+                                        class="fas fa-times"></i> Campo obrigatório e com 5 caracteres no mínimo</p>
+                                <p *ngIf="orderForm.get('name')?.valid" class="text-success"><i
+                                        class="fas fa-check"></i> OK</p>
 
-                            <div class="col-sm-6 col-xs-12 formGroup">
-                                <input class="form-control" formControlName="name" placeholder="Nome"
-                                    autocomplete="off" required>
                             </div>
                             <div class="col-sm-3 col-xs-6">
                                 <input type="text" class="form-control" formControlName="email" placeholder="E-mail"
-                                    autocomplete="off">
+                                    autocomplete="off" required>
+                                <p *ngIf="orderForm.get('email')?.errors?.minlength" class="text-danger"><i
+                                        class="fas fa-times"></i> E-mail inválido</p>
+                                <p *ngIf="orderForm.get('email')?.valid" class="text-success"><i
+                                        class="fas fa-check"></i> OK</p>
                             </div>
                             <div class="col-sm-3 col-xs-6">
                                 <input type="text" class="form-control" formControlName="emailConfirmation"
-                                    placeholder="Confirmação do e-mail" autocomplete="off">
+                                    placeholder="Confirmação do e-mail" autocomplete="off" required>
+                                <p *ngIf="orderForm.get('emailConfirmation')?.errors?.minlength" class="text-danger"><i
+                                        class="fas fa-times"></i> E-mail inválido</p>
+                                <p *ngIf="orderForm.get('emailConfirmation')?.valid" class="text-success"><i
+                                        class="fas fa-check"></i> OK</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <p class="lead">Endereço de Entrega:</p>
                             </div>
+                            <div class="col-sm-3 col-xs-6 mb-4">
+                                <input type="text" class="form-control" formControlName="number"  placeholder="CEP"
+                                    autocomplete="off" required>
+                                <p *ngIf="orderForm.get('number')?.errors?.pattern" class="text-danger"><i
+                                        class="fas fa-times"></i> Obrigatório e somente números</p>
+                                <p *ngIf="orderForm.get('number')?.valid" class="text-success"><i
+                                        class="fas fa-check"></i> OK</p>
+                            </div>
                             <div class="col-sm-6 col-xs-12">
                                 <input class="form-control" formControlName="address" placeholder="Endereço"
-                                    autocomplete="off">
+                                    autocomplete="off" required>
+                                <p *ngIf="orderForm.get('address')?.errors?.minlength" class="text-danger"><i
+                                        class="fas fa-times"></i> Campo obrigatório e com 5 caracteres no mínimo</p>
+                                <p *ngIf="orderForm.get('address')?.valid" class="text-success"><i
+                                        class="fas fa-check"></i> OK</p>
                             </div>
                             <div class="col-sm-3 col-xs-6">
-                                <input type="text" class="form-control" formControlName="number" placeholder="Número"
-                                    autocomplete="off">
+                                <input type="text" class="form-control" formControlName="number"  placeholder="Número"
+                                    autocomplete="off" required>
+                                <p *ngIf="orderForm.get('number')?.errors?.pattern" class="text-danger"><i
+                                        class="fas fa-times"></i> Obrigatório e somente números</p>
+                                <p *ngIf="orderForm.get('number')?.valid" class="text-success"><i
+                                        class="fas fa-check"></i> OK</p>
                             </div>
-                            <div class="col-sm-3 col-xs-6">
+                            <div class="col-sm-6 col-xs-6">
                                 <input type="text" class="form-control" formControlName="optionalAddress"
                                     placeholder="Complemento">
                             </div>

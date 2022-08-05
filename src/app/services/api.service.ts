@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
@@ -15,6 +15,9 @@ import { Order } from '../components/order/order.model';
 })
 
 export class ListaApiService {
+
+  notifier = new EventEmitter<any>()
+
 
   url = 'http://localhost:3000';
   editDados: any = '';
@@ -42,6 +45,10 @@ export class ListaApiService {
         catchError(this.handleError)
       )
 
+  }
+
+  notify(message: string){
+    this.notifier.emit(message)
   }
 
   // Obtem todas as TELAS
@@ -80,6 +87,8 @@ export class ListaApiService {
     }else{
       this.items.push(new CartItem(item))
     }
+    this.notify(`Você adicionou o item ${item.name}`)
+    
   }
 
   increaseQty(item: CartItem){
@@ -99,6 +108,7 @@ export class ListaApiService {
 
   removeItem(item:CartItem){
     this.items.splice(this.items.indexOf(item), 1)
+    this.notify(`Você removeu o item ${item.menuItem.name}`)
   }
 
   total(): number{
