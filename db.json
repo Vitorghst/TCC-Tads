@@ -56,16 +56,16 @@
   "menu": [
     {
       "id": 1,
-      "imagePath": "assets/images/foods/cupcake.png",
-      "name": "Cup Cake",
-      "description": "Cup Cake recheado de Doce de Leite",
+      "imagePath": "assets/images/foods/fries.png",
+      "name": "Cachorro Quente Simples",
+      "description": "Pão de leite, salsicha, tomate, maionese, catchup e mostarda.",
       "price": 8.7
     },
     {
       "id": 2,
-      "imagePath": "assets/images/foods/donut.png",
-      "name": "Donut",
-      "description": "Coberto com chantilly",
+      "imagePath": "assets/images/foods/hotduplo.png",
+      "name": "HOT DOG TRADICIONAL DUPLO",
+      "description": "Pão de leite, 02 salsicha, tomate, maionese, catchup e mostarda.",
       "price": 2.5
     },
     {
@@ -84,9 +84,9 @@
     },
     {
       "id": 5,
-      "imagePath": "assets/images/foods/fries.png",
-      "name": "Batatas Fritas",
-      "description": "Batatas fritas crocantes",
+      "imagePath": "assets/images/foods/cupcake.png", 
+      "name": "Cup Cake",
+      "description": "Cup Cake recheado de Doce de Leite",
       "price": 5.5
     },
     {

@@ -61,6 +61,13 @@
   color: white;
 }
 
+.quantity {
+  color: rgb(0, 0, 0);
+  height: 30px;
+  border-radius: 0;
+  background-color: whitesmoke;
+}
+
 .local {
   color: #f25c04;
 }
