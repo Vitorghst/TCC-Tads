@@ -4,6 +4,7 @@ import { ListaApiService } from '../services/api.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { NgBusinessHoursComponent } from 'ng-business-hours';
 import { timeout, timestamp } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -21,38 +22,64 @@ import { timeout, timestamp } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('searchBar') searchBar?: { setFocus: () => void; } ;
+  @ViewChild('searchBar') searchBar?: { setFocus: () => void; };
 
   menuItemState = 'ready';
   searchText = '';
   toastmsg: any;
-  home?: MenuItem[];
+  observationForm!: FormGroup
+  home!: MenuItem[];
   @Output() add = new EventEmitter()
   rowState = 'ready'
   hours: any;
   now = new Date()
+  adicionais: any;
 
-  public showSearchBar : boolean = false;
-
-
-
+  public showSearchBar: boolean = false;
 
 
-  constructor(private Api: ListaApiService) { }
+
+
+
+  constructor(private Api: ListaApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.getTelas()
+    this.getAdicionais()
+
+    this.observationForm = this.formBuilder.group({
+      observacao: this.formBuilder.control('', [Validators.required]),
+
+    })
   }
 
   getTelas() {
     this.Api.getMenu().subscribe((home: MenuItem[]) => {
       this.home = home;
+      console.log(this.home);
+
     });
   }
 
+  getAdicionais() {
+    this.Api.getAdicionais().subscribe((adicional: any) => {
+      this.adicionais = adicional;
+      console.log(this.adicionais);
+
+    });
+  }
+
+
+  filtrarCategoria(event: any) {
+    this.items()
+    this.home = this.home.filter(item => item.category === event ) //filtra por categoria
+    
+  }
+
+
   items(): any[] {
     return this.Api.items;
-    
+
   }
 
   clear() {
@@ -66,8 +93,8 @@ export class HomeComponent implements OnInit {
 
   addItem(item: any) {
     this.Api.addItem(item)
-    
-    
+
+
   }
 
   total(): number {
@@ -81,28 +108,15 @@ export class HomeComponent implements OnInit {
   emitAddEvent(item: any) {
     this.Api.addItem(item)
 
-  
-  }
+  } 
 
-  decreaseQty(item: any){
+  decreaseQty(item: any) {
     this.Api.decreaseQty(item)
   }
-  
+
   emitRemoveEvent(item: any) {
     this.Api.decreaseQty(item)
   }
-
-  toggleSearchBar(){
-    this.showSearchBar = ! this.showSearchBar;
-    if (this.showSearchBar)
-      // use setTimeout to allow *ngIf to display searchBar before calling setFocus
-      setTimeout( () => {
-        if (this.searchBar) this.searchBar.setFocus();
-      } )
-
-}
-
-
 
 
 }

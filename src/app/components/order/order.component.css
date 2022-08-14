@@ -21,3 +21,8 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+
+.color-orange {
+    background-color: #f25c04;
+    color: white;
+}

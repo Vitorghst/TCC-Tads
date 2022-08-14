@@ -3,36 +3,38 @@
         <div class="container-img">
             <div class="col-md-6 ms-5 mb-5 opacity shadow border-bottom">
                 <div class="row">
-                <div class="col-md-4 offset-md-4 text-white">
-                    <h5 class="tipografia">
-                        <h2 class="text-center">FoodBoard</h2>
-                    </h5>
+                    <div class="col-md-4 offset-md-4 text-white">
+                        <h5 class="tipografia">
+                            <h2 class="text-center">FoodBoard</h2>
+                        </h5>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="pull-right text-decoration-none avaliacao tipografia-icon text-white"
+                            routerLinkActive="detail-active" id="reviews" [routerLink]="['/reviews']">
+                            <button class="btn color-orange" type="submit"> <i class="fas fa-star"></i> 4.9</button>
+                        </a>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a class="pull-right text-decoration-none avaliacao tipografia-icon text-white" routerLinkActive="detail-active" id="reviews"
-                        [routerLink]="['/reviews']" >
-                    <button class="btn color-orange" type="submit"> <i class="fas fa-star"></i> 4.9</button> 
-                    </a>
-                </div>
-               </div>
                 <hr>
                 <div class="row">
                     <div class="col-sm-2 offset-md-1">
                         <img src="../../assets/images/logo2.png" data-bs-toggle="dropdown" height="150">
                     </div>
                     <div class="col-md-7 offset-md-1">
-                        <span class="tipografia  text-white" ><i class="fas fa-circle"></i>
-                             Fechado - Abre hoje as 18:00</span><span class="tipografia" data-bs-toggle="modal" data-bs-target="#exampleModal"></span>
-                                <!-- <i class="fas fa-clock"></i> Horarios</span> -->
+                        <span class="tipografia  text-white"><i class="fas fa-circle"></i>
+                            Fechado - Abre hoje as 18:00</span><span class="tipografia" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"></span>
+                        <!-- <i class="fas fa-clock"></i> Horarios</span> -->
                         <div class="mt-5 me-4">
-                            <p class="text-white"><i class="fas fa-map-marker-alt local"></i> Avenida Romário Martins, 101 Centro, Rolândia - PR, 86600-103</p>
+                            <p class="text-white"><i class="fas fa-map-marker-alt local"></i> Avenida Romário Martins,
+                                101 Centro, Rolândia - PR, 86600-103</p>
                         </div>
                         <div class="mt-3 me-4">
                             <p class="text-white"><i class="fas fa-phone-alt local"></i> (43) 3221-9000</p>
                         </div>
                     </div>
                 </div>
-               
+
                 <hr>
 
                 <div class="row">
@@ -43,8 +45,10 @@
                         <i class="fas fa-box-open"></i> Retirada em 30 min.
                     </div>
                     <div class="w-100"></div>
-                    <div class="col-md-4 offset-md-3 tipografia-icon text-white"><i class="fas fa-shopping-bag text-white"></i> Pedido minimo de R$8,50</div>
-                    <div class="col-md-4 offset-md-1 tipografia-icon text-white"><i class="fas fa-money-bill text-white"></i> Calcular Entrega</div>
+                    <div class="col-md-4 offset-md-3 tipografia-icon text-white"><i
+                            class="fas fa-shopping-bag text-white"></i> Pedido minimo de R$8,50</div>
+                    <div class="col-md-4 offset-md-1 tipografia-icon text-white"><i
+                            class="fas fa-money-bill text-white"></i> Calcular Entrega</div>
                 </div>
             </div>
         </div>
@@ -58,9 +62,8 @@
                 </button>
                 <div class="collapse navbar-collapse " id="navbarNav">
                     <ul class="navbar-nav">
-                        <button class="btn btn-outline-warning me-2 button-menu" type="button">Lanches</button>
-                        <button class="btn btn-outline-warning me-2 button-menu" type="button">Cachorro Quentes</button>
-                        <button class="btn btn-outline-warning me-2 button-menu" type="button">Refrigerantes</button>
+                        <button class="btn btn-outline-warning me-2 button-menu" type="button" (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
+                        <button class="btn btn-outline-warning me-2 button-menu" type="button" (click)="filtrarCategoria('Lanches')">Lanches</button>
                     </ul>
                 </div>
             </div>
@@ -85,9 +88,14 @@
                         <div class="col">
                             <h3 class="mt-2 tipografia ">{{menuItem.name}}</h3>
                             <span>{{menuItem.description}}</span>
+                            <br>
+                            <p>{{ menuItem.category }}</p>
                             <div class="mt-2">
-                                <span class="mt-3"><i class="fas fa-wallet"></i> {{menuItem.price | currency: 'BRL': true}}</span>
-                                <button type="button"  class="btn btn-color ms-4 shadow btn-sm space  text-decoration-none" id="adicionar" (click)="emitAddEvent(menuItem)">
+                                <span class="mt-3"><i class="fas fa-wallet"></i> {{menuItem.price | currency: 'BRL':
+                                    true}}</span>
+                                <button type="button"
+                                    class="btn btn-color ms-4 shadow btn-sm space  text-decoration-none" id="adicionar"
+                                    (click)="emitAddEvent(menuItem)">
                                     <i class="fas me-1 fa-shopping-cart"></i> Adicionar</button>
                             </div>
                         </div>
@@ -115,17 +123,21 @@
                                         <td><img height="60px" [src]="item.menuItem.imagePath"></td>
                                         <th>({{item.quantity}}x) {{item.menuItem.name}}
                                             <br>
-                                                <a  (click)="emitRemoveEvent(item)" class="btn btn-sm quantity local"><i class="fa fa-minus"></i>
-                                                </a>
-                                                <a class="btn btn-sm quantity">{{item.quantity}}</a>
-                                                <a (click)="emitAddEvent(item.menuItem)" class="btn btn-sm quantity local"><i class="fa fa-plus"></i></a>
-                                                <br>
-                                                <button class="btn btn-sm btn-color mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fas fa-plus"></i> Adicionais</button>
-                                           
-                                                
-                                            </th>
+                                            <a (click)="emitRemoveEvent(item)" class="btn btn-sm quantity local"><i
+                                                    class="fa fa-minus"></i>
+                                            </a>
+                                            <a class="btn btn-sm quantity">{{item.quantity}}</a>
+                                            <a (click)="emitAddEvent(item.menuItem)"
+                                                class="btn btn-sm quantity local"><i class="fa fa-plus"></i></a>
+                                            <br>
+                                            <button class="btn btn-sm btn-color mt-2" data-bs-toggle="modal"
+                                                data-bs-target="#staticBackdrop"><i class="fas fa-plus"></i>
+                                                Adicionais</button>
+
+
+                                        </th>
                                         <td>{{item.value() | currency: 'BRL': true}}</td>
-                                        
+
                                         <td class="text-right offset-md-4">
                                             <a (click)="removeItem(item)" class="btn btn-sm danger"><i
                                                     class="fas fa-times-circle"></i></a>
@@ -139,11 +151,13 @@
                     <div *ngIf="items().length">
                         <div class="row">
                             <div class="col offset-md-4">
-                                <button (click)="clear()" type="button" class="btn float-button btn-danger"><i (click)="clear()" class="fas fa-trash-alt"></i> Limpar</button>
+                                <button (click)="clear()" type="button" class="btn float-button btn-danger"><i
+                                        (click)="clear()" class="fas fa-trash-alt"></i> Limpar</button>
                             </div>
                             <div class="col">
-                                <button [routerLink]="['/order']" type="button" class="btn float-button btn-success"><i class="fa fa-credit-card"></i>
-                                     Finalizar</button>
+                                <button [routerLink]="['/order']" type="button" class="btn float-button btn-success"><i
+                                        class="fa fa-credit-card"></i>
+                                    Finalizar</button>
                             </div>
                         </div>
                     </div>
@@ -153,36 +167,51 @@
     </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-obs" *ngFor="let item of items()">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Adicionais</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" *ngFor="let adicional of adicionais">
+                    <strong>{{ adicional.name }}
+                        <a class="btn btn-sm quantity local"><i class="fa fa-minus"></i>
+                        </a>
+                        <a class="btn btn-sm quantity" value="0"></a>
+                        <a class="btn btn-sm quantity local"><i class="fa fa-plus"></i></a>
+                    </strong>
+                </div>
+                <div class="col-lg-12 offset-md-2 mt-3">
+                        <button type="button" class="btn color-orange"><i class="fas fa-comment-dots"></i> Alguma
+                            observação?</button>
+                        <div>
+                            <textarea class="text-area mt-3 mb-4 shadow" 
+                                id="exampleFormControlTextarea1"
+                                placeholder="Ex: Tirar a cebola, maionese à parte, ponto da carne etc"></textarea>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Salvar</button>
+                </div>
             </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 </div>

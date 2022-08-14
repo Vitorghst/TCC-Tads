@@ -21,6 +21,8 @@ export class OrderComponent implements OnInit {
 
   delivery: number = 8
   
+
+
   paymentOptions: RadioOption[] = [
     {label: 'Dinheiro', value: 'MON'},
     {label: 'Cartão de Débito', value: 'DEB'},
@@ -30,12 +32,14 @@ export class OrderComponent implements OnInit {
   constructor(private Api: ListaApiService, private route: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-
     this.orderForm = this.formBuilder.group({
       name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
-      address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+      cep: this.formBuilder.control( '', [Validators.required, Validators.minLength(8)]),
+      logradouro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+      bairro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
+      localidade: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(''),
       paymentOption: this.formBuilder.control('', [Validators.required])
@@ -50,6 +54,19 @@ export class OrderComponent implements OnInit {
   cartItems(): CartItem[] {
     return this.Api.cartItems()
   }
+  
+
+  buscar(){ 
+    this.Api.buscar(this.orderForm.get('cep')!.value).subscribe((response) => {
+      this.orderForm.patchValue({
+        logradouro: response['logradouro'],
+        bairro: response['bairro'],
+        localidade: response['localidade']
+      })
+    }
+    )
+  }
+
 
   increaseQty(item: CartItem){
     this.Api.increaseQty(item)

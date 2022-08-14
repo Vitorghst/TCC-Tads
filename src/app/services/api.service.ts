@@ -10,6 +10,7 @@ import { Order } from '../components/order/order.model';
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -68,6 +69,7 @@ export class ListaApiService {
       )
   }
 
+
   getReview(): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/reviews`)
       .pipe(
@@ -75,6 +77,27 @@ export class ListaApiService {
         catchError(this.handleError)
       )
   }
+
+  getAdicionais(): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/adicionais`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  buscar(cep: string): Observable<any> {
+    return this.httpClient.get<any>(`https://viacep.com.br/ws/${cep}/json/`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+    // return this.httpClient.get<any>(`https://viacep.com.br/ws/${cep}/json/`)
+    // .toPromise().then(response => {
+    //   console.log(response)
+    // })
 
   clear(){
     this.items = []
@@ -166,3 +189,7 @@ export class ListaApiService {
   };
 
 }
+function adicionais(arg0: CartItem, adicionais: any) {
+  throw new Error('Function not implemented.');
+}
+

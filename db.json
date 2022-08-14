@@ -59,14 +59,16 @@
       "imagePath": "assets/images/foods/fries.png",
       "name": "Cachorro Quente Simples",
       "description": "Pão de leite, salsicha, tomate, maionese, catchup e mostarda.",
-      "price": 8.7
+      "price": 8.7,
+      "category": "Cachorro Quente"
     },
     {
       "id": 2,
       "imagePath": "assets/images/foods/hotduplo.png",
       "name": "HOT DOG TRADICIONAL DUPLO",
       "description": "Pão de leite, 02 salsicha, tomate, maionese, catchup e mostarda.",
-      "price": 2.5
+      "price": 2.5,
+      "category": "Cachorro Quente"
     },
     {
       "id": 3,
@@ -80,11 +82,12 @@
       "imagePath": "assets/images/foods/burger.png",
       "name": "Classic Burger",
       "description": "O clássico. Não tem como errar.",
-      "price": 18.5
+      "price": 18.5,
+      "category": "Lanches"
     },
     {
       "id": 5,
-      "imagePath": "assets/images/foods/cupcake.png", 
+      "imagePath": "assets/images/foods/cupcake.png",
       "name": "Cup Cake",
       "description": "Cup Cake recheado de Doce de Leite",
       "price": 5.5
@@ -179,6 +182,23 @@
       "name": "Fatia de Bolo",
       "description": "Fatia de bolo de morango",
       "price": 5.9
+    }
+  ],
+  "adicionais": [
+    {
+      "id": 1,
+      "name": "Salsicha",
+      "price": 5.9
+    },
+    {
+      "id": 2,
+      "name": "Tomate",
+      "price": 4
+    },
+    {
+      "id": 3,
+      "name": "Milho",
+      "price": 4
     }
   ],
   "reviews": [
@@ -437,6 +457,25 @@
         }
       ],
       "id": 6
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": 1
+        }
+      ],
+      "id": 7
     }
   ]
 }
