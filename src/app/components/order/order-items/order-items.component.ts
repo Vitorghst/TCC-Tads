@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { CartItem } from 'src/app/home/home.model';
 
 @Component({
@@ -10,20 +11,34 @@ export class OrderItemsComponent implements OnInit {
 
   @Input()
   items!: CartItem[];
+  
 
   @Output() increaseQty = new EventEmitter<CartItem>()
+  @Output() observacao = new EventEmitter<CartItem>()
+  @Output() adicionais = new EventEmitter<CartItem>()
   @Output() decreaseQty = new EventEmitter<CartItem>()
   @Output() remove = new EventEmitter<CartItem>()
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+
   }
+
+  
 
   emitIncreaseQty(item: CartItem){
     this.increaseQty.emit(item)
   }
 
+  emitObservacao(item: CartItem){
+    this.observacao.emit(item)
+  }
+
+  emitAdicionais(item: CartItem){
+    this.adicionais.emit(item)
+  }
+  
   emitDecreaseQty(item: CartItem){
     this.decreaseQty.emit(item)
   }

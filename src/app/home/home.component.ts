@@ -23,6 +23,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
 
   @ViewChild('searchBar') searchBar?: { setFocus: () => void; };
+  
 
   menuItemState = 'ready';
   searchText = '';
@@ -32,9 +33,9 @@ export class HomeComponent implements OnInit {
   @Output() add = new EventEmitter()
   rowState = 'ready'
   hours: any;
+  saveCheckbox!: boolean;
   now = new Date()
   adicionais: any;
-
   public showSearchBar: boolean = false;
 
 
@@ -48,7 +49,7 @@ export class HomeComponent implements OnInit {
     this.getAdicionais()
 
     this.observationForm = this.formBuilder.group({
-      observacao: this.formBuilder.control('', [Validators.required]),
+      observacao: this.formBuilder.control(''),
 
     })
   }
@@ -57,6 +58,7 @@ export class HomeComponent implements OnInit {
     this.Api.getMenu().subscribe((home: MenuItem[]) => {
       this.home = home;
       console.log(this.home);
+      
 
     });
   }
@@ -71,14 +73,15 @@ export class HomeComponent implements OnInit {
 
 
   filtrarCategoria(event: any) {
-    this.items()
-    this.home = this.home.filter(item => item.category === event ) //filtra por categoria
+    this.home= this.home.filter(item => item.category === event ) 
+    // trazer todos os itens do menu sem filtrar por categoria
+    //quando clicar novamente ele limpar o array
     
   }
 
-
   items(): any[] {
-    return this.Api.items;
+    return this.Api.items; 
+    
 
   }
 
@@ -87,15 +90,23 @@ export class HomeComponent implements OnInit {
   }
 
 
-  removeItem(item: any) {
+
+
+  removeItem(item: any): void {
     this.Api.removeItem(item)
   }
 
   addItem(item: any) {
     this.Api.addItem(item)
-
-
+    
   }
+
+
+  salvarObs(item: CartItem) {
+    this.Api.addObservacao(item);
+    
+  }
+
 
   total(): number {
     return this.Api.total()
@@ -107,8 +118,17 @@ export class HomeComponent implements OnInit {
 
   emitAddEvent(item: any) {
     this.Api.addItem(item)
+    
+    
 
   } 
+
+  emitAddObsEvent(event: any) {
+    this.Api.addAdicionais(this.observationForm.value.adicional)
+    console.log(event);
+    
+    
+  }
 
   decreaseQty(item: any) {
     this.Api.decreaseQty(item)

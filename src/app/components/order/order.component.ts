@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaApiService } from '../../services/api.service';
-import {CartItem} from '../../home/home.model';
+import {CartItem, MenuItem} from '../../home/home.model';
 import {Order, OrderItem} from "./order.model"
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -44,6 +44,7 @@ export class OrderComponent implements OnInit {
       optionalAddress: this.formBuilder.control(''),
       paymentOption: this.formBuilder.control('', [Validators.required])
     },)
+
   }
 
 
@@ -53,6 +54,7 @@ export class OrderComponent implements OnInit {
 
   cartItems(): CartItem[] {
     return this.Api.cartItems()
+    
   }
   
 
@@ -71,6 +73,18 @@ export class OrderComponent implements OnInit {
   increaseQty(item: CartItem){
     this.Api.increaseQty(item)
   }
+  
+  observacao(item: CartItem){
+    this.Api.addObservacao(item)
+  }
+
+  adicionais(item: CartItem){
+    this.Api.addAdicionais(item)
+    console.log(item);
+    
+  }
+  
+  
 
   decreaseQty(item: CartItem){
     this.Api.decreaseQty(item)
@@ -81,7 +95,7 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order){
-    order.orderItems = this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
+    order.orderItems = this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.name, item.observacao, item.adicionais))
     this.Api.checkOrder(order).subscribe((): void => {
       this.route.navigate(['/order-sumary'])
       this.Api.clear()

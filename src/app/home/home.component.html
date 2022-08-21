@@ -18,7 +18,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-sm-2 offset-md-1">
-                        <img src="../../assets/images/logo2.png" data-bs-toggle="dropdown" height="150">
+                        <img src="../../assets/images/logo2.png" data-bs-toggle="dropdown" width="100%">
                     </div>
                     <div class="col-md-7 offset-md-1">
                         <span class="tipografia  text-white"><i class="fas fa-circle"></i>
@@ -62,8 +62,10 @@
                 </button>
                 <div class="collapse navbar-collapse " id="navbarNav">
                     <ul class="navbar-nav">
-                        <button class="btn btn-outline-warning me-2 button-menu" type="button" (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
-                        <button class="btn btn-outline-warning me-2 button-menu" type="button" (click)="filtrarCategoria('Lanches')">Lanches</button>
+                        <button class="btn btn-outline-warning me-2 button-menu" type="button"
+                            (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
+                        <button class="btn btn-outline-warning me-2 button-menu" type="button"
+                            (click)="filtrarCategoria('Lanches')">Lances</button>
                     </ul>
                 </div>
             </div>
@@ -83,9 +85,10 @@
                 <div class="content-body">
                     <hr class="bg-black">
                     <div class="row shaodow" *ngFor="let menuItem of home | filter:searchText">
-                        <div class="col-md-4" [@menuItemAppeared]="menuItemState"><span>
-                                <img height="140px" [src]="menuItem.imagePath"></span></div>
-                        <div class="col">
+                        <div class="col-sm-8 col-md-4" [@menuItemAppeared]="menuItemState">
+                            <img width="90%" [src]="menuItem.imagePath">
+                        </div>
+                        <div class="col-sm-6 col-md-12 col-lg-6">
                             <h3 class="mt-2 tipografia ">{{menuItem.name}}</h3>
                             <span>{{menuItem.description}}</span>
                             <br>
@@ -104,7 +107,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-3" [@menuItemAppeared]="menuItemState" *ngIf="items().length">
+        <div class="col-sm-8 col-md-3" [@menuItemAppeared]="menuItemState" *ngIf="items().length">
             <div class="container-teste bg-white shadow border-top">
                 <div class="input-group rounded">
                     <h5 class="mt-3"><i class="fas fa-shopping-cart"></i> Carrinho</h5>
@@ -133,8 +136,54 @@
                                             <button class="btn btn-sm btn-color mt-2" data-bs-toggle="modal"
                                                 data-bs-target="#staticBackdrop"><i class="fas fa-plus"></i>
                                                 Adicionais</button>
-
-
+                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                                data-bs-keyboard="false" tabindex="-1"
+                                                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-obs">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="staticBackdropLabel">Adicionais
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="col-lg-12 offset-md-2 mt-3"
+                                                            *ngFor="let item of items()">
+                                                            <h5>{{ item.menuItem.name }}</h5>
+                                                            <div *ngFor="let adicional of adicionais">
+                                                                <div class="row">
+                                                                    <div class="col-sm-2">
+                                                                        <p  >{{ adicional.name }}</p>
+                                                                    </div>
+                                                                    <div class="col-sm-2">
+                                                                        <div class="form-check">
+                                                                            <input type="radio" class="btn btn-primary" name="{{ adicional.name }}" 
+                                                                            [(ngModel)]="item.adicionais"  value="{{ adicional.name }}">
+                                                                          </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button type="button" class="btn color-orange"><i
+                                                                    class="fas fa-comment-dots"></i> Alguma
+                                                                observação?</button>
+                                                            <div>
+                                                                <textarea class="text-area mt-3 mb-4 shadow"
+                                                                    id="exampleFormControlTextarea1"
+                                                                    placeholder="Ex: Tirar a cebola, maionese à parte, ponto da carne etc"
+                                                                    [(ngModel)]="item.observacao"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger"
+                                                                data-bs-dismiss="modal"
+                                                                (click)="item.observacao = ''">Cancelar</button>
+                                                            <button type="button" class="btn btn-success"
+                                                                data-bs-dismiss="modal"
+                                                                value="{{ item.observacao }}">Salvar</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </th>
                                         <td>{{item.value() | currency: 'BRL': true}}</td>
 
@@ -182,36 +231,5 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-obs" *ngFor="let item of items()">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Adicionais</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body" *ngFor="let adicional of adicionais">
-                    <strong>{{ adicional.name }}
-                        <a class="btn btn-sm quantity local"><i class="fa fa-minus"></i>
-                        </a>
-                        <a class="btn btn-sm quantity" value="0"></a>
-                        <a class="btn btn-sm quantity local"><i class="fa fa-plus"></i></a>
-                    </strong>
-                </div>
-                <div class="col-lg-12 offset-md-2 mt-3">
-                        <button type="button" class="btn color-orange"><i class="fas fa-comment-dots"></i> Alguma
-                            observação?</button>
-                        <div>
-                            <textarea class="text-area mt-3 mb-4 shadow" 
-                                id="exampleFormControlTextarea1"
-                                placeholder="Ex: Tirar a cebola, maionese à parte, ponto da carne etc"></textarea>
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Salvar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>

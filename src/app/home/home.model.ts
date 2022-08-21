@@ -14,12 +14,16 @@ export interface MenuItem {
 export class CartItem {
   constructor(public menuItem: MenuItem,
               public quantity: number = 1,
+              public observacao: string = '',
+              public adicionais: any = ''
       ){}
 
+  
   value(): number {
     return this.menuItem.price * this.quantity
   }
 
+  
 
 
 }

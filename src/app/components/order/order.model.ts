@@ -13,7 +13,7 @@ class Order {
 
   
   class OrderItem {
-    constructor(public quantity: number, public menuId: string){}
+    constructor(public quantity: number, public menuId: string, public observacao: string, public adicionais: any){}
   }
   
   export {Order, OrderItem}

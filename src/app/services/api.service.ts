@@ -94,14 +94,13 @@ export class ListaApiService {
       )
   }
 
-    // return this.httpClient.get<any>(`https://viacep.com.br/ws/${cep}/json/`)
-    // .toPromise().then(response => {
-    //   console.log(response)
-    // })
+
+
 
   clear(){
     this.items = []
   }
+  
 
   addItem(item:MenuItem){
     let foundItem = this.items.find((mItem)=> mItem.menuItem.id === item.id)
@@ -117,6 +116,23 @@ export class ListaApiService {
   increaseQty(item: CartItem){
     item.quantity = item.quantity + 1
   }
+
+
+  addObservacao(item: CartItem) {
+    item.observacao = item.observacao
+
+
+    console.log(item);
+    
+  }
+
+  addAdicionais(item: CartItem) {
+    item.adicionais = item.adicionais
+    this.increaseQty(item.adicionais)
+    console.log(item);
+    
+  }
+
 
   decreaseQty(item: CartItem){
     item.quantity = item.quantity - 1
