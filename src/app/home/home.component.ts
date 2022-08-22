@@ -73,10 +73,13 @@ export class HomeComponent implements OnInit {
 
 
   filtrarCategoria(event: any) {
-    this.home= this.home.filter(item => item.category === event ) 
-    // trazer todos os itens do menu sem filtrar por categoria
-    //quando clicar novamente ele limpar o array
-    
+  const teste = (item: { category: any; }) => item.category === event;
+  const categorias = this.home.filter(teste)
+  console.log(categorias);
+  
+  
+  
+
   }
 
   items(): any[] {

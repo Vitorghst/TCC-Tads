@@ -21,10 +21,9 @@
                         <img src="../../assets/images/logo2.png" data-bs-toggle="dropdown" width="100%">
                     </div>
                     <div class="col-md-7 offset-md-1">
-                        <span class="tipografia  text-white"><i class="fas fa-circle"></i>
-                            Fechado - Abre hoje as 18:00</span><span class="tipografia" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"></span>
-                        <!-- <i class="fas fa-clock"></i> Horarios</span> -->
+                        <span class="tipografia  text-white" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"><i class="fas fa-clock" ></i>
+                            Fechado - Abre hoje as 18:00</span>
                         <div class="mt-5 me-4">
                             <p class="text-white"><i class="fas fa-map-marker-alt local"></i> Avenida Romário Martins,
                                 101 Centro, Rolândia - PR, 86600-103</p>
@@ -60,12 +59,13 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse " id="navbarNav">
+                <div class="collapse navbar-collapse " id="navbarNav" >
                     <ul class="navbar-nav">
+                        <button class="btn btn-outline-warning me-2 button-menu" type="button">Todos</button>
                         <button class="btn btn-outline-warning me-2 button-menu" type="button"
-                            (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
+                         (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
                         <button class="btn btn-outline-warning me-2 button-menu" type="button"
-                            (click)="filtrarCategoria('Lanches')">Lances</button>
+                            (click)="filtrarCategoria('Lanches')">Lanches</button>
                     </ul>
                 </div>
             </div>
@@ -150,17 +150,16 @@
                                                         <div class="col-lg-12 offset-md-2 mt-3"
                                                             *ngFor="let item of items()">
                                                             <h5>{{ item.menuItem.name }}</h5>
-                                                            <div *ngFor="let adicional of adicionais">
-                                                                <div class="row">
-                                                                    <div class="col-sm-2">
-                                                                        <p  >{{ adicional.name }}</p>
-                                                                    </div>
-                                                                    <div class="col-sm-2">
-                                                                        <div class="form-check">
-                                                                            <input type="radio" class="btn btn-primary" name="{{ adicional.name }}" 
-                                                                            [(ngModel)]="item.adicionais"  value="{{ adicional.name }}">
-                                                                          </div>
-                                                                    </div>
+                                                            <div *ngFor="let cavalo of adicionais">
+                                                                <div class="form-check">
+                                                                    
+                                                                    <form >
+                                                                        <div>
+                                                                        <input class="form-check-input" [(ngModel)]="item.adicionais" 
+                                                                         type="radio" value="{{ cavalo.name }}" [ngModelOptions]="{standalone: true}"
+                                                                         > {{ cavalo.name }}
+                                                                        </div>
+                                                                    </form>
                                                                 </div>
                                                             </div>
                                                             <button type="button" class="btn color-orange"><i
@@ -231,5 +230,4 @@
             </div>
         </div>
     </div>
-
 </div>

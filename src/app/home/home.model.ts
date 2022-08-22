@@ -15,7 +15,7 @@ export class CartItem {
   constructor(public menuItem: MenuItem,
               public quantity: number = 1,
               public observacao: string = '',
-              public adicionais: any = ''
+              public adicionais: string = ''
       ){}
 
   

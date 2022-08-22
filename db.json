@@ -951,6 +951,27 @@
         }
       ],
       "id": 30
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": true
+        }
+      ],
+      "id": 31
     }
   ]
 }

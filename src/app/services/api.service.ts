@@ -128,7 +128,6 @@ export class ListaApiService {
 
   addAdicionais(item: CartItem) {
     item.adicionais = item.adicionais
-    this.increaseQty(item.adicionais)
     console.log(item);
     
   }
