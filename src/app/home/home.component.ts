@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
   now = new Date()
   adicionais: any;
   public showSearchBar: boolean = false;
+  categorias!: MenuItem[];
 
 
 
@@ -47,6 +48,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getTelas()
     this.getAdicionais()
+    this.getHorarios()
 
     this.observationForm = this.formBuilder.group({
       observacao: this.formBuilder.control(''),
@@ -57,11 +59,20 @@ export class HomeComponent implements OnInit {
   getTelas() {
     this.Api.getMenu().subscribe((home: MenuItem[]) => {
       this.home = home;
+      this.categorias = home
       console.log(this.home);
       
 
     });
   }
+
+  getHorarios() {
+    this.Api.getHorarios().subscribe((hours: any) => {
+      this.hours = hours;
+      console.log(this.hours);
+   
+  }
+  )}
 
   getAdicionais() {
     this.Api.getAdicionais().subscribe((adicional: any) => {
@@ -74,8 +85,8 @@ export class HomeComponent implements OnInit {
 
   filtrarCategoria(event: any) {
   const teste = (item: { category: any; }) => item.category === event;
-  const categorias = this.home.filter(teste)
-  console.log(categorias);
+  this.categorias = this.home.filter(teste)
+  console.log(this.categorias);
   
   
   

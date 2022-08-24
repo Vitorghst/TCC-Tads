@@ -26,26 +26,23 @@
                   </div>
 
                   <div class="d-grid mt-3 mb-2">
-                    <button type="button" class="btn btn-primary" (click)="login()"  [disabled]="form.invalid">
+                    <button type="button" class="btn local" (click)="login()"  [disabled]="form.invalid">
                         <i class="fas fa-sign-in-alt"></i> Entrar
                     </button>
                   
                 </div>
                   <div class="d-flex align-items-center justify-content-center pb-4">
                     <p class="mb-0 me-2">Você não possui uma conta?</p>
-                    <button type="button" class="btn btn-success">Cadastre-se</button>
+                    <button type="button" class="btn btn-success" [routerLink]="['/cadastro']" routerLinkActive="router-link-active" >Cadastre-se</button>
                   </div>
 
                 </form>
 
               </div>
             </div>
-            <div class="col-lg-6 d-flex background align-items-center ">
+            <div class="col-lg-6 d-flex  align-items-center img-size">
               <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4">Meat App</h4>
-                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            
               </div>
             </div>
           </div>

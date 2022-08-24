@@ -15,12 +15,14 @@ import { HomeComponent } from './home/home.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderSumaryComponent } from './components/order-sumary/order-sumary.component';
+import { CadastroComponent } from './components/login/cadastro/cadastro.component';
 
 
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'cadastro', component: CadastroComponent},
   {
     path: '', component: MainComponent, canActivate: [AuthGuard],
     children: [

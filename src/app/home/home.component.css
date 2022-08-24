@@ -190,6 +190,10 @@
   cursor: pointer;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 .fa-box-open:before {
   content: "\f49e";
   color: #f25c04;

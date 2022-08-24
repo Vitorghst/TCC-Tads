@@ -86,6 +86,14 @@ export class ListaApiService {
       )
   }
 
+  getHorarios(): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/horarios`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
   buscar(cep: string): Observable<any> {
     return this.httpClient.get<any>(`https://viacep.com.br/ws/${cep}/json/`)
       .pipe(
@@ -163,6 +171,14 @@ export class ListaApiService {
   public addApi(params: { id: number, codigo: number, nome: string, metodo: string }): Observable<Api> {
     return this.httpClient.post<Api>(`${this.url}/apis`, params, this.options)
 
+  }
+
+  getUser(user: { id: number, user: string, email: string, password: string }): Observable<any> {
+    return this.httpClient.post<any>(`${this.url}/users`, user, this.options)
+  }
+
+  addUser(user: { id: number, user: string, email: string, password: string }): Observable<any> {
+    return this.httpClient.post<any>(`${this.url}/users`, user, this.options)
   }
   // Adicionar uma TELA
   public addTela(telas: { id: number, JHashT: string, nome: string, permissao: string }): Observable<Tela> {

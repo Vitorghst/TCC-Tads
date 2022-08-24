@@ -17,6 +17,28 @@
     }
 }
 
+.local {
+    color: #ffffff;
+    background-color: #f25c04 ;
+}
+
 .background {
     background-color: #e69a3e
 }
+
+.background-img {
+    background-image: url(../../../assets/images/cadastro-img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+
+.img-size {
+    background-image: url(../../../assets/images/image-login.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 80%;
+    height: 80vh;
+}
+

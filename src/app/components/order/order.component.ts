@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ListaApiService } from '../../services/api.service';
 import {CartItem, MenuItem} from '../../home/home.model';
 import {Order, OrderItem} from "./order.model"
@@ -20,6 +20,7 @@ export class OrderComponent implements OnInit {
   orderForm!: FormGroup
 
   delivery: number = 8
+
   
 
 
@@ -42,8 +43,22 @@ export class OrderComponent implements OnInit {
       localidade: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(''),
+      total: this.formBuilder.control('R$' + this.total(), [Validators.required]),
       paymentOption: this.formBuilder.control('', [Validators.required])
-    },)
+    }, {validator: OrderComponent.equalsTo})
+
+  }
+
+  static equalsTo(group: AbstractControl): {[key:string]: boolean} {
+    const email = group.get('email')
+    const emailConfirmation = group.get('emailConfirmation')
+    if(!email || !emailConfirmation){ 
+      return undefined!
+    }
+    if(email.value !== emailConfirmation.value){
+      return {emailsNotMatch: true}
+    }
+    return undefined!
 
   }
 
@@ -52,11 +67,14 @@ export class OrderComponent implements OnInit {
     return this.Api.total()
   }
 
+  total(): number {
+    return this.Api.total() + this.delivery
+  }
+
   cartItems(): CartItem[] {
     return this.Api.cartItems()
     
   }
-  
 
   buscar(){ 
     this.Api.buscar(this.orderForm.get('cep')!.value).subscribe((response) => {
@@ -95,7 +113,7 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order){
-    order.orderItems = this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.name, item.observacao, item.adicionais))
+    order.orderItems = this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.name, item.observacao, item.adicionais, this.total))
     this.Api.checkOrder(order).subscribe((): void => {
       this.route.navigate(['/order-sumary'])
       this.Api.clear()
