@@ -27,20 +27,26 @@
 }
 
 
+
 .container-img {
   width: 100%;
   padding-top: 120px;
   padding-bottom: 70px;
-  background-image: url("https://img4.goodfon.com/wallpaper/nbig/0/32/meat-tomatoes-salat-fastfud-fast-food-sendvich-hamburger-pom.jpg");
+  background-image: url("../../assets/images/home-layout.png");
   background-size: cover;
   font-size: 17px;
   background-position: center;
 }
 
+.form-check-input:checked {
+  background-color: #f25c04;
+  border-color: #f25c04;
+}
+
 
 
 .border-bottom {
-  border-bottom: 4px solid #c08b18 !important;
+  border-bottom: 4px solid #f25c04 !important;
 }
 
 .espaço{
@@ -158,13 +164,19 @@
 
 .button-menu:hover {
   
-  background-color: #f25c04; /* Green */
-  color: white;
+  background-color: white; /* Green */
+  color: #f25c04;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #f25c04;
+  border-color: #f25c04;
 }
 
 .border-top {
   border-top: 5px solid !important;
-  border-color: #c08b18 !important;
+  border-color: #f25c04 !important;
 }
 
 

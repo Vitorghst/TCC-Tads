@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import {CommonModule} from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 import {FormsModule} from '@angular/forms'
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ListaApiService } from './services/api.service';
@@ -82,7 +82,7 @@ import { CadastroComponent } from './components/login/cadastro/cadastro.componen
     BrowserAnimationsModule
 
   ],
-  providers: [ListaApiService],
+  providers: [ListaApiService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

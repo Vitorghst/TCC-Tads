@@ -21,7 +21,7 @@ export class OrderComponent implements OnInit {
 
   delivery: number = 8
 
-  
+
 
 
   paymentOptions: RadioOption[] = [

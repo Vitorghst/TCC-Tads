@@ -102,12 +102,10 @@ export class ListaApiService {
       )
   }
 
-
-
-
   clear(){
     this.items = []
   }
+
   
 
   addItem(item:MenuItem){
@@ -125,11 +123,8 @@ export class ListaApiService {
     item.quantity = item.quantity + 1
   }
 
-
   addObservacao(item: CartItem) {
     item.observacao = item.observacao
-
-
     console.log(item);
     
   }

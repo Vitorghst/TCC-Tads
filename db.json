@@ -51,6 +51,20 @@
       "email": "ghostrzr@gmail.com",
       "password": "123",
       "confirmPassword": "123"
+    },
+    {
+      "id": 9,
+      "user": "cavalo",
+      "email": "ghostrzr@gmail.com",
+      "password": "123",
+      "confirmPassword": "123"
+    },
+    {
+      "id": 10,
+      "user": "lucas",
+      "email": "ghostrzr@gmail.com",
+      "password": "123",
+      "confirmPassword": "123"
     }
   ],
   "apis": [
@@ -114,39 +128,43 @@
     },
     {
       "id": 3,
-      "imagePath": "assets/images/foods/bread.png",
-      "name": "Pão Artesanal Italiano",
-      "description": "Pão artesanal com queijos italianos",
+      "imagePath": "assets/images/foods/hotdogfrango.png",
+      "name": "Hot Dog C/ Frango",
+      "description": "Pão de leite, salsicha, frango desfiado, tomate, maionese, catchup e mostarda",
+      "category": "Cachorro Quente",
       "price": 15.9
     },
     {
       "id": 4,
-      "imagePath": "assets/images/foods/burger.png",
-      "name": "Classic Burger",
-      "description": "O clássico. Não tem como errar.",
+      "imagePath": "assets/images/foods/x-salada.png",
+      "name": "X-Salada",
+      "description": "Pão de hambúrguer, hambúrguer Artesanal aprox. 90g, presunto, queijo, alface, tomate, milho batata palha, maionese catchup.",
       "price": 18.5,
       "category": "Lanches"
     },
     {
       "id": 5,
-      "imagePath": "assets/images/foods/cupcake.png",
-      "name": "Cup Cake",
-      "description": "Cup Cake recheado de Doce de Leite",
-      "price": 5.5
+      "imagePath": "assets/images/foods/xburguer.png",
+      "name": "X-Burguer",
+      "description": "Pão de hambúrguer, hambúrguer Artesanal aprox. 90g, presunto, queijo, alface americana e tomate.",
+      "price": 5.5,
+      "category": "Lanches"
     },
     {
       "id": 6,
-      "imagePath": "assets/images/foods/coke.png",
-      "name": "Refrigerante",
-      "description": "O refri mais gelado da cidade.",
-      "price": 4.5
+      "imagePath": "assets/images/foods/craftburguer.png",
+      "name": "Craft Burguer",
+      "description": "Pão brioche, hambúrguer artesanal de costela aprox. 200g, queijo prato, rúcula, cebola roxa e molho especial e porção de 150 g de batata rustica.",
+      "price": 4.5,
+      "category": "Hamburgers Artesanal"
     },
     {
       "id": 7,
-      "imagePath": "assets/images/foods/capp.png",
-      "name": "Cappuccino com Chantilly",
-      "description": "Tradicional cappuccino com chantilly",
-      "price": 9.9
+      "imagePath": "assets/images/foods/x-egg-salada.png",
+      "name": "X-Egg",
+      "description": "Pão de hambúrguer, hambúrguer Artesanal aprox. 90g, ovo, presunto, queijo, alface, tomate, milho, batata palha, maionese e catchup.",
+      "price": 9.9,
+      "category": "Lanches"
     },
     {
       "id": 8,
@@ -229,77 +247,74 @@
   "horarios": [
     {
       "id": 1,
-      "dia": "Segunda-Feira",
-      "startTime": "18:00",
-      "endTime": "22:00",
-      "status": "Aberto"
+      "dia": "segunda-feira",
+      "startTime": "",
+      "endTime": "",
+      "status": "Fechado"
     },
     {
       "id": 2,
-      "dia": "Terça-Feira",
+      "dia": "terça-feira",
       "startTime": "18:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 3,
-      "dia": "Quarta-Feira",
+      "dia": "quarta-feira",
       "startTime": "18:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 4,
-      "dia": "Quinta-Feira",
+      "dia": "quinta-feira",
       "startTime": "18:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 5,
-      "dia": "Sexta-Feira",
+      "dia": "sexta-feira",
       "startTime": "18:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 6,
-      "dia": "Sábado",
+      "dia": "sábado",
       "startTime": "18:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 7,
-      "dia": "Domingo",
-      "status": "Fechado"
+      "dia": "domingo",
+      "startTime": "18:00",
+      "endTime": "22:00",
+      "status": "Aberto"
     }
   ],
   "adicionais": [
     {
       "id": 1,
-      "name": "Salsicha",
-      "teste": "cavalo"
+      "name": "Salsicha"
     },
     {
       "id": 2,
-      "name": "Tomate",
-      "teste": "cavalo"
+      "name": "Tomate"
     },
     {
       "id": 3,
-      "name": "Maionese",
-      "teste": "cavalo"
+      "name": "Maionese"
     },
     {
       "id": 4,
-      "name": "Catchup",
-      "teste": "cavalo"
+      "name": "Catchup"
     },
     {
       "id": 5,
-      "name": "Mostarda",
-      "teste": "cavalo"
+      "name": "Mostarda"
     }
   ],
   "reviews": [
@@ -1510,6 +1525,168 @@
         }
       ],
       "id": 48
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "total": "R$16.7",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        }
+      ],
+      "id": 49
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "total": "R$16.7",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "teste",
+          "adicionais": ""
+        }
+      ],
+      "id": 50
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "total": "R$16.7",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "xalala",
+          "adicionais": "Tomate"
+        }
+      ],
+      "id": 51
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "total": "R$26.7",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "X-Burguer",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Craft Burguer",
+          "observacao": "",
+          "adicionais": ""
+        }
+      ],
+      "id": 52
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "casa da frente",
+      "total": "R$53",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 10,
+          "menuId": "Craft Burguer",
+          "observacao": "Tirar a cebola",
+          "adicionais": "Tomate"
+        }
+      ],
+      "id": 53
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "total": "R$69.1",
+      "paymentOption": "DEB",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 2,
+          "menuId": "X-Salada",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "X-Burguer",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "X-Egg",
+          "observacao": "",
+          "adicionais": ""
+        }
+      ],
+      "id": 54
     }
   ]
 }

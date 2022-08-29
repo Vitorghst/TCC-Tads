@@ -5,6 +5,9 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { NgBusinessHoursComponent } from 'ng-business-hours';
 import { timeout, timestamp } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import * as moment from 'moment';
+import 'moment/min/locales';
 
 @Component({
   selector: 'app-home',
@@ -23,12 +26,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class HomeComponent implements OnInit {
 
   @ViewChild('searchBar') searchBar?: { setFocus: () => void; };
-  
+
 
   menuItemState = 'ready';
   searchText = '';
   toastmsg: any;
-  observationForm!: FormGroup
   home!: MenuItem[];
   @Output() add = new EventEmitter()
   rowState = 'ready'
@@ -38,22 +40,26 @@ export class HomeComponent implements OnInit {
   adicionais: any;
   public showSearchBar: boolean = false;
   categorias!: MenuItem[];
+  dataAtual = new Date()
+  funcionamento: any;
+  status!: string;
+  horario: any;
+  
 
 
 
 
 
-  constructor(private Api: ListaApiService, private formBuilder: FormBuilder) { }
+
+
+  constructor(private Api: ListaApiService, private formBuilder: FormBuilder, private datepipe: DatePipe) { }
 
   ngOnInit(): void {
     this.getTelas()
     this.getAdicionais()
     this.getHorarios()
 
-    this.observationForm = this.formBuilder.group({
-      observacao: this.formBuilder.control(''),
 
-    })
   }
 
   getTelas() {
@@ -61,7 +67,7 @@ export class HomeComponent implements OnInit {
       this.home = home;
       this.categorias = home
       console.log(this.home);
-      
+
 
     });
   }
@@ -69,10 +75,26 @@ export class HomeComponent implements OnInit {
   getHorarios() {
     this.Api.getHorarios().subscribe((hours: any) => {
       this.hours = hours;
-      console.log(this.hours);
-   
+      this.hours.forEach((x: any) => {
+        if (x.dia == moment(this.dataAtual).locale('pt-br').format('dddd')) {
+          if(x.dia === 'segunda-feira') {
+            this.status = 'Fechado às Segundas-Feiras'     
+          } else {
+          this.funcionamento = x
+        }
+        }
+      })
+      if(moment(this.dataAtual).format('HH:mm') >= this.funcionamento.startTime && moment(this.dataAtual).format('HH:mm') <= this.funcionamento.endTime){
+        console.log('Aberto');
+        this.status = 'Aberto -'
+        this.horario = 'Fecha as ' + this.funcionamento.endTime
+      }else{
+        console.log('Fechado');
+        this.status = 'Fechado -'
+        this.horario = 'Abre as ' + this.funcionamento.startTime 
+      }
+    })
   }
-  )}
 
   getAdicionais() {
     this.Api.getAdicionais().subscribe((adicional: any) => {
@@ -84,43 +106,36 @@ export class HomeComponent implements OnInit {
 
 
   filtrarCategoria(event: any) {
-  const teste = (item: { category: any; }) => item.category === event;
-  this.categorias = this.home.filter(teste)
-  console.log(this.categorias);
-  
-  
-  
+
+    const menuCategory = (item: { category: any; }) => item.category === event;
+    this.categorias = this.home.filter(menuCategory)
 
   }
 
   items(): any[] {
-    return this.Api.items; 
-    
+    return this.Api.items;
 
   }
+
 
   clear() {
     this.Api.clear()
   }
 
-
-
-
   removeItem(item: any): void {
     this.Api.removeItem(item)
   }
 
+
   addItem(item: any) {
     this.Api.addItem(item)
-    
-  }
 
+  }
 
   salvarObs(item: CartItem) {
     this.Api.addObservacao(item);
-    
-  }
 
+  }
 
   total(): number {
     return this.Api.total()
@@ -132,16 +147,12 @@ export class HomeComponent implements OnInit {
 
   emitAddEvent(item: any) {
     this.Api.addItem(item)
-    
-    
 
-  } 
+  }
 
-  emitAddObsEvent(event: any) {
-    this.Api.addAdicionais(this.observationForm.value.adicional)
-    console.log(event);
-    
-    
+  adicionaisChecked(event: any) {
+    this.Api.addAdicionais(event)
+    console.log(event)
   }
 
   decreaseQty(item: any) {

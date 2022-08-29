@@ -1,6 +1,6 @@
 <div class="main">
     <div class="shadow">
-        <div class="container-img">
+        <div class="container-img border-bottom">
             <div class="col-md-6 ms-5 mb-5 opacity shadow border-bottom">
                 <div class="row">
                     <div class="col-md-4 offset-md-4 text-white">
@@ -22,8 +22,8 @@
                     </div>
                     <div class="col-md-7 offset-md-1">
                         <span class="tipografia  text-white pointer" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"><i class="fas fa-clock" ></i>
-                            Fechado - Abre hoje as 18:00</span>
+                            data-bs-target="#exampleModal" ><i class="fas fa-clock" [ngStyle]="{'color': this.status === 'Aberto -' ? 'green' : 'red'}" ></i>
+                           {{ this.status }} {{ this.horario }}</span>
                         <div class="mt-5 me-4">
                             <p class="text-white"><i class="fas fa-map-marker-alt local"></i> Avenida Romário Martins,
                                 101 Centro, Rolândia - PR, 86600-103</p>
@@ -52,28 +52,20 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12 bg-white shadow bg-white mb-4">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid col-md-5 offset-md-1">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarNav" >
-                    <ul class="navbar-nav">
-                        <button class="btn btn-outline-warning me-2 button-menu" type="button">Todos</button>
-                        <button class="btn btn-outline-warning me-2 button-menu" type="button"
-                         (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
-                        <button class="btn btn-outline-warning me-2 button-menu" type="button"
-                            (click)="filtrarCategoria('Lanches')">Lanches</button>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
     <div class="row espaço">
-        <div class="col-md-6 offset-md-1 border-top">
+        <div class="col-md-6 offset-md-1 mt-3 border-top">
             <div class="content p-4 shadow bg-white">
+                <div class="col-md-8 mt-1 mb-2">
+                    <button class="btn btn-danger me-2 button-menu" type="button"
+                    (click)="getTelas()">Todos</button>
+                <button class="btn btn-danger me-2 button-menu" type="button"
+                    (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
+                <button class="btn btn-danger me-2 button-menu" type="button"
+                    (click)="filtrarCategoria('Lanches')">Lanches</button>
+                <button class="btn btn-danger me-2 button-menu" type="button"
+                    (click)="filtrarCategoria('Hamburgers Artesanal')">Hamburguer Artesanal </button>
+                </div>
+                <hr>
                 <h5 class="tipografia"><i class="fas fa-list"></i> Menu</h5>
                 <div class="col-md-2 input-group rounded">
                     <input type="search" class="form-control mt-3 rounded " [(ngModel)]="searchText"
@@ -84,7 +76,7 @@
                 </div>
                 <div class="content-body">
                     <hr class="bg-black">
-                    <div class="row shaodow"  *ngFor="let menuItem of home | filter:searchText">
+                    <div class="row shaodow" *ngFor="let menuItem of categorias | filter:searchText">
                         <div class="col-sm-8 col-md-4" [@menuItemAppeared]="menuItemState">
                             <img width="90%" [src]="menuItem.imagePath">
                         </div>
@@ -107,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-8 col-md-3" [@menuItemAppeared]="menuItemState" *ngIf="items().length">
+        <div class="col-sm-8 col-md-3 mt-3" [@menuItemAppeared]="menuItemState" *ngIf="items().length">
             <div class="container-teste bg-white shadow border-top">
                 <div class="input-group rounded">
                     <h5 class="mt-3"><i class="fas fa-shopping-cart"></i> Carrinho</h5>
@@ -147,19 +139,20 @@
                                                         <div class="col-lg-12 offset-md-2 mt-3"
                                                             *ngFor="let item of items()">
                                                             <h5>({{ item.quantity}}x) {{ item.menuItem.name }}</h5>
-                                                            <div *ngFor="let cavalo of adicionais">
+                                                            <div *ngFor="let checkbox of adicionais">
                                                                 <div class="form-check">
-                                                                    
-                                                                    <form >
+                                                                    <form>
                                                                         <div>
-                                                                        <input class="form-check-input" [(ngModel)]="item.adicionais" 
-                                                                         type="radio" value="{{ cavalo.name }}" [ngModelOptions]="{standalone: true}"
-                                                                         > {{ cavalo.name }}
+                                                                            <input class="form-check-input"
+                                                                                [(ngModel)]="item.adicionais"
+                                                                                type="radio" value="{{ checkbox.name }}"
+                                                                                [ngModelOptions]="{standalone: true}">
+                                                                            {{ checkbox.name }}
                                                                         </div>
                                                                     </form>
                                                                 </div>
                                                             </div>
-                                                            <button type="button" class="btn color-orange"><i
+                                                            <button type="button" class="btn color-orange mt-2"><i
                                                                     class="fas fa-comment-dots"></i> Alguma
                                                                 observação?</button>
                                                             <div>
@@ -191,8 +184,9 @@
                                 </tbody>
                             </table>
                             <p class="right"><button class="btn btn-sm btn-color mt-1" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop" ><i class="fas fa-plus"></i>
-                                Adicionais</button><strong class="ms-3">Total:</strong> {{total() | currency: 'BRL': true}}</p>
+                                    data-bs-target="#staticBackdrop"><i class="fas fa-plus"></i>
+                                    Adicionais</button><strong class="ms-3">Total:</strong> {{total() | currency: 'BRL':
+                                true}}</p>
                         </div>
                     </div>
                     <div *ngIf="items().length">
@@ -222,12 +216,14 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row">
-                          <div class="col-md-6"  *ngFor="let horario of hours">
-                             <h5>{{horario.dia}}</h5>
-                            <p>{{ horario.startTime }} - {{ horario.endTime }} <strong>{{horario.status}}</strong> </p>
-                          </div>
+                            <div class="col-md-6" *ngFor="let horario of hours">
+                                <h5><i class="fas fa-clock" [ngStyle]="{'color': horario.dia !== 'segunda-feira' ? 'green' : 'red'}"></i> {{horario.dia | uppercase}}</h5>
+                                <p *ngIf="horario.dia === 'segunda-feira'">{{ horario.status }}</p>
+                                <p *ngIf="horario.dia != 'segunda-feira'" >{{ horario.startTime }} às {{ horario.endTime }}
+                                </p>
+                            </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
