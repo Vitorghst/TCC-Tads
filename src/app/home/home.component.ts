@@ -46,13 +46,7 @@ export class HomeComponent implements OnInit {
   horario: any;
   
 
-
-
-
-
-
-
-  constructor(private Api: ListaApiService, private formBuilder: FormBuilder, private datepipe: DatePipe) { }
+  constructor(private Api: ListaApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.getTelas()
@@ -104,6 +98,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  
+
 
   filtrarCategoria(event: any) {
 
@@ -117,6 +113,15 @@ export class HomeComponent implements OnInit {
 
   }
 
+  teste(): any[] {
+    return this.Api.itemAdicionais
+  }
+
+  openModal(event: any){
+    console.log(event);
+    
+  }
+
 
   clear() {
     this.Api.clear()
@@ -124,6 +129,7 @@ export class HomeComponent implements OnInit {
 
   removeItem(item: any): void {
     this.Api.removeItem(item)
+    this.Api.itemAdicionais = []
   }
 
 

@@ -12,6 +12,7 @@ export class OrderItemsComponent implements OnInit {
   @Input()
   items!: CartItem[];
   
+  @Input() itemAdicionais!: CartItem[];
 
   @Output() increaseQty = new EventEmitter<CartItem>()
   @Output() observacao = new EventEmitter<CartItem>()

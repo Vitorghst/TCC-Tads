@@ -7,6 +7,10 @@ import { Tela } from '../components/listar-tela/listar-tela.model';
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
 import { CartItem, MenuItem } from '../home/home.model';
 import { Order } from '../components/order/order.model';
+import { NgToastService } from 'ng-angular-popup';
+import { ThrowStmt } from '@angular/compiler';
+
+
 
 
 
@@ -32,7 +36,9 @@ export class ListaApiService {
     })
   }
 
-  constructor(private httpClient: HttpClient) { }
+  itemAdicionais: CartItem[] = []
+
+  constructor(private httpClient: HttpClient, private toast: NgToastService ) { }
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -48,7 +54,7 @@ export class ListaApiService {
 
   }
 
-  notify(message: string){
+  notify( message: string): void{
     this.notifier.emit(message)
   }
 
@@ -67,6 +73,10 @@ export class ListaApiService {
         retry(2),
         catchError(this.handleError)
       )
+  }
+
+  getUser(): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/users`)
   }
 
 
@@ -104,23 +114,25 @@ export class ListaApiService {
 
   clear(){
     this.items = []
+    this.itemAdicionais = []
   }
 
-  
 
   addItem(item:MenuItem){
     let foundItem = this.items.find((mItem)=> mItem.menuItem.id === item.id)
     if(foundItem){
       this.increaseQty(foundItem)
+      this.itemAdicionais.push(new CartItem(item))
     }else{
       this.items.push(new CartItem(item))
+      this.itemAdicionais.push(new CartItem(item))
     }
-    this.notify(`Você adicionou o item ${item.name}`)
-    
+    this.toast.success({summary:`Você adicionou o item ${item.name}`, position: 'br', duration: 3000});
   }
 
   increaseQty(item: CartItem){
     item.quantity = item.quantity + 1
+    
   }
 
   addObservacao(item: CartItem) {
@@ -147,9 +159,15 @@ export class ListaApiService {
     return this.items
   }
 
+  cartAdicionais(): CartItem[]{
+    return this.itemAdicionais
+  }
+
+
   removeItem(item:CartItem){
+    this.itemAdicionais.splice(this.itemAdicionais.indexOf(item), 1)
     this.items.splice(this.items.indexOf(item), 1)
-    this.notify(`Você removeu o item ${item.menuItem.name}`)
+    this.toast.error({summary:`Você removeu o item ${item.menuItem.name}`, position: 'br', duration: 3000});
   }
 
   total(): number{
@@ -168,9 +186,7 @@ export class ListaApiService {
 
   }
 
-  getUser(user: { id: number, user: string, email: string, password: string }): Observable<any> {
-    return this.httpClient.post<any>(`${this.url}/users`, user, this.options)
-  }
+
 
   addUser(user: { id: number, user: string, email: string, password: string }): Observable<any> {
     return this.httpClient.post<any>(`${this.url}/users`, user, this.options)

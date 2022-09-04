@@ -106,15 +106,21 @@
                         </div>
                         <div class="teste mt-1">
                             <div class=" teste mt-3">
-                                <app-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)" (observacao)="observacao($event)" 
+                                <app-order-items [items]="cartItems()" [itemAdicionais]="itemAdicionais()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)" (observacao)="observacao($event)" 
                                 (remove)="remove($event)" (adicionais)="adicionais($event)"></app-order-items>
                             </div>
                             <hr>
                         </div>
                         <div class="col-sm-6 col-xs-12">
                             <p class="lead">Formas de Pagamento:</p>
+
+                            <strong>Pagar na Entrega:</strong>
                             <div class="form-group">
                                 <app-radio [options]="paymentOptions" formControlName="paymentOption"></app-radio>
+                            </div>
+                            <hr>
+                            <div id="myPaypalButtons">
+
                             </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
@@ -125,10 +131,16 @@
                 </form>
                 <div class="row">
                     <div class="p-2">
+
                         <button (click)="checkOrder(orderForm.value)" class="btn btn-success pull-right float-button"
-                            [disabled]="!orderForm.valid || cartItems().length === 0">
-                            <i class="fa fa-credit-card"></i> Concluir Pedido
+                            [disabled]="!orderForm.valid || cartItems().length === 0" *ngIf="details === 'COMPLETED' || paymentOptions" >
+                            <i class="fa fa-credit-card" ></i> Concluir Pedido
+                            
                         </button>
+                        <div *ngIf="itemsValue() < 8.50" class="alert alert-danger col-md-6 offset-md-6" role="alert">
+                            <span >Valor mínimo de pedido é de R$ 8,50.</span>
+                          </div>
+                        
                     </div>
                 </div>
             </div>

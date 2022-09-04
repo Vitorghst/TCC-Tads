@@ -4,7 +4,9 @@ import {CartItem, MenuItem} from '../../home/home.model';
 import {Order, OrderItem} from "./order.model"
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { render } from 'creditcardpayments/creditCardPayments';
 import { RadioOption } from '../radio/radio.model';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-order',
@@ -21,7 +23,7 @@ export class OrderComponent implements OnInit {
 
   delivery: number = 8
 
-
+  details: any 
 
 
   paymentOptions: RadioOption[] = [
@@ -29,8 +31,12 @@ export class OrderComponent implements OnInit {
     {label: 'Cartão de Débito', value: 'DEB'},
     {label: 'Cartão Refeição', value: 'REF'}
   ]
+  paypal: any
+  pagamentoAplicativo!: string;
 
-  constructor(private Api: ListaApiService, private route: Router, private formBuilder: FormBuilder) { }
+  constructor(private Api: ListaApiService, private route: Router, private formBuilder: FormBuilder, private toast: NgToastService ) {
+   
+   }
 
   ngOnInit(): void {
     this.orderForm = this.formBuilder.group({
@@ -44,8 +50,28 @@ export class OrderComponent implements OnInit {
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(''),
       total: this.formBuilder.control('R$' + this.total(), [Validators.required]),
-      paymentOption: this.formBuilder.control('', [Validators.required])
+      paymentOption: this.formBuilder.control(''),
+      paypal: this.formBuilder.control(''),
     }, {validator: OrderComponent.equalsTo})
+    
+
+    render ({
+      id: '#myPaypalButtons',
+      currency: 'USD',
+      value:  this.total().toString(),
+      onApprove: (details: any) => {
+        if(details.status === 'COMPLETED'){
+          this.details = details.status
+          this.paypal = this.toast.success({summary:`Transação Aprovada pelo Paypal`, position: 'br', duration: 3000})
+          this.pagamentoAplicativo = 'Pagamento realizado pelo Paypal'
+          
+        } else {
+          this.toast.error({summary:`Transação Recusada`, position: 'br', duration: 3000});
+        }
+        
+      }
+    })
+      
 
   }
 
@@ -72,9 +98,15 @@ export class OrderComponent implements OnInit {
   }
 
   cartItems(): CartItem[] {
-    return this.Api.cartItems()
+    return this.Api.cartItems() 
     
   }
+
+  itemAdicionais(): CartItem[] {
+    return this.Api.cartAdicionais()
+  }	
+
+
 
   buscar(){ 
     this.Api.buscar(this.orderForm.get('cep')!.value).subscribe((response) => {
@@ -113,7 +145,7 @@ export class OrderComponent implements OnInit {
   }
 
   checkOrder(order: Order){
-    order.orderItems = this.cartItems().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.name, item.observacao, item.adicionais, this.total))
+    order.orderItems = this.itemAdicionais().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.name, item.observacao, item.adicionais, this.total))
     this.Api.checkOrder(order).subscribe((): void => {
       this.route.navigate(['/order-sumary'])
       this.Api.clear()

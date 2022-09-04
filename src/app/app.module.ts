@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgToastModule } from 'ng-angular-popup'
 import { HttpClientModule } from '@angular/common/http';
 import {CommonModule, DatePipe} from '@angular/common';
 import {FormsModule} from '@angular/forms'
@@ -44,6 +45,7 @@ import { CadastroComponent } from './components/login/cadastro/cadastro.componen
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,6 +80,7 @@ import { CadastroComponent } from './components/login/cadastro/cadastro.componen
     ReactiveFormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
+    NgToastModule,
     CommonModule,
     BrowserAnimationsModule
 
