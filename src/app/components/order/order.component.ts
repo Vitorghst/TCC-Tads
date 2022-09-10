@@ -27,12 +27,12 @@ export class OrderComponent implements OnInit {
 
 
   paymentOptions: RadioOption[] = [
-    {label: 'Dinheiro', value: 'MON'},
-    {label: 'Cartão de Débito', value: 'DEB'},
-    {label: 'Cartão Refeição', value: 'REF'}
+    {label: 'Dinheiro', value: 'Dinheiro'},
+    {label: 'Cartão de Débito', value: 'Cartão de Débito'},
+    {label: 'Cartão Refeição', value: 'Cartão Refeição'},
   ]
   paypal: any
-  pagamentoAplicativo!: string;
+  pagamentoAplicativo!: any;
 
   constructor(private Api: ListaApiService, private route: Router, private formBuilder: FormBuilder, private toast: NgToastService ) {
    
@@ -50,11 +50,12 @@ export class OrderComponent implements OnInit {
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(''),
       total: this.formBuilder.control('R$' + this.total(), [Validators.required]),
-      paymentOption: this.formBuilder.control(''),
-      paypal: this.formBuilder.control(''),
+      pagamentoEntrega: this.formBuilder.control(''),
+      pagamentoAplicativo: this.formBuilder.control('')
     }, {validator: OrderComponent.equalsTo})
     
-
+    console.log(this.paymentOptions);
+    
     render ({
       id: '#myPaypalButtons',
       currency: 'USD',
@@ -62,18 +63,40 @@ export class OrderComponent implements OnInit {
       onApprove: (details: any) => {
         if(details.status === 'COMPLETED'){
           this.details = details.status
-          this.paypal = this.toast.success({summary:`Transação Aprovada pelo Paypal`, position: 'br', duration: 3000})
           this.pagamentoAplicativo = 'Pagamento realizado pelo Paypal'
-          
+          this.orderForm.value.pagamentoAplicativo = this.pagamentoAplicativo	
+          this.paypal = this.toast.success({summary:`Transação Aprovada pelo Paypal`, position: 'br', duration: 2000})
+         
+          return this.pagamentoApp()
         } else {
           this.toast.error({summary:`Transação Recusada`, position: 'br', duration: 3000});
         }
         
-      }
+    
+
+    },
     })
       
 
   }
+  
+  pagamentoApp(){
+    this.pagamentoAplicativo = 'Pagamento realizado pelo aplicativo'
+  }
+  
+
+  // libear o botao de finalizar caso for paymeetOptions ou paypal
+  isOrderCompleted(): boolean {
+    if(this.orderForm.get('pagamentoEntrega')!.value === 'Dinheiro' || this.orderForm.get('pagamentoEntrega')!.value === 'Cartão Refeição' || this.orderForm.get('pagamentoEntrega')!.value === 'Cartão de Débito'){
+      return true
+    } else if(this.details === 'COMPLETED'){
+      return true
+    } else {
+      return false
+    }
+  }
+
+
 
   static equalsTo(group: AbstractControl): {[key:string]: boolean} {
     const email = group.get('email')
@@ -140,9 +163,11 @@ export class OrderComponent implements OnInit {
     this.Api.decreaseQty(item)
   }
 
-  remove(item: CartItem){
+  removeItem(item: any): void {
     this.Api.removeItem(item)
+    
   }
+
 
   checkOrder(order: Order){
     order.orderItems = this.itemAdicionais().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.name, item.observacao, item.adicionais, this.total))

@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
 import 'moment/min/locales';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-home',
@@ -113,7 +114,7 @@ export class HomeComponent implements OnInit {
 
   }
 
-  teste(): any[] {
+  itemAdicionais(): any[] {
     return this.Api.itemAdicionais
   }
 
@@ -127,9 +128,10 @@ export class HomeComponent implements OnInit {
     this.Api.clear()
   }
 
-  removeItem(item: any): void {
+  removeItem(item: CartItem): void {
     this.Api.removeItem(item)
-    this.Api.itemAdicionais = []
+
+    
   }
 
 
@@ -163,10 +165,12 @@ export class HomeComponent implements OnInit {
 
   decreaseQty(item: any) {
     this.Api.decreaseQty(item)
+   
   }
 
   emitRemoveEvent(item: any) {
     this.Api.decreaseQty(item)
+    
   }
 
 

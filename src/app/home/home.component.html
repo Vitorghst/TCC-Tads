@@ -137,7 +137,7 @@
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="col-lg-12 offset-md-2 mt-3"
-                                                            *ngFor="let item of teste()">
+                                                            *ngFor="let item of itemAdicionais(); let myIndex=index;">
                                                             <h5>({{ item.quantity }}x) {{ item.menuItem.name }}</h5>
                                                             <div *ngFor="let checkbox of adicionais">
                                                                 <div class="form-check">

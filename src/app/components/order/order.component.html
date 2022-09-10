@@ -107,7 +107,7 @@
                         <div class="teste mt-1">
                             <div class=" teste mt-3">
                                 <app-order-items [items]="cartItems()" [itemAdicionais]="itemAdicionais()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)" (observacao)="observacao($event)" 
-                                (remove)="remove($event)" (adicionais)="adicionais($event)"></app-order-items>
+                                (remove)="removeItem($event)"  (adicionais)="adicionais($event)"></app-order-items>
                             </div>
                             <hr>
                         </div>
@@ -116,7 +116,7 @@
 
                             <strong>Pagar na Entrega:</strong>
                             <div class="form-group">
-                                <app-radio [options]="paymentOptions" formControlName="paymentOption"></app-radio>
+                                <app-radio [options]="paymentOptions" formControlName="pagamentoEntrega"></app-radio>
                             </div>
                             <hr>
                             <div id="myPaypalButtons">
@@ -133,7 +133,7 @@
                     <div class="p-2">
 
                         <button (click)="checkOrder(orderForm.value)" class="btn btn-success pull-right float-button"
-                            [disabled]="!orderForm.valid || cartItems().length === 0" *ngIf="details === 'COMPLETED' || paymentOptions" >
+                            [disabled]="!orderForm.valid || cartItems().length === 0 " *ngIf="isOrderCompleted()"> 
                             <i class="fa fa-credit-card" ></i> Concluir Pedido
                             
                         </button>

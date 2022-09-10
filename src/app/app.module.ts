@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {CommonModule, DatePipe} from '@angular/common';
 import {FormsModule} from '@angular/forms'
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ListaApiService } from './services/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -77,6 +78,7 @@ import { CadastroComponent } from './components/login/cadastro/cadastro.componen
     RouterModule,
     DragDropModule,
     FormsModule,
+    NgxStarRatingModule,
     ReactiveFormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,

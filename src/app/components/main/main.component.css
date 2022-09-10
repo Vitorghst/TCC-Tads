@@ -110,6 +110,11 @@ a:focus {
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
+.fa-phone-alt:before {
+    content: "\f879";
+    font-size: 20px;
+}
+
 .border-bottom {
     border-bottom: 4px solid #f25c04 !important;
 }
@@ -118,6 +123,10 @@ a:focus {
     color: #f25c04 ;
     box-shadow: inset 500px 0 0 0 #ffffff;
     ;
+}
+
+.local {
+    color: #f25c04;
 }
 
 /* Presentational styles */

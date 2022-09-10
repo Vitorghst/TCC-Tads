@@ -24,7 +24,7 @@
         <td class="text-center">
           <a (click)="emitDecreaseQty(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a>
           {{item.quantity}}
-          <a (click)="emitIncreaseQty(item)" class="btn btn-sm"><i class="fa fa-plus"></i></a>
+          <a (click)="emitAddEvent(item.menuItem)" class="btn btn-sm"><i class="fa fa-plus"></i></a>
         </td>
         <td>{{item.menuItem.name}}</td>
   
@@ -33,7 +33,7 @@
         <td>{{ item.observacao}}</td>
         <td class="text-right">{{item.value() | currency: 'BRL': true}}</td>
         <td class="text-center">
-          <a (click)="emitRemove(item)" class="btn btn-sm danger"><i
+          <a (click)="removeItem(item)" class="btn btn-sm danger"><i
             class="fas fa-times-circle"></i></a>
         </td>
       </tr>

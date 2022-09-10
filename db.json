@@ -227,21 +227,21 @@
     {
       "id": 3,
       "dia": "quarta-feira",
-      "startTime": "18:00",
-      "endTime": "22:00",
+      "startTime": "13:00",
+      "endTime": "23:58",
       "status": "Aberto"
     },
     {
       "id": 4,
       "dia": "quinta-feira",
-      "startTime": "18:00",
-      "endTime": "23:00",
+      "startTime": "20:00",
+      "endTime": "23:50",
       "status": "Aberto"
     },
     {
       "id": 5,
       "dia": "sexta-feira",
-      "startTime": "18:00",
+      "startTime": "09:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
@@ -922,12 +922,30 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$34.099999999999994",
+      "paymentOption": "MON",
+      "paypal": "Pagamento na entrega",
       "orderItems": [
         {
           "quantity": 1,
-          "menuId": 1,
-          "observacao": "MAIKAO CORNO"
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 26
@@ -940,24 +958,39 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "69",
+      "number": "68",
       "optionalAddress": "",
+      "total": "R$42.8",
       "paymentOption": "DEB",
+      "paypal": false,
       "orderItems": [
         {
           "quantity": 1,
-          "menuId": 3,
-          "observacao": "tirar cebola"
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         },
         {
           "quantity": 1,
-          "menuId": 2,
-          "observacao": ""
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         },
         {
           "quantity": 1,
-          "menuId": 1,
-          "observacao": ""
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 27
@@ -972,12 +1005,23 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$16.7",
+      "paymentOption": "",
+      "paypal": false,
       "orderItems": [
         {
-          "quantity": 3,
+          "quantity": 1,
           "menuId": "Cachorro Quente Simples",
-          "observacao": "tirar cebola"
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
         }
       ],
       "id": 28
@@ -990,19 +1034,24 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "67",
+      "number": "69",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$25.4",
+      "paymentOption": "MON",
       "orderItems": [
         {
-          "quantity": 2,
+          "quantity": 1,
           "menuId": "Cachorro Quente Simples",
-          "observacao": ""
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
-          "observacao": "tirar cebola"
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 29
@@ -1017,13 +1066,30 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
+      "total": "R$34.099999999999994",
       "paymentOption": "MON",
+      "paypal": "",
       "orderItems": [
         {
-          "quantity": 8,
+          "quantity": 1,
           "menuId": "Cachorro Quente Simples",
-          "observacao": "33333",
-          "adicionais": "Salsicha"
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 30
@@ -1038,13 +1104,23 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "paymentOption": "MON",
+      "total": "R$25.4",
+      "paymentOption": "DEB",
+      "paypal": "",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
-          "adicionais": true
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 31
@@ -1058,20 +1134,24 @@
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
       "number": "69",
-      "optionalAddress": "Casa da frente",
+      "optionalAddress": "",
+      "total": "R$25.4",
       "paymentOption": "MON",
+      "paypal": "",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
-          "observacao": "tirar o bacon",
-          "adicionais": "Tomate"
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
-          "observacao": "ao ponto ",
-          "adicionais": "Mostarda"
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 32
@@ -1084,21 +1164,32 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "67",
+      "number": "69",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$34.099999999999994",
+      "paymentOption": "MON",
+      "paypal": "",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
-          "adicionais": ""
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "menuId": "Cachorro Quente Simples",
           "observacao": "",
-          "adicionais": ""
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 33
@@ -1111,16 +1202,32 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "68",
+      "number": "69",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$37.7",
+      "paymentOption": "",
+      "paypal": "",
       "orderItems": [
         {
-          "quantity": 2,
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
+        },
+        {
+          "quantity": 1,
           "menuId": "HOT DOG TRADICIONAL DUPLO",
           "observacao": "",
           "adicionais": "",
-          "total": 5
+          "paypal": "Pagamento realizado pelo Paypal"
+        },
+        {
+          "quantity": 1,
+          "menuId": "X-Salada",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
         }
       ],
       "id": 34
@@ -1133,16 +1240,31 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "57",
+      "number": "69",
       "optionalAddress": "",
-      "paymentOption": "REF",
+      "total": "R$undefined",
+      "paymentOption": "MON",
       "orderItems": [
         {
-          "quantity": 2,
+          "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "adicionais": "",
-          "total": 17.4
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 35
@@ -1157,14 +1279,36 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$undefined",
+      "paymentOption": "",
       "orderItems": [
         {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
           "observacao": "",
           "adicionais": "",
-          "total": 17.4
+          "paypal": "Pagamento realizado pelo Paypal"
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Hot Dog C/ Frango",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
         }
       ],
       "id": 36
@@ -1177,23 +1321,25 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "77",
+      "number": "68",
       "optionalAddress": "",
+      "total": "R$25.4",
       "paymentOption": "MON",
+      "pagamentoAplicativo": null,
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "adicionais": "",
-          "total": 19.2
+          "paypal": "Pagamento na entrega"
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "adicionais": "",
-          "total": 19.2
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 37
@@ -1208,21 +1354,30 @@
       "localidade": "Rolândia",
       "number": "78",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$34.099999999999994",
+      "paymentOption": "MON",
+      "pagamentoAplicativo": null,
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
-          "adicionais": "Mostarda",
-          "total": 19.2
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "adicionais": "",
-          "total": 19.2
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 38
@@ -1237,14 +1392,23 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$32",
+      "paymentOption": "",
+      "pagamentoAplicativo": null,
       "orderItems": [
         {
           "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "teste",
-          "adicionais": "Catchup",
-          "total": 16.7
+          "menuId": "X-Salada",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
+        },
+        {
+          "quantity": 1,
+          "menuId": "X-Burguer",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
         }
       ],
       "id": 39
@@ -1259,14 +1423,23 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "paymentOption": "DEB",
+      "total": "R$25.4",
+      "paymentOption": "MON",
+      "pagamentoAplicativo": "",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
-          "adicionais": "Tomate",
-          "total": 16.7
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": "",
+          "paypal": "Pagamento na entrega"
         }
       ],
       "id": 40
@@ -1281,21 +1454,23 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "paymentOption": "MON",
+      "total": "R$32",
+      "paymentOption": "",
+      "pagamentoAplicativo": "COMPLETED",
       "orderItems": [
         {
           "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
+          "menuId": "X-Burguer",
           "observacao": "",
           "adicionais": "",
-          "total": 21.7
+          "paypal": "Pagamento realizado pelo Paypal"
         },
         {
-          "quantity": 2,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "quantity": 1,
+          "menuId": "X-Salada",
           "observacao": "",
           "adicionais": "",
-          "total": 21.7
+          "paypal": "Pagamento realizado pelo Paypal"
         }
       ],
       "id": 41
@@ -1310,15 +1485,20 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "total": "",
-      "paymentOption": "DEB",
+      "total": "R$25.4",
+      "paymentOption": "",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
-          "adicionais": "Tomate",
-          "total": 16.7
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
         }
       ],
       "id": 42
@@ -1331,22 +1511,25 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "67",
+      "number": "69",
       "optionalAddress": "",
-      "total": 19.2,
-      "paymentOption": "DEB",
+      "total": "R$45",
+      "paymentOption": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
       "orderItems": [
         {
           "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
+          "menuId": "X-Salada",
           "observacao": "",
-          "adicionais": ""
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "menuId": "X-Salada",
           "observacao": "",
-          "adicionais": ""
+          "adicionais": "",
+          "paypal": "Pagamento realizado pelo Paypal"
         }
       ],
       "id": 43
@@ -1361,18 +1544,19 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "total": 19.2,
-      "paymentOption": "DEB",
+      "total": "R$19",
+      "paymentOption": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
       "orderItems": [
         {
           "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
+          "menuId": "X-Burguer",
           "observacao": "",
           "adicionais": ""
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "menuId": "X-Burguer",
           "observacao": "",
           "adicionais": ""
         }
@@ -1387,10 +1571,11 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "69",
+      "number": "67",
       "optionalAddress": "",
-      "total": "$19.2",
-      "paymentOption": "DEB",
+      "total": "R$34.099999999999994",
+      "paymentOption": "Dinheiro",
+      "pagamentoAplicativo": "",
       "orderItems": [
         {
           "quantity": 1,
@@ -1400,7 +1585,13 @@
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "adicionais": ""
         }
@@ -1415,22 +1606,29 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "69",
+      "number": "67",
       "optionalAddress": "",
-      "total": "R$19.2",
-      "paymentOption": "DEB",
+      "total": "R$34.099999999999994",
+      "pagamentoEntrega": "Cartão Refeição",
+      "pagamentoAplicativo": "",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
-          "observacao": "Renata puta",
-          "adicionais": "Catchup"
+          "observacao": "",
+          "adicionais": ""
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
-          "observacao": "maikao corno",
-          "adicionais": "Tomate"
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
         }
       ],
       "id": 46
@@ -1445,20 +1643,45 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "total": "R$27.9",
-      "paymentOption": "DEB",
+      "total": "R$47.8",
+      "pagamentoEntrega": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
       "orderItems": [
         {
-          "quantity": 2,
+          "quantity": 1,
           "menuId": "Cachorro Quente Simples",
-          "observacao": "tirar cebola",
+          "observacao": "eefge",
           "adicionais": "Tomate"
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
-          "observacao": "ao ponto da carne",
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "efe",
           "adicionais": "Salsicha"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "efef",
+          "adicionais": "Maionese"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "efefefe",
+          "adicionais": "Maionese"
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "efefef",
+          "adicionais": "Salsicha"
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "efefefef",
+          "adicionais": "Catchup"
         }
       ],
       "id": 47
@@ -1473,799 +1696,24 @@
       "localidade": "Rolândia",
       "number": "69",
       "optionalAddress": "",
-      "total": "R$19.2",
-      "paymentOption": "DEB",
+      "total": "R$25.4",
+      "pagamentoEntrega": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
-          "observacao": "svdvv",
-          "adicionais": "Catchup"
+          "observacao": "",
+          "adicionais": ""
         },
         {
           "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
-          "observacao": "vvvfvv",
-          "adicionais": "Tomate"
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
         }
       ],
       "id": 48
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$16.7",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 49
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$16.7",
-      "paymentOption": "DEB",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "teste",
-          "adicionais": ""
-        }
-      ],
-      "id": 50
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$16.7",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "xalala",
-          "adicionais": "Tomate"
-        }
-      ],
-      "id": 51
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$26.7",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        },
-        {
-          "quantity": 1,
-          "menuId": "X-Burguer",
-          "observacao": "",
-          "adicionais": ""
-        },
-        {
-          "quantity": 1,
-          "menuId": "Craft Burguer",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 52
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "casa da frente",
-      "total": "R$53",
-      "paymentOption": "DEB",
-      "orderItems": [
-        {
-          "quantity": 10,
-          "menuId": "Craft Burguer",
-          "observacao": "Tirar a cebola",
-          "adicionais": "Tomate"
-        }
-      ],
-      "id": 53
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$69.1",
-      "paymentOption": "DEB",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        },
-        {
-          "quantity": 2,
-          "menuId": "X-Salada",
-          "observacao": "",
-          "adicionais": ""
-        },
-        {
-          "quantity": 1,
-          "menuId": "X-Burguer",
-          "observacao": "",
-          "adicionais": ""
-        },
-        {
-          "quantity": 1,
-          "menuId": "X-Egg",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 54
-    },
-    {
-      "name": "Maik corno",
-      "email": "maikrenata@gmail.com",
-      "emailConfirmation": "maikrenata@gmail.com",
-      "cep": "86604642",
-      "logradouro": "Rua Ângelo Armacolo",
-      "bairro": "Jardim Novo Horizonte",
-      "localidade": "Rolândia",
-      "number": "600",
-      "optionalAddress": "",
-      "total": "R$76.2",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        },
-        {
-          "quantity": 5,
-          "menuId": "Craft Burguer",
-          "observacao": "",
-          "adicionais": ""
-        },
-        {
-          "quantity": 2,
-          "menuId": "X-Salada",
-          "observacao": "",
-          "adicionais": "Maionese"
-        }
-      ],
-      "id": 55
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$9.5",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Sorvete Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 56
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$19.2",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "Mostarda"
-        },
-        {
-          "quantity": 1,
-          "menuId": "HOT DOG TRADICIONAL DUPLO",
-          "observacao": "",
-          "adicionais": "Salsicha"
-        }
-      ],
-      "id": 57
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86183877",
-      "logradouro": "Rua Serra dos Papagaios",
-      "bairro": "Residencial Alto Paraíso",
-      "localidade": "Cambé",
-      "number": "152",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "DEB",
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 58
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$9.5",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Sorvete Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 59
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "",
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 60
-    },
-    {
-      "name": "",
-      "email": "",
-      "emailConfirmation": "",
-      "cep": "",
-      "logradouro": "",
-      "bairro": "",
-      "localidade": "",
-      "number": "",
-      "optionalAddress": "",
-      "total": "R$16.7",
-      "paymentOption": "",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 61
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$16.7",
-      "paymentOption": "",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 62
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "MON",
-      "paypal": null,
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 63
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "MON",
-      "paypal": null,
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 64
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "MON",
-      "paypal": "25.4Pago pelo aplicatvio",
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 65
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "MON",
-      "paypal": "25.4Pago pelo aplicatvio",
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 66
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "MON",
-      "paypal": null,
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "",
-          "paypal": "COMPLETED"
-        }
-      ],
-      "id": 67
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$42.8",
-      "paymentOption": "MON",
-      "paypal": null,
-      "orderItems": [
-        {
-          "quantity": 4,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "",
-          "paypal": "COMPLETED"
-        }
-      ],
-      "id": 68
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "MON",
-      "paypal": null,
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "",
-          "paypal": "COMPLETED"
-        }
-      ],
-      "id": 69
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "DEB",
-      "paypal": null,
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "",
-          "paypal": "COMPLETED"
-        }
-      ],
-      "id": 70
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "MON",
-      "paypal": null,
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "",
-          "paypal": "COMPLETED"
-        }
-      ],
-      "id": 71
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "",
-          "paypal": "Pagamento realizado pelo Paypal"
-        }
-      ],
-      "id": 72
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$16.7",
-      "paypal": null,
-      "paymentOption": "MON",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 73
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$42.8",
-      "paymentOption": "",
-      "paypal": "",
-      "orderItems": [
-        {
-          "quantity": 4,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 74
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$25.4",
-      "paymentOption": "",
-      "paypal": "",
-      "orderItems": [
-        {
-          "quantity": 2,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 75
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$34.099999999999994",
-      "paymentOption": "MON",
-      "paypal": "",
-      "orderItems": [
-        {
-          "quantity": 3,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 76
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$34.099999999999994",
-      "paymentOption": "MON",
-      "paypal": "",
-      "orderItems": [
-        {
-          "quantity": 3,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": ""
-        }
-      ],
-      "id": 77
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "69",
-      "optionalAddress": "",
-      "total": "R$34.099999999999994",
-      "paymentOption": "MON",
-      "paypal": "",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "Maionese"
-        },
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "Salsicha"
-        },
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "adicionais": "Mostarda"
-        }
-      ],
-      "id": 78
-    },
-    {
-      "name": "VITOR JOSE CUSTODIO",
-      "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
-      "cep": "86601028",
-      "logradouro": "Rua José Costa Fontes",
-      "bairro": "Manoel Müller",
-      "localidade": "Rolândia",
-      "number": "59",
-      "optionalAddress": "",
-      "total": "R$34.099999999999994",
-      "paymentOption": "MON",
-      "paypal": "",
-      "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "dsvfsdvdsfv",
-          "adicionais": "Mostarda"
-        },
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "dsvffgfdgfdg",
-          "adicionais": "Maionese"
-        },
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "dfgdsgdsgdsg",
-          "adicionais": "Salsicha"
-        }
-      ],
-      "id": 79
     }
   ]
 }

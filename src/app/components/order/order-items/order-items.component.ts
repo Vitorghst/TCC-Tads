@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { CartItem } from 'src/app/home/home.model';
-
+import { ListaApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'app-order-items',
   templateUrl: './order-items.component.html',
@@ -20,7 +20,7 @@ export class OrderItemsComponent implements OnInit {
   @Output() decreaseQty = new EventEmitter<CartItem>()
   @Output() remove = new EventEmitter<CartItem>()
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private Api: ListaApiService) { }
 
   ngOnInit(): void {
 
@@ -32,6 +32,16 @@ export class OrderItemsComponent implements OnInit {
     this.increaseQty.emit(item)
   }
 
+  removeItem(item: any): void {
+    this.Api.removeItem(item)
+    
+  }
+
+  emitAddEvent(item: any) {
+    this.Api.addItem(item)
+
+  }
+
   emitObservacao(item: CartItem){
     this.observacao.emit(item)
   }
@@ -41,11 +51,8 @@ export class OrderItemsComponent implements OnInit {
   }
   
   emitDecreaseQty(item: CartItem){
-    this.decreaseQty.emit(item)
+    this.Api.decreaseQty(item)
   }
 
-  emitRemove(item: CartItem){
-    this.remove.emit(item)
-  }
 
 }

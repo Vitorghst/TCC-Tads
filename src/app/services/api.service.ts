@@ -123,12 +123,14 @@ export class ListaApiService {
     if(foundItem){
       this.increaseQty(foundItem)
       this.itemAdicionais.push(new CartItem(item))
+      
     }else{
       this.items.push(new CartItem(item))
       this.itemAdicionais.push(new CartItem(item))
     }
     this.toast.success({summary:`Você adicionou o item ${item.name}`, position: 'br', duration: 3000});
   }
+
 
   increaseQty(item: CartItem){
     item.quantity = item.quantity + 1
@@ -150,6 +152,7 @@ export class ListaApiService {
 
   decreaseQty(item: CartItem){
     item.quantity = item.quantity - 1
+    this.itemAdicionais.splice(this.itemAdicionais.indexOf(item), 1)
     if (item.quantity === 0){
       this.removeItem(item)
     }
@@ -165,10 +168,15 @@ export class ListaApiService {
 
 
   removeItem(item:CartItem){
-    this.itemAdicionais.splice(this.itemAdicionais.indexOf(item), 1)
     this.items.splice(this.items.indexOf(item), 1)
+    if(item.quantity == 0){
+      this.itemAdicionais = []
+    } else {
+      this.itemAdicionais = this.itemAdicionais.filter((mItem)=> mItem.menuItem.id !== item.menuItem.id)
+    }
     this.toast.error({summary:`Você removeu o item ${item.menuItem.name}`, position: 'br', duration: 3000});
   }
+
 
   total(): number{
     return this.items

@@ -7,3 +7,8 @@
     width: 100%;
     overflow-y: auto;
 }
+
+.margin-right {
+    margin-right: 34%;
+    margin-bottom: 50px;
+}

@@ -12,8 +12,43 @@
                             aria-current="page">Menu</a>
                     </li>
                     <li class="nav-item margin-nav margin-nav-link">
-                        <a class="nav-link text-hover tipografia"
-                            aria-current="page">Contato</a>
+                        <a class="nav-link text-hover tipografia" data-bs-toggle="modal" data-bs-target="#contatoModal">
+                            Contato
+                        </a>
+                          <div class="modal fade" id="contatoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Contato</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm-1">
+                                                <i class="fas fa-phone-alt local mt-1 ms-1"></i>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <p class="text-black">(43)3221-9000</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-sm-1">
+                                            <img src="assets/images/whats.png" width="25px"/>
+                                          </div>
+                                          <div class="col-sm-4">
+                                            <p class="text-black">(43)99859-9286</p>
+                                          </div>
+                                          </div>
+                                        </div>
+                                   
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                     </li>
 
                 </ul>
@@ -23,7 +58,6 @@
     <div class="content">
         <div class="content-body">
             <router-outlet></router-outlet>
-
         </div>
         <app-snackbar></app-snackbar>
         <lib-ng-toast></lib-ng-toast>

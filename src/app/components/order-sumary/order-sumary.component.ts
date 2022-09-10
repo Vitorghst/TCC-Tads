@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-order-sumary',
@@ -6,12 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-sumary.component.css']
 })
 export class OrderSumaryComponent implements OnInit {
-
+  rating3 = 0
   rated!: boolean
-  constructor() { }
+  form!: FormGroup
+  
+  constructor(public fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      rating: ['', Validators.required],
+    })
   }
+  
 
   rate() {
     this.rated = true
