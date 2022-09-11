@@ -76,9 +76,25 @@ export class ListaApiService {
   }
 
   getUser(): Observable<any> {
-    return this.httpClient.get<any>(`${this.url}/users`)
+    return this.httpClient.get<any>(`${this.url}/users` )
   }
 
+
+  getUserById(id: any): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/users/${id}`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  addMenuItem(item: any){
+    return this.httpClient.post<MenuItem>(`${this.url}/menu`, item, this.options)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
 
   getReview(): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/reviews`)
@@ -87,6 +103,8 @@ export class ListaApiService {
         catchError(this.handleError)
       )
   }
+
+  // pegar o usuario logado no sistema
 
   getAdicionais(): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/adicionais`)
@@ -130,6 +148,7 @@ export class ListaApiService {
     }
     this.toast.success({summary:`Você adicionou o item ${item.name}`, position: 'br', duration: 3000});
   }
+
 
 
   increaseQty(item: CartItem){

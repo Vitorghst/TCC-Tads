@@ -1,20 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
-      "user": "vitor",
-      "password": "123"
-    },
-    {
-      "id": 2,
-      "user": "pacheco",
-      "password": "123"
-    },
-    {
       "id": 3,
       "user": "teste",
       "email": "ghostrzr@gmail.com",
       "password": "123",
+      "permissao": "B",
       "confirmPassword": "123"
     },
     {
@@ -22,12 +13,14 @@
       "user": "cavalo",
       "email": "ghostrzr@gmail.com",
       "password": "1234",
+      "permissao": "B",
       "confirmPassword": "123"
     },
     {
       "id": 5,
       "user": "pachecao",
       "email": "pacheco@gmail.com",
+      "permissao": "A",
       "password": "123",
       "confirmPassword": "123"
     }
@@ -248,7 +241,7 @@
     {
       "id": 6,
       "dia": "sábado",
-      "startTime": "13:00",
+      "startTime": "10:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
@@ -1714,6 +1707,88 @@
         }
       ],
       "id": 48
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "total": "R$18",
+      "pagamentoEntrega": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "adicionais": ""
+        }
+      ],
+      "id": 49
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "total": "R$42.8",
+      "pagamentoEntrega": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "adicionais": ""
+        }
+      ],
+      "id": 50
     }
   ]
 }

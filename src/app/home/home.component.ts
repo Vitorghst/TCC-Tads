@@ -4,11 +4,14 @@ import { ListaApiService } from '../services/api.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { NgBusinessHoursComponent } from 'ng-business-hours';
 import { timeout, timestamp } from 'rxjs/operators';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import * as moment from 'moment';
 import 'moment/min/locales';
 import { ThrowStmt } from '@angular/compiler';
+import { RequestService } from '../services/request.service';
+import { NgToastService } from 'ng-angular-popup';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -45,14 +48,27 @@ export class HomeComponent implements OnInit {
   funcionamento: any;
   status!: string;
   horario: any;
+  usuario: any;
+  permissao: any
+  adicionarItemForm = this.formBuilder.group({
+    id: new FormControl(''),
+    imagePath: new FormControl(''),
+    name: new FormControl(''),
+    description: new FormControl(''),
+    price: new FormControl(''),
+    category: new FormControl(''),
+})
+
+fileName = '';
   
 
-  constructor(private Api: ListaApiService, private formBuilder: FormBuilder) { }
+  constructor(private Api: ListaApiService, private formBuilder: FormBuilder,  private request: RequestService, private toast: NgToastService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getTelas()
     this.getAdicionais()
     this.getHorarios()
+    this.getUser()
 
 
   }
@@ -65,6 +81,52 @@ export class HomeComponent implements OnInit {
 
 
     });
+  }
+
+
+  addItemMenu(){
+    let item = {
+      id: this.adicionarItemForm.get('id')?.value,
+      imagePath: this.adicionarItemForm.get('imagePath')?.value,
+      name: this.adicionarItemForm.get('name')?.value,
+      description: this.adicionarItemForm.get('description')?.value,
+      price : this.adicionarItemForm.get('price')?.value,
+      category: this.adicionarItemForm.get('category')?.value,
+    }
+    this.Api.addMenuItem(item).subscribe((item: any) => {
+      const id = item['id'];
+      this.toast.success({summary:`${item.name} foi adicionado com sucesso!`, position: 'br', duration: 3000});
+      this.getTelas()
+    }, (err) => {
+      console.log(err);
+    });
+    
+  }
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.adicionarItemForm.get('imagePath')?.setValue(reader.result);
+      // diminuir o tamanho do token para o banco de dados
+      console.log(reader.result);; 
+      
+    };
+  }
+
+  
+  // pegar o user logado com o session storage
+  getUser() {
+    const token = sessionStorage.getItem('token')
+    this.Api.getUserById(token).subscribe((user: any) => {
+      this.usuario = user
+      this.permissao = user.permissao
+      console.log(this.permissao);
+      
+    console.log(this.usuario);
+    
+  })
   }
 
   getHorarios() {
