@@ -71,9 +71,9 @@
     {
       "id": 1,
       "imagePath": "assets/images/foods/fries.png",
-      "name": "Cachorro Quente Simples",
+      "name": "Cachorro Quente Simples 2",
       "description": "Pão de leite, salsicha, tomate, maionese, catchup e mostarda.",
-      "price": 8.7,
+      "price": 10,
       "category": "Cachorro Quente"
     },
     {
@@ -126,96 +126,43 @@
     },
     {
       "id": 8,
-      "imagePath": "assets/images/foods/espreso.png",
-      "name": "Super Espreso",
-      "description": "Café espresso duplo. ",
-      "price": 12.5
+      "imagePath": "assets/images/foods/coca-350ml.png",
+      "name": "Coca Cola 350ml",
+      "description": "Coca Cola 350ml",
+      "price": 3.5,
+      "category": "Refrigerantes"
     },
     {
       "id": 9,
-      "imagePath": "assets/images/foods/starb.png",
-      "name": "Starbucks Copycat",
-      "description": "O mais pedido da casa. O verdadeiro café americano pura água.",
-      "price": 15.6
+      "imagePath": "assets/images/foods/Pepsi-350ml.png",
+      "name": "Pepsi 350ml",
+      "description": "Pepsi 350ml",
+      "price": 3.5,
+      "category": "Refrigerantes"
     },
     {
       "id": 10,
-      "imagePath": "assets/images/foods/zlasagna.png",
-      "name": "Lasagna de Zucchini",
-      "description": "Lasagna deliciosa que se salva por causa do queijo",
-      "price": 14.9
-    },
-    {
-      "id": 11,
-      "imagePath": "assets/images/foods/greensandwich.png",
-      "name": "Sanduíche de Frango",
-      "description": "Frango grelhado e salada",
-      "price": 10.5
-    },
-    {
-      "id": 12,
-      "imagePath": "assets/images/foods/ceasar.png",
-      "name": "Salada Ceasar",
-      "description": "Clássica salada ceasar.",
-      "price": 33.9
-    },
-    {
-      "id": 13,
-      "imagePath": "assets/images/foods/sunday.png",
-      "name": "Mega Sunday",
-      "description": "Sunday com várias bolas de sorvete a sua escolha",
-      "price": 21.5
-    },
-    {
-      "id": 14,
-      "imagePath": "assets/images/foods/chocpop.png",
-      "name": "Picolé de Brigadeiro",
-      "description": "Picolé de brigadeiro recheado com côco.",
-      "price": 8.5
-    },
-    {
-      "id": 15,
-      "imagePath": "assets/images/foods/icestd.png",
-      "name": "Sorvete Simples",
-      "description": "Clássico sorvete de rua onde todos os sabores são idênticos.",
-      "price": 1.5
-    },
-    {
-      "id": 16,
-      "imagePath": "assets/images/foods/cup.png",
-      "name": "Cup Cake de Choc. Branco",
-      "description": "Cup Cake de chocolate branco",
-      "price": 5.5
-    },
-    {
-      "id": 17,
-      "imagePath": "assets/images/foods/straw.png",
-      "name": "Bolo de Morango",
-      "description": "Bolo recheado e coberto com morangos",
-      "price": 40.5
-    },
-    {
-      "id": 18,
-      "imagePath": "assets/images/foods/cake.png",
-      "name": "Fatia de Bolo",
-      "description": "Fatia de bolo de morango",
-      "price": 5.9
+      "imagePath": "assets/images/foods/coca-600.png",
+      "name": "Coca Cola 600ml",
+      "description": "Coca Cola 600ml",
+      "price": 5,
+      "category": "Refrigerantes"
     }
   ],
   "horarios": [
     {
       "id": 1,
       "dia": "segunda-feira",
-      "startTime": "",
-      "endTime": "",
-      "status": "Fechado"
+      "startTime": "18:00",
+      "endTime": "23:00",
+      "status": "Aberto"
     },
     {
       "id": 2,
       "dia": "terça-feira",
-      "startTime": "18:00",
-      "endTime": "22:00",
-      "status": "Aberto"
+      "startTime": "",
+      "endTime": "",
+      "status": "Fechado"
     },
     {
       "id": 3,
@@ -227,28 +174,28 @@
     {
       "id": 4,
       "dia": "quinta-feira",
-      "startTime": "20:00",
-      "endTime": "23:50",
+      "startTime": "18:00",
+      "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 5,
       "dia": "sexta-feira",
-      "startTime": "09:00",
+      "startTime": "18:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 6,
       "dia": "sábado",
-      "startTime": "10:00",
+      "startTime": "18:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 7,
       "dia": "domingo",
-      "startTime": "00:00",
+      "startTime": "18:00",
       "endTime": "22:00",
       "status": "Aberto"
     }
@@ -1789,6 +1736,47 @@
         }
       ],
       "id": 50
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "optionalAddress": "",
+      "total": "R$42.8",
+      "pagamentoEntrega": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "egregeegee",
+          "adicionais": "Tomate"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "ergeregeger",
+          "adicionais": "Salsicha"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "regegrg",
+          "adicionais": "Maionese"
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "geregergeg",
+          "adicionais": "Tomate"
+        }
+      ],
+      "id": 51
     }
   ]
 }

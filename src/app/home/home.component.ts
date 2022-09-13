@@ -50,6 +50,7 @@ export class HomeComponent implements OnInit {
   horario: any;
   usuario: any;
   permissao: any
+
   adicionarItemForm = this.formBuilder.group({
     id: new FormControl(''),
     imagePath: new FormControl(''),
@@ -59,12 +60,31 @@ export class HomeComponent implements OnInit {
     category: new FormControl(''),
 })
 
+ editForm = this.formBuilder.group({
+    id: new FormControl(''),
+    imagePath: new FormControl(''),
+    name: new FormControl(''),
+    description: new FormControl(''),
+    price: new FormControl(''),
+    category: new FormControl(''),
+})
+
 fileName = '';
+  status2: any;
   
 
   constructor(private Api: ListaApiService, private formBuilder: FormBuilder,  private request: RequestService, private toast: NgToastService, private http: HttpClient) { }
 
   ngOnInit(): void {
+    if (this.Api.editItem !== '') {
+        this.editForm.get('id')?.setValue(this.Api.editItem.id),
+        this.editForm.get('imagePath')?.setValue(this.Api.editItem.imagePath),
+        this.editForm.get('name')?.setValue(this.Api.editItem.name),
+        this.editForm.get('description')?.setValue(this.Api.editItem.description);
+        this.editForm.get('price')?.setValue(this.Api.editItem.price);
+        this.editForm.get('category')?.setValue(this.Api.editItem.category);
+      console.log(this.Api.editItem);
+    }
     this.getTelas()
     this.getAdicionais()
     this.getHorarios()
@@ -82,6 +102,49 @@ fileName = '';
 
     });
   }
+
+  editApi(item: MenuItem) {
+    this.editForm.get('id')?.setValue(item.id),
+    this.editForm.get('name')?.setValue(item.name)
+    this.editForm.get('description')?.setValue(item.description)
+    this.editForm.get('price')?.setValue(item.price)
+    this.editForm.get('category')?.setValue(item.category)
+    this.editForm.get('imagePath')?.setValue(item.imagePath)
+    this.Api.editItem = item
+  }
+
+  // updateItem pegando da service
+  updateItem() {
+    let params = {
+       id: this.editForm.get('id')?.value,
+        imagePath: this.editForm.get('imagePath')?.value,
+        name: this.editForm.get('name')?.value,
+        description: this.editForm.get('description')?.value,
+        price : this.editForm.get('price')?.value,
+        category: this.editForm.get('category')?.value,
+
+    }
+    this.Api.updateItem(params)
+      .subscribe(res => {
+        const id = res['id'];
+        this.toast.success({summary:`${params.name} foi editado com sucesso!`, position: 'br', duration: 3000});
+        this.getTelas()
+      }, (err) => {
+      });
+  }
+
+  onFileSelected2(event: any) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      this.editForm.get('imagePath')?.setValue(reader.result);
+      // diminuir o tamanho do token para o banco de dados
+      console.log(reader.result);; 
+      
+    };
+  }
+
 
 
   addItemMenu(){
@@ -134,8 +197,11 @@ fileName = '';
       this.hours = hours;
       this.hours.forEach((x: any) => {
         if (x.dia == moment(this.dataAtual).locale('pt-br').format('dddd')) {
-          if(x.dia === 'segunda-feira') {
-            this.status = 'Fechado às Segundas-Feiras'     
+          if(x.dia === 'terça-feira') {
+            this.status = 'Fechado às Terças-Feiras'  
+            this.status = x.status
+            console.log(this.status2);
+            
           } else {
           this.funcionamento = x
         }
@@ -143,12 +209,14 @@ fileName = '';
       })
       if(moment(this.dataAtual).format('HH:mm') >= this.funcionamento.startTime && moment(this.dataAtual).format('HH:mm') <= this.funcionamento.endTime){
         console.log('Aberto');
-        this.status = 'Aberto -'
-        this.horario = 'Fecha as ' + this.funcionamento.endTime
+         this.status = 'Aberto' ? 'Aberto' : 'Fechado'
+        console.log(this.status);
+        
+        this.horario = '- Fecha as ' + this.funcionamento.endTime
       }else{
         console.log('Fechado');
-        this.status = 'Fechado -'
-        this.horario = 'Abre as ' + this.funcionamento.startTime 
+       this.status = 'Fechado' ? 'Fechado' : 'Aberto'
+        this.horario = '- Abre as ' + this.funcionamento.startTime 
       }
     })
   }
@@ -183,6 +251,15 @@ fileName = '';
   openModal(event: any){
     console.log(event);
     
+  }
+
+  deleteItem(item: MenuItem) {
+    this.Api.deleteItembyId(item).subscribe((item: any) => {
+      this.toast.success({summary:`O Item foi deletado com sucesso!`, position: 'br', duration: 3000});
+      this.getTelas()
+    }, (err) => {
+      console.log(err);
+    });
   }
 
 

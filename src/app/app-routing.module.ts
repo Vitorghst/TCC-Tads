@@ -29,8 +29,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent, children: [
          { path: '', redirectTo: 'reviews', pathMatch: 'full' },
-         { path: 'reviews', component: ReviewsComponent },
       ] },
+      { path: 'reviews', component: ReviewsComponent },
       { path: 'listar-api', component: ListarApiComponent },
       { path: 'edit-api', component: EditApiComponent},
       {path: 'order', component: OrderComponent},

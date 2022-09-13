@@ -27,6 +27,7 @@ export class ListaApiService {
   url = 'http://localhost:3000';
   editDados: any = '';
   editTelas: any = '';
+  editItem: any = '';
   items: CartItem[] = []
   ev: any = '';
   options = {
@@ -88,6 +89,12 @@ export class ListaApiService {
       )
   }
 
+  deleteItembyId(id: any){
+    return this.httpClient.delete(`${this.url}/menu/${id}`)
+  }
+
+  // editar dados do menu
+
   addMenuItem(item: any){
     return this.httpClient.post<MenuItem>(`${this.url}/menu`, item, this.options)
       .pipe(
@@ -103,8 +110,6 @@ export class ListaApiService {
         catchError(this.handleError)
       )
   }
-
-  // pegar o usuario logado no sistema
 
   getAdicionais(): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/adicionais`)
@@ -184,6 +189,9 @@ export class ListaApiService {
   cartAdicionais(): CartItem[]{
     return this.itemAdicionais
   }
+  
+
+    
 
 
   removeItem(item:CartItem){
@@ -222,6 +230,10 @@ export class ListaApiService {
   public addTela(telas: { id: number, JHashT: string, nome: string, permissao: string }): Observable<Tela> {
     return this.httpClient.post<Tela>(`${this.url}/telas`, telas, this.options)
 
+  }
+
+  updateItem(params: { id: string, imagePath: string, name: string, description: string, price: number, category: string }): Observable<MenuItem> {
+    return this.httpClient.put<MenuItem>(`${this.url}/menu/${params.id}`, params, this.options)
   }
 
   // Editar API

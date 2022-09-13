@@ -23,7 +23,7 @@
                     <div class="col-md-7 offset-md-1">
                         <span class="tipografia  text-white pointer" data-bs-toggle="modal"
                             data-bs-target="#exampleModal"><i class="fas fa-clock"
-                                [ngStyle]="{'color': this.status === 'Aberto -' ? 'green' : 'red'}"></i>
+                                [ngStyle]="{'color': this.status === 'Aberto' ? 'green' : 'red'}"></i>
                             {{ this.status }} {{ this.horario }}</span>
                         <div class="mt-5 me-4">
                             <p class="text-white"><i class="fas fa-map-marker-alt local"></i> Avenida Romário Martins,
@@ -61,7 +61,7 @@
                     <i class="fas fa-plus"></i> Adicionar items</button>
             </div>
             <div class="content p-4 bg-white">
-                <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+                <div class="col-xs-12 col-sm-10 col-md-8 col-lg-12">
                     <button class="btn btn-danger me-2 button-menu" type="button" (click)="getTelas()">Todos</button>
                     <button class="btn btn-danger me-2 button-menu" type="button"
                         (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
@@ -69,6 +69,8 @@
                         (click)="filtrarCategoria('Lanches')">Lanches</button>
                     <button class="btn btn-danger me-2 button-menu" type="button"
                         (click)="filtrarCategoria('Hamburgers Artesanal')">Hamburguer Artesanal </button>
+                        <button class="btn btn-danger me-2 button-menu" type="button"
+                        (click)="filtrarCategoria('Refrigerantes')">Refrigerantes</button>
                 </div>
                 <hr>
                 <h5 class="tipografia"><i class="fas fa-list"></i> Menu</h5>
@@ -85,8 +87,13 @@
                         <div class="col-sm-8 col-md-4" [@menuItemAppeared]="menuItemState">
                             <img width="90%" [src]="menuItem.imagePath">
                         </div>
-                        <div class="col-sm-6 col-md-12 col-lg-6">
-                            <h3 class="mt-2 tipografia ">{{menuItem.name}}</h3>
+                        <div class="col-sm-6 col-md-12 col-lg-8">
+                            <h3 class="mt-2 tipografia ">{{menuItem.name}} <i
+                                    class="fas fa-trash-alt float-right pointer" *ngIf="permissao === 'A'"
+                                    (click)="deleteItem(menuItem.id)"></i>
+                                <i class="fas fa-edit float-right pointer me-2" *ngIf="permissao === 'A'" (click)="editApi(menuItem)"
+                                    data-bs-toggle="modal" data-bs-target="#editarItem"></i>
+                            </h3>
                             <span>{{menuItem.description}}</span>
                             <br>
                             <p>{{ menuItem.category }}</p>
@@ -95,11 +102,85 @@
                                     true}}</span>
                                 <button type="button"
                                     class="btn btn-color ms-4 shadow btn-sm space  text-decoration-none" id="adicionar"
-                                    (click)="emitAddEvent(menuItem)" *ngIf="this.status === 'Aberto -'">
+                                    (click)="emitAddEvent(menuItem)" *ngIf="this.status === 'Aberto'">
                                     <i class="fas me-1 fa-shopping-cart"></i> Adicionar</button>
                             </div>
                         </div>
                         <hr class="mt-2 bg-black">
+                        <div class="modal fade" id="editarItem" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <i class="fas fa-store local"></i>
+                                        <h5 class="modal-title ms-2" id="staticBackdropLabel">Editar Item</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form [formGroup]="editForm">
+                                            <div class="fw-bold col-md-12 offset-md-2">
+                                                <div>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <i
+                                                            class="fas fa-hamburger me-3 mt-4 fa-fw margin-icon local"></i>
+                                                        <div class="form-outline flex-fill ">
+                                                            <label class="mb-1" for="usr">Nome do Item:</label>
+                                                            <input type="text" id="name" formControlName="name"
+                                                                class="additem">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <i
+                                                            class="fas fa-info-circle me-3 mt-4 fa-fw margin-icon local"></i>
+                                                        <div class="form-outline flex-fill ">
+                                                            <label class="mb-1" for="usr">Descrição do Item:</label>
+                                                            <input type="text" name="nome" formControlName="description"
+                                                                class="additem ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <i
+                                                            class="fas fa-money-bill me-3 mt-4 fa-fw margin-icon local"></i>
+                                                        <div class="form-outline flex-fill ">
+                                                            <label class="mb-1" for="usr">Preço do Item:</label>
+                                                            <input type="number" name="nome" formControlName="price"
+                                                                class="additem ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex flex-row align-items-center mb-4">
+                                                        <i class="fas fa-tags me-3 mt-4 fa-fw margin-icon local"></i>
+                                                        <div class="form-outline flex-fill ">
+                                                            <label class="mb-1" for="usr">Categoria do Item:</label>
+                                                            <input type="text" name="nome" formControlName="category"
+                                                                class="additem ">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="formFile" class="form-label">Image do Item:</label>
+                                                    <input class="form-control" type="file" id="formFile"
+                                                        (change)="onFileSelected2($event)"
+                                                        onchange="console.log(event.target.files)">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                                            (click)="updateItem()">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -223,10 +304,10 @@
                         <div class="row">
                             <div class="col-md-6" *ngFor="let horario of hours">
                                 <h5><i class="fas fa-clock"
-                                        [ngStyle]="{'color': horario.dia !== 'segunda-feira' ? 'green' : 'red'}"></i>
+                                        [ngStyle]="{'color': horario.dia !== 'terça-feira' ? 'green' : 'red'}"></i>
                                     {{horario.dia | uppercase}}</h5>
-                                <p *ngIf="horario.dia === 'segunda-feira'">{{ horario.status }}</p>
-                                <p *ngIf="horario.dia != 'segunda-feira'">{{ horario.startTime }} às {{ horario.endTime
+                                <p *ngIf="horario.dia === 'terça-feira'">{{ horario.status }}</p>
+                                <p *ngIf="horario.dia != 'terça-feira'">{{ horario.startTime }} às {{ horario.endTime
                                     }}
                                 </p>
                             </div>
@@ -256,8 +337,7 @@
                                     <i class="fas fa-hamburger me-3 mt-4 fa-fw margin-icon local"></i>
                                     <div class="form-outline flex-fill ">
                                         <label class="mb-1" for="usr">Nome do Item:</label>
-                                        <input type="text" name="nome" formControlName="name"
-                                            class="additem">
+                                        <input type="text" name="nome" formControlName="name" class="additem">
                                     </div>
                                 </div>
                             </div>
@@ -289,9 +369,10 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="formFile" class="form-label">Default file input example</label>
-                                <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" onchange="console.log(event.target.files)">
-                              </div>
+                                <label for="formFile" class="form-label">Image do Item:</label>
+                                <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)"
+                                    onchange="console.log(event.target.files)">
+                            </div>
                         </div>
                     </form>
                 </div>
