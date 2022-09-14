@@ -16,6 +16,7 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderSumaryComponent } from './components/order-sumary/order-sumary.component';
 import { CadastroComponent } from './components/login/cadastro/cadastro.component';
+import { PainelGerencimentoComponent } from './components/painel-gerencimento/painel-gerencimento.component';
 
 
 
@@ -30,6 +31,10 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent, children: [
          { path: '', redirectTo: 'reviews', pathMatch: 'full' },
       ] },
+      { path: 'painel-gerenciamento', component: PainelGerencimentoComponent, children: [
+        { path: 'gerencimamento-usuarios', component: PainelGerencimentoComponent },
+        { path: 'gerenciamento-pedidos', component: PainelGerencimentoComponent },
+      ]},
       { path: 'reviews', component: ReviewsComponent },
       { path: 'listar-api', component: ListarApiComponent },
       { path: 'edit-api', component: EditApiComponent},

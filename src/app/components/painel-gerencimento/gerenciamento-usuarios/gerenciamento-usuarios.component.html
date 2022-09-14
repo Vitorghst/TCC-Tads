@@ -1,0 +1,27 @@
+<div class="content-body">
+  <div class="rounded  bg-white col-md-10 offset-md-1">
+    <strong class="h5 font-weight-bold"><i class="fas fa-user me-2 "></i>Usuários</strong>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr class="text-black text">
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Email</th>
+            <th>Permissão</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-blue" *ngFor="let usuario of usuarios">
+            <td class="pt-3 text">{{ usuario.id }}</td>
+            <td class="pt-3 text">{{ usuario.user }}</td>
+            <td class="pt-3 text">{{ usuario.email }}</td>
+            <td class="pt-3 text">{{ usuario.permissao}}</td>
+            <td class="pt-3 text"><i class="fas fa-edit"></i></td>
+            <td class="pt-3" (click)="deleteUser(usuario.id)"><i class="fas fa-trash-alt"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

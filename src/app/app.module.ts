@@ -39,6 +39,11 @@ import { RadioComponent } from './components/radio/radio.component';
 import { OrderSumaryComponent } from './components/order-sumary/order-sumary.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { CadastroComponent } from './components/login/cadastro/cadastro.component';
+import { PainelGerencimentoComponent } from './components/painel-gerencimento/painel-gerencimento.component';
+import { GerenciamentoUsuariosComponent } from './components/painel-gerencimento/gerenciamento-usuarios/gerenciamento-usuarios.component';
+import { SideMenuComponent } from './components/painel-gerencimento/side-menu/side-menu.component';
+import { GerenciamentoPedidosComponent } from './components/painel-gerencimento/gerenciamento-pedidos/gerenciamento-pedidos.component';
+import { Md5 } from 'ts-md5';
 
 
 
@@ -68,6 +73,10 @@ import { CadastroComponent } from './components/login/cadastro/cadastro.componen
     OrderSumaryComponent,
     SnackbarComponent,
     CadastroComponent,
+    PainelGerencimentoComponent,
+    GerenciamentoUsuariosComponent,
+    SideMenuComponent,
+    GerenciamentoPedidosComponent,
 
     
 

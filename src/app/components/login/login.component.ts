@@ -32,18 +32,18 @@ export class LoginComponent implements OnInit {
       this.request.login(params).subscribe((ret: any) => {
         if (ret[0].user === params.user && ret[0].password === params.password) {
           sessionStorage.setItem('token', ret[0].id);
-          this.toast.success({summary:`Bem-vindo ${params.user}`, position: 'br', duration: 3000});
+          this.toast.success({summary:`Bem-vindo ${params.user}`, position: 'br', duration: 2000});
           setTimeout(() => {
             this.router.navigate(['']);
-          }, 3000);
+          }, 2000);
         } else {
           sessionStorage.removeItem('token');
-          this.toast.error({summary:`Nome do usuário ou senha incorreto!`, position: 'br', duration: 5000});
+          this.toast.error({summary:`Nome do usuário ou senha incorreto!`, position: 'br', duration: 2000});
         }
       },
         (error: any) => {
           sessionStorage.removeItem('token');
-          this.toast.error({summary:`Você não possui um cadastro!`, position: 'br', duration: 5000});
+          this.toast.error({summary:`Você não possui um cadastro!`, position: 'br', duration: 2000});
         })
     }
   }

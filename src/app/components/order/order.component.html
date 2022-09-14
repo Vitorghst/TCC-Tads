@@ -19,7 +19,7 @@
                                     não conferem</span>
                             </div>
                                 
-                            <div class="col-sm-6 col-xs-12 formGroup ">
+                            <div class="col-sm-3 col-xs-4 formGroup ">
                                 <input class="form-control " formControlName="name" placeholder="Nome" autocomplete="off"
                                     required>
                                 <p *ngIf="orderForm.get('name')?.invalid && 
@@ -28,6 +28,15 @@
                                 <p *ngIf="orderForm.get('name')?.valid" class="text-success"><i
                                         class="fas fa-check"></i> OK</p>
 
+                            </div>
+                            <div class="col-sm-3 col-xs-6">
+                                <input type="text" class="form-control" formControlName="telefone"
+                                    placeholder="Telefone/Celular" autocomplete="off" required>
+                                <p *ngIf="orderForm.get('telefone')?.invalid  && 
+                                orderForm.get('telefone')?.touched" class="text-danger"><i
+                                        class="fas fa-times"></i> Campo obrigatório</p>
+                                <p *ngIf="orderForm.get('telefone')?.valid" class="text-success"><i
+                                        class="fas fa-check"></i> OK</p>
                             </div>
                             <div class="col-sm-3 col-xs-6">
                                 <input type="text" class="form-control" formControlName="email" placeholder="E-mail"

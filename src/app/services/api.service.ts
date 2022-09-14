@@ -80,6 +80,14 @@ export class ListaApiService {
     return this.httpClient.get<any>(`${this.url}/users` )
   }
 
+  getOrders(): Observable<Order[]> {
+    return this.httpClient.get<Order[]>(`${this.url}/orders`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
 
   getUserById(id: any): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/users/${id}`)
@@ -88,6 +96,15 @@ export class ListaApiService {
         catchError(this.handleError)
       )
   }
+
+  deleteUserById(id: any){
+    return this.httpClient.delete<any>(`${this.url}/users/${id}`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+  
 
   deleteItembyId(id: any){
     return this.httpClient.delete(`${this.url}/menu/${id}`)
@@ -223,7 +240,7 @@ export class ListaApiService {
 
 
 
-  addUser(user: { id: number, user: string, email: string, password: string }): Observable<any> {
+  addUser(user: { id: number, user: string, email: string, password: any}): Observable<any> {
     return this.httpClient.post<any>(`${this.url}/users`, user, this.options)
   }
   // Adicionar uma TELA

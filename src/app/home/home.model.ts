@@ -3,7 +3,7 @@ export interface MenuItem {
     name: string
     description: string
     price: number
-    imagePath: string, 
+    imagePath: any
     category: string,
 }
 
@@ -12,7 +12,7 @@ export interface MenuItem {
 
 
 export class CartItem {
-  constructor(public menuItem: MenuItem,
+  constructor(public menuItem: MenuItem, 
               public quantity: number = 1,
               public observacao: string = '',
               public adicionais: string = ''

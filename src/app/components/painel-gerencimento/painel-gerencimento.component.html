@@ -1,0 +1,17 @@
+<div class="main">
+    <div class="row espaço">
+        <div class="col-md-10 offset-md-1">
+            <div class="mt-3 shadow bg-white border-top">
+                <app-side-menu (telaPedidos)="valorMenuLateral($event)"></app-side-menu>
+                <div [ngSwitch]="componentes">
+                    <div *ngSwitchDefault>
+                        <app-gerenciamento-pedidos></app-gerenciamento-pedidos>
+                    </div>
+                    <div  *ngSwitchCase="'Usuários'">
+                        <app-gerenciamento-usuarios></app-gerenciamento-usuarios>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

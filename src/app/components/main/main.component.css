@@ -17,9 +17,14 @@
     }
 }
 
-.tipografia{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
+.tipografia {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+.contact {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .main {
@@ -48,12 +53,16 @@
 .content {
     flex-grow: 1;
     overflow: hidden;
- }
+}
 
 
 .content-body {
     height: 100%;
-    
+
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
@@ -120,6 +129,12 @@ a:focus {
 
 }
 
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -190%;
+    margin-top: 11px;
+}
+
 .fa-door-open:before {
     content: "\f52b";
     color: #f25c04;
@@ -134,8 +149,12 @@ a:focus {
     border-bottom: 4px solid #f25c04 !important;
 }
 
+.border-top {
+    border-top: 4px solid #f25c04 !important;
+}
+
 .text-hover:hover {
-    color: #f25c04 ;
+    color: #f25c04;
     box-shadow: inset 500px 0 0 0 #ffffff;
     ;
 }
@@ -144,10 +163,20 @@ a:focus {
     color: #f25c04;
 }
 
+.fa-store-alt:before {
+    content: "\f54f";
+    color: rgb(44, 99, 44);
+}
+
+.fa-address-book:before {
+    content: "\f2b9";
+    color: rgb(91, 175, 91);
+    font-size: 35px;
+}
+
 /* Presentational styles */
 .text-hover {
     color: #000000;
-    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -160,3 +189,10 @@ a:focus {
 .navbar-light .navbar-nav .nav-link.active {
     color: rgba(245, 245, 245, 0.9);
 }
+
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,400i,700");
+
+
+
+
+

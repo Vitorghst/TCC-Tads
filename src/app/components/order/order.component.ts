@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { render } from 'creditcardpayments/creditCardPayments';
 import { RadioOption } from '../radio/radio.model';
 import { NgToastService } from 'ng-angular-popup';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-order',
@@ -33,6 +34,8 @@ export class OrderComponent implements OnInit {
   ]
   paypal: any
   pagamentoAplicativo!: any;
+  date = moment().locale('pt-br').format('L, h:mm:ss a');
+  
 
   constructor(private Api: ListaApiService, private route: Router, private formBuilder: FormBuilder, private toast: NgToastService ) {
    
@@ -43,18 +46,20 @@ export class OrderComponent implements OnInit {
       name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
+      telefone: this.formBuilder.control('', [Validators.required]),
       cep: this.formBuilder.control( '', [Validators.required, Validators.minLength(8)]),
       logradouro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       bairro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       localidade: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
+      data: this.formBuilder.control(this.date),
       optionalAddress: this.formBuilder.control(''),
       total: this.formBuilder.control('R$' + this.total(), [Validators.required]),
       pagamentoEntrega: this.formBuilder.control(''),
       pagamentoAplicativo: this.formBuilder.control('')
     }, {validator: OrderComponent.equalsTo})
     
-    console.log(this.paymentOptions);
+    this.orderForm.value.data = this.date
     
     render ({
       id: '#myPaypalButtons',
@@ -170,7 +175,7 @@ export class OrderComponent implements OnInit {
 
 
   checkOrder(order: Order){
-    order.orderItems = this.itemAdicionais().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.name, item.observacao, item.adicionais, this.total))
+    order.orderItems = this.itemAdicionais().map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.name, item.observacao, item.menuItem.imagePath, item.adicionais, this.total))
     this.Api.checkOrder(order).subscribe((): void => {
       this.route.navigate(['/order-sumary'])
       this.Api.clear()

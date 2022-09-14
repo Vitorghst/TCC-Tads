@@ -1,0 +1,44 @@
+<div class="content-body">
+    <div *ngFor="let pedido of pedidos">
+      <div class="row">
+        <div class="col-md-4 offset-md-1">
+          <strong>Numero do Pedido: {{ pedido.id }}</strong>
+          <br>
+          <a><strong><i class="fas fa-user"></i> Nome do Cliente: </strong> {{ pedido.name }}</a>
+          <br>
+          <a><strong><i class="fas fa-envelope"></i> Email: </strong>{{ pedido.email }}</a>
+          <br>
+          <a><strong><i class="fas fa-envelope"></i> Telefone/Celular: </strong>{{ pedido.telefone }}</a>
+          <br>
+          <strong> <i class="fas fa-address-card"></i> Endereço de entrega:</strong>
+          <a> {{ pedido.cep }}, {{ pedido.logradouro }}
+            {{ pedido.bairro}}, {{ pedido.localidade }}, {{ pedido.number }}
+            {{ pedido.optionalAddress }}
+          </a>
+          <br>
+          <strong>Data do Pedido:</strong>
+          <br>
+          <a>{{ pedido.data }}</a>
+          <br>
+          <strong><i class="fas fa-money-bill-wave-alt"></i> Metodo de Pagamento:</strong>
+          <a> {{ pedido.pagamentoEntrega }} {{ pedido.pagamentoAplicativo}}</a>
+          <br>
+          <span class="me-2 mt-4 "><i class="fas fa-wallet"></i><strong> Total: </strong> {{ pedido.total }}</span>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+          <strong><i class="fas fa-list"></i> Items do Pedido:</strong>
+          <br>
+          <div class="col-md-4" *ngFor="let order of pedido.orderItems">
+            <strong>({{order.quantity}}x)<img src="{{ order.imagePath }}" width="70"></strong>
+            {{order.menuId}}
+            <br>
+            <strong>Adicionais:</strong> {{ order.adicionais }}
+            <br>
+            <strong>Observação:</strong> {{ order.observacao }}
+          </div>
+        </div>
+      </div>
+      <hr class=" bg-black">
+    </div>
+</div>

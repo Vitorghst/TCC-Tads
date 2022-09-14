@@ -20,6 +20,7 @@ export class CadastroComponent implements OnInit {
     id: new FormControl(''),
     user: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
+    permissao: new FormControl('B'),
     password: new FormControl('', Validators.required),
     confirmPassword: new FormControl('', Validators.required),
   })
@@ -70,6 +71,7 @@ export class CadastroComponent implements OnInit {
           id: this.form.get('id')?.value,
           user: this.form.get('user')?.value,
           email: this.form.get('email')?.value,
+          permissao: this.form.get('permissao')?.value,
           password: this.form.get('password')?.value,
           confirmPassword: this.form.get('confirmPassword')?.value
         }
@@ -80,7 +82,7 @@ export class CadastroComponent implements OnInit {
             this.toast.success({detail:"Sucesso",summary:'Cadastrado com sucesso', sticky:true}); 
             setTimeout(() => {
               this.router.navigate(['/login']);
-            }, 5000);
+            }, 1000);
           }, (err) => {
             console.log(err);
           });
