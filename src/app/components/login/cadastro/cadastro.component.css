@@ -38,6 +38,21 @@
     height: 85vh;
 }
 
+.fa-check:before {
+    content: "\f00c";
+    font-size: 15px;
+    color: green;
+}
+
+.fa-times:before {
+    content: "\f00d";
+    font-size: 15px;
+}
+
+.font-size{
+    font-size: 12px;
+}
+
 .local {
     color: #ffffff;
     background-color:  #f25c04;

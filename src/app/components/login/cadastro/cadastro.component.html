@@ -19,7 +19,11 @@
                         <i class="fas fa-user fa-lg me-3 fa-fw margin-icon"></i>
                         <div class="form-outline flex-fill mb-0">
                           <input type="text" id="form3Example1c" placeholder="User" formControlName="user" class="form-control" />
-                          <label class="form-label" for="form3Example1c" ></label>
+                          <small *ngIf="form.get('user')?.invalid && 
+                                form.get('user')?.touched " class="text-danger font-size"><i
+                                        class="fas fa-times"></i> Campo obrigatório</small>
+                                <small *ngIf="form.get('user')?.valid" class="text-success"><i
+                                        class="fas fa-check font-size"></i>OK</small>
                         </div>
                     </div>
 
@@ -27,7 +31,11 @@
                         <i class="fas fa-envelope fa-lg me-3 fa-fw margin-icon"></i>
                         <div class="form-outline flex-fill mb-0">
                           <input type="email" id="form3Example3c" placeholder="Email"  formControlName="email" class="form-control" />
-                          <label class="form-label" for="form3Example3c"></label>
+                          <small *ngIf="form.get('email')?.invalid && 
+                                form.get('email')?.touched " class="text-danger font-size"><i
+                                        class="fas fa-times"></i> Campo obrigatório</small>
+                                <small *ngIf="form.get('email')?.valid" class="text-success"><i
+                                        class="fas fa-check font-size"></i> OK</small>
                         </div>
                     </div>
   
@@ -35,7 +43,11 @@
                         <i class="fas fa-lock fa-lg me-3 fa-fw margin-icon"></i>
                         <div class="form-outline flex-fill mb-0">
                           <input type="password" id="form3Example4c" placeholder="Senha" formControlName="password" class="form-control" />
-                          <label class="form-label" for="form3Example4c"></label>
+                          <small *ngIf="form.get('password')?.invalid && 
+                                form.get('password')?.touched " class="text-danger font-size"><i
+                                        class="fas fa-times"></i> Campo obrigatório</small>
+                                <small *ngIf="form.get('password')?.valid" class="text-success"><i
+                                        class="fas fa-check font-size"></i> OK</small>
                         </div>
                     </div>
   
@@ -43,7 +55,11 @@
                         <i class="fas fa-key fa-lg me-3 fa-fw margin-icon"></i>
                         <div class="form-outline flex-fill mb-0">
                           <input type="password" id="form3Example4cd" placeholder="Confirmar Senha" formControlName="confirmPassword" class="form-control" />
-                          <label class="form-label" for="form3Example4cd"></label>
+                          <small *ngIf="form.get('confirmPassword')?.invalid && 
+                          form.get('confirmPassword')?.touched " class="text-danger font-size"><i
+                                  class="fas fa-times"></i> Campo obrigatório</small>
+                          <small *ngIf="form.get('confirmPassword')?.valid" class="text-success"><i
+                                  class="fas fa-check font-size"></i> OK</small>
                         </div>
                       </div>
 

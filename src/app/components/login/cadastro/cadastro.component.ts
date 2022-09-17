@@ -32,6 +32,16 @@ export class CadastroComponent implements OnInit {
     this.getUser()
   }
 
+  comparePassword() {
+    let password = this.form.get('password')?.value
+    let confirmPassword = this.form.get('confirmPassword')?.value
+    if (password === confirmPassword) {
+      return true
+    } else {
+      return false
+    }
+  }
+
 
   getUser() {
     this.Api.getUser().subscribe((data: any) => {

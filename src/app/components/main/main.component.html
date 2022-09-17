@@ -1,18 +1,18 @@
 <div class="main">
-    <nav class="navbar navbar-light border-bottom shadow">
+    <nav class="navbar navbar-light border-bottom shadow navbar-default">
         <div class="container-fluid ">
 
             <div class="col-md-12 offset-md-1">
                 <ul class="nav">
-                    <div >
-                        <img src="assets/images/logo1.png" data-bs-toggle="dropdown" height="65">
+                    <div class="mt-2">
+                        <img src="assets/images/logo1.png" data-bs-toggle="dropdown" height="54">
                     </div>
-                    <li class="nav-item margin-nav margin-nav-link">
-                        <a class="nav-link text-hover tipografia mt-1" [routerLink]="['/home']" [routerLinkActive]="'active'"
+                    <li class="nav-item margin-nav margin-nav-link mt-4">
+                        <a class="nav-link text-hover tipografia " [routerLink]="['/home']" [routerLinkActive]="'active'"
                             aria-current="page">Menu</a>
                     </li>
-                    <li class="nav-item margin-nav margin-nav-link pointer">
-                        <a class="nav-link text-hover tipografia mt-1" data-bs-toggle="modal" data-bs-target="#contatoModal">
+                    <li class="nav-item margin-nav margin-nav-link mt-4 pointer">
+                        <a class="nav-link text-hover tipografia" data-bs-toggle="modal" data-bs-target="#contatoModal">
                             Contato
                         </a>
                           <div class="modal fade" id="contatoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,7 +50,7 @@
                             </div>
                           </div>
                     </li>
-                    <li class="nav-item  mb-3 icon-user margin-nav-link">
+                    <li class="nav-item  mb-3 icon-user mt-3 margin-nav-link">
                       <div class="dropdown">
                         <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                           <img

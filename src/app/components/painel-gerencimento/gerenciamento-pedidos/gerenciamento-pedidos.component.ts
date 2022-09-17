@@ -9,6 +9,7 @@ import { ListaApiService } from 'src/app/services/api.service';
 export class GerenciamentoPedidosComponent implements OnInit {
   pedidos: any;
   teste: any;
+  pedidoModal: any;
   constructor(private Api: ListaApiService) { }
 
   ngOnInit(): void {
@@ -21,4 +22,12 @@ export class GerenciamentoPedidosComponent implements OnInit {
   
     })  
   } 
+
+  // cada pedido tem o valor do modal
+  editOrder(item: any) {
+    this.Api.editOrder = item
+    this.pedidoModal = item
+    console.log(item);
+    
+  }
 }

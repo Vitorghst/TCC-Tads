@@ -5,8 +5,8 @@
       "user": "pachecao",
       "email": "pacheco@gmail.com",
       "permissao": "A",
-      "password": "123",
-      "confirmPassword": "123"
+      "password": "cavalo",
+      "confirmPassword": "cavalo"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
     },
     {
       "id": 4,
-      "user": "joao",
+      "user": "teste",
       "email": "joao@gmail.com",
       "permissao": "B",
       "password": "123",
@@ -181,14 +181,14 @@
     {
       "id": 5,
       "dia": "sexta-feira",
-      "startTime": "18:00",
+      "startTime": "13:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
     {
       "id": 6,
       "dia": "sábado",
-      "startTime": "18:00",
+      "startTime": "01:00",
       "endTime": "22:00",
       "status": "Aberto"
     },
@@ -845,6 +845,88 @@
         }
       ],
       "id": 7
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "68",
+      "data": "17/09/2022, 2:04:57 am",
+      "optionalAddress": "",
+      "total": "R$56",
+      "pagamentoEntrega": "Cartão de Débito",
+      "pagamentoAplicativo": "",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Craft Burguer",
+          "observacao": "",
+          "imagePath": "assets/images/foods/craftburguer.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Craft Burguer",
+          "observacao": "",
+          "imagePath": "assets/images/foods/craftburguer.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Coca Cola 350ml",
+          "observacao": "",
+          "imagePath": "assets/images/foods/coca-350ml.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Coca Cola 350ml",
+          "observacao": "",
+          "imagePath": "assets/images/foods/coca-350ml.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Pepsi 350ml",
+          "observacao": "",
+          "imagePath": "assets/images/foods/Pepsi-350ml.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Pepsi 350ml",
+          "observacao": "",
+          "imagePath": "assets/images/foods/Pepsi-350ml.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Coca Cola 600ml",
+          "observacao": "",
+          "imagePath": "assets/images/foods/coca-600.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 8
     }
   ]
 }

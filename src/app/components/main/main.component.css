@@ -23,8 +23,8 @@
 }
 
 .contact {
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .main {
@@ -37,9 +37,7 @@
 
 }
 
-.margin-nav-link {
-    margin-top: 20px;
-}
+
 
 .margin {
     margin-left: 300px;
@@ -132,12 +130,12 @@ a:focus {
 .dropdown-menu[data-bs-popper] {
     top: 100%;
     left: -190%;
-    margin-top: 11px;
+    margin-top: 15px;
 }
 
 .fa-door-open:before {
     content: "\f52b";
-    color: #f25c04;
+    color: #d67032 ;
 }
 
 .fa-user:before {
@@ -146,41 +144,44 @@ a:focus {
 }
 
 .border-bottom {
-    border-bottom: 4px solid #f25c04 !important;
+    border-bottom: 4px solid #121921 !important;
 }
 
 .border-top {
-    border-top: 4px solid #f25c04 !important;
+    border-top: 4px solid #d67032 !important;
 }
 
 .text-hover:hover {
-    color: #f25c04;
+    color: #d67032;
     box-shadow: inset 500px 0 0 0 #ffffff;
     ;
 }
 
+.margin-top {
+    margin-top: 17px;
+}
+
 .local {
-    color: #f25c04;
+    color: #d67032;
 }
 
 .fa-store-alt:before {
     content: "\f54f";
-    color: rgb(44, 99, 44);
+    color: rgb(54, 153, 54);
 }
 
 .fa-address-book:before {
     content: "\f2b9";
-    color: rgb(91, 175, 91);
+    color: #d67032;
     font-size: 35px;
 }
 
 /* Presentational styles */
 .text-hover {
     color: #000000;
-    font-size: 15px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    font-weight: 700;
+    font-size: 1rem;
+    padding: 0 8px 17px 8px;
+    font-weight: 550;
     line-height: 1.5;
     text-decoration: none;
 }
@@ -189,10 +190,6 @@ a:focus {
 .navbar-light .navbar-nav .nav-link.active {
     color: rgba(245, 245, 245, 0.9);
 }
-
-@import url("https://fonts.googleapis.com/css?family=Merriweather:400,400i,700");
-
-
 
 
 

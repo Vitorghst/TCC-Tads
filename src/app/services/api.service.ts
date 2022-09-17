@@ -28,6 +28,8 @@ export class ListaApiService {
   editDados: any = '';
   editTelas: any = '';
   editItem: any = '';
+  editUser: any = '';
+  editOrder: any = ''
   items: CartItem[] = []
   ev: any = '';
   options = {
@@ -87,6 +89,15 @@ export class ListaApiService {
         catchError(this.handleError)
       )
   }
+
+  updateUser(user: { id: number, user: string, email: string, password: any,  confirmPassword: any}): Observable<any> {
+    return this.httpClient.put<any>(`${this.url}/users/${user.id}`, user, this.options)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
 
 
   getUserById(id: any): Observable<any> {

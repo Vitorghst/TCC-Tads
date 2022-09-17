@@ -1,7 +1,7 @@
 .fa-user:before {
-    content: "\f007";
-    font-size: 18px;
-    color: #ffffff;
+    content: "\f0c0";
+    font-size: 22px;
+    color: red;
 }
 
 .tipografia{
@@ -13,7 +13,7 @@
 .fa-clipboard-list:before {
     content: "\f46d";
     font-size: 20px;
-    color: #ffffff;
+    color: #198754;
 }
 
 .text-hover:hover {
@@ -21,6 +21,21 @@
     box-shadow: inset 500px 0 0 0 #ffffff;
     ;
 }
+
+.text-hover {
+    color: #000000;
+    font-size: 1rem;
+    padding: 0 8px 17px 8px;
+    font-weight: 550;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.fa-user[_ngcontent-kif-c88]:before {
+    content: "\f0c0";
+    color: #d67032;
+}
+
 
 
 

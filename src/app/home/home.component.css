@@ -45,8 +45,9 @@
 
 
 
-.border-bottom {
-  border-bottom: 4px solid #f25c04 !important;
+
+.border-bottom-2 {
+  border-bottom: 2px solid white !important;
 }
 
 .espaço{
@@ -59,11 +60,11 @@
 
 .fa-wallet:before {
   content: "\f555";
-  color: #f25c04;
+  color: #427c3c;
 }
 
 .color-orange {
-  background-color: #f25c04;
+  background-color: #d67032;
   color: white;
 }
 
@@ -75,7 +76,7 @@
 }
 
 .local {
-  color: #f25c04;
+  color: #d67032;
 }
 
 .float-right {
@@ -169,18 +170,34 @@
 .button-menu:hover {
   
   background-color: white; /* Green */
-  color: #f25c04;
+  color: #d67032;
+}
+
+.fa-list:before {
+  content: "\f03a";
+  color: #d67032;
 }
 
 .btn-danger {
   color: #fff;
-  background-color: #f25c04;
-  border-color: #f25c04;
+  background-color: red;
+  border-color: red;
+}
+
+.btn-danger-filter {
+  color: #fff;
+  background-color: #d67032;
+  border-color: #d67032;
 }
 
 .border-top {
   border-top: 5px solid !important;
-  border-color: #f25c04 !important;
+  border-color: #121921!important;
+}
+
+.fa-shopping-cart-car:before {
+  content: "\f07a";
+  color: #d67032;
 }
 
 
@@ -208,7 +225,7 @@
 
 .fa-edit:before {
   content: "\f044";
-  color: #0d6efd;
+  color: #237e1f;
   font-size: 15px;
 }
 
@@ -218,26 +235,26 @@
 
 .fa-box-open:before {
   content: "\f49e";
-  color: #f25c04;
+  color: #d67032;
 }
 
 .fa-shopping-bag:before {
   content: "\f290";
-  color: #f25c04;
+  color: #d67032;
 }
 
 .fa-money-bill:before {
   content: "\f0d6";
-  color: #f25c04;
+  color: #d67032;
 }
 
 .fa-motorcycle:before {
   content: "\f21c";
-  color: #f25c04;
+  color: #d67032;
 }
 
 .navbar-light .navbar-nav .nav-link {
-   color: #f25c04;
+   color: #d67032;
 }
 
 .espaço-cart {
@@ -329,7 +346,7 @@ table {
 
 .btn-color {
   color: white;
-  background-color: #f25c04;
+  background-color: #d67032;
 }
 
 .gradient-custom-2 {
@@ -430,6 +447,12 @@ table {
 .fa-trash-alt-cart:before {
   content: "\f2ed";
   font-size: 15px;
+}
+
+.item-price:before {
+	content: "\ea68";
+	left: 0;
+	top: -1px;
 }
 
 

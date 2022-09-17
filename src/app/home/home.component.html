@@ -1,7 +1,7 @@
 <div class="main">
     <div class="shadow">
         <div class="container-img border-bottom">
-            <div class="col-md-6 ms-5 mb-5 opacity shadow border-bottom">
+            <div class="col-md-6 offset-md-1 mb-5 border-bottom-2">
                 <div class="row">
                     <div class="col-md-4 offset-md-4 text-white">
                         <h5 class="tipografia">
@@ -17,7 +17,7 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="col-sm-2 offset-md-1">
+                    <div class="col-sm-2">
                         <img src="../../assets/images/logo2.png" data-bs-toggle="dropdown" width="100%">
                     </div>
                     <div class="col-md-7 offset-md-1">
@@ -35,7 +35,6 @@
                     </div>
                 </div>
 
-                <hr>
 
                 <div class="row">
                     <div class="col-md-4 offset-md-3 tipografia-icon text-white mb-2">
@@ -45,9 +44,9 @@
                         <i class="fas fa-box-open"></i> Retirada em 30 min.
                     </div>
                     <div class="w-100"></div>
-                    <div class="col-md-4 offset-md-3 tipografia-icon text-white"><i
+                    <div class="col-md-4 offset-md-3 tipografia-icon mb-2 text-white"><i
                             class="fas fa-shopping-bag text-white"></i> Pedido minimo de R$8,50</div>
-                    <div class="col-md-4 offset-md-1 tipografia-icon text-white"><i
+                    <div class="col-md-4 offset-md-1 tipografia-icon mb-2 text-white"><i
                             class="fas fa-money-bill text-white"></i> Calcular Entrega</div>
                 </div>
             </div>
@@ -55,25 +54,31 @@
     </div>
     <div class="row espaço">
         <div class="col-md-6 offset-md-1 mt-3 shadow border-top">
-            <div class="p-3 bg-white">
-                <button type="button" class="btn btn-success ms-4 float-right shadow btn-sm space  text-decoration-none"
+            <div class="container bg-white">
+                <div class="row">
+                  <div class="col p-3 ms-4">
+                    <h5 class="tipografia"><i class="fas fa-list"></i> Menu</h5>
+                  </div>
+                  <div class="col p-3 me-4">
+                    <button type="button" class="btn btn-success ms-4 float-right shadow btn-sm space  text-decoration-none"
                     id="adicionar" data-bs-toggle="modal" data-bs-target="#adicionarItem" *ngIf="permissao === 'A'">
                     <i class="fas fa-plus"></i> Adicionar items</button>
-            </div>
+                  </div>
+                </div>
+              </div>
             <div class="content p-4 bg-white">
                 <div class="col-xs-12 col-sm-10 col-md-8 col-lg-12">
-                    <button class="btn btn-danger me-2 button-menu" type="button" (click)="getTelas()">Todos</button>
-                    <button class="btn btn-danger me-2 button-menu" type="button"
+                    <button class="btn btn-danger-filter me-2 button-menu" type="button" (click)="getTelas()">Todos</button>
+                    <button class="btn btn-danger-filter me-2 button-menu" type="button"
                         (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
-                    <button class="btn btn-danger me-2 button-menu" type="button"
+                    <button class="btn btn-danger-filter me-2 button-menu" type="button"
                         (click)="filtrarCategoria('Lanches')">Lanches</button>
-                    <button class="btn btn-danger me-2 button-menu" type="button"
+                    <button class="btn btn-danger-filter me-2 button-menu" type="button"
                         (click)="filtrarCategoria('Hamburgers Artesanal')">Hamburguer Artesanal </button>
-                        <button class="btn btn-danger me-2 button-menu" type="button"
+                        <button class="btn btn-danger-filter me-2 button-menu" type="button"
                         (click)="filtrarCategoria('Refrigerantes')">Refrigerantes</button>
                 </div>
                 <hr>
-                <h5 class="tipografia"><i class="fas fa-list"></i> Menu</h5>
                 <div class="col-md-2 input-group rounded">
                     <input type="search" class="form-control mt-3 rounded " [(ngModel)]="searchText"
                         placeholder="Pesquisar Produto" aria-label="Search" aria-describedby="search-addon" />
@@ -188,7 +193,7 @@
         <div class="col-sm-8 col-md-3 mt-3" [@menuItemAppeared]="menuItemState" *ngIf="items().length">
             <div class="container-teste bg-white shadow border-top">
                 <div class="input-group rounded">
-                    <h5 class="mt-3"><i class="fas fa-shopping-cart"></i> Carrinho</h5>
+                    <h5 class="mt-3"><i class="fas fa-shopping-cart-car"></i> Carrinho</h5>
                 </div>
                 <div class="content-body">
                     <div class="box-body">

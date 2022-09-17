@@ -43,8 +43,10 @@ export class LoginComponent implements OnInit {
       },
         (error: any) => {
           sessionStorage.removeItem('token');
-          this.toast.error({summary:`Você não possui um cadastro!`, position: 'br', duration: 2000});
         })
+    }
+    if(this.form.valid!) {
+      this.toast.error({summary:`Usuário não cadastrado!`, position: 'br', duration: 2000});
     }
   }
 

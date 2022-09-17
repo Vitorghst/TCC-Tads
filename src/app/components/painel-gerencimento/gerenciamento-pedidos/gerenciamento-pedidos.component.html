@@ -1,44 +1,106 @@
 <div class="content-body">
-    <div *ngFor="let pedido of pedidos">
-      <div class="row">
-        <div class="col-md-4 offset-md-1">
-          <strong>Numero do Pedido: {{ pedido.id }}</strong>
-          <br>
-          <a><strong><i class="fas fa-user"></i> Nome do Cliente: </strong> {{ pedido.name }}</a>
-          <br>
-          <a><strong><i class="fas fa-envelope"></i> Email: </strong>{{ pedido.email }}</a>
-          <br>
-          <a><strong><i class="fas fa-envelope"></i> Telefone/Celular: </strong>{{ pedido.telefone }}</a>
-          <br>
-          <strong> <i class="fas fa-address-card"></i> Endereço de entrega:</strong>
-          <a> {{ pedido.cep }}, {{ pedido.logradouro }}
-            {{ pedido.bairro}}, {{ pedido.localidade }}, {{ pedido.number }}
-            {{ pedido.optionalAddress }}
-          </a>
-          <br>
-          <strong>Data do Pedido:</strong>
-          <br>
-          <a>{{ pedido.data }}</a>
-          <br>
-          <strong><i class="fas fa-money-bill-wave-alt"></i> Metodo de Pagamento:</strong>
-          <a> {{ pedido.pagamentoEntrega }} {{ pedido.pagamentoAplicativo}}</a>
-          <br>
-          <span class="me-2 mt-4 "><i class="fas fa-wallet"></i><strong> Total: </strong> {{ pedido.total }}</span>
+  <div *ngFor="let pedido of pedidos">
+    <div class="row  row-cols-3">
+      <div class="col-md-4 offset-md-1">
+        <div class="mb-3">
+          <i class="far fa-id-badge me-1"></i>
+          <label for="formGroupExampleInput" class="form-label"><strong>Numero do Pedido:</strong> {{ pedido.id
+            }}</label>
         </div>
-        <div class="col-md-6">
-          <div class="row">
-          <strong><i class="fas fa-list"></i> Items do Pedido:</strong>
-          <br>
-          <div class="col-md-4" *ngFor="let order of pedido.orderItems">
-            <strong>({{order.quantity}}x)<img src="{{ order.imagePath }}" width="70"></strong>
-            {{order.menuId}}
-            <br>
-            <strong>Adicionais:</strong> {{ order.adicionais }}
-            <br>
-            <strong>Observação:</strong> {{ order.observacao }}
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <div class="mb-3">
+          <i class="fas fa-user me-1"></i>
+          <label for="formGroupExampleInput2" class="form-label"><strong>Nome do Cliente:</strong> {{ pedido.name }}
+          </label>
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <div class="mb-3">
+          <i class="fas fa-envelope me-1"></i>
+          <label for="formGroupExampleInput2" class="form-label"><strong>Email:</strong> {{ pedido.email }}</label>
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <div class="mb-3">
+          <i class="fas fa-phone-alt me-1"></i>
+          <label for="formGroupExampleInput2" class="form-label"><strong>Telefone/Celular: </strong>{{ pedido.telefone
+            }}</label>
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <div class="mb-3">
+          <i class="fas fa-map-marker-alt me-1"></i>
+          <label for="formGroupExampleInput2" class="form-label"><strong>Endereço de entrega :</strong></label>
+          {{ pedido.cep }}, {{ pedido.logradouro }}
+          {{ pedido.bairro}}, {{ pedido.localidade }}, {{ pedido.number }}
+          {{ pedido.optionalAddress }}
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <div class="mb-3">
+          <i class="fas fa-calendar-alt me-1"></i>
+          <label for="formGroupExampleInput2" class="form-label"><strong>Data do Pedido:</strong> {{ pedido.data
+            }}</label>
+        </div>
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <div class="mb-3">
+          <i class="fas fa-clock me-1"></i>
+          <label for="formGroupExampleInput2" class="form-label"><strong>Metodo de Pagamento:</strong> {{
+            pedido.pagamentoEntrega }} {{ pedido.pagamentoAplicativo}}</label>
+        </div>
+        <span class=""><i class="fas fa-wallet"></i><strong> Total: </strong> {{ pedido.total }}</span>
+      </div>
+      <div class="col-md-4 offset-md-1">
+        <strong class="mb-2"><i class="fas fa-list"></i> Items do Pedido:</strong>
+        <br>
+        <button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="editOrder(pedido.orderItems)">Visualizar o
+          Pedido</button>
+      </div>
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl" >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-clipboard-list me-2"></i>Items do pedido:</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" >
+            <div class="col-md-12">
+              <div class="container">
+                <div class="row" >
+                  <div class="col-md-6" *ngFor="let order of pedidoModal">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img src="{{ order.imagePath }}" width="140">
+                        </div>
+                        <div class="col-md-6">
+                          <i class="fas fa-hamburger"></i> {{order.menuId}}
+                          <div class="">
+                            <i class="fas fa-plus-circle me-2"></i><strong>Adicionais:</strong> {{ order.adicionais }}
+                          </div>
+                          <div class="">
+                            <i class="fas fa-sticky-note me-2"></i> <strong>Observações:</strong> {{ order.observacoes }}
+                          </div>
+                        </div>
+                        <hr class=" bg-black">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
-      <hr class=" bg-black">
     </div>
+    <hr class=" bg-black">
+  </div>
 </div>

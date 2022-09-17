@@ -37,6 +37,25 @@ img {
     border-radius: 15px;
 }
 
+.fa-envelope:before {
+    content: "\f0e0";
+    color: #f25c04;
+}
+
+.fa-lock:before {
+    content: "\f023";
+    color: #f25c04;
+}
+
+.fa-key:before {
+    content: "\f084";
+    color: #f25c04;
+}
+
+.margin-icon {
+    margin-bottom: 25px;
+}
+
 .content-body::-webkit-scrollbar {
     width: 20px;
   }
@@ -77,14 +96,14 @@ img {
 }
 
 .bg-blue:hover {
-    background-color: #f25c04;
+    background-color: #d67032;
     color: #eee;
     cursor: pointer
 }
 
 .fa-edit:before {
     content: "\f044";
-    color: blue
+    color: rgb(48, 116, 35)
 }
 
 .fa-trash-alt:before {
@@ -94,7 +113,7 @@ img {
 
 .bg-blue:hover .fa-check,
 .bg-blue:hover .fa-minus {
-    background-color: #f25c04;
+    background-color: #d67032;
     color: #eee
 }
 

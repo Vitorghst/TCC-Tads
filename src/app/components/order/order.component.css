@@ -8,7 +8,7 @@
 }
 
 .border-top{
-    border-top: 4px solid #f25c04 !important;
+    border-top: 4px solid #121921 !important;
 }
 
 .boder-color {
@@ -25,4 +25,9 @@
 .color-orange {
     background-color: #f25c04;
     color: white;
+}
+
+.fa-shopping-cart:before {
+    content: "\f07a";
+    color: #d67032 ;
 }
