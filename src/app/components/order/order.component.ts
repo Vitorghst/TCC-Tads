@@ -35,6 +35,9 @@ export class OrderComponent implements OnInit {
   paypal: any
   pagamentoAplicativo!: any;
   date = moment().locale('pt-br').format('L, h:mm:ss a');
+  usuario!: any;
+  permissao: any
+  nomeUser!: any
   
 
   constructor(private Api: ListaApiService, private route: Router, private formBuilder: FormBuilder, private toast: NgToastService ) {
@@ -56,7 +59,8 @@ export class OrderComponent implements OnInit {
       optionalAddress: this.formBuilder.control(''),
       total: this.formBuilder.control('R$' + this.total(), [Validators.required]),
       pagamentoEntrega: this.formBuilder.control(''),
-      pagamentoAplicativo: this.formBuilder.control('')
+      pagamentoAplicativo: this.formBuilder.control(''),
+      usuario: this.formBuilder.control(sessionStorage.getItem('token')),
     }, {validator: OrderComponent.equalsTo})
     
     this.orderForm.value.data = this.date
@@ -81,7 +85,6 @@ export class OrderComponent implements OnInit {
 
     },
     })
-      
 
   }
   
@@ -114,6 +117,15 @@ export class OrderComponent implements OnInit {
     }
     return undefined!
 
+  }
+
+  getUser() {
+    const token = sessionStorage.getItem('token')
+    this.Api.getUserById(token).subscribe((user: any) => {
+      user.id = this.orderForm.value.usuario
+      console.log(this.orderForm.value.usuario);
+      
+  })
   }
 
 

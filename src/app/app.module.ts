@@ -44,6 +44,8 @@ import { GerenciamentoUsuariosComponent } from './components/painel-gerencimento
 import { SideMenuComponent } from './components/painel-gerencimento/side-menu/side-menu.component';
 import { GerenciamentoPedidosComponent } from './components/painel-gerencimento/gerenciamento-pedidos/gerenciamento-pedidos.component';
 import { Md5 } from 'ts-md5';
+import { PedidosUsuariosComponent } from './components/pedidos-usuarios/pedidos-usuarios.component';
+import { SideMenuPedidosComponent } from './components/pedidos-usuarios/side-menu-pedidos/side-menu-pedidos.component';
 
 
 
@@ -77,6 +79,8 @@ import { Md5 } from 'ts-md5';
     GerenciamentoUsuariosComponent,
     SideMenuComponent,
     GerenciamentoPedidosComponent,
+    PedidosUsuariosComponent,
+    SideMenuPedidosComponent,
 
     
 

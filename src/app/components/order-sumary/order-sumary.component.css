@@ -12,3 +12,16 @@
     margin-right: 34%;
     margin-bottom: 50px;
 }
+
+.color-orange {
+    background-color: #d67032;
+    color: white;
+}
+.text-area {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    width: 70%;
+    height: 150px;
+    width:  500px;
+  }
+

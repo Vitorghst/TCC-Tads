@@ -50,6 +50,9 @@ export class HomeComponent implements OnInit {
   horario: any;
   usuario: any;
   permissao: any
+  review: any;
+  rating: any;
+  ratingTotal: any;
 
   adicionarItemForm = this.formBuilder.group({
     id: new FormControl(''),
@@ -89,6 +92,7 @@ fileName = '';
     this.getAdicionais()
     this.getHorarios()
     this.getUser()
+    this.totalRating()
 
 
   }
@@ -176,6 +180,21 @@ fileName = '';
       console.log(reader.result);; 
       
     };
+  }
+
+  totalRating() {
+    this.Api.getReview().subscribe((review: any) => {
+      this.review = review;
+      let total = 0
+      review.forEach((element: any) => {
+        this.rating = element.rating
+        total = total + this.rating
+      });
+      this.ratingTotal = total / review.length
+      this.ratingTotal = this.ratingTotal.toFixed(1)
+      console.log(this.ratingTotal);
+      
+    });
   }
 
   

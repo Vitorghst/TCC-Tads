@@ -50,7 +50,7 @@
                             </div>
                           </div>
                     </li>
-                    <li class="nav-item  mb-3 icon-user mt-3 margin-nav-link">
+                    <li class="nav-item  mb-3 icon-user mt-3 offset-md-3">
                       <div class="dropdown">
                         <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                           <img
@@ -64,6 +64,7 @@
                       
                         <ul class="dropdown-menu border-top" aria-labelledby="dropdownMenuLink" >
                           <li class="p-2" *ngIf="this.permissao === 'A'"><a class="dropdown-item"  [routerLink]="['/painel-gerenciamento']"><i class="fas fa-store-alt me-2"></i>Painel de Gerenciamento</a></li>
+                          <li class="p-2" *ngIf="this.permissao === 'B'"><a class="dropdown-item"  [routerLink]="['/pedidos-usuarios']"><i class="fas fa-store-alt me-2"></i>Meus Pedidos</a></li>
                           <li class="p-2"><a class="dropdown-item" href="#" (click)="exit()"><i class="fas fa-door-open"></i> Sair</a></li>
                         </ul>
                       </div>

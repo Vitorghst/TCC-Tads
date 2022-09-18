@@ -25,6 +25,8 @@
 .container {
     width: 100%;
     padding: 6px;
+    max-height: 800px;
+    min-height: 800px;
 }
 
 .espaço {
@@ -46,11 +48,11 @@
 .avaliacao {
     float: right;
     font-size: 20px;
-    color: #fccb90;
+    color: #d67032;
 }
 
 .top-avaliacao {
-    color: #fccb90;
+    color: #d67032;
 }
 
 .margin {
@@ -81,7 +83,7 @@
 }
 
 .color {
-    color: #fccb90;
+    color: #d67032;
     cursor: pointer;
 }
 

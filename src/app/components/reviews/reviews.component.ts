@@ -20,7 +20,8 @@ export class ReviewsComponent implements OnInit {
 
   menuItemState = 'ready';
   review?: any
-  
+  rating: any
+  teste: any
 
   constructor(private Api: ListaApiService) { }
 
@@ -31,9 +32,14 @@ export class ReviewsComponent implements OnInit {
   getReview() {
     this.Api.getReview().subscribe((review: any) => {
       this.review = review;
+      review.forEach((element: any) => {
+        this.rating = element.rating
+        console.log(this.rating);
+        
+      });
       console.log(this.review);
 
     });
   }
-
+      
 }

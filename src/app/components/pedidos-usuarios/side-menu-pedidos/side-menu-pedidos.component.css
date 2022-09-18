@@ -22,12 +22,6 @@
     ;
 }
 
-.fa-shopping-bag:before {
-    content: "\f290";
-    font-size: 22px;
-    color: #198754;
-}
-
 .text-hover {
     color: #000000;
     font-size: 1rem;

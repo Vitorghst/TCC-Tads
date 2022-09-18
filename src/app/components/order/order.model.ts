@@ -8,13 +8,14 @@ class Order {
       public optionalAddress: string,
       public paymentOption: string,
       public paypal: string,
+      public usuario: number,
       public orderItems: OrderItem[] = []
     ){}
   }
 
   
   class OrderItem {
-    constructor(public quantity: number, public menuId: string, public observacao: string, public imagePath:string, public adicionais: any, public total: any){}
+    constructor(public quantity: number, public menuId: string, public observacao: string, public imagePath:string, public adicionais: any,  public total: any){}
   }
   
   export {Order, OrderItem}

@@ -17,6 +17,7 @@ import { OrderComponent } from './components/order/order.component';
 import { OrderSumaryComponent } from './components/order-sumary/order-sumary.component';
 import { CadastroComponent } from './components/login/cadastro/cadastro.component';
 import { PainelGerencimentoComponent } from './components/painel-gerencimento/painel-gerencimento.component';
+import { PedidosUsuariosComponent } from './components/pedidos-usuarios/pedidos-usuarios.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
         { path: 'gerencimamento-usuarios', component: PainelGerencimentoComponent },
         { path: 'gerenciamento-pedidos', component: PainelGerencimentoComponent },
       ]},
+      { path: 'pedidos-usuarios', component: PedidosUsuariosComponent},
       { path: 'reviews', component: ReviewsComponent },
       { path: 'listar-api', component: ListarApiComponent },
       { path: 'edit-api', component: EditApiComponent},

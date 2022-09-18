@@ -12,7 +12,7 @@
                         <span class="review-score avaliacao pull-right" ><i class="fa fa-star"></i>
                             {{reviews.rating}}</span>
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <img *ngIf="reviews.rating < 3" alt="User Image"  width="90%" class="img-circle"
                                     src="assets/images/reactions/pissed.png">
                                 <img *ngIf="reviews.rating >= 3 && reviews.rating < 4"  width="90%" alt="User Image"
@@ -24,7 +24,7 @@
                                 <div>
                                     <h6 class="username">{{reviews.name}}</h6>
                                 </div>
-                                <span class="description"> {{reviews.date | date:'dd/MM/yyyy'}}</span>
+                                <span class="description"> {{reviews.date}}</span>
                             </div>
                         </div>
                         <hr>

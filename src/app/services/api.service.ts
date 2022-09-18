@@ -9,6 +9,7 @@ import { CartItem, MenuItem } from '../home/home.model';
 import { Order } from '../components/order/order.model';
 import { NgToastService } from 'ng-angular-popup';
 import { ThrowStmt } from '@angular/compiler';
+import { Reviews } from '../components/order-sumary/order-sumary.model';
 
 
 
@@ -40,6 +41,7 @@ export class ListaApiService {
   }
 
   itemAdicionais: CartItem[] = []
+  rating3?: number;
 
   constructor(private httpClient: HttpClient, private toast: NgToastService ) { }
 
@@ -70,6 +72,7 @@ export class ListaApiService {
       )
   }
 
+
   getMenu(): Observable<MenuItem[]> {
     return this.httpClient.get<MenuItem[]>(`${this.url}/menu`)
       .pipe(
@@ -82,8 +85,25 @@ export class ListaApiService {
     return this.httpClient.get<any>(`${this.url}/users` )
   }
 
+
+  getOrderById(id: any): Observable<Order[]> {
+    return this.httpClient.get<Order[]>(`${this.url}/orders?usuario=${id}`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
   getOrders(): Observable<Order[]> {
     return this.httpClient.get<Order[]>(`${this.url}/orders`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  addReview(review: any){
+    return this.httpClient.post<Reviews>(`${this.url}/reviews`, review, this.options)
       .pipe(
         retry(2),
         catchError(this.handleError)
@@ -107,6 +127,7 @@ export class ListaApiService {
         catchError(this.handleError)
       )
   }
+
 
   deleteUserById(id: any){
     return this.httpClient.delete<any>(`${this.url}/users/${id}`)
