@@ -30,4 +30,5 @@ export class GerenciamentoPedidosComponent implements OnInit {
     console.log(item);
     
   }
+
 }

@@ -24,11 +24,12 @@ export class OrderSumaryComponent implements OnInit {
 
   })
   user: any;
+  status: any
 
  
   
   
-  constructor(public fb: FormBuilder, public Api: ListaApiService, private toast: NgToastService) { }
+  constructor(private fb: FormBuilder, private Api: ListaApiService, private toast: NgToastService) { }
 
   ngOnInit(): void {
     this.getUser()
@@ -68,6 +69,23 @@ export class OrderSumaryComponent implements OnInit {
       
     })
   }
+
+  // mudar o css de acordo com a status do pedido
+  getStatus() {
+    switch (this.status) {
+      case 'Em preparo':
+        return 'completed'
+      case 'Em entrega':
+        return 'completed'
+      case 'Entregue':
+        return 'completed'
+      case 'Cancelado':
+        return 'canceled'
+      default:
+        return ''
+    }
+  }
+
 
 
 }

@@ -3,31 +3,29 @@
     <div class="col-md-6 offset-md-3 ">
       <div class="container mt-3 shadow bg-white">
         <div class="jumbotron p-5 font-size text-center">
+          <form [formGroup]="form">
           <div class="col-md-6 mb-1 offset-md-3">
             <img src="../../../assets/images/logo1.png" data-bs-toggle="dropdown" height="70">
           </div>
           <h1>Pedido Conluído</h1>
           <p>Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!</p>
           <p><b>Avalie</b> sua experiência:</p>
-            <form [formGroup]="form">
-              <div class="col-md-8">
+              <div class="col-sm-12 col-md-8  ">
                 <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
+                
               </div>
-              <div class="col-md-3 offset-md-2">
-                <button type="button" class="btn color-orange mt-1"><i class="fas fa-comment-dots"></i> Alguma
-                  observação?</button>
-                <textarea formControlName="comments" class="mt-2 text-area"></textarea>
-              </div>
-            </form>
-
-          <div class="col-md-10 offset-md-1">
+            <div class="col-sm-8 col-md-10 col-lg-10 offset-md-1 margin-top">
+              <button type="button" class="btn color-orange ms-3 " ><i class="fas fa-comment-dots"></i> Alguma
+                observação?</button><textarea formControlName="comments" class="mt-2 text-area"></textarea>
+            </div>
+           
+          <div class="col-sm-8 col-md-10 col-lg-10 offset-md-1">
             <button class="btn btn-success" [disabled]="!form.valid" (click)="addReview()">Enviar avaliação</button>
           </div>
-        </div>
-        <!-- <p *ngIf="rated">
-                  Obrigado pela sua avaliação!
-                </p> -->
+        </form>
+        </div> 
       </div>
+      
     </div>
   </div>
 </div>
