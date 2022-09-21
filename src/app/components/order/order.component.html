@@ -22,41 +22,85 @@
 
                             <div class="col-sm-3 col-xs-4 formGroup ">
                                 <input class="form-control " formControlName="name" placeholder="Nome"
-                                    autocomplete="off" required>
-                                <p *ngIf="orderForm.get('name')?.invalid && 
+                                    autocomplete="off" required [ngClass]=" (orderForm.get('name')?.touched ||
+                                    orderForm.get('name')?.dirty) &&
+                                    orderForm.get('name')?.hasError('required')
+                                    ? 'is-invalid'
+                                    : '' ||  orderForm.get('name')?.hasError('minlength')
+                                    ? 'is-invalid'
+                                    : '' ||
+                                      (( orderForm.get('name')?.touched ||
+                                      orderForm.get('name')?.dirty) &&
+                                        ! orderForm.get('name')?.invalid)
+                                    ? 'is-valid'
+                                    : ''
+                                ">
+                              <p *ngIf="orderForm.get('name')?.invalid && 
                                 orderForm.get('name')?.touched" class="text-danger"><i class="fas fa-times"></i> Campo
                                     obrigatório e com 5 caracteres no mínimo</p>
-                                <p *ngIf="orderForm.get('name')?.valid" class="text-success"><i
-                                        class="fas fa-check"></i> OK</p>
+
 
                             </div>
                             <div class="col-sm-3 col-xs-6">
                                 <input type="text" class="form-control" formControlName="telefone"
-                                    placeholder="Telefone/Celular" autocomplete="off" required>
+                                    placeholder="Telefone/Celular" autocomplete="off" required
+                                    [ngClass]=" (orderForm.get('telefone')?.touched ||
+                                    orderForm.get('telefone')?.dirty) &&
+                                    orderForm.get('telefone')?.hasError('required')
+                                    ? 'is-invalid'
+                                    : '' ||  orderForm.get('telefone')?.hasError('minlength')
+                                    ? 'is-invalid'
+                                    : '' ||
+                                      (( orderForm.get('telefone')?.touched ||
+                                      orderForm.get('telefone')?.dirty) &&
+                                        ! orderForm.get('telefone')?.invalid)
+                                    ? 'is-valid'
+                                    : ''
+                                ">
                                 <p *ngIf="orderForm.get('telefone')?.invalid  && 
                                 orderForm.get('telefone')?.touched" class="text-danger"><i class="fas fa-times"></i>
                                     Campo obrigatório</p>
-                                <p *ngIf="orderForm.get('telefone')?.valid" class="text-success"><i
-                                        class="fas fa-check"></i> OK</p>
                                 
                             </div>
                             <div class="col-sm-3 col-xs-6">
                                 <input type="text" class="form-control" formControlName="email" placeholder="E-mail"
-                                    autocomplete="off" required>
+                                    autocomplete="off" required 
+                                    [ngClass]=" (orderForm.get('email')?.touched ||
+                                    orderForm.get('email')?.dirty) &&
+                                    orderForm.get('email')?.hasError('required')
+                                    ? 'is-invalid'
+                                    : '' ||  orderForm.get('email')?.hasError('minlength')
+                                    ? 'is-invalid'
+                                    : '' ||
+                                      (( orderForm.get('email')?.touched ||
+                                      orderForm.get('email')?.dirty) &&
+                                        ! orderForm.get('email')?.invalid)
+                                    ? 'is-valid'
+                                    : ''
+                                ">
                                 <p *ngIf="orderForm.get('email')?.invalid && 
                                 orderForm.get('email')?.touched" class="text-danger"><i class="fas fa-times"></i>
                                     E-mail inválido</p>
-                                <p *ngIf="orderForm.get('email')?.valid" class="text-success"><i
-                                        class="fas fa-check"></i> OK</p>
                             </div>
                             <div class="col-sm-3 col-xs-6">
-                                <input type="text" class="form-control" formControlName="emailConfirmation"
-                                    placeholder="Confirmação do e-mail" autocomplete="off" required>
+                                <input type="text" class="form-control " formControlName="emailConfirmation"
+                                    placeholder="Confirmação do e-mail"  autocomplete="off" required
+                                    [ngClass]=" (orderForm.get('emailConfirmation')?.touched ||
+                                    orderForm.get('emailConfirmation')?.dirty) &&
+                                    orderForm.get('emailConfirmation')?.hasError('required')
+                                    ? 'is-invalid'
+                                    : '' ||  orderForm.get('emailConfirmation')?.hasError('minlength')
+                                    ? 'is-invalid'
+                                    : '' ||
+                                      (( orderForm.get('emailConfirmation')?.touched ||
+                                      orderForm.get('emailConfirmation')?.dirty) &&
+                                        ! orderForm.get('emailConfirmation')?.invalid)
+                                    ? 'is-valid'
+                                    : ''
+                                ">
                                 <p *ngIf="orderForm.get('emailConfirmation')?.invalid  && 
                                 orderForm.get('emailConfirmation')?.touched" class="text-danger"><i
                                         class="fas fa-times"></i> E-mail inválido</p>
-                                <p *ngIf="orderForm.get('emailConfirmation')?.valid" class="text-success"><i
-                                        class="fas fa-check"></i> OK</p>
                             </div>
                         </div>
                         <div class="row">
@@ -74,39 +118,82 @@
                         </div>
                         <div class="col-sm-6 col-xs-12">
                             <input class="form-control" formControlName="logradouro" placeholder="Logradouro"
-                                autocomplete="off" required>
+                                autocomplete="off" required 
+                                [ngClass]=" (orderForm.get('logradouro')?.touched ||
+                                    orderForm.get('logradouro')?.dirty) &&
+                                    orderForm.get('logradouro')?.hasError('required')
+                                    ? 'is-invalid'
+                                    : '' ||  orderForm.get('logradouro')?.hasError('minlength')
+                                    ? 'is-invalid'
+                                    : '' ||
+                                      (( orderForm.get('logradouro')?.valid ||
+                                      orderForm.get('logradouro')?.dirty) &&
+                                        ! orderForm.get('logradouro')?.invalid)
+                                    ? 'is-valid'
+                                    : ''
+                                ">
                             <p *ngIf="orderForm.get('logradouro')?.invalid && 
                                 orderForm.get('logradouro')?.touched " class="text-danger"><i class="fas fa-times"></i>
                                 Campo obrigatório e com 5 caracteres no mínimo</p>
-                            <p *ngIf="orderForm.get('logradouro')?.valid" class="text-success"><i
-                                    class="fas fa-check"></i> OK</p>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                             <input type="text" class="form-control" formControlName="bairro" placeholder="Bairro"
-                                autocomplete="off" required>
+                                autocomplete="off" required [ngClass]=" (orderForm.get('bairro')?.touched ||
+                                orderForm.get('bairro')?.dirty) &&
+                                orderForm.get('bairro')?.hasError('required')
+                                ? 'is-invalid'
+                                : '' ||  orderForm.get('bairro')?.hasError('minlength')
+                                ? 'is-invalid'
+                                : '' ||
+                                  (( orderForm.get('bairro')?.valid ||
+                                  orderForm.get('bairro')?.dirty) &&
+                                    ! orderForm.get('bairro')?.invalid)
+                                ? 'is-valid'
+                                : ''
+                            ">
                             <p *ngIf="orderForm.get('bairro')?.invalid && 
                                 orderForm.get('bairro')?.touched" class="text-danger"><i class="fas fa-times"></i>
                                 Campo obrigatório e com 5 caracteres no mínimo</p>
-                            <p *ngIf="orderForm.get('bairro')?.valid" class="text-success"><i class="fas fa-check"></i>
-                                OK</p>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                             <input type="text" class="form-control" formControlName="localidade"
-                                placeholder="Localidade" autocomplete="off" required>
+                                placeholder="Localidade" autocomplete="off" required
+                                [ngClass]=" (orderForm.get('localidade')?.touched ||
+                                    orderForm.get('localidade')?.dirty) &&
+                                    orderForm.get('localidade')?.hasError('required')
+                                    ? 'is-invalid'
+                                    : '' ||  orderForm.get('localidade')?.hasError('minlength')
+                                    ? 'is-invalid'
+                                    : '' ||
+                                      (( orderForm.get('localidade')?.valid ||
+                                      orderForm.get('localidade')?.dirty) &&
+                                        ! orderForm.get('localidade')?.invalid)
+                                    ? 'is-valid'
+                                    : ''
+                                ">
                             <p *ngIf="orderForm.get('localidade')?.invalid && 
                                 orderForm.get('localidade')?.touched" class="text-danger"><i class="fas fa-times"></i>
                                 Campo obrigatório e com 5 caracteres no mínimo</p>
-                            <p *ngIf="orderForm.get('localidade')?.valid" class="text-success"><i
-                                    class="fas fa-check"></i> OK</p>
                         </div>
                         <div class="col-sm-3 col-xs-6">
                             <input type="text" class="form-control" formControlName="number" placeholder="Numero"
-                                autocomplete="off" required>
+                                autocomplete="off" required 
+                                [ngClass]=" (orderForm.get('number')?.touched ||
+                                    orderForm.get('number')?.dirty) &&
+                                    orderForm.get('number')?.hasError('required')
+                                    ? 'is-invalid'
+                                    : '' ||  orderForm.get('number')?.hasError('minlength')
+                                    ? 'is-invalid'
+                                    : '' ||
+                                      (( orderForm.get('number')?.touched ||
+                                      orderForm.get('number')?.dirty) &&
+                                        ! orderForm.get('number')?.invalid)
+                                    ? 'is-valid'
+                                    : ''
+                                ">
                             <p *ngIf="orderForm.get('number')?.invalid && 
                                 orderForm.get('number')?.touched" class="text-danger"><i class="fas fa-times"></i>
                                 Obrigatório e somente números</p>
-                            <p *ngIf="orderForm.get('number')?.valid" class="text-success"><i class="fas fa-check"></i>
-                                OK</p>
                         </div>
                         <div class="col-sm-6 col-xs-6">
                             <input type="text" class="form-control" formControlName="optionalAddress"

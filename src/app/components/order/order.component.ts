@@ -30,6 +30,7 @@ export class OrderComponent implements OnInit {
   details: any 
 
 
+
   paymentOptions: RadioOption[] = [
     {label: 'Dinheiro', value: 'Dinheiro'},
     {label: 'Cartão de Débito', value: 'Cartão de Débito'},
@@ -53,7 +54,7 @@ export class OrderComponent implements OnInit {
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       telefone: this.formBuilder.control('', [Validators.required]),
-      cep: this.formBuilder.control( '', [Validators.required, Validators.pattern(this.cepPattern)]), //cep mask
+      cep: this.formBuilder.control( '', [Validators.required]), //cep mask
       logradouro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       bairro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       localidade: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
@@ -95,7 +96,6 @@ export class OrderComponent implements OnInit {
     this.pagamentoAplicativo = 'Pagamento realizado pelo aplicativo'
   }
   
-
   // libear o botao de finalizar caso for paymeetOptions ou paypal
   isOrderCompleted(): boolean {
     if(this.orderForm.get('pagamentoEntrega')!.value === 'Dinheiro' || this.orderForm.get('pagamentoEntrega')!.value === 'Cartão Refeição' || this.orderForm.get('pagamentoEntrega')!.value === 'Cartão de Débito'){
