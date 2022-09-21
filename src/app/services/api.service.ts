@@ -72,6 +72,13 @@ export class ListaApiService {
       )
   }
 
+  getRestaurante(): Observable<any> {
+    return this.httpClient.get<any>(`${this.url}/restaurant`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
 
   getMenu(): Observable<MenuItem[]> {
     return this.httpClient.get<MenuItem[]>(`${this.url}/menu`)

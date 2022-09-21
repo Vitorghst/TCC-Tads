@@ -2,52 +2,55 @@
     <div class="shadow">
         <div class="container-img border-bottom">
             <div class="col-md-6 offset-md-1 mb-5 border-bottom-2">
-                <div class="row">
-                    <div class="col-md-4 offset-md-4 text-white">
-                        <h5 class="tipografia">
-                            <h2 class="text-center">FoodBoard</h2>
-                        </h5>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="pull-right text-decoration-none avaliacao tipografia-icon text-white"
-                            routerLinkActive="detail-active" id="reviews" [routerLink]="['/reviews']">
-                            <button class="btn color-orange" type="submit"> <i class="fas fa-star me-2"></i>{{ ratingTotal }}</button>
-                        </a>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-2">
-                        <img src="../../assets/images/logo2.png" data-bs-toggle="dropdown" width="100%">
-                    </div>
-                    <div class="col-md-7 offset-md-1">
-                        <span class="tipografia  text-white pointer" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"><i class="fas fa-clock"
-                                [ngStyle]="{'color': this.status === 'Aberto' ? 'green' : 'red'}"></i>
-                            {{ this.status }} {{ this.horario }}</span>
-                        <div class="mt-5 me-4">
-                            <p class="text-white"><i class="fas fa-map-marker-alt local"></i> Avenida Romário Martins,
-                                101 Centro, Rolândia - PR, 86600-103</p>
+                <div *ngFor="let restaurante of restaurant">
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4 text-white">
+                            <h5 class="tipografia">
+                                <h2 class="text-center">{{ restaurante.name }}</h2>
+                            </h5>
                         </div>
-                        <div class="mt-3 me-4">
-                            <p class="text-white"><i class="fas fa-phone-alt local"></i> (43) 3221-9000</p>
+                        <div class="col-md-4">
+                            <a class="pull-right text-decoration-none avaliacao tipografia-icon text-white"
+                                routerLinkActive="detail-active" id="reviews" [routerLink]="['/reviews']">
+                                <button class="btn color-orange" type="submit"> <i class="fas fa-star me-2"></i>{{
+                                    ratingTotal }}</button>
+                            </a>
                         </div>
                     </div>
-                </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="../../assets/images/logo2.png" data-bs-toggle="dropdown" width="100%">
+                        </div>
+                        <div class="col-md-7 offset-md-1">
+                            <span class="tipografia  text-white pointer" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal"><i class="fas fa-clock"
+                                    [ngStyle]="{'color': this.status === 'Aberto' ? 'green' : 'red'}"></i>
+                                {{ this.status }} {{ this.horario }}</span>
+                            <div class="mt-5 me-4">
+                                <p class="text-white"><i class="fas fa-map-marker-alt local"></i> {{ restaurante.endereco }},
+                                     {{ restaurante.cidade }} - {{ restaurante.estado }}, {{ restaurante.cep }}</p>
+                            </div>
+                            <div class="mt-3 me-4">
+                                <p class="text-white"><i class="fas fa-phone-alt local me-2"></i>  {{ restaurante.telefone }}</p>
+                            </div>
+                        </div>
+                    </div>
 
 
-                <div class="row">
-                    <div class="col-md-4 offset-md-3 tipografia-icon text-white mb-2">
-                        <i class="fas fa-motorcycle text-white"></i> Entrega em até 40 min
+                    <div class="row">
+                        <div class="col-md-4 offset-md-3 tipografia-icon text-white mb-2">
+                            <i class="fas fa-motorcycle text-white"></i> Entrega em até {{ restaurante.entregaTempo }} min
+                        </div>
+                        <div class="col-md-4 offset-md-1 tipografia-icon text-white">
+                            <i class="fas fa-box-open"></i> Retirada em {{restaurante.retirada}} min.
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-4 offset-md-3 tipografia-icon mb-2 text-white"><i
+                                class="fas fa-shopping-bag text-white"></i> Pedido minimo de {{ restaurante.pedidoMin | currency:'BRL':true }}</div>
+                        <div class="col-md-4 offset-md-1 tipografia-icon mb-2 text-white"><i
+                                class="fas fa-money-bill text-white"></i> Calcular Entrega</div>
                     </div>
-                    <div class="col-md-4 offset-md-1 tipografia-icon text-white">
-                        <i class="fas fa-box-open"></i> Retirada em 30 min.
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-md-4 offset-md-3 tipografia-icon mb-2 text-white"><i
-                            class="fas fa-shopping-bag text-white"></i> Pedido minimo de R$8,50</div>
-                    <div class="col-md-4 offset-md-1 tipografia-icon mb-2 text-white"><i
-                            class="fas fa-money-bill text-white"></i> Calcular Entrega</div>
                 </div>
             </div>
         </div>
@@ -56,26 +59,29 @@
         <div class="col-sm-6 col-md-6 offset-md-1 mt-3 shadow border-top">
             <div class="container bg-white">
                 <div class="row">
-                  <div class="col p-3 ms-4">
-                    <h5 class="tipografia"><i class="fas fa-list"></i> Menu</h5>
-                  </div>
-                  <div class="col p-3 me-4">
-                    <button type="button" class="btn btn-success ms-4 float-right shadow btn-sm space  text-decoration-none"
-                    id="adicionar" data-bs-toggle="modal" data-bs-target="#adicionarItem" *ngIf="permissao === 'A'">
-                    <i class="fas fa-plus"></i> Adicionar items</button>
-                  </div>
+                    <div class="col p-3 ms-4">
+                        <h5 class="tipografia"><i class="fas fa-list"></i> Menu</h5>
+                    </div>
+                    <div class="col p-3 me-4">
+                        <button type="button"
+                            class="btn btn-success ms-4 float-right shadow btn-sm space  text-decoration-none"
+                            id="adicionar" data-bs-toggle="modal" data-bs-target="#adicionarItem"
+                            *ngIf="permissao === 'A'">
+                            <i class="fas fa-plus"></i> Adicionar items</button>
+                    </div>
                 </div>
-              </div>
+            </div>
             <div class="content p-4 bg-white">
                 <div class="col-xs-10 col-sm-10 col-md-10  col-lg-10">
-                    <button class="btn btn-danger-filter me-2 mb-2 button-menu" type="button" (click)="getTelas()">Todos</button>
+                    <button class="btn btn-danger-filter me-2 mb-2 button-menu" type="button"
+                        (click)="getTelas()">Todos</button>
                     <button class="btn btn-danger-filter me-2 mb-2 button-menu" type="button"
                         (click)="filtrarCategoria('Cachorro Quente')">Cachorro Quente</button>
                     <button class="btn btn-danger-filter me-2 mb-2 button-menu" type="button"
                         (click)="filtrarCategoria('Lanches')">Lanches</button>
                     <button class="btn btn-danger-filter me-2 mb-2 button-menu" type="button"
                         (click)="filtrarCategoria('Hamburgers Artesanal')">Hamburguer Artesanal </button>
-                        <button class="btn btn-danger-filter me-2 mb-2 button-menu" type="button"
+                    <button class="btn btn-danger-filter me-2 mb-2 button-menu" type="button"
                         (click)="filtrarCategoria('Refrigerantes')">Refrigerantes</button>
                 </div>
                 <hr>
@@ -96,8 +102,8 @@
                             <h3 class="mt-2 tipografia ">{{menuItem.name}} <i
                                     class="fas fa-trash-alt float-right pointer" *ngIf="permissao === 'A'"
                                     (click)="deleteItem(menuItem.id)"></i>
-                                <i class="fas fa-edit float-right pointer me-2" *ngIf="permissao === 'A'" (click)="editApi(menuItem)"
-                                    data-bs-toggle="modal" data-bs-target="#editarItem"></i>
+                                <i class="fas fa-edit float-right pointer me-2" *ngIf="permissao === 'A'"
+                                    (click)="editApi(menuItem)" data-bs-toggle="modal" data-bs-target="#editarItem"></i>
                             </h3>
                             <span>{{menuItem.description}}</span>
                             <br>
@@ -231,9 +237,10 @@
                                                             *ngFor="let item of itemAdicionais(); let myIndex=index;">
                                                             <h5>({{ item.quantity }}x) {{ item.menuItem.name }}</h5>
                                                             <div *ngFor="let checkbox of adicionais">
-                                                                <div class="form-check" *ngIf="item.menuItem.category !== 'Refrigerantes'">
+                                                                <div class="form-check"
+                                                                    *ngIf="item.menuItem.category !== 'Refrigerantes'">
                                                                     <form>
-                                                                        <div >
+                                                                        <div>
                                                                             <input class="form-check-input"
                                                                                 [(ngModel)]="item.adicionais"
                                                                                 type="radio" value="{{ checkbox.name }}"

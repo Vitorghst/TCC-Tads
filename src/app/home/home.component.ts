@@ -52,6 +52,7 @@ export class HomeComponent implements OnInit {
   permissao: any
   review: any;
   rating: any;
+  restaurant: any;
   ratingTotal: any;
 
   adicionarItemForm = this.formBuilder.group({
@@ -93,6 +94,7 @@ fileName = '';
     this.getHorarios()
     this.getUser()
     this.totalRating()
+    this.getRestaurant()
 
 
   }
@@ -196,6 +198,14 @@ fileName = '';
       
     });
   }
+
+  getRestaurant() {
+    this.Api.getRestaurante().subscribe((restaurant: any) => {
+      this.restaurant = restaurant;
+      console.log(this.restaurant);
+    });
+  }
+
 
   
   // pegar o user logado com o session storage

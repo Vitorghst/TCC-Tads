@@ -67,12 +67,29 @@
   "profile": {
     "name": "typicode"
   },
+  "restaurant": [
+    {
+      "id": 1,
+      "name": "FoodBoard",
+      "endereco": "Avenida Romário Martins 101 Centro",
+      "cidade": "Rolândia",
+      "estado": "PR",
+      "cep": "86601-028",
+      "telefone": "43 3256-9661",
+      "celular": "43 99859-9286",
+      "cnpj": "19.123.456/0001-12",
+      "entregaTempo": "40",
+      "retirada": "30",
+      "pedidoMin": "8.50",
+      "frete": "8"
+    }
+  ],
   "menu": [
     {
       "id": 1,
       "imagePath": "assets/images/foods/fries.png",
       "name": "Cachorro Quente Simples",
-      "description": "Pão de leite, salsicha, tomate, maionese, catchup e mostarda.",
+      "description": "Pão de leite, salsicha, tomate, maionese, ketchup e mostarda.",
       "price": 10,
       "category": "Cachorro Quente"
     },
@@ -80,7 +97,7 @@
       "id": 2,
       "imagePath": "assets/images/foods/hotduplo.png",
       "name": "HOT DOG TRADICIONAL DUPLO",
-      "description": "Pão de leite, 02 salsicha, tomate, maionese, catchup e mostarda.",
+      "description": "Pão de leite, 02 salsicha, tomate, maionese, ketchup e mostarda.",
       "price": 2.5,
       "category": "Cachorro Quente"
     },
@@ -88,7 +105,7 @@
       "id": 3,
       "imagePath": "assets/images/foods/hotdogfrango.png",
       "name": "Hot Dog C/ Frango",
-      "description": "Pão de leite, salsicha, frango desfiado, tomate, maionese, catchup e mostarda",
+      "description": "Pão de leite, salsicha, frango desfiado, tomate, maionese, ketchup e mostarda",
       "category": "Cachorro Quente",
       "price": 15.9
     },
@@ -96,7 +113,7 @@
       "id": 4,
       "imagePath": "assets/images/foods/x-salada.png",
       "name": "X-Salada",
-      "description": "Pão de hambúrguer, hambúrguer Artesanal aprox. 90g, presunto, queijo, alface, tomate, milho batata palha, maionese catchup.",
+      "description": "Pão de hambúrguer, hambúrguer Artesanal aprox. 90g, presunto, queijo, alface, tomate, milho batata palha, maionese e ketchup.",
       "price": 18.5,
       "category": "Lanches"
     },
@@ -120,7 +137,7 @@
       "id": 7,
       "imagePath": "assets/images/foods/x-egg-salada.png",
       "name": "X-Egg",
-      "description": "Pão de hambúrguer, hambúrguer Artesanal aprox. 90g, ovo, presunto, queijo, alface, tomate, milho, batata palha, maionese e catchup.",
+      "description": "Pão de hambúrguer, hambúrguer Artesanal aprox. 90g, ovo, presunto, queijo, alface, tomate, milho, batata palha, maionese e ketchup.",
       "price": 9.9,
       "category": "Lanches"
     },
@@ -250,6 +267,13 @@
       "date": "18/09/2022",
       "comments": "Ótima comida.",
       "id": "_79rZ_a"
+    },
+    {
+      "rating": 5,
+      "name": "pachecao",
+      "date": "21/09/2022",
+      "comments": "maikao corno",
+      "id": "CEhanwW"
     }
   ],
   "orders": [
@@ -683,6 +707,61 @@
         }
       ],
       "id": 26
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "data": "21/09/2022, 11:13:23 pm",
+      "optionalAddress": "",
+      "total": "R$20.5",
+      "pagamentoEntrega": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
+      "usuario": "1",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 27
     }
   ]
 }

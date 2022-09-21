@@ -20,6 +20,9 @@ export class OrderComponent implements OnInit {
 
   numberPattern = /^[0-9]*$/
 
+  cepPattern = /^[0-9]{5}-[0-9]{3}$/
+
+
   orderForm!: FormGroup
 
   delivery: number = 8
@@ -50,7 +53,7 @@ export class OrderComponent implements OnInit {
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       telefone: this.formBuilder.control('', [Validators.required]),
-      cep: this.formBuilder.control( '', [Validators.required, Validators.minLength(8)]),
+      cep: this.formBuilder.control( '', [Validators.required, Validators.pattern(this.cepPattern)]), //cep mask
       logradouro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       bairro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       localidade: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),

@@ -15,16 +15,17 @@
                                 <p class="lead">Seus Dados:</p>
                             </div>
                             <div class="col-xs-12 col-sm-3">
-                                <span class="help-block pull-right text-danger" *ngIf="orderForm.hasError('emailsNotMatch')"><i class="fas fa-times"></i> Email-s
+                                <span class="help-block pull-right text-danger"
+                                    *ngIf="orderForm.hasError('emailsNotMatch')"><i class="fas fa-times"></i> Email-s
                                     não conferem</span>
                             </div>
-                                
+
                             <div class="col-sm-3 col-xs-4 formGroup ">
-                                <input class="form-control " formControlName="name" placeholder="Nome" autocomplete="off"
-                                    required>
+                                <input class="form-control " formControlName="name" placeholder="Nome"
+                                    autocomplete="off" required>
                                 <p *ngIf="orderForm.get('name')?.invalid && 
-                                orderForm.get('name')?.touched"  class="text-danger"><i
-                                        class="fas fa-times"></i> Campo obrigatório e com 5 caracteres no mínimo</p>
+                                orderForm.get('name')?.touched" class="text-danger"><i class="fas fa-times"></i> Campo
+                                    obrigatório e com 5 caracteres no mínimo</p>
                                 <p *ngIf="orderForm.get('name')?.valid" class="text-success"><i
                                         class="fas fa-check"></i> OK</p>
 
@@ -33,17 +34,18 @@
                                 <input type="text" class="form-control" formControlName="telefone"
                                     placeholder="Telefone/Celular" autocomplete="off" required>
                                 <p *ngIf="orderForm.get('telefone')?.invalid  && 
-                                orderForm.get('telefone')?.touched" class="text-danger"><i
-                                        class="fas fa-times"></i> Campo obrigatório</p>
+                                orderForm.get('telefone')?.touched" class="text-danger"><i class="fas fa-times"></i>
+                                    Campo obrigatório</p>
                                 <p *ngIf="orderForm.get('telefone')?.valid" class="text-success"><i
                                         class="fas fa-check"></i> OK</p>
+                                
                             </div>
                             <div class="col-sm-3 col-xs-6">
                                 <input type="text" class="form-control" formControlName="email" placeholder="E-mail"
                                     autocomplete="off" required>
                                 <p *ngIf="orderForm.get('email')?.invalid && 
-                                orderForm.get('email')?.touched" class="text-danger"><i
-                                        class="fas fa-times"></i> E-mail inválido</p>
+                                orderForm.get('email')?.touched" class="text-danger"><i class="fas fa-times"></i>
+                                    E-mail inválido</p>
                                 <p *ngIf="orderForm.get('email')?.valid" class="text-success"><i
                                         class="fas fa-check"></i> OK</p>
                             </div>
@@ -63,97 +65,100 @@
                             </div>
                             <div class="col-sm-3 col-xs-6 mb-4">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="CEP"  formControlName="cep"  aria-label="Recipient's username" required aria-describedby="button-addon2">
-                                    <button class="btn color-orange" type="button" (click)="buscar()">Buscar</button>
-                                  </div>
-                                
-                                
-                            </div>
-                            <div class="col-sm-6 col-xs-12">
-                                <input class="form-control" formControlName="logradouro" placeholder="Logradouro"
-                                    autocomplete="off" required>
-                                <p *ngIf="orderForm.get('logradouro')?.invalid && 
-                                orderForm.get('logradouro')?.touched " class="text-danger"><i
-                                        class="fas fa-times"></i> Campo obrigatório e com 5 caracteres no mínimo</p>
-                                <p *ngIf="orderForm.get('logradouro')?.valid" class="text-success"><i
-                                        class="fas fa-check"></i> OK</p>
-                            </div>
-                            <div class="col-sm-3 col-xs-6">
-                                <input type="text" class="form-control" formControlName="bairro"  placeholder="Bairro"
-                                    autocomplete="off" required>
-                                <p *ngIf="orderForm.get('bairro')?.invalid && 
-                                orderForm.get('bairro')?.touched" class="text-danger"><i
-                                        class="fas fa-times"></i> Campo obrigatório e com 5 caracteres no mínimo</p>
-                                <p *ngIf="orderForm.get('bairro')?.valid" class="text-success"><i
-                                        class="fas fa-check"></i> OK</p>
-                            </div>
-                            <div class="col-sm-3 col-xs-6">
-                                <input type="text" class="form-control" formControlName="localidade"  placeholder="Localidade"
-                                    autocomplete="off" required>
-                                <p *ngIf="orderForm.get('localidade')?.invalid && 
-                                orderForm.get('localidade')?.touched" class="text-danger"><i
-                                        class="fas fa-times"></i> Campo obrigatório e com 5 caracteres no mínimo</p>
-                                <p *ngIf="orderForm.get('localidade')?.valid" class="text-success"><i
-                                        class="fas fa-check"></i> OK</p>
-                            </div>
-                            <div class="col-sm-3 col-xs-6">
-                                <input type="text" class="form-control" formControlName="number"  placeholder="Numero"
-                                    autocomplete="off" required>
-                                <p *ngIf="orderForm.get('number')?.invalid && 
-                                orderForm.get('number')?.touched" class="text-danger"><i
-                                        class="fas fa-times"></i> Obrigatório e somente números</p>
-                                <p *ngIf="orderForm.get('number')?.valid" class="text-success"><i
-                                        class="fas fa-check"></i> OK</p>
-                            </div>
-                            <div class="col-sm-6 col-xs-6">
-                                <input type="text" class="form-control" formControlName="optionalAddress"
-                                    placeholder="Complemento">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 mt-2">
-                            <p class="lead">Itens do Pedido:</p>
-                        </div>
-                        <div class="teste mt-1">
-                            <div class=" teste mt-3">
-                                <app-order-items [items]="cartItems()" [itemAdicionais]="itemAdicionais()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)" (observacao)="observacao($event)" 
-                                (remove)="removeItem($event)"  (adicionais)="adicionais($event)"></app-order-items>
-                            </div>
-                            <hr>
+                                    <input  type="text" formControlName="cep" class="form-control"
+                                        placeholder="CEP" aria-label="Recipient's username"
+                                        aria-describedby="basic-addon2">
+                                        <button class="btn color-orange" type="button"
+                                            (click)="buscar()">Buscar</button>
+                                </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
-                            <p class="lead">Formas de Pagamento:</p>
-
-                            <strong>Pagar na Entrega:</strong>
-                            <div class="form-group">
-                                <app-radio [options]="paymentOptions" formControlName="pagamentoEntrega"></app-radio>
-                            </div>
-                            <hr>
-                            <strong>Pagar pelo Paypal:</strong>
-                            <div id="myPaypalButtons" class="mt-2">
-
-                            </div>
+                            <input class="form-control" formControlName="logradouro" placeholder="Logradouro"
+                                autocomplete="off" required>
+                            <p *ngIf="orderForm.get('logradouro')?.invalid && 
+                                orderForm.get('logradouro')?.touched " class="text-danger"><i class="fas fa-times"></i>
+                                Campo obrigatório e com 5 caracteres no mínimo</p>
+                            <p *ngIf="orderForm.get('logradouro')?.valid" class="text-success"><i
+                                    class="fas fa-check"></i> OK</p>
                         </div>
-                        <div class="col-sm-6 col-xs-12">
-                            <p class="lead">Frete e Total:</p>
-                            <app-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></app-delivery-costs>
+                        <div class="col-sm-3 col-xs-6">
+                            <input type="text" class="form-control" formControlName="bairro" placeholder="Bairro"
+                                autocomplete="off" required>
+                            <p *ngIf="orderForm.get('bairro')?.invalid && 
+                                orderForm.get('bairro')?.touched" class="text-danger"><i class="fas fa-times"></i>
+                                Campo obrigatório e com 5 caracteres no mínimo</p>
+                            <p *ngIf="orderForm.get('bairro')?.valid" class="text-success"><i class="fas fa-check"></i>
+                                OK</p>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <input type="text" class="form-control" formControlName="localidade"
+                                placeholder="Localidade" autocomplete="off" required>
+                            <p *ngIf="orderForm.get('localidade')?.invalid && 
+                                orderForm.get('localidade')?.touched" class="text-danger"><i class="fas fa-times"></i>
+                                Campo obrigatório e com 5 caracteres no mínimo</p>
+                            <p *ngIf="orderForm.get('localidade')?.valid" class="text-success"><i
+                                    class="fas fa-check"></i> OK</p>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <input type="text" class="form-control" formControlName="number" placeholder="Numero"
+                                autocomplete="off" required>
+                            <p *ngIf="orderForm.get('number')?.invalid && 
+                                orderForm.get('number')?.touched" class="text-danger"><i class="fas fa-times"></i>
+                                Obrigatório e somente números</p>
+                            <p *ngIf="orderForm.get('number')?.valid" class="text-success"><i class="fas fa-check"></i>
+                                OK</p>
+                        </div>
+                        <div class="col-sm-6 col-xs-6">
+                            <input type="text" class="form-control" formControlName="optionalAddress"
+                                placeholder="Complemento">
                         </div>
                     </div>
-                </form>
-                <div class="row">
-                    <div class="p-2">
-
-                        <button (click)="checkOrder(orderForm.value)" class="btn btn-success pull-right float-button"
-                            [disabled]="!orderForm.valid || cartItems().length === 0 " *ngIf="isOrderCompleted()"> 
-                            <i class="fa fa-credit-card" ></i> Concluir Pedido
-                            
-                        </button>
-                        <div *ngIf="itemsValue() < 8.50" class="alert alert-danger col-md-6 offset-md-6" role="alert">
-                            <span >Valor mínimo de pedido é de R$ 8,50.</span>
-                          </div>
-                        
+                    <div class="col-xs-12 mt-2">
+                        <p class="lead">Itens do Pedido:</p>
                     </div>
+                    <div class="teste mt-1">
+                        <div class=" teste mt-3">
+                            <app-order-items [items]="cartItems()" [itemAdicionais]="itemAdicionais()"
+                                (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)"
+                                (observacao)="observacao($event)" (remove)="removeItem($event)"
+                                (adicionais)="adicionais($event)"></app-order-items>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <p class="lead">Formas de Pagamento:</p>
+
+                        <strong>Pagar na Entrega:</strong>
+                        <div class="form-group">
+                            <app-radio [options]="paymentOptions" formControlName="pagamentoEntrega"></app-radio>
+                        </div>
+                        <hr>
+                        <strong>Pagar pelo Paypal:</strong>
+                        <div id="myPaypalButtons" class="mt-2">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <p class="lead">Frete e Total:</p>
+                        <app-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></app-delivery-costs>
+                    </div>
+            </div>
+            </form>
+            <div class="row">
+                <div class="p-2">
+
+                    <button (click)="checkOrder(orderForm.value)" class="btn btn-success pull-right float-button"
+                        [disabled]="!orderForm.valid || cartItems().length === 0 " *ngIf="isOrderCompleted()">
+                        <i class="fa fa-credit-card"></i> Concluir Pedido
+
+                    </button>
+                    <div *ngIf="itemsValue() < 8.50" class="alert alert-danger col-md-6 offset-md-6" role="alert">
+                        <span>Valor mínimo de pedido é de R$ 8,50.</span>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
