@@ -8,6 +8,20 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgxStarRatingModule } from 'ngx-star-rating';
 import { ListaApiService } from './services/api.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {InputTextModule} from 'primeng/inputtext';
+import {TableModule} from 'primeng/table';
+import {CalendarModule} from 'primeng/calendar';
+import {SliderModule} from 'primeng/slider';
+import {DialogModule} from 'primeng/dialog';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {ButtonModule} from 'primeng/button';
+import {ToastModule} from 'primeng/toast';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputMaskModule} from 'primeng/inputmask';
+import { NgxMaskModule } from 'ngx-mask';
+import { Md5 } from 'ts-md5';
 
 
 
@@ -42,7 +56,6 @@ import { PainelGerencimentoComponent } from './components/painel-gerencimento/pa
 import { GerenciamentoUsuariosComponent } from './components/painel-gerencimento/gerenciamento-usuarios/gerenciamento-usuarios.component';
 import { SideMenuComponent } from './components/painel-gerencimento/side-menu/side-menu.component';
 import { GerenciamentoPedidosComponent } from './components/painel-gerencimento/gerenciamento-pedidos/gerenciamento-pedidos.component';
-import { Md5 } from 'ts-md5';
 import { PedidosUsuariosComponent } from './components/pedidos-usuarios/pedidos-usuarios.component';
 import { SideMenuPedidosComponent } from './components/pedidos-usuarios/side-menu-pedidos/side-menu-pedidos.component';
 
@@ -96,6 +109,19 @@ import { SideMenuPedidosComponent } from './components/pedidos-usuarios/side-men
     Ng2SearchPipeModule,
     NgToastModule,
     CommonModule,
+    InputTextModule,
+    TableModule,
+    CalendarModule,
+    SliderModule,
+    DialogModule,
+    MultiSelectModule,
+    ContextMenuModule,
+    NgxMaskModule.forRoot(),
+    ButtonModule,
+    ToastModule,
+    ProgressBarModule,
+    InputMaskModule,
+    DropdownModule,
     BrowserAnimationsModule
 
   ],

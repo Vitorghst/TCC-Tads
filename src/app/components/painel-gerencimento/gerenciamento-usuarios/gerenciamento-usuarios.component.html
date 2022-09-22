@@ -1,29 +1,39 @@
 <div class="content-body">
-  <div class="rounded  bg-white col-md-10 offset-md-1">
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr class="text-black text">
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Email</th>
-            <th>Permissão</th>
+  <div class="card">
+    <p-table #dt1  [value]="usuarios" responsiveLayout="scroll" class="pesquisa" stateStorage="local"
+    [globalFilterFields]="['id','name','email', 'permissao']">
+      <ng-template pTemplate="caption">
+        <div class="p-d-flex p-ai-center p-jc-between">
+            <h5 class="p-m-0 mt-1"><i class="fas fa-user ms-4"></i> Usuários</h5>
+            <span class="p-input-icon-left">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target)?.value, 'contains')" placeholder="Search...">
+            </span>
+        </div>
+    </ng-template>
+      <ng-template pTemplate="header">
+      <tr>
+            <th pSortableColumn="id">Id<p-sortIcon field="code"></p-sortIcon></th>
+            <th pSortableColumn="user">Usuário<p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="email">Email <p-sortIcon field="category"></p-sortIcon></th>
+            <th pSortableColumn="permissao">Permissão <p-sortIcon field="permissao"></p-sortIcon></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </ng-template>
+      <ng-template pTemplate="body" let-usuario>
+          <tr>
+              <td>{{usuario.id}}</td>
+              <td>{{usuario.user}}</td>
+              <td>{{usuario.email}}</td>
+              <td>{{usuario.permissao}}</td>
+              <td class="pt-3 text" (click)="editUser(usuario)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-edit"></i></td>
+              <td class="pt-3" (click)="deleteUser(usuario.id)"><i class="fas fa-trash-alt"></i></td>
           </tr>
-        </thead>
-        <tbody>
-          <tr class="bg-blue" *ngFor="let usuario of usuarios">
-            <td class="pt-3 text">{{ usuario.id }}</td>
-            <td class="pt-3 text">{{ usuario.user }}</td>
-            <td class="pt-3 text">{{ usuario.email }}</td>
-            <td class="pt-3 text">{{ usuario.permissao}}</td>
-            <td class="pt-3 text" (click)="editUser(usuario)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-edit"></i></td>
-            <td class="pt-3" (click)="deleteUser(usuario.id)"><i class="fas fa-trash-alt"></i></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+          
+      </ng-template>
+  </p-table>
   </div>
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

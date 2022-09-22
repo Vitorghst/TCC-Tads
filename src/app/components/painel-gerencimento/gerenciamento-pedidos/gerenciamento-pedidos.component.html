@@ -24,15 +24,14 @@
       <div class="col-md-4 offset-md-1">
         <div class="mb-3">
           <i class="fas fa-phone-alt me-1"></i>
-          <label for="formGroupExampleInput2" class="form-label"><strong>Telefone/Celular: </strong>{{ pedido.telefone
-            }}</label>
+          <label for="formGroupExampleInput2" class="form-label"><strong>Telefone/Celular: </strong>{{ pedido.telefone | mask: '(00)00000-0000' }}</label>
         </div>
       </div>
       <div class="col-md-4 offset-md-1">
         <div class="mb-3">
           <i class="fas fa-map-marker-alt me-1"></i>
           <label for="formGroupExampleInput2" class="form-label"><strong>Endereço de entrega :</strong></label>
-          {{ pedido.cep }}, {{ pedido.logradouro }}
+          {{ pedido.cep | mask: '00.000-000'}}, {{ pedido.logradouro }}
           {{ pedido.bairro}}, {{ pedido.localidade }}, {{ pedido.number }}
           {{ pedido.optionalAddress }}
         </div>
@@ -47,8 +46,8 @@
       <div class="col-md-4 offset-md-1">
         <div class="mb-3">
           <i class="fas fa-clock me-1"></i>
-          <label for="formGroupExampleInput2" class="form-label"><strong>Metodo de Pagamento:</strong> {{
-            pedido.pagamentoEntrega }} {{ pedido.pagamentoAplicativo}}</label>
+          <label for="formGroupExampleInput2" class="form-label"><strong> Metodo de Pagamento:</strong></label>
+           {{ pedido.pagamentoEntrega }} {{ pedido.pagamentoAplicativo}}
         </div>
         <span class=""><i class="fas fa-wallet"></i><strong> Total: </strong> {{ pedido.total }}</span>
       </div>

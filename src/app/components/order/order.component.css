@@ -31,3 +31,12 @@
     content: "\f07a";
     color: #d67032 ;
 }
+
+.p-fluid .p-inputtext {
+    width: 100%;
+}
+
+.p-inputtext {
+    margin: 0 !important;
+    width: 100% !important;
+}

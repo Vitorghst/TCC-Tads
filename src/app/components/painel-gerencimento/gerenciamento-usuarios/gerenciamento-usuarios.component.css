@@ -69,7 +69,7 @@ img {
 
 .fa-user:before {
     content: "\f0c0";
-    color: #f25c04;
+    color: rgb(48, 116, 35);
 }
 
 .table > :not(:first-child) {
@@ -132,4 +132,32 @@ img {
         width: 125%;
         padding: 20px 10px
     }
+}
+
+.pesquisa {
+    background-color: #f8f9fa;
+}
+
+.search {
+    float: right;
+}
+
+.p-jc-between {
+    justify-content: space-between !important;
+}
+.p-d-flex {
+    display: flex!important;
+}
+
+.border-search {
+    border: none !important;
+}
+
+.color {
+    background-color: #d67032;
+}
+
+.fa-search:before {
+    content: "\f002";
+    color: white;
 }

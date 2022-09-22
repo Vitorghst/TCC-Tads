@@ -28,7 +28,9 @@ export class OrderComponent implements OnInit {
   delivery: number = 8
 
   details: any 
+ 
 
+  
 
 
   paymentOptions: RadioOption[] = [
@@ -43,6 +45,7 @@ export class OrderComponent implements OnInit {
   permissao: any
   nomeUser!: any
   
+  
 
   constructor(private Api: ListaApiService, private route: Router, private formBuilder: FormBuilder, private toast: NgToastService ) {
    
@@ -54,7 +57,7 @@ export class OrderComponent implements OnInit {
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       telefone: this.formBuilder.control('', [Validators.required]),
-      cep: this.formBuilder.control( '', [Validators.required]), //cep mask
+      cep: this.formBuilder.control( '', [Validators.required]),
       logradouro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       bairro: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       localidade: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
@@ -64,6 +67,7 @@ export class OrderComponent implements OnInit {
       total: this.formBuilder.control('R$' + this.total(), [Validators.required]),
       pagamentoEntrega: this.formBuilder.control(''),
       pagamentoAplicativo: this.formBuilder.control(''),
+      
       usuario: this.formBuilder.control(sessionStorage.getItem('token')),
     }, {validator: OrderComponent.equalsTo})
     
@@ -84,6 +88,7 @@ export class OrderComponent implements OnInit {
         } else {
           this.toast.error({summary:`Transação Recusada`, position: 'br', duration: 3000});
         }
+       
         
     
 

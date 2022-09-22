@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ListaApiService } from 'src/app/services/api.service';
+import { Table } from 'primeng/table';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-gerenciamento-usuarios',
@@ -9,7 +11,10 @@ import { ListaApiService } from 'src/app/services/api.service';
 })
 export class GerenciamentoUsuariosComponent implements OnInit {
   usuarios: any;
-
+  first = 0;
+  rows = 10;
+  rowState = 'ready'
+  searchText = '';
   form = new FormGroup({
     id: new FormControl(''),
     user: new FormControl('', Validators.required),
@@ -29,7 +34,7 @@ export class GerenciamentoUsuariosComponent implements OnInit {
       this.usuarios = data
     })
 
-} 
+  }
   deleteUser(id: any) {
     this.Api.deleteUserById(id).subscribe((data: any) => {
       this.Api.notify('Usuário deletado com sucesso!')
@@ -42,26 +47,40 @@ export class GerenciamentoUsuariosComponent implements OnInit {
     this.form.get('user')?.setValue(item.user)
     this.form.get('email')?.setValue(item.email)
     this.form.get('permissao')?.setValue(item.permissao)
-    this.form.get('password')?.setValue( item.password)
+    this.form.get('password')?.setValue(item.password)
     this.form.get('confirmPassword')?.setValue(item.confirmPassword)
     this.Api.editUser = item
   }
 
   updateUser() {
-     let params = {
+    let params = {
       id: this.form.get('id')?.value,
       user: this.form.get('user')?.value,
       email: this.form.get('email')?.value,
       permissao: this.form.get('permissao')?.value,
       password: this.form.get('password')?.value,
       confirmPassword: this.form.get('confirmPassword')?.value,
-     }
-      this.Api.updateUser(params).subscribe((data: any) => {
-        this.Api.notify('Usuário atualizado com sucesso!')
-        this.getUsers()
-      }
+    }
+    this.Api.updateUser(params).subscribe((data: any) => {
+      this.Api.notify('Usuário atualizado com sucesso!')
+      this.getUsers()
+    }
     )
 
   }
+
+  next() {
+    this.first = this.first + this.rows;
+  }
+
+  prev() {
+    this.first = this.first - this.rows;
+  }
+
+  reset() {
+    this.first = 0;
+  }
+
+
 
 }

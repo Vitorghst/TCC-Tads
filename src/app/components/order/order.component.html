@@ -41,9 +41,9 @@
 
 
                             </div>
-                            <div class="col-sm-3 col-xs-6">
-                                <input type="text" class="form-control" formControlName="telefone"
-                                    placeholder="Telefone/Celular" autocomplete="off" required
+                            <div class="col-sm-3 ">
+                                <input type="text" class="form-control"  mask="(00) 00000-0000" formControlName="telefone" 
+                                    placeholder="Telefone/Celular" autocomplete="off" 
                                     [ngClass]=" (orderForm.get('telefone')?.touched ||
                                     orderForm.get('telefone')?.dirty) &&
                                     orderForm.get('telefone')?.hasError('required')
@@ -109,7 +109,7 @@
                             </div>
                             <div class="col-sm-3 col-xs-6 mb-4">
                                 <div class="input-group mb-3">
-                                    <input  type="text" formControlName="cep" class="form-control"
+                                    <input  type="text" formControlName="cep" mask="00.000-000" class="form-control"
                                         placeholder="CEP" aria-label="Recipient's username"
                                         aria-describedby="basic-addon2">
                                         <button class="btn color-orange" type="button"

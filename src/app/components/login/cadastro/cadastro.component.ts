@@ -5,6 +5,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { ListaApiService } from 'src/app/services/api.service';
 import { NgToastService } from 'ng-angular-popup';
+import { Md5 } from 'ts-md5';
+
 
 
 
@@ -16,6 +18,8 @@ import { NgToastService } from 'ng-angular-popup';
 export class CadastroComponent implements OnInit {
   users: any
   user: any
+  md5 = new Md5();
+
   form = new FormGroup({
     id: new FormControl(''),
     user: new FormControl('', Validators.required),
@@ -92,6 +96,7 @@ export class CadastroComponent implements OnInit {
             this.toast.success({detail:"Sucesso",summary:'Cadastrado com sucesso', sticky:true}); 
             setTimeout(() => {
               this.router.navigate(['/login']);
+              
             }, 1000);
           }, (err) => {
             console.log(err);
