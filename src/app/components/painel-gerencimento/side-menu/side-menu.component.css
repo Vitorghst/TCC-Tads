@@ -1,6 +1,6 @@
 .fa-user:before {
     content: "\f0c0";
-    font-size: 22px;
+    font-size: 20px;
     color: #198754;
 }
 
@@ -12,7 +12,7 @@
 
 .fa-clipboard-list:before {
     content: "\f46d";
-    font-size: 20px;
+    font-size: 16px;
     color: #198754;
 }
 
@@ -24,7 +24,7 @@
 
 .fa-shopping-bag:before {
     content: "\f290";
-    font-size: 22px;
+    font-size: 20px;
     color: #198754;
 }
 

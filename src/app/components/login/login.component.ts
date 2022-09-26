@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RequestService } from '../../services/request.service';
 import { NgToastService } from 'ng-angular-popup';
+import { Md5 } from 'ts-md5';
 
 
 @Component({
@@ -17,6 +18,8 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required)
   })
 
+  md5 = new Md5();
+
   constructor(private request: RequestService, private router: Router,  private toast: NgToastService) { }
 
   ngOnInit(): void {
@@ -27,7 +30,7 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       let params = {
         user: this.form.get('user')?.value,
-        password: this.form.get('password')?.value
+        password: this.md5.appendStr(this.form.get('password')?.value).end() as string
       }
       this.request.login(params).subscribe((ret: any) => {
         if (ret[0].user === params.user && ret[0].password === params.password) {

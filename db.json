@@ -5,40 +5,24 @@
       "user": "Master",
       "email": "master@gmail.com",
       "permissao": "A",
-      "password": "cavalo",
-      "confirmPassword": "cavalo"
+      "password": "202cb962ac59075b964b07152d234b70",
+      "confirmPassword": "202cb962ac59075b964b07152d234b70"
     },
     {
       "id": 2,
-      "user": "Ghost",
-      "email": "Ghost@gmail.com",
-      "permissao": "B",
-      "password": "123",
-      "confirmPassword": "123"
+      "user": "Celia",
+      "email": "ghostrzr@gmail.com",
+      "permissao": "A",
+      "password": "71144850f4fb4cc55fc0ee6935badddf",
+      "confirmPassword": "5c8cecea8540d10b6f62dc751264ae3d"
     },
     {
-      "id": 4,
-      "user": "João",
-      "email": "joao@gmail.com",
+      "id": 3,
+      "user": "Felipe",
+      "email": "felipe@gmail.com",
       "permissao": "B",
-      "password": "123",
-      "confirmPassword": "123"
-    },
-    {
-      "id": 5,
-      "user": "Vitor",
-      "email": "vitorjose98@hotmail.com",
-      "permissao": "B",
-      "password": "123",
-      "confirmPassword": "123"
-    },
-    {
-      "id": 6,
-      "user": "Hericson",
-      "email": "Hericson@gmail.com",
-      "permissao": "B",
-      "password": "123",
-      "confirmPassword": "123"
+      "password": "c965492a50b519451be98427ea60397b",
+      "confirmPassword": "4812983d482829a381f678138aa7b16f"
     }
   ],
   "apis": [
@@ -162,7 +146,7 @@
       "imagePath": "assets/images/foods/coca-350ml.png",
       "name": "Coca Cola 350ml",
       "description": "Coca Cola 350ml",
-      "price": 3.5,
+      "price": 4,
       "category": "Refrigerantes"
     },
     {
@@ -186,7 +170,7 @@
     {
       "id": 1,
       "dia": "segunda-feira",
-      "startTime": "18:00",
+      "startTime": "13:00",
       "endTime": "23:00",
       "status": "Aberto"
     },
@@ -297,6 +281,27 @@
       "date": "21/09/2022",
       "comments": "Cachorro Quente Sensacional!!",
       "id": "6VCgaq_"
+    },
+    {
+      "rating": 5,
+      "name": "Maik",
+      "date": "22/09/2022",
+      "comments": "Top Demais",
+      "id": "IGVmmCd"
+    },
+    {
+      "rating": 5,
+      "name": "Celia",
+      "date": "25/09/2022",
+      "comments": "Loirinho gostoso",
+      "id": "PkK16Do"
+    },
+    {
+      "rating": 5,
+      "name": "Celia",
+      "date": "26/09/2022",
+      "comments": "Cavalo",
+      "id": "6fjqwlz"
     }
   ],
   "orders": [
@@ -1114,6 +1119,143 @@
         }
       ],
       "id": 34
+    },
+    {
+      "name": "Maik ",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "data": "22/09/2022, 8:50:13 pm",
+      "optionalAddress": "",
+      "total": "R$48",
+      "pagamentoEntrega": "Cartão Refeição",
+      "pagamentoAplicativo": "",
+      "usuario": "7",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 35
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "data": "25/09/2022, 6:55:36 pm",
+      "optionalAddress": "",
+      "total": "R$26",
+      "pagamentoEntrega": "Dinheiro",
+      "pagamentoAplicativo": "",
+      "usuario": "2",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "X-Burguer",
+          "observacao": "",
+          "imagePath": "assets/images/foods/xburguer.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 36
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "data": "26/09/2022, 1:42:54 pm",
+      "optionalAddress": "",
+      "total": "R$48",
+      "pagamentoEntrega": "Dinheiro",
+      "pagamentoAplicativo": "",
+      "usuario": "2",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 37
     }
   ]
 }

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ListaApiService } from 'src/app/services/api.service';
 import { Table } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
+import { Md5 } from 'ts-md5';
 
 @Component({
   selector: 'app-gerenciamento-usuarios',
@@ -15,6 +16,7 @@ export class GerenciamentoUsuariosComponent implements OnInit {
   rows = 10;
   rowState = 'ready'
   searchText = '';
+  md5 = new Md5();
   form = new FormGroup({
     id: new FormControl(''),
     user: new FormControl('', Validators.required),
@@ -58,8 +60,8 @@ export class GerenciamentoUsuariosComponent implements OnInit {
       user: this.form.get('user')?.value,
       email: this.form.get('email')?.value,
       permissao: this.form.get('permissao')?.value,
-      password: this.form.get('password')?.value,
-      confirmPassword: this.form.get('confirmPassword')?.value,
+      password: this.md5.appendStr(this.form.get('password')?.value).end(),
+      confirmPassword: this.md5.appendStr(this.form.get('confirmPassword')?.value).end(),
     }
     this.Api.updateUser(params).subscribe((data: any) => {
       this.Api.notify('Usuário atualizado com sucesso!')

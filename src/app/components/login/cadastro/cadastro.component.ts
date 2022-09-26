@@ -86,8 +86,8 @@ export class CadastroComponent implements OnInit {
           user: this.form.get('user')?.value,
           email: this.form.get('email')?.value,
           permissao: this.form.get('permissao')?.value,
-          password: this.form.get('password')?.value,
-          confirmPassword: this.form.get('confirmPassword')?.value
+          password: this.md5.appendStr(this.form.get('password')?.value).end(),
+          confirmPassword: this.md5.appendStr(this.form.get('confirmPassword')?.value).end()
         }
         this.Api.addUser(params)
           .subscribe(async res => {

@@ -1,56 +1,62 @@
 <div class="content-body">
   <div class="card">
-    <p-table #dt1  [value]="usuarios" responsiveLayout="scroll" class="pesquisa" stateStorage="local"
-    [globalFilterFields]="['id','name','email', 'permissao']">
+    <p-table #dt1 [value]="usuarios" responsiveLayout="scroll" class="pesquisa" stateStorage="local"
+      [globalFilterFields]="['id','name','email', 'permissao']">
       <ng-template pTemplate="caption">
         <div class="p-d-flex p-ai-center p-jc-between">
-            <h5 class="p-m-0 mt-1"><i class="fas fa-user ms-4"></i> Usuários</h5>
-            <span class="p-input-icon-left">
-                <i class="pi pi-search"></i>
-                <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target)?.value, 'contains')" placeholder="Search...">
-            </span>
+          <h5 class="p-m-0 mt-1"><i class="fas fa-user-gerenc ms-4"></i> Lista de Usuários</h5>
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target)?.value, 'contains')"
+              placeholder="Search...">
+          </span>
         </div>
-    </ng-template>
-      <ng-template pTemplate="header">
-      <tr>
-            <th pSortableColumn="id">Id<p-sortIcon field="code"></p-sortIcon></th>
-            <th pSortableColumn="user">Usuário<p-sortIcon field="name"></p-sortIcon></th>
-            <th pSortableColumn="email">Email <p-sortIcon field="category"></p-sortIcon></th>
-            <th pSortableColumn="permissao">Permissão <p-sortIcon field="permissao"></p-sortIcon></th>
-            <th></th>
-            <th></th>
-        </tr>
-    </ng-template>
-      <ng-template pTemplate="body" let-usuario>
-          <tr>
-              <td>{{usuario.id}}</td>
-              <td>{{usuario.user}}</td>
-              <td>{{usuario.email}}</td>
-              <td>{{usuario.permissao}}</td>
-              <td class="pt-3 text" (click)="editUser(usuario)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-edit"></i></td>
-              <td class="pt-3" (click)="deleteUser(usuario.id)"><i class="fas fa-trash-alt"></i></td>
-          </tr>
-          
       </ng-template>
-  </p-table>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="id">Id<p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="user">Usuário<p-sortIcon field="user"></p-sortIcon>
+          </th>
+          <th pSortableColumn="email">Email <p-sortIcon field="category"></p-sortIcon>
+          </th>
+          <th pSortableColumn="permissao">Permissão <p-sortIcon field="permissao"></p-sortIcon>
+          </th>
+          <th></th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-usuario>
+        <tr>
+          <td>{{usuario.id}}</td>
+          <td>{{usuario.user}}</td>
+          <td>{{usuario.email}}</td>
+          <td>{{usuario.permissao}}</td>
+          <td class="pt-3 text" (click)="editUser(usuario)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+              class="fas fa-edit"></i></td>
+          <td class="pt-3" (click)="deleteUser(usuario.id)"><i class="fas fa-trash-alt"></i></td>
+        </tr>
+
+      </ng-template>
+    </p-table>
   </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Usuário</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="form">
-  
-          <div class="d-flex flex-row align-items-center mb-4">
-              <i class="fas fa-user fa-lg me-3 fa-fw margin-icon"></i>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar Usuário</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="form">
+
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-user-edit fa-lg me-3 fa-fw margin-icon"></i>
               <div class="form-outline flex-fill mb-0">
                 <input type="text" id="form3Example1c" placeholder="User" formControlName="user" class="form-control"
-                [ngClass]=" (form.get('user')?.touched ||
+                  [ngClass]=" (form.get('user')?.touched ||
                                     form.get('user')?.dirty) &&
                                     form.get('user')?.hasError('required')
                                     ? 'is-invalid'
@@ -64,16 +70,16 @@
                                     : ''
                                 ">
                 <small *ngIf="form.get('user')?.invalid && 
-                      form.get('user')?.touched " class="text-danger font-size"><i
-                              class="fas fa-times"></i> Campo obrigatório</small>
+                      form.get('user')?.touched " class="text-danger font-size"><i class="fas fa-times"></i> Campo
+                  obrigatório</small>
               </div>
-          </div>
+            </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="d-flex flex-row align-items-center mb-4">
               <i class="fas fa-envelope fa-lg me-3 fa-fw margin-icon"></i>
               <div class="form-outline flex-fill mb-0">
-                <input type="email" id="form3Example3c" placeholder="Email"  formControlName="email" class="form-control"
-                [ngClass]=" (form.get('email')?.touched ||
+                <input type="email" id="form3Example3c" placeholder="Email" formControlName="email" class="form-control"
+                  [ngClass]=" (form.get('email')?.touched ||
                                     form.get('email')?.dirty) &&
                                     form.get('email')?.hasError('required')
                                     ? 'is-invalid'
@@ -87,16 +93,39 @@
                                     : ''
                                 ">
                 <small *ngIf="form.get('email')?.invalid && 
-                      form.get('email')?.touched " class="text-danger font-size"><i
-                              class="fas fa-times"></i> Campo obrigatório</small>
+                      form.get('email')?.touched " class="text-danger font-size"><i class="fas fa-times"></i> Campo
+                  obrigatório</small>
               </div>
-          </div>
+            </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="d-flex flex-row align-items-center mb-4">
+              <i class="fas fa-envelope fa-lg me-3 fa-fw margin-icon"></i>
+              <div class="form-outline flex-fill mb-0">
+                <input type="text" id="form3Example3c" placeholder="permissao" formControlName="permissao" class="form-control"
+                  [ngClass]=" (form.get('permissao')?.touched ||
+                                  form.get('permissao')?.dirty) &&
+                                  form.get('permissao')?.hasError('required')
+                                  ? 'is-invalid'
+                                  : '' ||  form.get('permissao')?.hasError('minlength')
+                                  ? 'is-invalid'
+                                  : '' ||
+                                    (( form.get('permissao')?.valid||
+                                    form.get('permissao')?.dirty) &&
+                                      ! form.get('permissao')?.invalid)
+                                  ? 'is-valid'
+                                  : ''
+                              ">
+                <small *ngIf="form.get('permissao')?.invalid && 
+                    form.get('permissao')?.touched " class="text-danger font-size"><i class="fas fa-times"></i> Campo
+                  obrigatório</small>
+              </div>
+            </div>
+
+            <div class="d-flex flex-row align-items-center mb-4">
               <i class="fas fa-lock fa-lg me-3 fa-fw margin-icon"></i>
               <div class="form-outline flex-fill mb-0">
-                <input type="password" id="form3Example4c" placeholder="Senha" formControlName="password" class="form-control" 
-                [ngClass]=" (form.get('password')?.touched ||
+                <input type="password" id="form3Example4c" placeholder="Senha" formControlName="password"
+                  class="form-control" [ngClass]=" (form.get('password')?.touched ||
                                     form.get('password')?.dirty) &&
                                     form.get('password')?.hasError('required')
                                     ? 'is-invalid'
@@ -110,16 +139,16 @@
                                     : ''
                                 ">
                 <small *ngIf="form.get('password')?.invalid && 
-                      form.get('password')?.touched " class="text-danger font-size"><i
-                              class="fas fa-times"></i> Campo obrigatório</small>
+                      form.get('password')?.touched " class="text-danger font-size"><i class="fas fa-times"></i> Campo
+                  obrigatório</small>
               </div>
-          </div>
+            </div>
 
-          <div class="d-flex flex-row align-items-center mb-4">
+            <div class="d-flex flex-row align-items-center mb-4">
               <i class="fas fa-key fa-lg me-3 fa-fw margin-icon"></i>
               <div class="form-outline flex-fill mb-0">
-                <input type="password" id="form3Example4cd" placeholder="Confirmar Senha" formControlName="confirmPassword" class="form-control"
-                [ngClass]=" (form.get('confirmPassword')?.touched ||
+                <input type="password" id="form3Example4cd" placeholder="Confirmar Senha"
+                  formControlName="confirmPassword" class="form-control" [ngClass]=" (form.get('confirmPassword')?.touched ||
                                     form.get('confirmPassword')?.dirty) &&
                                     form.get('confirmPassword')?.hasError('required')
                                     ? 'is-invalid'
@@ -133,16 +162,16 @@
                                     : ''
                                 ">
                 <small *ngIf="form.get('confirmPassword')?.invalid && 
-                form.get('confirmPassword')?.touched " class="text-danger font-size"><i
-                        class="fas fa-times"></i> Campo obrigatório</small>
+                form.get('confirmPassword')?.touched " class="text-danger font-size"><i class="fas fa-times"></i> Campo
+                  obrigatório</small>
               </div>
             </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="updateUser()">Salvar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="updateUser()">Salvar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
