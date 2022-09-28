@@ -1,84 +1,94 @@
 <div class="main">
-    <nav class="navbar navbar-light border-bottom shadow navbar-default">
-        <div class="container-fluid ">
+  <nav class="navbar navbar-light border-bottom shadow navbar-default">
+    <div class="container-fluid ">
 
-            <div class="col-xs-10 col-sm-12 col-md-12 col-lg-12 offset-md-1">
-                <ul class="nav">
-                    <div class="mt-2">
-                        <img src="assets/images/logo1.png" data-bs-toggle="dropdown" height="54">
-                    </div>
-                    <li class="nav-item margin-nav margin-nav-link mt-4">
-                        <a class="nav-link text-hover tipografia " [routerLink]="['/home']" [routerLinkActive]="'active'"
-                            aria-current="page">Menu</a>
-                    </li>
-                    <li class="nav-item margin-nav margin-nav-link mt-4 pointer">
-                        <a class="nav-link text-hover tipografia" data-bs-toggle="modal" data-bs-target="#contatoModal">
-                            Contato
-                        </a>
-                          <div class="modal fade" id="contatoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <i class="far fa-address-book mt-2 me-2"></i><h5 class="modal-title" id="exampleModalLabel"> Contato</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-sm-1">
-                                                <i class="fas fa-phone-alt local mt-1 ms-1"></i>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <a class="contact">(43) 3221-9000</a>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-2">
-                                          <div class="col-sm-1">
-                                            <img src="assets/images/whats.png" width="29px"/>
-                                          </div>
-                                          <div class="col-sm-6">
-                                            <a class="contact" href="http://api.whatsapp.com/send?1=pt_BR&phone=554398599286" target="_blank" rel="noopener noreferrer">(43) 99859-9286</a>
-                                          </div>
-                                          </div>
-                                        </div>
-                                   
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                    </li>
-                    <li class="nav-item mb-3 icon-user mt-3 offset-md-3">
-                      <div class="dropdown">
-                        <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                          <img
-                            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                            class="rounded-circle"
-                            height="35"
-                            alt="Black and White Portrait of a Man"
-                            loading="lazy"
-                          />
-                        </a>
-                      
-                        <ul class="dropdown-menu border-top" aria-labelledby="dropdownMenuLink" >
-                          <li class="p-2" *ngIf="this.permissao === 'A'"><a class="dropdown-item"  [routerLink]="['/painel-gerenciamento']"><i class="fas fa-store-alt me-2"></i>Painel de Gerenciamento</a></li>
-                          <li class="p-2" *ngIf="this.permissao === 'B'"><a class="dropdown-item"  [routerLink]="['/pedidos-usuarios']"><i class="fas fa-store-alt me-2"></i>Meus Pedidos</a></li>
-                          <li class="p-2"><a class="dropdown-item" href="#" (click)="exit()"><i class="fas fa-door-open"></i> Sair</a></li>
-                        </ul>
+      <div class="col-xs-10 col-sm-12 col-md-12 col-lg-12 offset-md-1">
+        <ul class="nav">
+          <div class="mt-2">
+            <img src="assets/images/logo1.png" data-bs-toggle="dropdown" height="54">
+          </div>
+          <li class="nav-item margin-nav margin-nav-link mt-4">
+            <a class="nav-link text-hover tipografia " [routerLink]="['/home']" [routerLinkActive]="'active'"
+              aria-current="page">Menu</a>
+          </li>
+          <li class="nav-item margin-nav margin-nav-link mt-4 pointer">
+            <a class="nav-link text-hover tipografia" data-bs-toggle="modal" data-bs-target="#contatoModal">
+              Contato
+            </a>
+            <div class="modal fade" id="contatoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <i class="far fa-address-book mt-2 me-2"></i>
+                    <h5 class="modal-title" id="exampleModalLabel"> Contato</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-1">
+                          <i class="fas fa-phone-alt local mt-1 ms-1"></i>
+                        </div>
+                        <div class="col-sm-6">
+                          <a class="contact">(43) 3221-9000</a>
+                        </div>
                       </div>
-                    </li>
-                </ul>
+                      <div class="row mt-2">
+                        <div class="col-sm-1">
+                          <img src="assets/images/whats.png" width="29px" />
+                        </div>
+                        <div class="col-sm-6">
+                          <a class="contact" href="http://api.whatsapp.com/send?1=pt_BR&phone=554398599286"
+                            target="_blank" rel="noopener noreferrer">(43) 99859-9286</a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </nav>
-    <div class="content">
-        <div class="content-body">
-            <router-outlet></router-outlet>
-        </div>
-        <app-snackbar></app-snackbar>
-        <lib-ng-toast></lib-ng-toast>
+          </li>
+          <li class="nav-item mb-3 icon-user mt-3 offset-md-3">
+            <div class="row">
+            <div class="col mt-2 dropdown ">
+              <i class="pi pi-bell p-mr-4 p-text-secondary me-3 mt-2 "
+               href="#" role="button" severity="success"  pBadge style="font-size: 20px" value="2"></i>
+
+            </div>
+            <div class="dropdown col">
+             
+              <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <p-avatar class="p-avatar" label="{{ nomeUserIni }}" shape="circle"></p-avatar>
+              </a>
+
+              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <li class="p-2" *ngIf="this.permissao === 'A'"><a class="dropdown-item"
+                    [routerLink]="['/painel-gerenciamento']"><i class="fas fa-store-alt me-2"></i>Painel de
+                    Gerenciamento</a></li>
+                <li class="p-2" *ngIf="this.permissao === 'B'"><a class="dropdown-item"
+                    [routerLink]="['/pedidos-usuarios']"><i class="fas fa-store-alt me-2"></i>Meus Pedidos</a></li>
+                <li class="p-2"><a class="dropdown-item" href="#" (click)="exit()"><i class="fas fa-door-open"></i>
+                    Sair</a></li>
+              </ul>
+            </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
+  <div class="content">
+    <div class="content-body">
+      <router-outlet></router-outlet>
+    </div>
+    <app-snackbar></app-snackbar>
+    <lib-ng-toast></lib-ng-toast>
+  </div>
 
 </div>

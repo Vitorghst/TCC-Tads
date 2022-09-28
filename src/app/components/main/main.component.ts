@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ListaApiService } from '../../services/api.service';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-main',
@@ -12,8 +13,8 @@ export class MainComponent implements OnInit {
   usuario: any;
   permissao: any
   nomeUser: any
-
-  constructor(private Api: ListaApiService, private router: Router) { }
+  nomeUserIni: any;
+  constructor(private Api: ListaApiService, private router: Router, private toast: NgToastService) { }
 
   ngOnInit(): void {
     this.getUser()
@@ -27,13 +28,19 @@ export class MainComponent implements OnInit {
       this.permissao = user.permissao
       this.nomeUser = user.user
       console.log(this.nomeUser);
-      
+      this.nomeUserIni = this.nomeUser.charAt(0).toUpperCase();
       console.log(this.permissao);
       
     console.log(this.usuario);
     
   })
   }
+
+  
+  teste(arg0: { title: string; message: string; type: string; duration: number; position: string; onClose: () => void; }) {
+    throw new Error('Method not implemented.');
+  }
+
 
   exit(){
     sessionStorage.removeItem('token');

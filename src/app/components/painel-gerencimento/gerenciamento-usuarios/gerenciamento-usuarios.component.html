@@ -4,7 +4,7 @@
       [globalFilterFields]="['id','name','email', 'permissao']">
       <ng-template pTemplate="caption">
         <div class="p-d-flex p-ai-center p-jc-between">
-          <h5 class="p-m-0 mt-1"><i class="fas fa-user-gerenc ms-4"></i> Lista de Usuários</h5>
+          <h5 class="p-m-0 mt-1"><i class="fas fa-user-gerenc ms-4"></i> Usuários</h5>
           <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
             <input pInputText type="text" (input)="dt1.filterGlobal($any($event.target)?.value, 'contains')"

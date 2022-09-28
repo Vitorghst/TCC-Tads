@@ -265,6 +265,18 @@
   width: 20px;
 }
 
+.check-margin {
+  margin-left: 10px;
+}	
+
+.form-check {
+  display: block !important;
+  min-height: 1.5rem !important;
+  padding-left: 0.1em;
+  margin-bottom: 0.125rem !important;
+}
+
+
 .content-body::-webkit-scrollbar-thumb {
   border-radius: 100px;
   border: 5px solid transparent;

@@ -8,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class SideMenuComponent implements OnInit {
   
   @Output() telaPedidos = new EventEmitter();
-  
+  items!: any[];
   constructor() { }
 
   ngOnInit(): void {

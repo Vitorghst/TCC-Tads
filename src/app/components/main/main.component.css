@@ -17,6 +17,7 @@
     }
 }
 
+
 .tipografia {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 50px;
@@ -24,7 +25,7 @@
 
 .contact {
     font-size: 18px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .main {
@@ -36,8 +37,6 @@
 
 
 }
-
-
 
 .margin {
     margin-left: 300px;
@@ -53,15 +52,34 @@
     overflow: hidden;
 }
 
-
 .content-body {
     height: 100%;
+}
 
+.content-body-notificacao {
+    height: 100%;
+    overflow: auto;
 }
 
 .pointer {
     cursor: pointer;
 }
+
+.p-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1rem;
+}
+
+.margin-icon {
+    margin-left: 50%;
+}
+
+
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
@@ -135,7 +153,7 @@ a:focus {
 
 .fa-door-open:before {
     content: "\f52b";
-    color: #d67032 ;
+    color: #d67032;
 }
 
 .fa-user:before {
@@ -146,6 +164,13 @@ a:focus {
 .border-bottom {
     border-bottom: 4px solid #121921 !important;
 }
+
+.max-height {
+    max-height: 300px;
+    overflow: auto;
+    
+}
+
 
 .border-top {
     border-top: 4px solid #d67032 !important;
@@ -190,6 +215,4 @@ a:focus {
 .navbar-light .navbar-nav .nav-link.active {
     color: rgba(245, 245, 245, 0.9);
 }
-
-
 

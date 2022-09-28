@@ -19,7 +19,7 @@ export class GerenciamentoPedidosComponent implements OnInit {
   getOrders() {
     this.Api.getOrders().subscribe((data: any) => {
       this.pedidos = data
-  
+      
     })  
   } 
 

@@ -1,14 +1,14 @@
 <div class="main">
     <div class="row espaço">
         <div class="col-md-6 offset-md-3 ">
-            <div class="container mt-3 shadow bg-white">
+            <div class=" mt-3 shadow container bg-white border-top">
                 <div class="row">
                     <div>
-                        <hr class="margin">
+                        
                         <h5 class="space mt-2 top-avaliacao"><i class="fas fa-star"></i>Avaliações</h5>
                         <hr class="margin">
                     </div>
-                    <div class="col-md-5 teste mt-3" *ngFor="let reviews of review " [@menuItemAppeared]="menuItemState">
+                    <div class="col-sm-8 col-md-8 col-lg-5 teste mt-3" *ngFor="let reviews of review " [@menuItemAppeared]="menuItemState">
                         <span class="review-score avaliacao pull-right" ><i class="fa fa-star"></i>
                             {{reviews.rating}}</span>
                         <div class="row">

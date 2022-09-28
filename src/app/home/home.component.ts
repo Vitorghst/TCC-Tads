@@ -145,13 +145,10 @@ fileName = '';
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.editForm.get('imagePath')?.setValue(reader.result);
-      // diminuir o tamanho do token para o banco de dados
       console.log(reader.result);; 
       
     };
   }
-
-
 
   addItemMenu(){
     let item = {

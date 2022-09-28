@@ -21,6 +21,13 @@ import {ProgressBarModule} from 'primeng/progressbar';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputMaskModule} from 'primeng/inputmask';
 import { NgxMaskModule } from 'ngx-mask';
+import {AccordionModule} from 'primeng/accordion';
+import {MenubarModule} from 'primeng/menubar';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {MenuItem} from 'primeng/api';
+import {BadgeModule} from 'primeng/badge';
+import {AvatarModule} from 'primeng/avatar';
+import {CheckboxModule} from 'primeng/checkbox';
 import { Md5 } from 'ts-md5';
 
 
@@ -58,6 +65,7 @@ import { SideMenuComponent } from './components/painel-gerencimento/side-menu/si
 import { GerenciamentoPedidosComponent } from './components/painel-gerencimento/gerenciamento-pedidos/gerenciamento-pedidos.component';
 import { PedidosUsuariosComponent } from './components/pedidos-usuarios/pedidos-usuarios.component';
 import { SideMenuPedidosComponent } from './components/pedidos-usuarios/side-menu-pedidos/side-menu-pedidos.component';
+import { MenuPedidosComponent } from './components/pedidos-usuarios/menu-pedidos/menu-pedidos.component';
 
 
 
@@ -93,6 +101,7 @@ import { SideMenuPedidosComponent } from './components/pedidos-usuarios/side-men
     GerenciamentoPedidosComponent,
     PedidosUsuariosComponent,
     SideMenuPedidosComponent,
+    MenuPedidosComponent,
 
     
 
@@ -110,17 +119,23 @@ import { SideMenuPedidosComponent } from './components/pedidos-usuarios/side-men
     NgToastModule,
     CommonModule,
     InputTextModule,
+    MenubarModule,
     TableModule,
     CalendarModule,
+    CheckboxModule,
     SliderModule,
     DialogModule,
     MultiSelectModule,
     ContextMenuModule,
+    AvatarModule,
+    BadgeModule,
+    TabMenuModule,
     NgxMaskModule.forRoot(),
     ButtonModule,
     ToastModule,
     ProgressBarModule,
     InputMaskModule,
+    AccordionModule,
     DropdownModule,
     BrowserAnimationsModule
 
