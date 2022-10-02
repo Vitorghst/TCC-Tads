@@ -269,6 +269,11 @@
   margin-left: 10px;
 }	
 
+.fa-plus-add:before {
+  content: "\f067";
+  color: #b87c4a;
+}
+
 .form-check {
   display: block !important;
   min-height: 1.5rem !important;

@@ -147,7 +147,7 @@ a:focus {
 
 .dropdown-menu[data-bs-popper] {
     top: 100%;
-    left: -190%;
+    left: -90%;
     margin-top: 15px;
 }
 

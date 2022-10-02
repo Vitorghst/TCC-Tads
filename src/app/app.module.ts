@@ -28,6 +28,7 @@ import {MenuItem} from 'primeng/api';
 import {BadgeModule} from 'primeng/badge';
 import {AvatarModule} from 'primeng/avatar';
 import {CheckboxModule} from 'primeng/checkbox';
+import {TimelineModule} from 'primeng/timeline';
 import { Md5 } from 'ts-md5';
 
 
@@ -132,6 +133,7 @@ import { MenuPedidosComponent } from './components/pedidos-usuarios/menu-pedidos
     TabMenuModule,
     NgxMaskModule.forRoot(),
     ButtonModule,
+    TimelineModule,
     ToastModule,
     ProgressBarModule,
     InputMaskModule,

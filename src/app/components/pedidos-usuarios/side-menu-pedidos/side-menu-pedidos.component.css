@@ -36,6 +36,12 @@
     color: #d67032;
 }
 
+.fa-shopping-bag:before {
+    content: "\f290";
+    font-size: 20px;
+    color: #689F38;
+}
+
 
 
 

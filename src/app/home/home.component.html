@@ -169,8 +169,13 @@
                                                         <i class="fas fa-tags me-3 mt-4 fa-fw margin-icon local"></i>
                                                         <div class="form-outline flex-fill ">
                                                             <label class="mb-1" for="usr">Categoria do Item:</label>
-                                                            <input type="text" name="nome" formControlName="category"
-                                                                class="additem ">
+                                                            <select class="additem form-select" formControlName="category" aria-label="Default select example">
+                                            
+                                                                <option value="Cachorro Quente">Cachorro Quente</option>
+                                                                <option value="Lanches">Lanches</option>
+                                                                <option value="Hamburguer Artesanal">Hamburguer Artesanal</option>
+                                                                <option value="Refrigerantes">Refrigerantes</option>
+                                                              </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -243,7 +248,7 @@
                                                                         <div>
                                                                             <div class="p-field-checkbox me-4">
                                                                                 <p-checkbox name="group1" value="{{ checkbox.name }}"  [(ngModel)]="item.adicionais" inputId="ny"></p-checkbox>
-                                                                                <label for="ny" class="check-margin">{{ checkbox.name }}</label>
+                                                                                <label for="ny" class="check-margin">{{ checkbox.name }}</label><br>
                                                                             </div>
                                                                         </div>
                                                                     </form>
@@ -375,7 +380,13 @@
                                     <i class="fas fa-tags me-3 mt-4 fa-fw margin-icon local"></i>
                                     <div class="form-outline flex-fill ">
                                         <label class="mb-1" for="usr">Categoria do Item:</label>
-                                        <input type="text" name="nome" formControlName="category" class="additem ">
+                                        <select class="additem form-select" formControlName="category" aria-label="Default select example">
+                                            
+                                            <option value="Cachorro Quente">Cachorro Quente</option>
+                                            <option value="Lanches">Lanches</option>
+                                            <option value="Hamburguer Artesanal">Hamburguer Artesanal</option>
+                                            <option value="Refrigerantes">Refrigerantes</option>
+                                          </select>
                                     </div>
                                 </div>
                             </div>

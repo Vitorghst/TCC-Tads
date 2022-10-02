@@ -1,7 +1,7 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { Observable, Subject, throwError } from 'rxjs';
+import { retry, catchError, tap } from 'rxjs/operators';
 import { Api } from '../components/listar-api/listar-api.model';
 import { Tela } from '../components/listar-tela/listar-tela.model';
 import { StringMap } from '@angular/compiler/src/compiler_facade_interface';
@@ -22,7 +22,7 @@ import { Reviews } from '../components/order-sumary/order-sumary.model';
 
 export class ListaApiService {
 
-  notifier = new EventEmitter<any>()
+  @Output() notifier = new EventEmitter<string>();
 
 
   url = 'http://localhost:3000';

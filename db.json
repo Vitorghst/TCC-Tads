@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "user": "Felipe",
+      "user": "Vitor",
       "email": "felipe@gmail.com",
       "permissao": "B",
       "password": "202cb962ac59075b964b07152d234b70",
@@ -199,13 +199,13 @@
       "id": 5,
       "dia": "sexta-feira",
       "startTime": "13:00",
-      "endTime": "22:00",
+      "endTime": "23:58",
       "status": "Aberto"
     },
     {
       "id": 6,
       "dia": "sábado",
-      "startTime": "18:00",
+      "startTime": "01:00",
       "endTime": "23:58",
       "status": "Aberto"
     },
@@ -220,23 +220,28 @@
   "adicionais": [
     {
       "id": 1,
-      "name": "Salsicha"
+      "name": " Salsicha",
+      "price": 2.5
     },
     {
       "id": 2,
-      "name": "Tomate"
+      "name": " Tomate",
+      "price": 2
     },
     {
       "id": 3,
-      "name": "Maionese"
+      "name": " Maionese",
+      "price": 1.5
     },
     {
       "id": 4,
-      "name": "Catchup"
+      "name": " Catchup",
+      "price": 1.5
     },
     {
       "id": 5,
-      "name": "Mostarda"
+      "name": " Mostarda",
+      "price": 2.1
     }
   ],
   "reviews": [
@@ -359,37 +364,43 @@
       "emailConfirmation": "ghostrzr@gmail.com",
       "telefone": "43999859286",
       "cep": "86601028",
-      "logradouro": "et456456",
-      "bairro": "456436",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
       "localidade": "Rolândia",
       "number": "67",
-      "data": "17/09/2022, 11:23:57 pm",
+      "data": "01/10/2022, 1:57:45 am",
       "optionalAddress": "",
       "total": "R$38",
       "pagamentoEntrega": "Dinheiro",
       "pagamentoAplicativo": "",
-      "usuario": "1",
+      "usuario": "3",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "imagePath": "assets/images/foods/fries.png",
-          "adicionais": ""
+          "adicionais": [
+            " Maionese"
+          ]
         },
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "imagePath": "assets/images/foods/fries.png",
-          "adicionais": ""
+          "adicionais": [
+            " Catchup"
+          ]
         },
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "imagePath": "assets/images/foods/fries.png",
-          "adicionais": ""
+          "adicionais": [
+            " Salsicha"
+          ]
         }
       ],
       "id": 18
@@ -400,16 +411,16 @@
       "emailConfirmation": "ghostrzr@gmail.com",
       "telefone": "43999859286",
       "cep": "86601028",
-      "logradouro": "wregtertetw",
-      "bairro": "ertetwt",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
       "localidade": "Rolândia",
       "number": "67",
-      "data": "17/09/2022, 11:24:26 pm",
+      "data": "01/10/2022, 8:40:12 pm",
       "optionalAddress": "",
       "total": "R$38",
       "pagamentoEntrega": "Dinheiro",
       "pagamentoAplicativo": "",
-      "usuario": "2",
+      "usuario": "3",
       "orderItems": [
         {
           "quantity": 1,
@@ -444,21 +455,14 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "69",
-      "data": "28/09/2022, 7:53:27 pm",
+      "number": "67",
+      "data": "01/10/2022, 8:41:11 pm",
       "optionalAddress": "",
-      "total": "R$48",
-      "pagamentoEntrega": "Cartão de Débito",
+      "total": "R$38",
+      "pagamentoEntrega": "Dinheiro",
       "pagamentoAplicativo": "",
       "usuario": "3",
       "orderItems": [
-        {
-          "quantity": 1,
-          "menuId": "Cachorro Quente Simples",
-          "observacao": "",
-          "imagePath": "assets/images/foods/fries.png",
-          "adicionais": ""
-        },
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
@@ -492,13 +496,13 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "69",
-      "data": "28/09/2022, 8:00:06 pm",
+      "number": "67",
+      "data": "01/10/2022, 9:01:31 pm",
       "optionalAddress": "",
       "total": "R$48",
-      "pagamentoEntrega": "Cartão Refeição",
+      "pagamentoEntrega": "Dinheiro",
       "pagamentoAplicativo": "",
-      "usuario": "3",
+      "usuario": "1",
       "orderItems": [
         {
           "quantity": 1,
@@ -540,14 +544,21 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "69",
-      "data": "28/09/2022, 8:00:41 pm",
+      "number": "56",
+      "data": "01/10/2022, 9:02:57 pm",
       "optionalAddress": "",
-      "total": "R$48",
+      "total": "R$58",
       "pagamentoEntrega": "Dinheiro",
       "pagamentoAplicativo": "",
-      "usuario": "3",
+      "usuario": "1",
       "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
@@ -588,14 +599,21 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "69",
-      "data": "28/09/2022, 7:56:49 pm",
+      "number": "56",
+      "data": "01/10/2022, 9:03:55 pm",
       "optionalAddress": "",
-      "total": "R$48",
-      "pagamentoEntrega": "Cartão de Débito",
+      "total": "R$58",
+      "pagamentoEntrega": "Dinheiro",
       "pagamentoAplicativo": "",
       "usuario": "1",
       "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
@@ -636,36 +654,229 @@
       "logradouro": "Rua José Costa Fontes",
       "bairro": "Manoel Müller",
       "localidade": "Rolândia",
-      "number": "69",
-      "data": "28/09/2022, 7:15:59 pm",
+      "number": "67",
+      "data": "01/10/2022, 9:05:39 pm",
       "optionalAddress": "",
-      "total": "R$28",
-      "pagamentoEntrega": "",
-      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
-      "usuario": "1",
+      "total": "R$48",
+      "pagamentoEntrega": "Dinheiro",
+      "pagamentoAplicativo": "",
+      "usuario": "3",
       "orderItems": [
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "imagePath": "assets/images/foods/fries.png",
-          "adicionais": [
-            "Tomate",
-            "Catchup"
-          ]
+          "adicionais": ""
         },
         {
           "quantity": 1,
           "menuId": "Cachorro Quente Simples",
           "observacao": "",
           "imagePath": "assets/images/foods/fries.png",
-          "adicionais": [
-            "Catchup",
-            "Maionese"
-          ]
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
         }
       ],
       "id": 24
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "678",
+      "data": "01/10/2022, 9:09:24 pm",
+      "optionalAddress": "",
+      "total": "R$48",
+      "pagamentoEntrega": "Dinheiro",
+      "pagamentoAplicativo": "",
+      "usuario": "3",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 25
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "56",
+      "data": "01/10/2022, 9:12:12 pm",
+      "optionalAddress": "",
+      "total": "R$48",
+      "pagamentoEntrega": "Dinheiro",
+      "pagamentoAplicativo": "",
+      "usuario": "3",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 26
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "69",
+      "data": "01/10/2022, 9:16:21 pm",
+      "optionalAddress": "",
+      "total": "R$38",
+      "pagamentoEntrega": "Dinheiro",
+      "pagamentoAplicativo": "",
+      "usuario": "3",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 27
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "56",
+      "data": "01/10/2022, 10:26:34 pm",
+      "optionalAddress": "",
+      "total": "R$48",
+      "pagamentoEntrega": "Dinheiro",
+      "pagamentoAplicativo": "",
+      "usuario": "3",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 28
     }
   ]
 }
