@@ -75,8 +75,8 @@
 }
 
 .margin {
-    margin-left: 42px;
-    margin-right: 42px;
+    margin-left: 40px;
+    margin-right: 96px;
 }
 
 .btn-primary {
@@ -184,5 +184,5 @@ table {
 
 .teste {
     margin-left: 53px;
-    border: #b1b0b0 solid 1px;
+    border-radius: 10px;
 }

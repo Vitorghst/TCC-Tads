@@ -1,9 +1,11 @@
-<nav class="navbar navbar-light border-bottom">
-  <div class="ms-5 mt-2">
-    <img src="../../../assets/images/logo3.png" alt="" width="50">
-    <i class="fas fa-shopping-bag ms-4"></i>
-    <label class="tipografia text-usuarios  text-hover" (click)="abrirTelas('Pedidos')">Pedidos</label>
-    <i class="fas fa-user ms-4"></i>
-    <label class="tipografia text-usuarios text-hover" (click)="abrirTelas('Usuários')">Usuários</label>
+<div class="sidebar shadow">
+  <div class="sidebar-header offset-md-4 mt-4 mb-2">
+    <img src="../../../assets/images/logo1.png" alt="" width="60">
   </div>
-</nav>
+  <a>
+    <img src="../../../../assets/images/bag.png" class="me-3" alt="" width="30">
+    <label class="tipografia" (click)="abrirTelas('Pedidos')">Pedidos</label></a>
+  <a>
+    <img src="../../../../assets/images/users.png" class="mb-2" alt="" width="30">
+    <label class="tipografia ms-3" (click)="abrirTelas('Usuários')">Usuários</label></a>
+</div>

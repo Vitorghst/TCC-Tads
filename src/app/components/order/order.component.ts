@@ -64,6 +64,7 @@ export class OrderComponent implements OnInit {
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       data: this.formBuilder.control(this.date),
       optionalAddress: this.formBuilder.control(''),
+      status : this.formBuilder.control('Aguardando Confirmação'),
       total: this.formBuilder.control('R$' + this.total(), [Validators.required]),
       pagamentoEntrega: this.formBuilder.control(''),
       pagamentoAplicativo: this.formBuilder.control(''),

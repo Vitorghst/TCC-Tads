@@ -9,26 +9,25 @@
           </div>
           <li class="nav-item margin-nav margin-nav-link mt-4">
             <a class="nav-link text-hover tipografia " [routerLink]="['/home']" [routerLinkActive]="'active'"
-              aria-current="page">Menu</a>
+              aria-current="page"> <img src="../../../../assets/images/pedidos.png" alt="" class="me-2" width="30">Menu</a>
           </li>
           <li class="nav-item margin-nav margin-nav-link mt-4 pointer">
             <a class="nav-link text-hover tipografia" data-bs-toggle="modal" data-bs-target="#contatoModal">
-              Contato
+              <img src="../../../../assets/images/contact.png" alt="" class="me-2" width="30"> Contato
             </a>
             <div class="modal fade" id="contatoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <i class="far fa-address-book mt-2 me-2"></i>
-                    <h5 class="modal-title" id="exampleModalLabel"> Contato</h5>
+                    <h5 class="modal-title" id="exampleModalLabel"><img src="../../../../assets/images/contact.png" alt="" class="me-2" width="35"> Contato</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <div class="container">
                       <div class="row">
                         <div class="col-sm-1">
-                          <i class="fas fa-phone-alt local mt-1 ms-1"></i>
+                          <img src="../../../../assets/images/phone.png" alt="" class="me-2" width="30">
                         </div>
                         <div class="col-sm-6">
                           <a class="contact">(43) 3221-9000</a>
@@ -69,7 +68,7 @@
 
               <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                 <li class="p-2" *ngIf="this.permissao === 'A'"><a class="dropdown-item"
-                    [routerLink]="['/painel-gerenciamento']"><i class="fas fa-store-alt me-2"></i>Painel de
+                    [routerLink]="['/painel-gerenciamento']"><img src="../../../../assets/images/shopp-admin.png" alt="" class="me-2" width="25">Painel de
                     Gerenciamento</a></li>
                 <li class="p-2" *ngIf="this.permissao === 'B'"><a class="dropdown-item"
                     [routerLink]="['/pedidos-usuarios']"><i class="fas fa-store-alt me-2"></i>Meus Pedidos</a></li>

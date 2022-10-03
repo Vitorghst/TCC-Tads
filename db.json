@@ -18,11 +18,11 @@
     },
     {
       "id": 3,
-      "user": "Vitor",
+      "user": "Felipe",
       "email": "felipe@gmail.com",
       "permissao": "B",
-      "password": "202cb962ac59075b964b07152d234b70",
-      "confirmPassword": "8ea63b57044da3159a6422e02f051b66"
+      "password": "d9b1d7db4cd6e70935368a1efb10e377",
+      "confirmPassword": "9532ebafeb4bc3c45ae4151612281da1"
     }
   ],
   "apis": [
@@ -170,7 +170,7 @@
     {
       "id": 1,
       "dia": "segunda-feira",
-      "startTime": "13:00",
+      "startTime": "08:00",
       "endTime": "23:00",
       "status": "Aberto"
     },
@@ -314,13 +314,20 @@
       "date": "28/09/2022",
       "comments": "Top",
       "id": "w60pCuN"
+    },
+    {
+      "rating": 5,
+      "name": "Master",
+      "date": "01/10/2022",
+      "comments": "2ef2f",
+      "id": "DY0PfEA"
     }
   ],
   "orders": [
     {
+      "id": 17,
       "name": "VITOR JOSE CUSTODIO",
       "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
       "telefone": "43999859286",
       "cep": "86601028",
       "logradouro": "ergeger",
@@ -329,6 +336,7 @@
       "number": "65665",
       "data": "17/09/2022, 7:15:52 pm",
       "optionalAddress": "",
+      "status": "Em preparo",
       "total": "R$38",
       "pagamentoEntrega": "Dinheiro",
       "pagamentoAplicativo": "",
@@ -355,8 +363,7 @@
           "imagePath": "assets/images/foods/fries.png",
           "adicionais": ""
         }
-      ],
-      "id": 17
+      ]
     },
     {
       "name": "VITOR JOSE CUSTODIO",
@@ -646,9 +653,9 @@
       "id": 23
     },
     {
+      "id": 24,
       "name": "VITOR JOSE CUSTODIO",
       "email": "ghostrzr@gmail.com",
-      "emailConfirmation": "ghostrzr@gmail.com",
       "telefone": "43999859286",
       "cep": "86601028",
       "logradouro": "Rua José Costa Fontes",
@@ -657,6 +664,7 @@
       "number": "67",
       "data": "01/10/2022, 9:05:39 pm",
       "optionalAddress": "",
+      "status": "Em preparo",
       "total": "R$48",
       "pagamentoEntrega": "Dinheiro",
       "pagamentoAplicativo": "",
@@ -690,8 +698,7 @@
           "imagePath": "assets/images/foods/fries.png",
           "adicionais": ""
         }
-      ],
-      "id": 24
+      ]
     },
     {
       "name": "VITOR JOSE CUSTODIO",
@@ -877,6 +884,110 @@
         }
       ],
       "id": 28
+    },
+    {
+      "id": 30,
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "67",
+      "data": "02/10/2022, 8:31:54 pm",
+      "optionalAddress": "",
+      "status": "Saiu para entrega",
+      "total": "R$20.5",
+      "pagamentoEntrega": "Dinheiro",
+      "pagamentoAplicativo": "",
+      "usuario": "1",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "HOT DOG TRADICIONAL DUPLO",
+          "observacao": "",
+          "imagePath": "assets/images/foods/hotduplo.png",
+          "adicionais": ""
+        }
+      ]
+    },
+    {
+      "name": "VITOR JOSE CUSTODIO",
+      "email": "ghostrzr@gmail.com",
+      "emailConfirmation": "ghostrzr@gmail.com",
+      "telefone": "43999859286",
+      "cep": "86601028",
+      "logradouro": "Rua José Costa Fontes",
+      "bairro": "Manoel Müller",
+      "localidade": "Rolândia",
+      "number": "66",
+      "data": "03/10/2022, 3:52:59 pm",
+      "optionalAddress": "",
+      "status": "Aguardando Confirmação",
+      "total": "R$48",
+      "pagamentoEntrega": "",
+      "pagamentoAplicativo": "Pagamento realizado pelo Paypal",
+      "usuario": "1",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        },
+        {
+          "quantity": 1,
+          "menuId": "Cachorro Quente Simples",
+          "observacao": "",
+          "imagePath": "assets/images/foods/fries.png",
+          "adicionais": ""
+        }
+      ],
+      "id": 31
     }
   ]
 }

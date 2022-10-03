@@ -9,6 +9,7 @@ class Order {
       public paymentOption: string,
       public paypal: string,
       public usuario: number,
+      public status: string,
       public orderItems: OrderItem[] = []
     ){}
   }

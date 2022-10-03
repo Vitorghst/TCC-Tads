@@ -154,6 +154,7 @@ a:focus {
 .fa-door-open:before {
     content: "\f52b";
     color: #d67032;
+    font-size: 20px;
 }
 
 .fa-user:before {

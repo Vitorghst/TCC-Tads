@@ -281,6 +281,11 @@
   margin-bottom: 0.125rem !important;
 }
 
+.fa-plus:before {
+  content: "\f067";
+  font-size: 15px;
+}
+
 
 .content-body::-webkit-scrollbar-thumb {
   border-radius: 100px;

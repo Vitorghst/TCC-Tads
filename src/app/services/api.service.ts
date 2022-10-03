@@ -31,6 +31,7 @@ export class ListaApiService {
   editItem: any = '';
   editUser: any = '';
   editOrder: any = ''
+  editStatus: any = '';
   items: CartItem[] = []
   ev: any = '';
   options = {
@@ -108,6 +109,12 @@ export class ListaApiService {
         catchError(this.handleError)
       )
   }
+
+  updateOrder(order: any): Observable<any> {
+    return this.httpClient.put<any>(`${this.url}/orders/${order.id}`, order, this.options)
+
+  }
+
 
   addReview(review: any){
     return this.httpClient.post<Reviews>(`${this.url}/reviews`, review, this.options)

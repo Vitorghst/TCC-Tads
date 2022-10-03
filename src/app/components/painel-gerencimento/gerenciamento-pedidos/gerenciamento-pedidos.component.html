@@ -6,27 +6,27 @@
         <div class="row row-cols-2 offset-md-1">
           <div class="col">
             <div class="">
-              <i class="fas fa-user me-1"></i>
+              <img src="../../../../assets/images/user.png" alt="" class="me-2" width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong>Nome do Cliente:</strong> {{ pedido.name }}
               </label>
             </div>
           </div>
           <div class="col">
             <div class="">
-              <i class="fas fa-envelope me-1"></i>
+              <img src="../../../../assets/images/email.png" alt="" class="me-2"  width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong>Email:</strong> {{ pedido.email }}</label>
             </div>
           </div>
           <div class="col">
             <div class="">
-              <i class="fas fa-phone-alt me-1"></i>
+              <img src="../../../../assets/images/phone.png" alt="" class="me-2" width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong>Telefone/Celular: </strong>{{
                 pedido.telefone | mask: '(00)00000-0000' }}</label>
             </div>
           </div>
           <div class="col">
             <div class="">
-              <i class="fas fa-map-marker-alt me-1"></i>
+              <img src="../../../../assets/images/local.png" alt="" class="me-2" width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong>Endereço de entrega :</strong></label>
               {{ pedido.cep | mask: '00.000-000'}}, {{ pedido.logradouro }}
               {{ pedido.bairro}}, {{ pedido.localidade }}, {{ pedido.number }}
@@ -35,21 +35,21 @@
           </div>
           <div class="col">
             <div class="">
-              <i class="fas fa-calendar-alt me-1"></i>
+              <img src="../../../../assets/images/calendar.png" alt="" class="me-2" width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong>Data do Pedido:</strong> {{ pedido.data
                 }}</label>
             </div>
           </div>
           <div class="col">
             <div class="">
-              <i class="fas fa-clock me-1"></i>
+              <img src="../../../../assets/images/payment.png" alt="" class="me-2" width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong> Metodo de Pagamento:</strong></label>
               {{ pedido.pagamentoEntrega }} {{ pedido.pagamentoAplicativo}}
             </div>
           </div>
           <div class="col">
             <div class="">
-              <i class="fas fa-list me-1"></i>
+              <img src="../../../../assets/images/pedidos.png" alt="" class="me-2" width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong>Items do Pedido:</strong></label>
               <button class="btn btn-success btn-sm space" data-bs-toggle="modal" data-bs-target="#exampleModal"
               (click)="editOrder(pedido.orderItems)">Visualizar o
@@ -57,11 +57,50 @@
             </div>
           </div>
           <div class="col ">
-             <span class=""><i class="fas fa-wallet"></i><strong> Total: </strong> {{ pedido.total }}</span>
+             <span class=""><img src="../../../../assets/images/wallet.png" alt=""  width="20"><strong> Total: </strong> {{ pedido.total }}</span>
           </div>
-        </div>      
+            <div class="modal fade" id="status" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"><img src="../../../../assets/images/info.png" alt="" class="me-1" width="40">Mudar Status</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form [formGroup]="form">
+                      <select formControlName="status" class="form-select">
+                        <option value="Confirmado pelo restaurante">Confirmado pelo restaurante</option>
+                        <option value="Em preparo">Em preparo</option>
+                        <option value="Saiu para entrega">Saiu para entrega</option>
+                        <option value="Entregue">Entregue</option>
+                      </select>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-success"  data-bs-dismiss="modal" (click)="updateOrder(pedido.id)">Salvar Status</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>  
+        <div class="col offset-md-1 mt-2">
+          <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#status"
+          (click)="editStatus(pedido)">
+            Mudar Status do Pedido
+          </button>
+        </div>    
+        <p-timeline [value]="events" layout="horizontal" styleClass="customized-timeline">
+          <ng-template pTemplate="content" let-event >
+            <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
+              <i [ngClass]="event.icon"></i>
+          </span>
+          {{ event.status }}
+          </ng-template>
+      </p-timeline>
       </p-accordionTab>
     </p-accordion>
+    
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">

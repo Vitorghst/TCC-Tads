@@ -27,21 +27,16 @@
     border-color: #d67032 !important;
 }
 
-.container {
-    width: 100%;
-}
 
 .border-radius {
     border-radius: 15px;
 }
 
-.espaço {
-    --bs-gutter-x: 0 rem;
-    --bs-gutter-y: 0;
+/* .espaço {
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-0.5 * var(--bs-gutter-x));
     margin-left: calc(-0.5 * var(--bs-gutter-x));
-}
+} */
 
 .container-teste {
     width: 100%;
@@ -192,3 +187,4 @@ table {
 .img {
     src: url(../../../assets/images/logo1.png);
 }
+

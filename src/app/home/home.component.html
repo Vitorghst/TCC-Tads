@@ -12,8 +12,9 @@
                         <div class="col-md-4">
                             <a class="pull-right text-decoration-none avaliacao tipografia-icon text-white"
                                 routerLinkActive="detail-active" id="reviews" [routerLink]="['/reviews']">
-                                <button class="btn color-orange" type="submit"> <i class="fas fa-star me-2"></i>{{
-                                    ratingTotal }}</button>
+                                
+                                <button class="btn color-orange" type="submit"><img src="../../../../assets/images/star.png" class=" mb-1" alt="" width="30"> 
+                                    <span class="me-1 ms-1">{{ ratingTotal }}</span></button>
                             </a>
                         </div>
                     </div>
@@ -28,11 +29,11 @@
                                     [ngStyle]="{'color': this.status === 'Aberto' ? 'green' : 'red'}"></i>
                                 {{ this.status }} {{ this.horario }}</span>
                             <div class="mt-5 me-4">
-                                <p class="text-white"><i class="fas fa-map-marker-alt local"></i> {{ restaurante.endereco }},
+                                <p class="text-white"><img src="../../../../assets/images/local.png" alt="" width="30"> {{ restaurante.endereco }},
                                      {{ restaurante.cidade }} - {{ restaurante.estado }}, {{ restaurante.cep }}</p>
                             </div>
                             <div class="mt-3 me-4">
-                                <p class="text-white"><i class="fas fa-phone-alt local me-2"></i>  {{ restaurante.telefone }}</p>
+                                <p class="text-white"><img src="../../../../assets/images/phone.png" alt="" width="25">   {{ restaurante.telefone }}</p>
                             </div>
                         </div>
                     </div>
@@ -40,16 +41,16 @@
 
                     <div class="row">
                         <div class="col-md-4 offset-md-3 tipografia-icon text-white mb-2">
-                            <i class="fas fa-motorcycle text-white"></i> Entrega em até {{ restaurante.entregaTempo }} min
+                            <img src="../../../../assets/images/moto.png" alt="" width="30"> Entrega em até {{ restaurante.entregaTempo }} min
                         </div>
                         <div class="col-md-4 offset-md-1 tipografia-icon text-white">
-                            <i class="fas fa-box-open"></i> Retirada em {{restaurante.retirada}} min.
+                            <img src="../../../../assets/images/box.png" alt="" width="30"> Retirada em {{restaurante.retirada}} min.
                         </div>
                         <div class="w-100"></div>
-                        <div class="col-md-4 offset-md-3 tipografia-icon mb-2 text-white"><i
-                                class="fas fa-shopping-bag text-white"></i> Pedido minimo de {{ restaurante.pedidoMin | currency:'BRL':true }}</div>
-                        <div class="col-md-4 offset-md-1 tipografia-icon mb-2 text-white"><i
-                                class="fas fa-money-bill text-white"></i> Calcular Entrega</div>
+                        <div class="col-md-4 offset-md-3 tipografia-icon mb-2 text-white">
+                            <img src="../../../../assets/images/bag.png" alt="" width="30"> Pedido minimo de {{ restaurante.pedidoMin | currency:'BRL':true }}</div>
+                        <div class="col-md-4 offset-md-1 tipografia-icon mb-2 text-white">
+                            <img src="../../../../assets/images/payment.png" alt="" width="30"> Calcular Entrega</div>
                     </div>
                 </div>
             </div>
@@ -60,7 +61,7 @@
             <div class="container bg-white">
                 <div class="row">
                     <div class="col p-3 ms-4">
-                        <h5 class="tipografia"><i class="fas fa-list"></i> Menu</h5>
+                        <h5 class="tipografia"><img src="../../../../assets/images/pedidos.png" class="mb-1" alt="" width="30"> Menu</h5>
                     </div>
                     <div class="col p-3 me-4">
                         <button type="button"
@@ -114,7 +115,7 @@
                                 <button type="button"
                                     class="btn btn-color ms-4 shadow btn-sm space  text-decoration-none" id="adicionar"
                                     (click)="emitAddEvent(menuItem)" *ngIf="this.status === 'Aberto'">
-                                    <i class="fas me-1 fa-shopping-cart"></i> Adicionar</button>
+                                    <img src="../../../../assets/images/cart.png" alt="" class="mb-1" width="23"> Adicionar</button>
                             </div>
                         </div>
                         <hr class="mt-2 bg-black">
@@ -123,7 +124,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <i class="fas fa-store local"></i>
+                                        <img src="../../assets/images/shopp-admin.png" alt="" class="me-2" width="35">
                                         <h5 class="modal-title ms-2" id="staticBackdropLabel">Editar Item</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
@@ -133,8 +134,7 @@
                                             <div class="fw-bold col-md-12 offset-md-2">
                                                 <div>
                                                     <div class="d-flex flex-row align-items-center mb-4">
-                                                        <i
-                                                            class="fas fa-hamburger me-3 mt-4 fa-fw margin-icon local"></i>
+                                                        <img src="../../../../assets/images/pedidos.png" alt="" class="me-2 mt-4" width="35">
                                                         <div class="form-outline flex-fill ">
                                                             <label class="mb-1" for="usr">Nome do Item:</label>
                                                             <input type="text" id="name" formControlName="name"
@@ -144,8 +144,7 @@
                                                 </div>
                                                 <div>
                                                     <div class="d-flex flex-row align-items-center mb-4">
-                                                        <i
-                                                            class="fas fa-info-circle me-3 mt-4 fa-fw margin-icon local"></i>
+                                                        <img src="../../../../assets/images/info.png" alt="" class="me-2 mt-4" width="35">
                                                         <div class="form-outline flex-fill ">
                                                             <label class="mb-1" for="usr">Descrição do Item:</label>
                                                             <input type="text" name="nome" formControlName="description"
@@ -155,8 +154,7 @@
                                                 </div>
                                                 <div>
                                                     <div class="d-flex flex-row align-items-center mb-4">
-                                                        <i
-                                                            class="fas fa-money-bill me-3 mt-4 fa-fw margin-icon local"></i>
+                                                        <img src="../../../../assets/images/payment.png" alt="" class="me-2 mt-4" width="35">
                                                         <div class="form-outline flex-fill ">
                                                             <label class="mb-1" for="usr">Preço do Item:</label>
                                                             <input type="number" name="nome" formControlName="price"
@@ -166,7 +164,7 @@
                                                 </div>
                                                 <div>
                                                     <div class="d-flex flex-row align-items-center mb-4">
-                                                        <i class="fas fa-tags me-3 mt-4 fa-fw margin-icon local"></i>
+                                                        <img src="../../../../assets/images/tag.png" alt="" class="me-2 mt-4" width="35">
                                                         <div class="form-outline flex-fill ">
                                                             <label class="mb-1" for="usr">Categoria do Item:</label>
                                                             <select class="additem form-select" formControlName="category" aria-label="Default select example">
@@ -180,6 +178,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="mb-3">
+                                                    <img src="../../assets/images/image .png" alt="" class="me-2" width="35">
                                                     <label for="formFile" class="form-label">Image do Item:</label>
                                                     <input class="form-control" type="file" id="formFile"
                                                         (change)="onFileSelected2($event)"
@@ -204,7 +203,7 @@
         <div class="col-sm-8 col-md-3 mt-3" [@menuItemAppeared]="menuItemState" *ngIf="items().length">
             <div class="container-teste bg-white shadow border-top">
                 <div class="input-group rounded">
-                    <h5 class="mt-3"><i class="fas fa-shopping-cart-car"></i> Carrinho</h5>
+                    <h5 class="mt-3"><img src="../../../../assets/images/cartcarrinho.png" alt="" width="30"> Carrinho</h5>
                 </div>
                 <div class="content-body">
                     <div class="box-body">
@@ -341,7 +340,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <i class="fas fa-store local"></i>
+                    <img src="../../../../assets/images/shopp-admin.png" alt="" class="me-1" width="30">
                     <h5 class="modal-title ms-2" id="staticBackdropLabel">Adicionar Item</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -350,7 +349,7 @@
                         <div class="fw-bold col-md-12 offset-md-2">
                             <div>
                                 <div class="d-flex flex-row align-items-center mb-4">
-                                    <i class="fas fa-hamburger me-3 mt-4 fa-fw margin-icon local"></i>
+                                    <img src="../../../../assets/images/pedidos.png" alt="" class="me-2 mt-4" width="33">
                                     <div class="form-outline flex-fill ">
                                         <label class="mb-1" for="usr">Nome do Item:</label>
                                         <input type="text" name="nome" formControlName="name" class="additem">
@@ -359,7 +358,7 @@
                             </div>
                             <div>
                                 <div class="d-flex flex-row align-items-center mb-4">
-                                    <i class="fas fa-info-circle me-3 mt-4 fa-fw margin-icon local"></i>
+                                    <img src="../../../../assets/images/info.png" alt="" class="me-2 mt-4" width="35">
                                     <div class="form-outline flex-fill ">
                                         <label class="mb-1" for="usr">Descrição do Item:</label>
                                         <input type="text" name="nome" formControlName="description" class="additem ">
@@ -368,7 +367,7 @@
                             </div>
                             <div>
                                 <div class="d-flex flex-row align-items-center mb-4">
-                                    <i class="fas fa-money-bill me-3 mt-4 fa-fw margin-icon local"></i>
+                                    <img src="../../../../assets/images/payment.png" alt="" class="me-2 mt-4" width="35">
                                     <div class="form-outline flex-fill ">
                                         <label class="mb-1" for="usr">Preço do Item:</label>
                                         <input type="number" name="nome" formControlName="price" class="additem ">
@@ -377,7 +376,7 @@
                             </div>
                             <div>
                                 <div class="d-flex flex-row align-items-center mb-4">
-                                    <i class="fas fa-tags me-3 mt-4 fa-fw margin-icon local"></i>
+                                    <img src="../../../../assets/images/tag.png" alt="" class="me-2 mt-4" width="35">
                                     <div class="form-outline flex-fill ">
                                         <label class="mb-1" for="usr">Categoria do Item:</label>
                                         <select class="additem form-select" formControlName="category" aria-label="Default select example">
@@ -391,6 +390,7 @@
                                 </div>
                             </div>
                             <div class="mb-3">
+                                <img src="../../assets/images/image .png" alt="" class="me-2" width="35">
                                 <label for="formFile" class="form-label">Image do Item:</label>
                                 <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)"
                                     onchange="console.log(event.target.files)">

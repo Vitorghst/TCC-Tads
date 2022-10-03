@@ -1,15 +1,16 @@
 <div class="main">
     <div class="row espaço">
-        <div class="col-md-6 offset-md-3 ">
-            <div class=" mt-3 shadow container bg-white border-top">
+        <div class="col-md-8 offset-md-2 ">
+            <div class=" mt-3 shadow container bg-white">
                 <div class="row">
                     <div>
                         
-                        <h5 class="space mt-2 top-avaliacao"><i class="fas fa-star"></i>Avaliações</h5>
+                        <h5 class="space mt-2 top-avaliacao"><img src="../../../../assets/images/staravali.png" alt="" 
+                            class="mb-1" width="30">Avaliações</h5>
                         <hr class="margin">
                     </div>
-                    <div class="col-sm-8 col-md-8 col-lg-5 teste mt-3" *ngFor="let reviews of review " [@menuItemAppeared]="menuItemState">
-                        <span class="review-score avaliacao pull-right" ><i class="fa fa-star"></i>
+                    <div class="col-sm-8 col-md-8 col-lg-5 teste shadow mt-3 border-top" *ngFor="let reviews of review " [@menuItemAppeared]="menuItemState">
+                        <span class="review-score avaliacao pull-right" ><img src="../../../../assets/images/staravali.png" alt="" width="30">
                             {{reviews.rating}}</span>
                         <div class="row">
                             <div class="col-md-4">
