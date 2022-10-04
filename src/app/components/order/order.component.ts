@@ -8,6 +8,7 @@ import { render } from 'creditcardpayments/creditCardPayments';
 import { RadioOption } from '../radio/radio.model';
 import { NgToastService } from 'ng-angular-popup';
 import * as moment from 'moment';
+import { PrimeIcons } from 'primeng/api';
 
 @Component({
   selector: 'app-order',
@@ -44,6 +45,7 @@ export class OrderComponent implements OnInit {
   usuario!: any;
   permissao: any
   nomeUser!: any
+  events!: any[];
   
   
 
@@ -52,6 +54,12 @@ export class OrderComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.events = [
+      { status: 'Confirmado pelo restaurante', icon: PrimeIcons.CHECK, color: 'gray' },
+      { status: 'Em preparo', icon: PrimeIcons.SHOPPING_CART, color: 'gray' },
+      { status: 'Saiu para entrega', icon: PrimeIcons.ENVELOPE, color: 'gray' },
+      { status: 'Entregue', icon: PrimeIcons.CHECK, color: 'gray' },
+    ];
     this.orderForm = this.formBuilder.group({
       name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
@@ -66,6 +74,7 @@ export class OrderComponent implements OnInit {
       optionalAddress: this.formBuilder.control(''),
       status : this.formBuilder.control('Aguardando Confirmação'),
       total: this.formBuilder.control('R$' + this.total(), [Validators.required]),
+      events: this.formBuilder.control(this.events),
       pagamentoEntrega: this.formBuilder.control(''),
       pagamentoAplicativo: this.formBuilder.control(''),
       

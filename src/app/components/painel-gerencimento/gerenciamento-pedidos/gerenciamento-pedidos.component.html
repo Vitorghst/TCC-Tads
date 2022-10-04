@@ -84,13 +84,14 @@
               </div>
             </div>
         </div>  
-        <div class="col offset-md-1 mt-2">
+        <hr>
+        <div class="mt-4">
           <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#status"
           (click)="editStatus(pedido)">
             Mudar Status do Pedido
           </button>
         </div>    
-        <p-timeline [value]="events" layout="horizontal" styleClass="customized-timeline">
+        <p-timeline [value]="pedido.events" layout="horizontal" styleClass="customized-timeline">
           <ng-template pTemplate="content" let-event >
             <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
               <i [ngClass]="event.icon"></i>

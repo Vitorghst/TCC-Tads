@@ -59,7 +59,15 @@
             <div class="col ">
                <span class=""><i class="fas fa-wallet"></i><strong> Total: </strong> {{ pedido.total }}</span>
             </div>
-          </div>      
+          </div> 
+          <p-timeline [value]="pedido.events" layout="horizontal" styleClass="customized-timeline">
+            <ng-template pTemplate="content" let-event >
+              <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
+                <i [ngClass]="event.icon"></i>
+            </span>
+            {{ event.status }}
+            </ng-template>
+        </p-timeline>     
         </p-accordionTab>
       </p-accordion>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

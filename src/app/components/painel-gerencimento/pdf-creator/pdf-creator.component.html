@@ -1,0 +1,30 @@
+<div id="content">
+    <div class="col-md-6 offset-md-4">
+        
+    </div>
+    <table class="table" id="contentToConvert">
+      <tbody *ngFor="let restaurante of restaurantes">
+        <div class="row">
+            <div class="col-md-6 text-center offset-md-3 text-black" id="teste">
+                <img src="../../assets/images/logo3.png" data-bs-toggle="dropdown" width="90">
+                <h5 class="tipografia">
+                    <h2 class="text-center">{{ restaurante.name }}</h2>
+                </h5>
+                <p class="text-black"><img src="../../../../assets/images/local.png" alt="" width="30"> {{ restaurante.endereco }},
+                         {{ restaurante.cidade }} - {{ restaurante.estado }}, {{ restaurante.cep }}</p>
+                <div class="mt-3 me-4">
+                    <p class="text-black"><img src="../../../../assets/images/phone.png" alt="" width="25">   {{ restaurante.telefone }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 offset-md-1">
+                
+            </div>
+        </div>
+      </tbody>
+    </table>
+  </div><br>
+  <div style="text-align: center;">
+    <input type="button" class="btn btn-danger" value="Imprimir" (click)="convertToPDF()" />
+  </div>

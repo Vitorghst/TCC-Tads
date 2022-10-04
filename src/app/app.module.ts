@@ -67,6 +67,7 @@ import { GerenciamentoPedidosComponent } from './components/painel-gerencimento/
 import { PedidosUsuariosComponent } from './components/pedidos-usuarios/pedidos-usuarios.component';
 import { SideMenuPedidosComponent } from './components/pedidos-usuarios/side-menu-pedidos/side-menu-pedidos.component';
 import { MenuPedidosComponent } from './components/pedidos-usuarios/menu-pedidos/menu-pedidos.component';
+import { PdfCreatorComponent } from './components/painel-gerencimento/pdf-creator/pdf-creator.component';
 
 
 
@@ -103,6 +104,7 @@ import { MenuPedidosComponent } from './components/pedidos-usuarios/menu-pedidos
     PedidosUsuariosComponent,
     SideMenuPedidosComponent,
     MenuPedidosComponent,
+    PdfCreatorComponent,
 
     
 

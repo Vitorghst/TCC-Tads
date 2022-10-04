@@ -18,6 +18,7 @@ import { OrderSumaryComponent } from './components/order-sumary/order-sumary.com
 import { CadastroComponent } from './components/login/cadastro/cadastro.component';
 import { PainelGerencimentoComponent } from './components/painel-gerencimento/painel-gerencimento.component';
 import { PedidosUsuariosComponent } from './components/pedidos-usuarios/pedidos-usuarios.component';
+import { PdfCreatorComponent } from './components/painel-gerencimento/pdf-creator/pdf-creator.component';
 
 
 
@@ -25,8 +26,10 @@ import { PedidosUsuariosComponent } from './components/pedidos-usuarios/pedidos-
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent},
+  { path: 'pdf-creator', component: PdfCreatorComponent, canActivate: [AuthGuard]},
   {
     path: '', component: MainComponent, canActivate: [AuthGuard],
+   
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent, children: [

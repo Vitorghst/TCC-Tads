@@ -11,7 +11,7 @@ import { ListaApiService } from 'src/app/services/api.service';
 })
 export class GerenciamentoPedidosComponent implements OnInit {
   pedidos: any;
-  teste: any;
+  testes!: []
   pedidoModal: any;
   delivery: number = 8
   date = moment().locale('pt-br').format('L, h:mm:ss a');
@@ -34,25 +34,16 @@ export class GerenciamentoPedidosComponent implements OnInit {
     pagamentoEntrega: new FormControl(''),
     pagamentoAplicativo: new FormControl(''),
     orderItems: new FormControl(''),
-    usuario: new FormControl(sessionStorage.getItem('token'),),
+    usuario: new FormControl(sessionStorage.getItem('token')),
+    events: new FormControl(''),
     
   })
   
   statusTeste: any;
-  events!: any[];
   constructor(private Api: ListaApiService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.getOrders()
-    this.getStatus(this.pedidos)
-    this.events = [
-      { status: 'Confirmado pelo restaurante', icon: PrimeIcons.CHECK, color: 'gray' },
-      { status: 'Em preparo', icon: PrimeIcons.SHOPPING_CART, color: 'gray' },
-      { status: 'Saiu para entrega', icon: PrimeIcons.ENVELOPE, color: 'gray' },
-      { status: 'Entregue', icon: PrimeIcons.CHECK, color: 'gray' },
-    ];
-
-    // separar por id do pedido o status
 
   }
 
@@ -60,7 +51,9 @@ export class GerenciamentoPedidosComponent implements OnInit {
   getOrders() {
     this.Api.getOrders().subscribe((data: any) => {
       this.pedidos = data
+      this.getStatus(this.pedidos)
     })  
+    
   } 
 
   total(): number {
@@ -70,35 +63,41 @@ export class GerenciamentoPedidosComponent implements OnInit {
 
   getStatus(item: any) {
     this.Api.getOrders().subscribe((data: any) => {
+      this.pedidos = data
       this.pedidos.forEach((x: any) => {
         if (x.status === 'Confirmado pelo restaurante') {
-          this.events[0].color = 'green'  
+          x.events[0].color = 'green'
+          x.events[1].color = 'gray'
+          x.events[2].color = 'gray'
+          x.events[3].color = 'gray'
         } else if (x.status === 'Em preparo') {
-          this.events[0].color = 'green'
-          this.events[1].color = 'green'
+          x.events[0].color = 'green'
+          x.events[1].color = 'green'
+          x.events[2].color = 'gray'
+          x.events[3].color = 'gray'
         } else if (x.status === 'Saiu para entrega') {
-          this.events[0].color = 'green'
-          this.events[1].color = 'green'
-          this.events[2].color = 'green'
+          x.events[0].color = 'green'
+          x.events[1].color = 'green'
+          x.events[2].color = 'green'
+          x.events[3].color = 'gray'
         } else if (x.status === 'Entregue') {
-          this.events[0].color = 'green'
-          this.events[1].color = 'green'
-          this.events[2].color = 'green'
-          this.events[3].color = 'green'
+          x.events[0].color = 'green'
+          x.events[1].color = 'green'
+          x.events[2].color = 'green'
+          x.events[3].color = 'green'
         }
         else if (x.status === 'Cancelado') {
-          this.events[0].color = 'red';
-          this.events[1].color = 'red';
-          this.events[2].color = 'red';
-          this.events[3].color = 'red';
+          x.events[0].color = 'red'
+          x.events[1].color = 'red';
+          x.events[2].color = 'red';
+          x.events[3].color = 'red';
         }
+        console.log(this.pedidos);
+        
       })
-      this.getOrders()
     })
   }
-
-
-  //pegar o id do pedido e editar
+  
 
   editStatus(item: any) {
     this.form.get('id')?.setValue(item.id)
@@ -117,6 +116,7 @@ export class GerenciamentoPedidosComponent implements OnInit {
     this.form.get('pagamentoEntrega')?.setValue(item.pagamentoEntrega)
     this.form.get('pagamentoAplicativo')?.setValue(item.pagamentoAplicativo)
     this.form.get('usuario')?.setValue(item.usuario)
+    this.form.get('events')?.setValue(item.events)
     this.form.get('orderItems')?.setValue(item.orderItems)
     this.Api.editStatus = item
   }
@@ -139,6 +139,7 @@ export class GerenciamentoPedidosComponent implements OnInit {
       pagamentoEntrega: this.form.get('pagamentoEntrega')?.value,
       pagamentoAplicativo: this.form.get('pagamentoAplicativo')?.value,
       usuario: this.form.get('usuario')?.value,
+      events: this.form.get('events')?.value,
       orderItems: this.form.get('orderItems')?.value,
       
     }
