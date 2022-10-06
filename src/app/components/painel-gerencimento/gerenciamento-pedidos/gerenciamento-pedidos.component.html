@@ -1,5 +1,21 @@
 <div class="content-body">
-  <div *ngFor="let pedido of pedidos">
+  <div class="container mb-4">
+    <div class="row">
+      <div class="col">
+        <h4 class="mt-1"><img src="../../../../assets/images/pedidos.png" alt="" class="me-2" width="35">Pedidos</h4>
+      </div>
+      <div class="col">
+        <div class="col input-group rounded">
+          <input type="search" class="form-control  rounded " [(ngModel)]="searchText"
+              placeholder="Pesquisar Produto" aria-label="Search" aria-describedby="search-addon" />
+          <span class="input-group-text  border-0" id="search-addon">
+              <i class="fas fa-search"></i>
+          </span>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let pedido of pedidos | filter:searchText">
     <p-accordion>
       <p-accordionTab [transitionOptions]="'50ms'" header="Pedido: {{ pedido.id
       }} ">
@@ -7,13 +23,13 @@
           <div class="col">
             <div class="">
               <img src="../../../../assets/images/user.png" alt="" class="me-2" width="20">
-              <label for="formGroupExampleInput2" class="form-label"><strong>Nome do Cliente:</strong> {{ pedido.name }}
+              <label for="formGroupExampleInput2" class="form-label"><strong>Nome do Cliente:</strong> {{ pedido.name}}
               </label>
             </div>
           </div>
           <div class="col">
             <div class="">
-              <img src="../../../../assets/images/email.png" alt="" class="me-2"  width="20">
+              <img src="../../../../assets/images/email.png" alt="" class="me-2" width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong>Email:</strong> {{ pedido.email }}</label>
             </div>
           </div>
@@ -52,96 +68,101 @@
               <img src="../../../../assets/images/pedidos.png" alt="" class="me-2" width="20">
               <label for="formGroupExampleInput2" class="form-label"><strong>Items do Pedido:</strong></label>
               <button class="btn btn-success btn-sm space" data-bs-toggle="modal" data-bs-target="#exampleModal"
-              (click)="editOrder(pedido.orderItems)">Visualizar o
-              Pedido</button>
+                (click)="editOrder(pedido.orderItems)">Visualizar o
+                Pedido</button>
             </div>
           </div>
           <div class="col ">
-             <span class=""><img src="../../../../assets/images/wallet.png" alt=""  width="20"><strong> Total: </strong> {{ pedido.total }}</span>
+            <span class=""><img src="../../../../assets/images/wallet.png" alt="" width="20"><strong> Total: </strong>
+              {{ pedido.total }}</span>
           </div>
-            <div class="modal fade" id="status" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><img src="../../../../assets/images/info.png" alt="" class="me-1" width="40">Mudar Status</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form [formGroup]="form">
-                      <select formControlName="status" class="form-select">
-                        <option value="Confirmado pelo restaurante">Confirmado pelo restaurante</option>
-                        <option value="Em preparo">Em preparo</option>
-                        <option value="Saiu para entrega">Saiu para entrega</option>
-                        <option value="Entregue">Entregue</option>
-                      </select>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-                    <button type="button" class="btn btn-success"  data-bs-dismiss="modal" (click)="updateOrder(pedido.id)">Salvar Status</button>
-                  </div>
+          <div class="modal fade" id="status" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><img src="../../../../assets/images/info.png" alt=""
+                      class="me-1" width="40">Mudar Status</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="form">
+                    <select formControlName="status" class="form-select">
+                      <option value="Confirmado pelo restaurante">Confirmado pelo restaurante</option>
+                      <option value="Em preparo">Em preparo</option>
+                      <option value="Saiu para entrega">Saiu para entrega</option>
+                      <option value="Entregue">Entregue</option>
+                    </select>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                    (click)="updateOrder(pedido.id)">Salvar Status</button>
                 </div>
               </div>
             </div>
-        </div>  
+          </div>
+        </div>
         <hr>
         <div class="mt-4">
           <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#status"
-          (click)="editStatus(pedido)">
+            (click)="editStatus(pedido)">
             Mudar Status do Pedido
           </button>
-        </div>    
+        </div>
         <p-timeline [value]="pedido.events" layout="horizontal" styleClass="customized-timeline">
-          <ng-template pTemplate="content" let-event >
+          <ng-template pTemplate="content" let-event>
             <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
               <i [ngClass]="event.icon"></i>
-          </span>
-          {{ event.status }}
+            </span>
+            {{ event.status }}
           </ng-template>
-      </p-timeline>
+        </p-timeline>
       </p-accordionTab>
     </p-accordion>
-    
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-clipboard-list me-2"></i>Items do pedido:</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="col-md-12">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6" *ngFor="let order of pedidoModal">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <img src="{{ order.imagePath }}" width="140">
-                      </div>
-                      <div class="col-md-6">
-                        <i class="fas fa-hamburger"></i> {{order.menuId}}
-                        <div class="">
-                          <i class="fas fa-plus-circle me-2"></i><strong>Adicionais:</strong> {{ order.adicionais }}
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-clipboard-list me-2"></i>Items do pedido:
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-12">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6" *ngFor="let order of pedidoModal">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <img src="{{ order.imagePath }}" width="140">
                         </div>
-                        <div class="">
-                          <i class="fas fa-sticky-note me-2"></i> <strong>Observações:</strong> {{ order.observacoes }}
+                        <div class="col-md-6">
+                          <i class="fas fa-hamburger"></i> {{order.menuId}}
+                          <div class="">
+                            <i class="fas fa-plus-circle me-2"></i><strong>Adicionais:</strong> {{ order.adicionais }}
+                          </div>
+                          <div class="">
+                            <i class="fas fa-sticky-note me-2"></i> <strong>Observações:</strong> {{ order.observacoes
+                            }}
+                          </div>
                         </div>
+                        <hr class=" bg-black">
                       </div>
-                      <hr class=" bg-black">
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+          </div>
         </div>
       </div>
     </div>
+    <hr class=" bg-black">
   </div>
-  <hr class=" bg-black">
-</div>
 </div>

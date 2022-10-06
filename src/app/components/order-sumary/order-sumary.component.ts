@@ -29,12 +29,20 @@ export class OrderSumaryComponent implements OnInit {
   
 
   events!: any[];
+  pedidos: any;
+  pedido: any
+  pedidoModal: any;
 
 
   constructor(private fb: FormBuilder, private Api: ListaApiService, private toast: NgToastService) { }
 
   ngOnInit(): void {
     this.getUser()
+    this.getOrderById()
+    this.getStatus(this.pedidos)
+    setInterval(() => {
+      this.getStatus(this.pedidos)
+    }, 60000)
     this.events = [
       { status: 'Confirmado pelo restaurante', icon: PrimeIcons.CHECK, color: 'gray' },
       { status: 'Em preparo', icon: PrimeIcons.SHOPPING_CART, color: 'gray' },
@@ -45,42 +53,56 @@ export class OrderSumaryComponent implements OnInit {
       
     ];
     
-    this.form.get('statusTeste')!.valueChanges.subscribe((x: any) => {
-      console.log(x)
-      this.status = x
-      if (this.status === 'Confirmado pelo restaurante') {
-        this.events[0].color = 'green'
-        
-      } else if (this.status === 'Em preparo') {
-        this.events[0].color = 'green'
-        this.events[1].color = 'green'
-      } else if (this.status === 'Saiu para entrega') {
-        this.events[0].color = 'green'
-        this.events[1].color = 'green'
-        this.events[2].color = 'green'
-      } else if (this.status === 'Entregue') {
-        this.events[0].color = 'green'
-        this.events[1].color = 'green'
-        this.events[2].color = 'green'
-        this.events[3].color = 'green'
-      }
-      else if (this.status === 'Cancelado') {
-        this.events[0].color = 'red';
-        this.events[1].color = 'red';
-        this.events[2].color = 'red';
-        this.events[3].color = 'red';
-      }
-   
+  }
+
+  getOrderById() {
+    const token = sessionStorage.getItem('token')
+    this.Api.getOrderById(token).subscribe((data: any) => {
+      this.pedidos = data
+      // pegar apenas o ultimo pedido
+      this.pedido = this.pedidos[this.pedidos.length - 1]
+      this.getStatus(this.pedidos)
+      console.log(data);
+      
     })
+  }
 
 
-
-    
-    
-
-   
-
-   
+  getStatus(item: any) {
+    const token = sessionStorage.getItem('token')
+    this.Api.getOrderById(token).subscribe((data: any) => {
+      this.pedidos.forEach((x: any) => {
+        if (x.status === 'Confirmado pelo restaurante') {
+          x.events[0].color = 'green'
+          x.events[1].color = 'gray'
+          x.events[2].color = 'gray'
+          x.events[3].color = 'gray'
+        } else if (x.status === 'Em preparo') {
+          x.events[0].color = 'green'
+          x.events[1].color = 'green'
+          x.events[2].color = 'gray'
+          x.events[3].color = 'gray'
+        } else if (x.status === 'Saiu para entrega') {
+          x.events[0].color = 'green'
+          x.events[1].color = 'green'
+          x.events[2].color = 'green'
+          x.events[3].color = 'gray'
+        } else if (x.status === 'Entregue') {
+          x.events[0].color = 'green'
+          x.events[1].color = 'green'
+          x.events[2].color = 'green'
+          x.events[3].color = 'green'
+        }
+        else if (x.status === 'Cancelado') {
+          x.events[0].color = 'red'
+          x.events[1].color = 'red';
+          x.events[2].color = 'red';
+          x.events[3].color = 'red';
+        }
+        console.log(this.pedidos);
+        
+      })
+    })
   }
   
 
@@ -117,6 +139,13 @@ export class OrderSumaryComponent implements OnInit {
       console.log(review);
 
     })
+  }
+
+  editOrder(item: any) {
+    this.Api.editOrder = item
+    this.pedidoModal = item
+    console.log(item);
+    
   }
 
 }

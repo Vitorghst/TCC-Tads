@@ -15,6 +15,8 @@ export class GerenciamentoPedidosComponent implements OnInit {
   pedidoModal: any;
   delivery: number = 8
   date = moment().locale('pt-br').format('L, h:mm:ss a');
+  menuItemState = 'ready';
+  searchText = '';
 
   form = this.fb.group({
     id: new FormControl(''),

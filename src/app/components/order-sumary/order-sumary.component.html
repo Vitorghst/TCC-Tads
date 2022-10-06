@@ -9,6 +9,78 @@
             </div>
             <h1>Pedido Conluído</h1>
             <p>Seu pedido foi recebido pelo restaurante. Prepare a mesa que a comida está chegando!</p>
+            <div>
+              <p-accordion>
+                <p-accordionTab [transitionOptions]="'50ms'" [selected]="true" header="Pedido: {{ pedido.id
+                }} ">
+                  <div class="row row-cols-2">
+                    <div class="col">
+                      <div class="">
+                        <img src="../../../assets/images/user.png" alt="" class="me-2" width="20">
+                        <label for="formGroupExampleInput2" class="form-label"><strong>Nome do Cliente:</strong> {{ pedido.name }}
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="">
+                        <img src="../../../assets/images/email.png" alt="" class="me-2" width="20">
+                        <label for="formGroupExampleInput2" class="form-label"><strong>Email:</strong> {{ pedido.email }}</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="">
+                        <img src="../../../assets/images/phone.png" alt="" class="me-2" width="20">
+                        <label for="formGroupExampleInput2" class="form-label"><strong>Telefone/Celular: </strong>{{
+                          pedido.telefone | mask: '(00)00000-0000' }}</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="">
+                        <img src="../../../assets/images/local.png" alt="" class="me-2" width="20">
+                        <label for="formGroupExampleInput2" class="form-label"><strong>Endereço de entrega :</strong></label>
+                        {{ pedido.cep | mask: '00.000-000'}}, {{ pedido.logradouro }}
+                        {{ pedido.bairro}}, {{ pedido.localidade }}, {{ pedido.number }}
+                        {{ pedido.optionalAddress }}
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="">
+                        <img src="../../../assets/images/calendar.png" alt="" class="me-2" width="20">
+                        <label for="formGroupExampleInput2" class="form-label"><strong>Data do Pedido:</strong> {{ pedido.data
+                          }}</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="">
+                        <img src="../../../assets/images/payment.png" alt="" class="me-2" width="20">
+                        <label for="formGroupExampleInput2" class="form-label"><strong> Metodo de Pagamento:</strong></label>
+                        {{ pedido.pagamentoEntrega }} {{ pedido.pagamentoAplicativo}}
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="">
+                        <img src="../../../assets/images/pedidos.png" alt="" class="me-2" width="20">
+                        <label for="formGroupExampleInput2" class="form-label"><strong>Items do Pedido:</strong></label>
+                        <button class="btn btn-success btn-sm space" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        (click)="editOrder(pedido.orderItems)">Visualizar o
+                        Pedido</button>
+                      </div>
+                    </div>
+                    <div class="col ">
+                       <span class=""><img src="../../../assets/images/wallet.png" alt="" class="me-2" width="20"><strong> Total: </strong> {{ pedidos.total }}</span>
+                    </div>
+                  </div> 
+                  <p-timeline [value]="pedido.events" layout="horizontal" styleClass="customized-timeline">
+                    <ng-template pTemplate="content" let-event >
+                      <span class="custom-marker shadow-2" [style.backgroundColor]="event.color">
+                        <i [ngClass]="event.icon"></i>
+                    </span>
+                    {{ event.status }}
+                    </ng-template>
+                </p-timeline>     
+                </p-accordionTab>
+              </p-accordion>
+            </div>
             <p><b>Avalie</b> sua experiência:</p>
             <div class="col-sm-12 col-md-8  ">
               <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
@@ -23,10 +95,48 @@
               <button class="btn btn-success" [disabled]="!form.valid" (click)="addReview()">Enviar avaliação</button>
             </div>
           </form>
-
         </div>
       </div>
-
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-clipboard-list me-2"></i>Items do pedido:</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="col-md-12">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6" *ngFor="let order of pedidoModal">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-4">
+                            <img src="{{ order.imagePath }}" width="140">
+                          </div>
+                          <div class="col-md-6">
+                            <i class="fas fa-hamburger"></i> {{order.menuId}}
+                            <div class="">
+                              <i class="fas fa-plus-circle me-2"></i><strong>Adicionais:</strong> {{ order.adicionais }}
+                            </div>
+                            <div class="">
+                              <i class="fas fa-sticky-note me-2"></i> <strong>Observações:</strong> {{ order.observacoes }}
+                            </div>
+                          </div>
+                          <hr class=" bg-black">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

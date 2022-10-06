@@ -11,6 +11,8 @@ export class MenuPedidosComponent implements OnInit {
   pedidos: any
   pedidoModal: any
   usuario: any
+  menuItemState = 'ready';
+  searchText = '';
 
   constructor(private Api: ListaApiService) { }
 

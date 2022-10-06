@@ -5,12 +5,18 @@
 .main {
     height: 100%;
     width: 100%;
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .margin-right {
     margin-right: 34%;
     margin-bottom: 50px;
+}
+
+.container { 
+  max-height: 700px;
+  max-width: 150%;
+  overflow: auto;
 }
 
 .color-orange {

@@ -16,6 +16,7 @@ export class PdfCreatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRestaurant();
+    this.getOrders()
   }
   
 
@@ -23,6 +24,13 @@ export class PdfCreatorComponent implements OnInit {
     this.Api.getRestaurante().subscribe((restaurant: any) => {
       this.restaurantes = restaurant;
       console.log(this.restaurantes);
+    });
+  }
+
+  getOrders() {
+    this.Api.getOrders().subscribe((orders: any) => {
+      const totalPedidos = orders.length;// pegar o valor do length
+      console.log(totalPedidos);
     });
   }
 
