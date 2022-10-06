@@ -274,6 +274,7 @@ export class ListaApiService {
       .reduce((prev, value)=> prev+value, 0)
   }
 
+
   checkOrder(order: Order): Observable<Order> {
     return this.httpClient.post<Order>(`${this.url}/orders`, order, this.options)
   }

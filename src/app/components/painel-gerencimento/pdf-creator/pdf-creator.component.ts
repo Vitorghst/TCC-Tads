@@ -11,7 +11,13 @@ import { ListaApiService } from 'src/app/services/api.service';
 })
 export class PdfCreatorComponent implements OnInit {
   restaurantes: any;
-
+  entregues = 0
+  cancelados = 0;
+  andamento = 0;
+  pendentes = 0;
+  entrega = 0;
+  quantidadePedidos = 0
+  quantidadePedidosSemana = 0;
   constructor(private Api: ListaApiService) { }
 
   ngOnInit(): void {
@@ -29,10 +35,41 @@ export class PdfCreatorComponent implements OnInit {
 
   getOrders() {
     this.Api.getOrders().subscribe((orders: any) => {
-      const totalPedidos = orders.length;// pegar o valor do length
-      console.log(totalPedidos);
+      // quantidade de pedidos entregues
+      this.entregues = 0;
+      // quantidade de pedidos em andamento
+      this.andamento = 0;
+      // quantidade de pedidos cancelados
+      this.cancelados = 0;
+      // quantidade de pedidos pendentes
+      this.pendentes = 0;
+      // quantidade de pedidos
+      this.quantidadePedidos = 0;
+      
+      for (let order of orders) {
+        if (order.status === "Entregue") {
+          this.entregues++;
+        } else if (order.status === "Em preparo") {
+          this.andamento++;
+        } else if (order.status === "Cancelado") {
+          this.cancelados++;
+        } else if (order.status === "Saiu para entrega") {
+          this.entrega++;
+        } else if (order.status === "Aguardando Confirmação") {
+          this.pendentes++;
+        }
+        this.quantidadePedidos++;
+        // quantidade de pedidos da semana
+      }
+      console.log("Entregues: " + this.entregues);
+      console.log("Em andamento: " + this.andamento);
+      console.log("Cancelados: " + this.cancelados);
+      console.log("Pendentes: " + this.pendentes);
+      console.log("Quantidade de pedidos: " + this.quantidadePedidos);
+      console.log("Quantidade de pedidos na semana: " + this.quantidadePedidosSemana);
     });
   }
+  
 
 
   public convertToPDF()
@@ -45,7 +82,7 @@ const contentDataURL = canvas.toDataURL('image/png')
 let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
 // centralizar o pdf
 var position = 0;
-pdf.addImage(contentDataURL, 'PNG', 15, 0, 180, 70)
+pdf.addImage(contentDataURL, 'PNG', 25, 0, 160, 120)
 pdf.save('output.pdf'); // Generated PDF
 });
 }
