@@ -24,13 +24,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <div class="container">
+                    <div class="container" *ngFor="let form of restaurantes">
                       <div class="row">
                         <div class="col-sm-1">
                           <img src="../../../../assets/images/phone.png" alt="" class="me-2" width="30">
                         </div>
                         <div class="col-sm-6">
-                          <a class="contact">(43) 3221-9000</a>
+                          <a class="contact">{{ form.telefone | mask: '(00) 00000-0000'  }}</a>
                         </div>
                       </div>
                       <div class="row mt-2">
@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-sm-6">
                           <a class="contact" href="http://api.whatsapp.com/send?1=pt_BR&phone=554398599286"
-                            target="_blank" rel="noopener noreferrer">(43) 99859-9286</a>
+                            target="_blank" rel="noopener noreferrer">{{ form.celular | mask: '(00) 00000-0000'  }}</a>
                         </div>
                       </div>
                     </div>

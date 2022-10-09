@@ -1,0 +1,101 @@
+<div class="content-body">
+    <div class="col">
+        <h4><img src="../../../../assets/images/restaurant.png" alt="" class="me-2" width="35">Restaurante</h4>
+    </div>
+    <form [formGroup]="form">
+        <h5 class="offset-md-3"><img src="../../../../assets/images/info.png" alt="" class="me-2 mt-1" width="34">Informações do Restaurante</h5>
+        <div class="offset-md-3 mt-5">
+            <div>
+                <div class="d-flex flex-row align-items-center mb-2">
+                    <img src="../../../../assets/images/restaurant.png" alt="" class="me-2 mt-4" width="34">
+                    <div class="form-outline flex-fill ">
+                        <label class="">Nome do Restaurante:</label>
+                        <input type="text" name="nome" formControlName="name" class="additem mt-2">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/local.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Endereço:</label>
+                    <input type="text" name="nome" formControlName="endereco" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/local.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Cidade:</label>
+                    <input type="text" name="nome" formControlName="cidade" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/local.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Estado:</label>
+                    <input type="text" name="nome" formControlName="estado" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/local.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">CEP:</label>
+                    <input type="text" name="nome" formControlName="cep" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/phone.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Telefone:</label>
+                    <input type="text" name="nome" formControlName="telefone" mask="(00) 00000-0000"
+                        class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/celular.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Celular:</label>
+                    <input type="text" name="nome" formControlName="celular" mask="(00) 00000-0000"
+                        class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/email.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Email:</label>
+                    <input type="text" name="nome" formControlName="email" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/moto.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Entrega:</label>
+                    <input type="number" name="nome" formControlName="entregaTempo" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/box.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Retirada:</label>
+                    <input type="number" name="nome" formControlName="retirada" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/bag.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Pedido Minino:</label>
+                    <input type="number" name="nome" formControlName="pedidoMin" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/payment.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="">Frete:</label>
+                    <input type="number" name="nome" formControlName="frete" class="additem mt-2">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center offset-md-5">
+                <button type="submit" class="btn btn-success col-4 ms-2 mt-4" (click)="updateRestaurante()">Salvar</button>
+            </div>
+        </div>
+    </form>
+</div>

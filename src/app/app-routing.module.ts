@@ -19,6 +19,7 @@ import { CadastroComponent } from './components/login/cadastro/cadastro.componen
 import { PainelGerencimentoComponent } from './components/painel-gerencimento/painel-gerencimento.component';
 import { PedidosUsuariosComponent } from './components/pedidos-usuarios/pedidos-usuarios.component';
 import { PdfCreatorComponent } from './components/painel-gerencimento/pdf-creator/pdf-creator.component';
+import { PainelRestauranteComponent } from './components/painel-gerencimento/painel-restaurante/painel-restaurante.component';
 
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
       { path: 'painel-gerenciamento', component: PainelGerencimentoComponent, children: [
         { path: 'gerencimamento-usuarios', component: PainelGerencimentoComponent },
         { path: 'gerenciamento-pedidos', component: PainelGerencimentoComponent },
+        { path: 'painel-restaurante', component: PainelRestauranteComponent  },
       ]},
       { path: 'pedidos-usuarios', component: PedidosUsuariosComponent},
       { path: 'reviews', component: ReviewsComponent },

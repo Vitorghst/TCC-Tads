@@ -30,6 +30,7 @@ export class ListaApiService {
   editTelas: any = '';
   editItem: any = '';
   editUser: any = '';
+  editRestaurant: any = ''
   editOrder: any = ''
   editStatus: any = '';
   items: CartItem[] = []
@@ -75,6 +76,14 @@ export class ListaApiService {
 
   getRestaurante(): Observable<any> {
     return this.httpClient.get<any>(`${this.url}/restaurant`)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
+
+  updateRestaurante(restaurante: any): Observable<any> {
+    return this.httpClient.put<any>(`${this.url}/restaurant/${restaurante.id}`, restaurante, this.options)
       .pipe(
         retry(2),
         catchError(this.handleError)

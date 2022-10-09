@@ -14,10 +14,12 @@ export class MainComponent implements OnInit {
   permissao: any
   nomeUser: any
   nomeUserIni: any;
+  restaurantes: any
   constructor(private Api: ListaApiService, private router: Router, private toast: NgToastService) { }
 
   ngOnInit(): void {
     this.getUser()
+    this.getRestaurante()
   }
 
 
@@ -41,6 +43,11 @@ export class MainComponent implements OnInit {
     throw new Error('Method not implemented.');
   }
 
+  getRestaurante(){
+    this.Api.getRestaurante().subscribe((restaurante: any) => {
+      this.restaurantes = restaurante
+    })
+  }
 
   exit(){
     sessionStorage.removeItem('token');
