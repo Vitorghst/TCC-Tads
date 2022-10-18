@@ -31,7 +31,8 @@ export class ListaApiService {
   editItem: any = '';
   editUser: any = '';
   editRestaurant: any = ''
-  editOrder: any = ''
+  editOrder: any = '';
+  editHorario: any = '';
   editStatus: any = '';
   items: CartItem[] = []
   ev: any = '';
@@ -262,6 +263,13 @@ export class ListaApiService {
     return this.itemAdicionais
   }
   
+  updateHorarios(horarios: any): Observable<any> {
+    return this.httpClient.put<any>(`${this.url}/horarios/${horarios.id}`, horarios, this.options)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      )
+  }
 
     
 

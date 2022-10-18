@@ -3,8 +3,9 @@
         <h4><img src="../../../../assets/images/restaurant.png" alt="" class="me-2" width="35">Restaurante</h4>
     </div>
     <form [formGroup]="form">
-        <h5 class="offset-md-3"><img src="../../../../assets/images/info.png" alt="" class="me-2 mt-1" width="34">Informações do Restaurante</h5>
-        <div class="offset-md-3 mt-5">
+        <h5 class="offset-md-3"><img src="../../../../assets/images/info.png" alt="" class="me-2 mt-1"
+                width="34">Informações do Restaurante</h5>
+        <div class="offset-md-3 mt-3">
             <div>
                 <div class="d-flex flex-row align-items-center mb-2">
                     <img src="../../../../assets/images/restaurant.png" alt="" class="me-2 mt-4" width="34">
@@ -66,6 +67,15 @@
                 </div>
             </div>
             <div class="d-flex flex-row align-items-center mb-2">
+                <img src="../../../../assets/images/cloack.png" alt="" class="me-2 mt-4" width="34">
+                <div class="form-outline flex-fill ">
+                    <label class="mt-4 me-2">Horário de Atendimento:</label>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Editar Horário
+                    </button>
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center mb-2">
                 <img src="../../../../assets/images/moto.png" alt="" class="me-2 mt-4" width="34">
                 <div class="form-outline flex-fill ">
                     <label class="">Entrega:</label>
@@ -94,7 +104,63 @@
                 </div>
             </div>
             <div class="d-flex flex-row align-items-center offset-md-5">
-                <button type="submit" class="btn btn-success col-4 ms-2 mt-4" (click)="updateRestaurante()">Salvar</button>
+                <button type="submit" class="btn btn-success col-4 ms-2 mt-4"
+                    (click)="updateRestaurante()">Salvar</button>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Horarios de Atendimento</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="editForm">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6" *ngFor="let horario of hours">
+                                        <h5 class="mt-3"><i class="fas fa-clock"
+                                                [ngStyle]="{'color': horario.status !== 'Fechado' ? 'green' : 'red'}"></i>
+                                            {{horario.dia | uppercase}}</h5>
+                                            {{ horario.status }} -
+                                            {{ horario.startTime }} ás
+                                            {{ horario.endTime }}
+                                        <div class="row">
+                                            <div class="col">
+                                                
+                                                <select class="form-select" formControlName="status"
+                                                    (click)="editApi(horario)" aria-label="Default select example">
+                                                    <option value="" disabled>Status</option>
+                                                    <option value="Aberto">Aberto</option>
+                                                    <option value="Fechado">Fechado</option>
+                                                </select>
+                                            </div>
+                                            <div class="col">
+                                               
+                                                <input type="text"
+                                                    class="form-control" formControlName="startTime">
+                                            </div>
+                                            <div class="col">
+                                                
+                                                <input type="text" 
+                                                    class="form-control" formControlName="endTime">
+                                            </div>
+                                            <div class="col ">
+                                                <button type="button" class="btn btn-success"
+                                                    (click)="updateHorario(horario)">Salvar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+
+                    </div>
+                </div>
             </div>
         </div>
     </form>

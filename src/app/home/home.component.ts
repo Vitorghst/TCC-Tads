@@ -223,8 +223,8 @@ fileName = '';
       this.hours = hours;
       this.hours.forEach((x: any) => {
         if (x.dia == moment(this.dataAtual).locale('pt-br').format('dddd')) {
-          if(x.dia === 'terça-feira') {
-            this.status = 'Fechado às Terças-Feiras'  
+          if(x.status === 'Fechado') {
+            this.status = 'Fechado'  
             this.status = x.status
             console.log(this.status2);
             

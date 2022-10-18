@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ListaApiService } from '../../../services/api.service';
 import { NgToastService } from 'ng-angular-popup';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-painel-restaurante',
@@ -28,13 +29,100 @@ export class PainelRestauranteComponent implements OnInit {
   
   });
   restaurantes: any
+  hours: any;
+  dataAtual = new Date();
+  status!: string;
+  status2!: string;
+  funcionamento: any;
+  horario!: string;
+
+  editForm = new FormGroup({
+    id: new FormControl(''),
+    dia : new FormControl(''),
+    startTime: new FormControl(''),
+    endTime: new FormControl(''),
+    status: new FormControl(''),
+  });
   constructor(private Api: ListaApiService, private toast: NgToastService) { }
   
 
   ngOnInit(): void {
     this.getRestaurante();
+    this.getHorarios()
     this.editRestaurante(this.form.value);
   }
+
+
+  editApi(item: any) {
+    console.log(item);
+    
+    this.Api.editItem = item
+  }
+
+
+  getHorarios() {
+    this.Api.getHorarios().subscribe((hours: any) => {
+      this.hours = hours;
+      this.hours.forEach((x: any) => {
+        if (x.dia == moment(this.dataAtual).locale('pt-br').format('dddd')) {
+          if(x.status === 'Fechado') {
+            this.status = 'Fechado'  
+            this.status = x.status
+            console.log(this.status2);
+            
+          } else {
+          this.funcionamento = x
+        }
+        }
+      })
+      if(moment(this.dataAtual).format('HH:mm') >= this.funcionamento.startTime && moment(this.dataAtual).format('HH:mm') <= this.funcionamento.endTime){
+        console.log('Aberto');
+         this.status = 'Aberto' ? 'Aberto' : 'Fechado'
+        console.log(this.status);
+        
+        this.horario = '- Fecha as ' + this.funcionamento.endTime
+      }else{
+        console.log('Fechado');
+       this.status = 'Fechado' ? 'Fechado' : 'Aberto'
+        this.horario = '- Abre as ' + this.funcionamento.startTime 
+      }
+    })
+  }
+
+  updateHorario(item: any){
+    let params = {
+      id: item.id,
+      dia: item.dia,
+      startTime: this.editForm.get('startTime')?.value ? this.editForm.get('startTime')?.value : item.startTime,
+      endTime: this.editForm.get('endTime')?.value ? this.editForm.get('endTime')?.value : item.endTime,
+      status: this.editForm.get('status')?.value ? this.editForm.get('status')?.value : item.status
+    }
+    if(this.editForm.get('status')?.value === 'Fechado'){
+      params = {
+        id: item.id,
+        dia: item.dia,
+        startTime: '',
+        endTime: '',
+        status: this.editForm.get('status')?.value ? this.editForm.get('status')?.value : item.status
+        
+    }
+    console.log('deus');
+    
+  }
+    console.log(params);
+    console.log(this.hours);
+    console.log(item);
+    
+    
+    this.Api.updateHorarios(params).subscribe((res: any) => {
+      this.toast.success({summary:`Atualizado com sucesso!`, position: 'br', duration: 2000});
+      this.getHorarios()
+    })
+    this.editForm.get('status')?.setValue('')
+    this.editForm.get('startTime')?.setValue('')
+    this.editForm.get('endTime')?.setValue('')
+  }
+
 
 
   getRestaurante(){

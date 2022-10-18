@@ -319,10 +319,10 @@
                         <div class="row">
                             <div class="col-md-6" *ngFor="let horario of hours">
                                 <h5><i class="fas fa-clock"
-                                        [ngStyle]="{'color': horario.dia !== 'terça-feira' ? 'green' : 'red'}"></i>
+                                        [ngStyle]="{'color': horario.status !== 'Fechado' ? 'green' : 'red'}"></i>
                                     {{horario.dia | uppercase}}</h5>
-                                <p *ngIf="horario.dia === 'terça-feira'">{{ horario.status }}</p>
-                                <p *ngIf="horario.dia != 'terça-feira'">{{ horario.startTime }} às {{ horario.endTime
+                                <p *ngIf="horario.status === 'Fechado'">{{ horario.status }}</p>
+                                <p *ngIf="horario.status != 'Fechado'">{{ horario.startTime }} {{ horario.endTime
                                     }}
                                 </p>
                             </div>
